@@ -28,3 +28,22 @@ class Objects
 };
 #endif // !OBJECTS_HPP
 
+class Two_Handed_Wooden_Sword : public Objects
+{
+public:
+	Two_Handed_Wooden_Sword();
+	Two_Handed_Wooden_Sword();
+	string getName();
+	string getDescription();
+	virtual void printObject();
+
+};
+
+// Making a change for science
+
+class Two_Handed_Bronze_Sword : public Objects
+{
+
+};
+
+
