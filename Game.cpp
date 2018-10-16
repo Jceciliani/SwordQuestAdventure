@@ -9,6 +9,7 @@ Description: This controls the flow of the game and all of the interactions
 #include <vector>
 #include <string>
 #include <stdio.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -276,7 +277,7 @@ void Game::play()
 	while (turns < 25)
 	{
 		// Clear screen after every iteration
-		system("CLS");
+		cout << string(50, '\n');
 
 		//cout << endl;
 		// Shows locations
