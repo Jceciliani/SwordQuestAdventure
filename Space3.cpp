@@ -18,13 +18,18 @@ Space3::Space3()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 3;
-	obj = NULL;
+	obj = new Bronze_Armor();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space3::~Space3()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space3::getName()
 {

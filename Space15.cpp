@@ -18,13 +18,18 @@ Space15::Space15()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 15;
-	obj = NULL;
+	obj = new Steel();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space15::~Space15()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space15::getName()
 {

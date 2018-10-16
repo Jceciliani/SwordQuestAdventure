@@ -18,13 +18,18 @@ Space21::Space21()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 21;
-	obj = NULL;
+	obj = new Two_Handed_Gold_Sword();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space21::~Space21()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space21::getName()
 {

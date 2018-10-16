@@ -18,13 +18,18 @@ Space8::Space8()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 8;
-	obj = NULL;
+	obj = new Two_Handed_Bronze_Sword();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space8::~Space8()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space8::getName()
 {

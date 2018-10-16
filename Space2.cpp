@@ -18,13 +18,18 @@ Space2::Space2()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 2;
-	obj = NULL;
+	obj = new Forge_Hammer();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space2::~Space2()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space2::getName()
 {

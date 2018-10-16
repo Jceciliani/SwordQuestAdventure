@@ -191,6 +191,55 @@ int Game::move(char loc)
 	}
 }
 
+/*
+void Game::fight()
+{
+	// Damage variable to place into the defense function
+	int damage;
+	// Death checkers
+	bool p1Death = false;
+	bool p2Death = false;
+
+	while (p1Death == false && p2Death == false)
+	{
+		cout << char1->getName() << " attack: " << endl;
+		damage = char1->attack();
+		cout << char2->getName() << " defense: " << endl;
+		char2->defense(damage);
+
+		// check if player 2 died
+		p2Death = char2->fatalBlow();
+
+		if (p2Death == false)
+		{
+			cout << char2->getName() << " attack: " << endl;
+			damage = char2->attack();
+			cout << char1->getName() << " defense: " << endl;
+			char1->defense(damage);
+			cout << endl;
+		}
+		// check if player 1 died
+		p1Death = char1->fatalBlow();
+		// Pause screen	
+		cin.get();
+	}
+
+	if (p1Death == true)
+	{
+		cout << "You have died." << endl;
+		cout << "GAME OVER" << endl;
+		return 0;
+	}
+	else if (p2Death == true)
+	{
+		cout << "Congratulations! You won!" << endl;
+		cout << "Level up!" << endl;
+		char1->levelUp();
+	}
+
+}
+*/
+
 void Game::play()
 {
 	// Create Space objects
@@ -226,7 +275,10 @@ void Game::play()
 	
 	while (turns < 25)
 	{
-		cout << endl;
+		// Clear screen after every iteration
+		system("CLS");
+
+		//cout << endl;
 		// Shows locations
 		if (playerLoc->getNorth() == NULL)
 		{
@@ -264,6 +316,7 @@ void Game::play()
 		// Error handling
 		while (1)
 		{
+
 			cout << " To go North, press N |";
 			cout << " To go East, press E |";
 			cout << " To go South, press S |";

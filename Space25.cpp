@@ -18,13 +18,18 @@ Space25::Space25()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 25;
-	obj = NULL;
+	obj = new Flint();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space25::~Space25()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space25::getName()
 {

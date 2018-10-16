@@ -18,13 +18,18 @@ Space23::Space23()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 23;
-	obj = NULL;
+	obj = new Gold_Armor();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space23::~Space23()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space23::getName()
 {

@@ -49,6 +49,7 @@ class Game
 		~Game();
 		void play();
 		int move(char loc);
+		//void fight();
 };
 #endif // !GAME_HPP
 

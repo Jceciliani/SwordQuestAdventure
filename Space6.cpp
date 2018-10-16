@@ -18,13 +18,18 @@ Space6::Space6()
 	shortForm = "This is the short form";
 	longForm = "This is the long form";
 	id = 6;
-	obj = NULL;
+	obj = new Silver_Armor();
 	combatEncounter = false;
 	visited = false;
 }
 
 Space6::~Space6()
-{}
+{
+	if (obj != NULL)
+	{
+		delete obj;
+	}
+}
 
 string Space6::getName()
 {
