@@ -90,6 +90,7 @@ void Space::setDirections(Space* N, Space* E, Space* S, Space* W)
 
 bool Space::getEncounter()
 {
+/*
 	if (combatEncounter == false)
 	{
 		combatEncounter = true;
@@ -99,10 +100,18 @@ bool Space::getEncounter()
 	{
 		return true;
 	}
+*/	
+	return combatEncounter;
+}
+
+void Space::setEncounter()
+{
+	combatEncounter = true;
 }
 
 bool Space::getVisited()
 {
+/*
 	if (visited == false)
 	{
 		visited = true;
@@ -112,5 +121,11 @@ bool Space::getVisited()
 	{
 		return true;
 	}
+*/
+	return visited;
 }
 
+void Space::setVisited()
+{
+	visited = true;
+}

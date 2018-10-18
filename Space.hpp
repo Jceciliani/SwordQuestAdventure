@@ -43,6 +43,8 @@ class Space
 		Space* getWest();
 		void setDirections(Space* N, Space* E, Space* S, Space* W);
 		bool getVisited();
+		void setVisited();
 		bool getEncounter();
+		void setEncounter();
 };
 #endif // !SPACE_HPP

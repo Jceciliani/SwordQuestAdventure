@@ -280,7 +280,7 @@ void Game::play()
 	cout << "A streak of crimson hits you in the chest. You are sent hurling across the room" << endl;
 	cout << "separated from your beloved farm tool. CRASH you meet the wall in a very unfriendly manner." << endl;
 	cout << "You begin to feel your own shades of crimson begin to leak from your head and your chest." << endl;
-	cout << "You have a loose grip on consciousness, but you can't give up. This may be your one chance." << end;
+	cout << "You have a loose grip on consciousness, but you can't give up. This may be your one chance." << endl;
 	cout << "As you try to stand, you feel the floor beneath you shift. Suddenly the floor on this side" << endl;
 	cout << "of the throne room begins to give way. You attempt to jump to safety but you are falling" << endl;
 	cout << "before you can even stand." << endl;
@@ -299,7 +299,7 @@ void Game::play()
 	while (turns < 25)
 	{
 		// Clear screen after every iteration
-		cout << string(50, '\n');
+		//cout << string(50, '\n');
 
 		//cout << endl;
 		// Shows locations
@@ -367,6 +367,9 @@ void Game::play()
 
 			}
 		}
+
+		cout << "-------------------------------------------------------------------------------------------\n\n" << endl;
+
 		// All the magic happens here - interaction with objects, fighting, etc.
 		if (playerLoc == spaceArr[0])
 		{
@@ -398,7 +401,15 @@ void Game::play()
 		}
 		else if (playerLoc == spaceArr[7])
 		{
-			s8.printSpace();
+			if(s8.getVisited() == false)
+			{
+				cout << s8.getLongForm() << endl;
+				s8.setVisited();
+			}
+			else
+			{
+				cout << s8.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[8])
 		{
@@ -418,7 +429,15 @@ void Game::play()
 		}
 		else if (playerLoc == spaceArr[12])
 		{
-			s13.printSpace();
+			if(s13.getVisited() == false)
+			{
+				cout << s13.getLongForm() << endl;
+				s13.setVisited();
+			}
+			else
+			{
+				cout << s13.getShortForm() << endl;
+			}	
 		}
 		else if (playerLoc == spaceArr[13])
 		{
