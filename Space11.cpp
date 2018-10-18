@@ -26,37 +26,3 @@ Space11::Space11()
 
 Space11::~Space11()
 {}
-
-string Space11::getName()
-{
-	return name;
-}
-
-string Space11::getShortForm()
-{
-	return shortForm;
-}
-
-string Space11::getLongForm()
-{
-	return longForm;
-}
-
-void Space11::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space11::getId()
-{
-	return id;
-}

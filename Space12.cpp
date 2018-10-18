@@ -32,37 +32,3 @@ Space12::Space12()
 
 Space12::~Space12()
 {}
-
-string Space12::getName()
-{
-	return name;
-}
-
-string Space12::getShortForm()
-{
-	return shortForm;
-}
-
-string Space12::getLongForm()
-{
-	return longForm;
-}
-
-void Space12::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space12::getId()
-{
-	return id;
-}

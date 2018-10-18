@@ -33,37 +33,3 @@ Space25::~Space25()
 		delete obj;
 	}
 }
-
-string Space25::getName()
-{
-	return name;
-}
-
-string Space25::getShortForm()
-{
-	return shortForm;
-}
-
-string Space25::getLongForm()
-{
-	return longForm;
-}
-
-void Space25::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space25::getId()
-{
-	return id;
-}

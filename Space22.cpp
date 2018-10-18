@@ -29,37 +29,3 @@ Space22::Space22()
 
 Space22::~Space22()
 {}
-
-string Space22::getName()
-{
-	return name;
-}
-
-string Space22::getShortForm()
-{
-	return shortForm;
-}
-
-string Space22::getLongForm()
-{
-	return longForm;
-}
-
-void Space22::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space22::getId()
-{
-	return id;
-}

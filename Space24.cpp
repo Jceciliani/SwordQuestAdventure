@@ -29,38 +29,3 @@ Space24::Space24()
 
 Space24::~Space24()
 {}
-
-string Space24::getName()
-{
-	return name;
-}
-
-string Space24::getShortForm()
-{
-	return shortForm;
-}
-
-string Space24::getLongForm()
-{
-	return longForm;
-}
-
-void Space24::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space24::getId()
-{
-	return id;
-}
-

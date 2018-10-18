@@ -31,37 +31,3 @@ Space20::Space20()
 
 Space20::~Space20()
 {}
-
-string Space20::getName()
-{
-	return name;
-}
-
-string Space20::getShortForm()
-{
-	return shortForm;
-}
-
-string Space20::getLongForm()
-{
-	return longForm;
-}
-
-void Space20::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space20::getId()
-{
-	return id;
-}

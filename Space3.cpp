@@ -34,37 +34,3 @@ Space3::~Space3()
 		delete obj;
 	}
 }
-
-string Space3::getName()
-{
-	return name;
-}
-
-string Space3::getShortForm()
-{
-	return shortForm;
-}
-
-string Space3::getLongForm()
-{
-	return longForm;
-}
-
-void Space3::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space3::getId()
-{
-	return id;
-}

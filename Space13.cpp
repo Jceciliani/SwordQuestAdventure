@@ -34,37 +34,3 @@ Space13::Space13()
 
 Space13::~Space13()
 {}
-
-string Space13::getName()
-{
-	return name;
-}
-
-string Space13::getShortForm()
-{
-	return shortForm;
-}
-
-string Space13::getLongForm()
-{
-	return longForm;
-}
-
-void Space13::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space13::getId()
-{
-	return id;
-}

@@ -29,37 +29,3 @@ Space4::Space4()
 
 Space4::~Space4()
 {}
-
-string Space4::getName()
-{
-	return name;
-}
-
-string Space4::getShortForm()
-{
-	return shortForm;
-}
-
-string Space4::getLongForm()
-{
-	return longForm;
-}
-
-void Space4::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space4::getId()
-{
-	return id;
-}

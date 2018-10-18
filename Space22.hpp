@@ -20,12 +20,6 @@ class Space22 : public Space
 public:
 	Space22();
 	~Space22();
-	string getName();
-	string getShortForm();
-	string getLongForm();
-	void printSpace();
-	int getId();
-
 };
 #endif // !SPACE22_HPP
 

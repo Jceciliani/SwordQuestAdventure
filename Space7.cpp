@@ -31,37 +31,3 @@ Space7::Space7()
 
 Space7::~Space7()
 {}
-
-string Space7::getName()
-{
-	return name;
-}
-
-string Space7::getShortForm()
-{
-	return shortForm;
-}
-
-string Space7::getLongForm()
-{
-	return longForm;
-}
-
-void Space7::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space7::getId()
-{
-	return id;
-}

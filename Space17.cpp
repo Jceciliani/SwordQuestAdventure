@@ -29,37 +29,3 @@ Space17::Space17()
 
 Space17::~Space17()
 {}
-
-string Space17::getName()
-{
-	return name;
-}
-
-string Space17::getShortForm()
-{
-	return shortForm;
-}
-
-string Space17::getLongForm()
-{
-	return longForm;
-}
-
-void Space17::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space17::getId()
-{
-	return id;
-}

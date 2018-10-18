@@ -31,37 +31,3 @@ Space9::Space9()
 
 Space9::~Space9()
 {}
-
-string Space9::getName()
-{
-	return name;
-}
-
-string Space9::getShortForm()
-{
-	return shortForm;
-}
-
-string Space9::getLongForm()
-{
-	return longForm;
-}
-
-void Space9::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space9::getId()
-{
-	return id;
-}

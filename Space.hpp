@@ -32,11 +32,11 @@ class Space
 	public:
 		Space();
 		~Space();
-		virtual string getName();
-		virtual string getShortForm();
-		virtual string getLongForm();
-		virtual void printSpace() = 0;
-		virtual int getId();
+		string getName();
+		string getShortForm();
+		string getLongForm();
+		void printSpace();
+		int getId();
 		Space* getNorth();
 		Space* getEast();
 		Space* getSouth();
