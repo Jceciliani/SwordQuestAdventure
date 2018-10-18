@@ -15,8 +15,12 @@ using namespace std;
 Space5::Space5()
 {
 	name = "Space5";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n
+	 You see a small corporeal form in the corner.";
+	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n
+	 You see a small corporeal form in the corner. \n\n
+	 To the west down the walkway you see a bright light and an opening to outside. \n
+	 To the south there is a ladder leading up \n";
 	id = 5;
 	obj = new Two_Handed_Silver_Sword();
 	combatEncounter = false;

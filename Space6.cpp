@@ -1,4 +1,4 @@
-/* Program Name: Sword Quest
+ /* Program Name: Sword Quest
 Author: Centaurus Team 1
 Date: October 9, 2018
 Description: Space 6 of 25 in the game
@@ -15,8 +15,13 @@ using namespace std;
 Space6::Space6()
 {
 	name = "Space6";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n
+	vines. The canopy is so think you are not sure if there is even a ceiling anymore.";
+	longForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n
+	vines. The canopy is so think you are not sure if there is even a ceiling anymore. \n\n
+	To the east is a small opening through the brush \n
+	To the south is a wide path marked with broken branches \n
+	To the north is you can see a small clearing through the brush\n";
 	id = 6;
 	obj = new Silver_Armor();
 	combatEncounter = false;

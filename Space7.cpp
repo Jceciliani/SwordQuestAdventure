@@ -15,8 +15,14 @@ using namespace std;
 Space7::Space7()
 {
 	name = "Space7";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The room is covered in moss and vegetation. Majority of the room is submerged\n
+	in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n
+	mossy island is in the middle of the room";
+	longForm = "The room is covered in moss and vegetation. Majority of the room is submerged\n
+	in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n
+	mossy island is in the middle of the room \n\n
+	To the east is a small opening through the brush \n
+	To the south is path thick with vegetation\n";
 	id = 7;
 	obj = NULL;
 	combatEncounter = false;

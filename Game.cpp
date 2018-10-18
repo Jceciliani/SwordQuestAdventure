@@ -274,6 +274,28 @@ void Game::play()
 
 	char choice;
 	
+	cout << "You are falling before you can even stand." << endl;
+    cin.ignore();
+	cout << "CRACK" << endl;
+	cout << "A streak of crimson hits you in the chest. You are sent hurling across the room, \n 
+	separated from your beloved farm tool. CRASH you meet the wall in a very unfriendly manner. \n
+	You begin to feel your own shades of crimson begin to leak from your head and your chest. \n
+	You have a loose grip on consciousness, but you can't give up. This may be your one chance.\n 
+	As you try to stand,  you feel the floor beneath you shift. Suddenly the floor on this side \n
+	of the throne room begins to give way. You attempt to jump to safety but you are falling \n
+	before you can even stand." << endl;
+	
+    cin.ignore();
+
+	cout << "Falling..." << endl;
+    cin.ignore();
+	cout << "Falling..." << endl;
+    cin.ignore();
+	cout << "Falling..." << endl;
+    cin.ignore();
+	cout << "You impact with a CRACK. Your consciousness fades to the ether." << endl;
+    cin.ignore();
+
 	while (turns < 25)
 	{
 		// Clear screen after every iteration

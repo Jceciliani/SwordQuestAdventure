@@ -15,8 +15,10 @@ using namespace std;
 Space1::Space1()
 {
 	name = "Space1";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere.";
+	longForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere. \n\n
+	To the east you see a cobblestone path\n
+	To the south is a trail into the thick brush\n";
 	id = 1;
 	obj = NULL;
 	combatEncounter = false;

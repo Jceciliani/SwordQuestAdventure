@@ -15,8 +15,9 @@ using namespace std;
 Space11::Space11()
 {
 	name = "Space11";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = " You find a small cave. It is covered it piles of broken tools, torn clothes, and bones.";
+	longForm = " You find a small cave. It is covered it piles of broken tools, torn clothes, and bones. \n\n
+	To the north is a wide path marked with broken branches \n";
 	id = 11;
 	obj = NULL;
 	combatEncounter = false;

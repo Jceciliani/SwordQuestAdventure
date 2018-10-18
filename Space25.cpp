@@ -15,8 +15,11 @@ using namespace std;
 Space25::Space25()
 {
 	name = "Space25";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "You reach a small platform in the middle of the burning lake. You won't last long \n
+	in this heat. The stalactites spark from the heat.";
+	longForm = "You reach a small platform in the middle of the burning lake. You won't last long \n
+	in this heat. The stalactites spark from the heat. \n\n
+	To the north is a steep climb out of the volcano \n";
 	id = 25;
 	obj = new Flint();
 	combatEncounter = false;

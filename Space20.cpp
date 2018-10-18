@@ -15,8 +15,14 @@ using namespace std;
 Space20::Space20()
 {
 	name = "Space20";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "You have reached the mouth of the volcano. The rocks around you dimly glow from the \n
+	mountains contents. The heat is nearly too much to bare. Near the lip you see a small ornate \n
+	fountain. To the east you also see a door shaped shimmering gateway.";
+	longForm = "You have reached the mouth of the volcano. The rocks around you dimly glow from the \n
+	mountains contents. The heat is nearly too much to bare. Near the lip you see a small ornate \n
+	fountain. To the east you also see a door shaped shimmering gateway.\n\n
+	The path to the west leads back down \n
+	To the south you can see a ledge leading into the volcano \n";
 	id = 20;
 	obj = NULL;
 	combatEncounter = false;

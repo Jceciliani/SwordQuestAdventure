@@ -15,8 +15,12 @@ using namespace std;
 Space3::Space3()
 {
 	name = "Space3";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n
+	There appears to be a fishing basket of some kind in the sewer waterway.";
+	longForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n
+	There appears to be a fishing basket of some kind in the sewer waterway. \n\n
+	To the south are stairs leading up to a door \n
+	Down the walkways to the east there is bright light and an opening to outside \n";
 	id = 3;
 	obj = new Bronze_Armor();
 	combatEncounter = false;

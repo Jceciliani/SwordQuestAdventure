@@ -15,8 +15,12 @@ using namespace std;
 Space24::Space24()
 {
 	name = "Space24";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n
+	landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever.";
+	longForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n
+	landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever. \n\n
+	The path to the west leads back down \n
+	The path to the north continues up the volcano.\n";
 	id = 24;
 	obj = NULL;
 	combatEncounter = false;

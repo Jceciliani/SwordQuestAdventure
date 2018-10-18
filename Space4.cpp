@@ -15,8 +15,12 @@ using namespace std;
 Space4::Space4()
 {
 	name = "Space4";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The mouth of the sewer opens up into the ocean. The waves look rough today. \n
+	There is a small wooden bridge connecting the eastern and western parts of the sewers.";
+	longForm = "The mouth of the sewer opens up into the ocean. The waves look rough today. \n
+	There is a small wooden bridge connecting the eastern and western parts of the sewers. \n\n
+	To the east you see the sewer tunnels continue \n
+	To the west you see the sewer tunnels continue \n";
 	id = 4;
 	obj = NULL;
 	combatEncounter = false;

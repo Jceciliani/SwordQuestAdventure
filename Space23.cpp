@@ -15,8 +15,14 @@ using namespace std;
 Space23::Space23()
 {
 	name = "Space23";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The path continues forward. You question the trails integrity as you see a few \n
+	chunks separate themselves from the mountain. There is a small alcove in the face of the volcano\n
+	containing various piles valuables and trinkets.";
+	longForm = "The path continues forward. You question the trails integrity as you see a few \n
+	chunks separate themselves from the mountain. There is a small alcove in the face of the volcano\n
+	containing various piles valuables and trinkets. \n\n
+	The path to the west leads back down \n
+	The path to the east continues up the volcano \n";
 	id = 23;
 	obj = new Gold_Armor();
 	combatEncounter = false;

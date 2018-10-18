@@ -15,8 +15,14 @@ using namespace std;
 Space19::Space19()
 {
 	name = "Space19";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "The air is thick with ash. The trial stops at another landing. In thee face of the \n
+	volcano you can see a small locked compartment. Beside it hangs a blue key, red key ,\n
+	and a green key.";
+	longForm = "The air is thick with ash. The trial stops at another landing. In thee face of the \n
+	volcano you can see a small locked compartment. Beside it hangs a blue key, red key ,\n
+	and a green key.\n\n
+	The path to the south leads back down \n
+	The path to the east continues up the volcano. \n";
 	id = 19;
 	obj = new Key();
 	combatEncounter = false;

@@ -15,8 +15,12 @@ using namespace std;
 Space10::Space10()
 {
 	name = "Space10";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	shortForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n
+	platform. In the corner you see a small hovel made of bone,. Metal scraps, and literal shit.";
+	longForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n
+	platform. In the corner you see a small hovel made of bone,. Metal scraps, and literal shit. \n\n
+	To the west there is a walkway \n
+	To the north is a ladder leading down\n";
 	id = 10;
 	obj = NULL;
 	combatEncounter = false;
