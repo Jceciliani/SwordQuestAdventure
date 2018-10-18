@@ -20,11 +20,5 @@ class Space13 : public Space
 public:
 	Space13();
 	~Space13();
-	string getName();
-	string getShortForm();
-	string getLongForm();
-	void printSpace();
-	int getId();
-
 };
 #endif // !SPACE13_HPP

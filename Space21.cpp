@@ -15,12 +15,12 @@ using namespace std;
 Space21::Space21()
 {
 	name = "Space21";
-	shortForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n
-	float in the air around you. On the side of the path you see a large boulder.";
-	longForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n
-	float in the air around you. On the side of the path you see a large boulder. \n\n
-	The path to the south leads back down \n
-	The path to the east continues up the volcano \n";
+	shortForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n"
+	"float in the air around you. On the side of the path you see a large boulder.";
+	longForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n"
+	"float in the air around you. On the side of the path you see a large boulder. \n\n"
+	"The path to the south leads back down \n"
+	"The path to the east continues up the volcano \n";
 	id = 21;
 	obj = new Two_Handed_Gold_Sword();
 	combatEncounter = false;
@@ -33,38 +33,4 @@ Space21::~Space21()
 	{
 		delete obj;
 	}
-}
-
-string Space21::getName()
-{
-	return name;
-}
-
-string Space21::getShortForm()
-{
-	return shortForm;
-}
-
-string Space21::getLongForm()
-{
-	return longForm;
-}
-
-void Space21::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space21::getId()
-{
-	return id;
 }

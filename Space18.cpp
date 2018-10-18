@@ -25,37 +25,3 @@ Space18::Space18()
 
 Space18::~Space18()
 {}
-
-string Space18::getName()
-{
-	return name;
-}
-
-string Space18::getShortForm()
-{
-	return shortForm;
-}
-
-string Space18::getLongForm()
-{
-	return longForm;
-}
-
-void Space18::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space18::getId()
-{
-	return id;
-}

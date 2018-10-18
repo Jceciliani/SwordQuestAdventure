@@ -15,15 +15,15 @@ using namespace std;
 Space12::Space12()
 {
 	name = "Space12";
-	shortForm = "The floor has dissipated from solid stone to a coarse dirt. The room is deceptively \n
-	large. If not for the walls and ceiling you'd feel like you were outside. In the center of\n
-	the room is  a signpost. Along the western wall is a small fence off plot of dirt.";
-	longForm = "The floor has dissipated from solid stone to a coarse dirt. The room is deceptively \n
-	large. If not for the walls and ceiling you'd feel like you were outside. In the center of\n
-	the room is  a signpost. Along the western wall is a small fence off plot of dirt.\n\n
-	To the north there is a path slowly encroached by brush \n
-	To the south there is a path that slopes upward \n
-	To the east there is a well lit corridor \n";
+	shortForm = "The floor has dissipated from solid stone to a coarse dirt. The room is deceptively \n"
+	"large. If not for the walls and ceiling you'd feel like you were outside. In the center of\n"
+	"the room is  a signpost. Along the western wall is a small fence off plot of dirt.";
+	longForm = "The floor has dissipated from solid stone to a coarse dirt. The room is deceptively \n"
+	"large. If not for the walls and ceiling you'd feel like you were outside. In the center of\n"
+	"the room is  a signpost. Along the western wall is a small fence off plot of dirt.\n\n"
+	"To the north there is a path slowly encroached by brush \n"
+	"To the south there is a path that slopes upward \n"
+	"To the east there is a well lit corridor \n";
 	id = 12;
 	obj = NULL;
 	combatEncounter = false;
@@ -32,37 +32,3 @@ Space12::Space12()
 
 Space12::~Space12()
 {}
-
-string Space12::getName()
-{
-	return name;
-}
-
-string Space12::getShortForm()
-{
-	return shortForm;
-}
-
-string Space12::getLongForm()
-{
-	return longForm;
-}
-
-void Space12::printSpace()
-{
-	if (visited == false)
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getLongForm() << endl;
-	}
-	else
-	{
-		cout << "Current Location: " << getName() << endl;
-		cout << getShortForm() << endl;
-	}
-}
-
-int Space12::getId()
-{
-	return id;
-}

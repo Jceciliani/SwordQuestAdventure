@@ -41,6 +41,20 @@ string Space::getLongForm()
 	return longForm;
 }
 
+void Space::printSpace()
+{
+	if (visited == false)
+	{
+		cout << "Current Location: " << getName() << endl;
+		cout << getLongForm() << endl;
+	}
+	else
+	{
+		cout << "Current Location: " << getName() << endl;
+		cout << getShortForm() << endl;
+	}
+}
+
 int Space::getId()
 {
 	return id;
