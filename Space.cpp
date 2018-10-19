@@ -100,7 +100,7 @@ bool Space::getEncounter()
 	{
 		return true;
 	}
-*/	
+*/
 	return combatEncounter;
 }
 
@@ -111,7 +111,7 @@ void Space::setEncounter()
 
 bool Space::getVisited()
 {
-/*
+
 	if (visited == false)
 	{
 		visited = true;
@@ -121,11 +121,4 @@ bool Space::getVisited()
 	{
 		return true;
 	}
-*/
-	return visited;
-}
-
-void Space::setVisited()
-{
-	visited = true;
 }

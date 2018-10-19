@@ -404,7 +404,7 @@ void Game::play()
 			if(s8.getVisited() == false)
 			{
 				cout << s8.getLongForm() << endl;
-				s8.setVisited();
+				//s8.setVisited();
 			}
 			else
 			{
@@ -432,7 +432,7 @@ void Game::play()
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;
-				s13.setVisited();
+				//s13.setVisited();
 			}
 			else
 			{
