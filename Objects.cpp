@@ -42,7 +42,7 @@ void Objects::printObject()
 Two_Handed_Wooden_Sword::Two_Handed_Wooden_Sword()
 {
 	name = "Two-Handed Wooden Sword";
-	description = "";
+	description = "a couple of boards nailed together. it looks more like a toy than a weapon";
 }
 
 Two_Handed_Wooden_Sword::~Two_Handed_Wooden_Sword()
@@ -52,7 +52,7 @@ Two_Handed_Wooden_Sword::~Two_Handed_Wooden_Sword()
 Two_Handed_Bronze_Sword::Two_Handed_Bronze_Sword()
 {
 	name = "Two-Handed Bronze Sword";
-	description = "";
+	description = " an old worn sword made of bronze. there are many chips in its toungue shaped blade";
 }
 
 Two_Handed_Bronze_Sword::~Two_Handed_Bronze_Sword()
@@ -62,7 +62,8 @@ Two_Handed_Bronze_Sword::~Two_Handed_Bronze_Sword()
 Two_Handed_Silver_Sword::Two_Handed_Silver_Sword()
 {
 	name = "Two-Handed Silver Sword";
-	description = "";
+	description = "a large blade with made of pure silver. it feels well crafted, something you imagine \n"
+	"a castle guard might use.";
 }
 
 Two_Handed_Silver_Sword::~Two_Handed_Silver_Sword()
@@ -72,7 +73,8 @@ Two_Handed_Silver_Sword::~Two_Handed_Silver_Sword()
 Two_Handed_Gold_Sword::Two_Handed_Gold_Sword()
 {
 	name = "Two-Handed Gold Sword";
-	description = "";
+	description = "an ornate golden blade. patterns weave down the blade and through the hilt eventually \n"
+	"swirling around the large ruby set into its pommel";
 }
 
 Two_Handed_Gold_Sword::~Two_Handed_Gold_Sword()
@@ -82,7 +84,8 @@ Two_Handed_Gold_Sword::~Two_Handed_Gold_Sword()
 Two_Handed_Ultimate_Sword::Two_Handed_Ultimate_Sword()
 {
 	name = "Two-Handed Ultimate Sword";
-	description = "";
+	description = "The strongest sword youve ever seen. its blade glows and shimmers with a plethora \n"
+	"of colors. you can feel the power contained within it.";
 }
 
 Two_Handed_Ultimate_Sword::~Two_Handed_Ultimate_Sword()
@@ -92,7 +95,8 @@ Two_Handed_Ultimate_Sword::~Two_Handed_Ultimate_Sword()
 Tunic_Armor::Tunic_Armor()
 {
 	name = "Tunic Armor";
-	description = "";
+	description = " a tattered leather tunic. youre not sure if its dirty from the fall, or if it was \n"
+	"always like this";
 }
 
 Tunic_Armor::~Tunic_Armor()
@@ -102,7 +106,8 @@ Tunic_Armor::~Tunic_Armor()
 Bronze_Armor::Bronze_Armor()
 {
 	name = "Bronze Armor";
-	description = "";
+	description = "a bronze cheast plate. the worn straps can still hold the mass to your body suprisingly \n"
+	" but the vairous puncture holes do not give you faith in its ability";
 }
 
 Bronze_Armor::~Bronze_Armor()
@@ -112,7 +117,8 @@ Bronze_Armor::~Bronze_Armor()
 Silver_Armor::Silver_Armor()
 {
 	name = "Silver Armor";
-	description = "";
+	description = "a set of silver armor. there are a few pieces missing, but the ones that are there are \n"
+	"fairly good quality";
 }
 
 Silver_Armor::~Silver_Armor()
@@ -122,7 +128,8 @@ Silver_Armor::~Silver_Armor()
 Gold_Armor::Gold_Armor()
 {
 	name = "Gold Armor";
-	description = "";
+	description = "a complete set of golden aarmor. intricate designs weave through the plates stemming \n"
+	"from a large lions head in the center of the breastplate. its very fancy, but very heavy.";
 }
 
 Gold_Armor::~Gold_Armor()
@@ -132,7 +139,8 @@ Gold_Armor::~Gold_Armor()
 Ultimate_Armor::Ultimate_Armor()
 {
 	name = "Ultimate Armor";
-	description = "";
+	description = "the strongest aarmor created. the surfaces are clean and smooth. it shimmers with \n"
+	"the various clolors of the spectrum";
 }
 
 Ultimate_Armor::~Ultimate_Armor()
@@ -142,7 +150,7 @@ Ultimate_Armor::~Ultimate_Armor()
 Forge_Hammer::Forge_Hammer()
 {
 	name = "Forge Hammer";
-	description = "";
+	description = " a hammer used to make weapons and aarmor. perhaps you can use this";
 }
 
 Forge_Hammer::~Forge_Hammer()
@@ -152,7 +160,8 @@ Forge_Hammer::~Forge_Hammer()
 Flint::Flint()
 {
 	name = "Flint";
-	description = "";
+	description = " a substance when struck with steel creates sparks that ignite flame. maybe \n"
+	"you can use this";
 }
 
 Flint::~Flint()
@@ -162,7 +171,7 @@ Flint::~Flint()
 Steel::Steel()
 {
 	name = "Steel";
-	description = "";
+	description = "a solid hunk of steel. seems like junk.";
 }
 
 Steel::~Steel()
@@ -172,7 +181,7 @@ Steel::~Steel()
 Key::Key()
 {
 	name = "Key";
-	description = "";
+	description = "a large black iron key. you can feel sinister energy eminating from it.";
 }
 
 Key::~Key()
