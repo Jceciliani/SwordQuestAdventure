@@ -80,6 +80,11 @@ Space* Space::getWest()
 	return west;
 }
 
+Objects* Space::getObject()
+{
+	return obj;
+}
+
 void Space::setDirections(Space* N, Space* E, Space* S, Space* W)
 {
 	north = N;

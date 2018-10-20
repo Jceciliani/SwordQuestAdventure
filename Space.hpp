@@ -37,10 +37,13 @@ class Space
 		string getLongForm();
 		void printSpace();
 		int getId();
+		// Directions
 		Space* getNorth();
 		Space* getEast();
 		Space* getSouth();
 		Space* getWest();
+		// Objects
+		Objects* getObject();
 		void setDirections(Space* N, Space* E, Space* S, Space* W);
 		bool getVisited();
 		bool getEncounter();
