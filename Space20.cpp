@@ -14,7 +14,7 @@ using namespace std;
 
 Space20::Space20()
 {
-	name = "Space20";
+	name = "Volcano Summit";
 	shortForm = "You have reached the mouth of the volcano. The rocks around you dimly glow from the \n"
 	"mountains contents. The heat is nearly too much to bare. Near the lip you see a small ornate \n"
 	"fountain. To the east you also see a door shaped shimmering gateway.";

@@ -14,7 +14,7 @@ using namespace std;
 
 Space14::Space14()
 {
-	name = "Space14";
+	name = "Mausoleum";
 	shortForm = "There is sparse light in the corridor. The walls seem to be etched with something. \n"
 	"The floor of the room feels slightly uneven";
 	longForm = "There is sparse light in the corridor. The walls seem to be etched with something. \n"

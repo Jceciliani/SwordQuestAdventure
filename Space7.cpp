@@ -14,7 +14,7 @@ using namespace std;
 
 Space7::Space7()
 {
-	name = "Space7";
+	name = "Swamp";
 	shortForm = "The room is covered in moss and vegetation. Majority of the room is submerged\n"
 	"in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n"
 	"mossy island is in the middle of the room";

@@ -14,7 +14,7 @@ using namespace std;
 
 Space22::Space22()
 {
-	name = "Space22";
+	name = "Volcano Lvl. 2";
 	shortForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
 	"An old man sits in the middle of the path";
 	longForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"

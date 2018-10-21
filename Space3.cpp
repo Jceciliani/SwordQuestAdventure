@@ -14,7 +14,7 @@ using namespace std;
 
 Space3::Space3()
 {
-	name = "Space3";
+	name = "Western Sewers";
 	shortForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n"
 	"There appears to be a fishing basket of some kind in the sewer waterway.";
 	longForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n"

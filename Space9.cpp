@@ -14,7 +14,7 @@ using namespace std;
 
 Space9::Space9()
 {
-	name = "Space9";
+	name = "Lower Maintenance";
 	shortForm = "You arrive in a large room. There are many large metal tubes crossing through\n"
 	"the room along the walls. In the center of the room is a small ornate fountain.There are\n"
 	"a collection of lockers along the west wall. There is a large metal hatch on one of the tubes";

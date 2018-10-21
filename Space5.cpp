@@ -14,7 +14,7 @@ using namespace std;
 
 Space5::Space5()
 {
-	name = "Space5";
+	name = "Eastern Sewers";
 	shortForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
 	"You see a small corporeal form in the corner.";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"

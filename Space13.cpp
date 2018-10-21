@@ -14,7 +14,7 @@ using namespace std;
 
 Space13::Space13()
 {
-	name = "Space13";
+	name = "Sanctuary";
 	shortForm = "In the center of the room is a small ornate fountain \n"
 	"In the south western corner is an anvil and furnace. Along the northern wall there is a large wooden chest \n";
 	longForm = "You awake to the sound of trickling water and the taste of rubble in your mouth. \n"

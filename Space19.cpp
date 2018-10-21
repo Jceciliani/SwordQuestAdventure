@@ -14,7 +14,7 @@ using namespace std;
 
 Space19::Space19()
 {
-	name = "Space19";
+	name = "Volcano Lvl. 5";
 	shortForm = "The air is thick with ash. The trial stops at another landing. In thee face of the \n"
 	"volcano you can see a small locked compartment. Beside it hangs a blue key, red key ,\n"
 	"and a green key.";

@@ -14,7 +14,7 @@ using namespace std;
 
 Space10::Space10()
 {
-	name = "Space10";
+	name = "Upper Maintenance";
 	shortForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n"
 	"platform. In the corner you see a small hovel made of bone,. Metal scraps, and literal shit.";
 	longForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n"

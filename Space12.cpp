@@ -14,7 +14,7 @@ using namespace std;
 
 Space12::Space12()
 {
-	name = "Space12";
+	name = "Crossroads";
 	shortForm = "The floor has dissipated from solid stone to a coarse dirt. The room is deceptively \n"
 	"large. If not for the walls and ceiling you'd feel like you were outside. In the center of\n"
 	"the room is  a signpost. Along the western wall is a small fence off plot of dirt.";
