@@ -50,7 +50,7 @@ class Game
 		Game();
 		~Game();
 		void play();
-		int move(char loc);
+		int move(string input);
 		void fight();
 };
 #endif // !GAME_HPP
