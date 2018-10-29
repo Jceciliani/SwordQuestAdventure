@@ -143,11 +143,23 @@ Game::~Game()
 
 }
 //  Moves hero from space to space
-int Game::move(char loc)
+int Game::move(string input)
 {
-	switch (loc)
+	// Input validation: break out into separate function
+	if (input.length() > 50/*maxInputLength*/)
 	{
-	case 'N':
+		cout << "Input must be 50 characters or less" << endl << endl;
+		return -1;
+	}
+	if (input.find("don't") < 50/*maxInputLength*/ || input.find("Don't") < 50/*maxInputLength*/)
+	{
+		cout << "Please don't say don't. It confuses me." << endl << endl;
+		return -1;
+	}
+	// end of input validation 
+	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
+	if (input.find("North") < 50/*maxInputLength*/ || input.find("north") < 50/*maxInputLength*/)
+	{
 		if (playerLoc->getNorth() == NULL)
 		{
 			return -1;
@@ -157,7 +169,9 @@ int Game::move(char loc)
 			playerLoc = playerLoc->getNorth();
 			return 0;
 		}
-	case 'E':
+	}
+	else if (input.find("East") < 50/*maxInputLength*/ || input.find("east") < 50/*maxInputLength*/)
+	{
 		if (playerLoc->getEast() == NULL)
 		{
 			return -1;
@@ -167,7 +181,9 @@ int Game::move(char loc)
 			playerLoc = playerLoc->getEast();
 			return 0;
 		}
-	case 'S':
+	}
+	else if (input.find("South") < 50/*maxInputLength*/ || input.find("south") < 50/*maxInputLength*/)
+	{
 		if (playerLoc->getSouth() == NULL)
 		{
 			return -1;
@@ -177,7 +193,9 @@ int Game::move(char loc)
 			playerLoc = playerLoc->getSouth();
 			return 0;
 		}
-	case 'W':
+	}
+	else if (input.find("West") < 50/*maxInputLength*/ || input.find("west") < 50/*maxInputLength*/)
+	{
 		if (playerLoc->getWest() == NULL)
 		{
 			return -1;
@@ -187,11 +205,14 @@ int Game::move(char loc)
 			playerLoc = playerLoc->getWest();
 			return 0;
 		}
-	default:
-		cout << "Not possible" << endl;
+	}
+	else
+	{
+		cout << "Sorry, I did not understand your input" << endl << endl;
 		return -1;
 	}
 }
+
 
 
 void Game::fight()
@@ -346,33 +367,25 @@ void Game::play()
 		// Error handling
 		while (1)
 		{
-
-			cout << " To go North, press N |";
-			cout << " To go East, press E |";
-			cout << " To go South, press S |";
-			cout << " To go West, press W" << endl;
-			choice = getchar();
-			cin.clear();
-			cin.ignore(255, '\n');
-			if (choice == 'N' || choice == 'E' || choice == 'S' || choice == 'W')
+			string input;
+			cout << "Where do you want to go?" << endl;
+			getline(cin, input);
+			int res = move(input);
+			if (res == -1)
 			{
-				int res = move(choice);
-				if (res == -1)
-				{
-					cout << "It is forbidden to go there" << endl;
+				cout << "It is forbidden to go there" << endl;
 
-				}
-				else
-				{
-					break;
-				}
 			}
-
+			else
+			{
+				break;
+			}
+		/*
 			else
 			{
 				cout << "Invalid input - Please enter N, E, S or W." << endl;
-
 			}
+		*/	
 		}
 
 		cout << "-------------------------------------------------------------------------------------------\n\n" << endl;
