@@ -1,6 +1,6 @@
 
-output: main.o Game.o Space.o Space1.o Space2.o Space3.o Space4.o Space5.o Space6.o Space7.o Space8.o Space9.o Space10.o Space11.o Space12.o Space13.o Space14.o Space15.o Space16.o Space17.o Space18.o Space19.o Space20.o Space21.o Space22.o Space23.o Space24.o Space25.o Characters.o Container.o Objects.o 
-	g++ main.cpp Game.cpp Space.cpp Space1.cpp Space2.cpp Space3.cpp Space4.cpp Space5.cpp Space6.cpp Space7.cpp Space8.cpp Space9.cpp Space10.cpp Space11.cpp Space12.cpp Space13.cpp Space14.cpp Space15.cpp Space16.cpp Space17.cpp Space18.cpp Space19.cpp Space20.cpp Space21.cpp Space22.cpp Space23.cpp Space24.cpp Space25.cpp Characters.cpp Container.cpp Objects.cpp -o output
+SwordQuest: main.o Game.o Space.o Space1.o Space2.o Space3.o Space4.o Space5.o Space6.o Space7.o Space8.o Space9.o Space10.o Space11.o Space12.o Space13.o Space14.o Space15.o Space16.o Space17.o Space18.o Space19.o Space20.o Space21.o Space22.o Space23.o Space24.o Space25.o Characters.o Container.o Objects.o 
+	g++ main.cpp Game.cpp Space.cpp Space1.cpp Space2.cpp Space3.cpp Space4.cpp Space5.cpp Space6.cpp Space7.cpp Space8.cpp Space9.cpp Space10.cpp Space11.cpp Space12.cpp Space13.cpp Space14.cpp Space15.cpp Space16.cpp Space17.cpp Space18.cpp Space19.cpp Space20.cpp Space21.cpp Space22.cpp Space23.cpp Space24.cpp Space25.cpp Characters.cpp Container.cpp Objects.cpp -o SwordQuest
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -95,5 +95,5 @@ Container.o: Container.hpp Container.cpp
 Objects.o: Objects.hpp Objects.cpp
 	g++ -c Objects.cpp
 
-clear:
-	rm *.o output
+clean:
+	rm *.o SwordQuest

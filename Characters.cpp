@@ -54,12 +54,17 @@ void Characters::levelUp()
 	level = level + 1;
 }
 
+int Characters::getHealth()
+{
+	return strength;
+}
+
 // Hero**********************************************************************
 Hero::Hero()
 {
 	strength = 10;
 	level = 1;
-	name = "";
+	name = "Hero";
 	isDead = false;
 }
 
@@ -99,17 +104,19 @@ void Hero::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -141,17 +148,19 @@ void Rat::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -183,17 +192,19 @@ void Goblin::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -225,17 +236,19 @@ void Hobgoblin::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -267,17 +280,19 @@ void Naga::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -309,17 +324,19 @@ void Troll::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -351,17 +368,20 @@ void Wizard::defense(int damage)
 
 	int d = damage - totaldefense;
 
+
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -429,18 +449,20 @@ void Gang_of_Bandits::defense(int damage)
 		d = damage - defense1;
 	}
 
+	cout << totaldefense << endl;
+
 	// Output statements for damage	
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " were hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " were hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 }
 
@@ -471,17 +493,19 @@ void Mountain_Giant::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -513,17 +537,19 @@ void Lesser_Drake::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }
@@ -555,17 +581,19 @@ void Dragon::defense(int damage)
 
 	int d = damage - totaldefense;
 
+	cout << totaldefense << endl;
+
 	if (d <= 0)
 	{
 		cout << "The " << name << " took no damage" << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 	else if (d >= 1)
 	{
 		strength -= d;
-		cout << "The " << name << " was hit for " << d << " damage." << endl;
-		cout << name << " Health: " << strength << " HP." << endl;
+		cout << "The " << name << " was hit for " << d << " damage" << endl;
+		cout << name << " Health: " << strength << " HP" << endl;
 	}
 
 }

@@ -32,6 +32,7 @@ class Characters
 		int getStrength();
 		int getLevel();
 		void levelUp();
+		int getHealth();
 };
 #endif // !CHARACTERS_HPP
 

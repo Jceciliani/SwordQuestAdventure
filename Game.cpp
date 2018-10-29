@@ -95,8 +95,8 @@ Game::Game()
 	// Space 25
 	spaceArr[24]->setDirections(spaceArr[19], NULL, NULL, NULL);
 
-
-
+	// Create Hero
+	char1 = new Hero();	
 	// Player starting location - Sancuary 
 	playerLoc = spaceArr[12];
 
@@ -139,6 +139,7 @@ Game::~Game()
 	}
 	// Delete array
 	delete[] spaceArr;
+	delete char1;
 
 }
 //  Moves hero from space to space
@@ -192,7 +193,7 @@ int Game::move(char loc)
 	}
 }
 
-/*
+
 void Game::fight()
 {
 	// Damage variable to place into the defense function
@@ -203,9 +204,9 @@ void Game::fight()
 
 	while (p1Death == false && p2Death == false)
 	{
-		cout << char1->getName() << " attack: " << endl;
+		cout << char1->getName() << " attack: ";
 		damage = char1->attack();
-		cout << char2->getName() << " defense: " << endl;
+		cout << char2->getName() << " defense: ";
 		char2->defense(damage);
 
 		// check if player 2 died
@@ -213,9 +214,9 @@ void Game::fight()
 
 		if (p2Death == false)
 		{
-			cout << char2->getName() << " attack: " << endl;
+			cout << char2->getName() << " attack: ";
 			damage = char2->attack();
-			cout << char1->getName() << " defense: " << endl;
+			cout << char1->getName() << " defense: ";
 			char1->defense(damage);
 			cout << endl;
 		}
@@ -229,17 +230,21 @@ void Game::fight()
 	{
 		cout << "You have died." << endl;
 		cout << "GAME OVER" << endl;
-		return 0;
+		exit(0);
 	}
 	else if (p2Death == true)
 	{
 		cout << "Congratulations! You won!" << endl;
-		cout << "Level up!" << endl;
+		cout << "Level up! +2 Health" << endl;
 		char1->levelUp();
+		cout << "Current Level: " << char1->getLevel() << endl;
+		cout << "Current Health: " << char1->getHealth() << endl;
+		cout << "-------------------------------------------------------------------------------------------\n\n" << endl;
+
 	}
 
 }
-*/
+
 
 void Game::play()
 {
@@ -296,6 +301,8 @@ void Game::play()
 	cout << "You impact with a CRACK. Your consciousness fades to the ether." << endl;
     cin.ignore();
 
+	// Randomize the game
+	srand(time(NULL));
 	while (turns < 25)
 	{
 		// Clear screen after every iteration
@@ -403,8 +410,14 @@ void Game::play()
 		{
 			if(s8.getVisited() == false)
 			{
+				if(s8.getEncounter() == false)
+				{
+					cout << "A GIANT RAT APPEARED!\n\n" << endl;
+					char2 = new Rat();
+					fight();
+					char2 = NULL;
+				}
 				cout << s8.getLongForm() << endl;
-				//s8.setVisited();
 			}
 			else
 			{

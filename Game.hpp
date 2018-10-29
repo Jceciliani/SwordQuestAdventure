@@ -44,12 +44,14 @@ class Game
 	private:
 		Space **spaceArr;
 		Space *playerLoc;
+		Characters* char1;
+		Characters* char2;
 	public:
 		Game();
 		~Game();
 		void play();
 		int move(char loc);
-		//void fight();
+		void fight();
 };
 #endif // !GAME_HPP
 
