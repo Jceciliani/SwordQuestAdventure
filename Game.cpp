@@ -393,31 +393,80 @@ void Game::play()
 		// All the magic happens here - interaction with objects, fighting, etc.
 		if (playerLoc == spaceArr[0])
 		{
-			s1.printSpace();
+			if(s1.getVisited() == false)
+			{
+				cout << s1.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s1.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[1])
 		{
-			s2.printSpace();
+			if(s2.getVisited() == false)
+			{
+				cout << s2.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s2.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[2])
 		{
-			s3.printSpace();
+			if(s3.getVisited() == false)
+			{
+				cout << s3.getLongForm() << endl;	
+			}
+			else
+			{
+				cout << s3.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[3])
 		{
-			s4.printSpace();
+			if(s4.getVisited() == false)
+			{
+				cout << s4.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s4.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[4])
 		{
-			s5.printSpace();
+			if(s5.getVisited() == false)
+			{
+				cout << s5.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s5.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[5])
 		{
-			s6.printSpace();
+			if(s6.getVisited() == false)
+			{
+				cout << s6.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s6.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[6])
 		{
-			s7.printSpace();
+			if(s7.getVisited() == false)
+			{
+				cout << s7.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s7.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[7])
 		{
@@ -439,26 +488,53 @@ void Game::play()
 		}
 		else if (playerLoc == spaceArr[8])
 		{
-			s9.printSpace();
+			if(s9.getVisited() == false)
+			{
+				cout << s9.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s9.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[9])
 		{
-			s10.printSpace();
+			if(s10.getVisited() == false)
+			{
+				cout << s10.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s10.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[10])
 		{
-			s11.printSpace();
+			if(s11.getVisited() == false)
+			{
+				cout << s11.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s11.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[11])
 		{
-			s12.printSpace();
+			if(s12.getVisited() == false)
+			{
+				cout << s12.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s12.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[12])
 		{
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;
-				//s13.setVisited();
 			}
 			else
 			{
@@ -467,51 +543,135 @@ void Game::play()
 		}
 		else if (playerLoc == spaceArr[13])
 		{
-			s14.printSpace();
+			if(s14.getVisited() == false)
+			{
+				cout << s14.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s14.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[14])
 		{
-			s15.printSpace();
+			if(s15.getVisited() == false)
+			{
+				cout << s15.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s15.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[15])
 		{
-			s16.printSpace();
+			if(s16.getVisited() == false)
+			{
+				cout << s16.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s16.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[16])
 		{
-			s17.printSpace();
+			if(s17.getVisited() == false)
+			{
+				cout << s17.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s17.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[17])
 		{
-			s18.printSpace();
+			if(s18.getVisited() == false)
+			{
+				cout << s18.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s18.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[18])
 		{
-			s19.printSpace();
+			if(s19.getVisited() == false)
+			{
+				cout << s19.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s19.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[19])
 		{
-			s20.printSpace();
+			if(s20.getVisited() == false)
+			{
+				cout << s20.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s20.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[20])
 		{
-			s21.printSpace();
+			if(s21.getVisited() == false)
+			{
+				cout << s21.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s21.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[21])
 		{
-			s22.printSpace();
+			if(s22.getVisited() == false)
+			{
+				cout << s22.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s22.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[22])
 		{
-			s23.printSpace();
+			if(s23.getVisited() == false)
+			{
+				cout << s23.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s23.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[23])
 		{
-			s24.printSpace();
+			if(s24.getVisited() == false)
+			{
+				cout << s24.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s24.getShortForm() << endl;
+			}
 		}
 		else if (playerLoc == spaceArr[24])
 		{
-			s25.printSpace();
+			if(s25.getVisited() == false)
+			{
+				cout << s25.getLongForm() << endl;
+			}
+			else
+			{
+				cout << s25.getShortForm() << endl;
+			}
 		}
 		else
 		{ }

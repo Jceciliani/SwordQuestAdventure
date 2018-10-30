@@ -16,7 +16,7 @@ Space6::Space6()
 {
 	name = "Jungle";
 	shortForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
-	"vines. The canopy is so think you are not sure if there is even a ceiling anymore.";
+	"vines. The canopy is so think you are not sure if there is even a ceiling anymore.\n";
 	longForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
 	"vines. The canopy is so think you are not sure if there is even a ceiling anymore. \n\n"
 	"To the east is a small opening through the brush \n"

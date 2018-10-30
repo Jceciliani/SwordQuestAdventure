@@ -17,11 +17,10 @@ Space23::Space23()
 	name = "Volcano Lvl. 3";
 	shortForm = "The path continues forward. You question the trails integrity as you see a few \n"
 	"chunks separate themselves from the mountain. There is a small alcove in the face of the volcano\n"
-	"containing various piles valuables and trinkets.";
+	"containing various piles valuables and trinkets.\n";
 	longForm = "The path continues forward. You question the trails integrity as you see a few \n"
 	"chunks separate themselves from the mountain. There is a small alcove in the face of the volcano\n"
 	"containing various piles valuables and trinkets. \n\n"
-	"The path to the west leads back down \n"
 	"The path to the east continues up the volcano \n";
 	id = 23;
 	obj = new Gold_Armor();

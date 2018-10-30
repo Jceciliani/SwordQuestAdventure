@@ -16,7 +16,7 @@ Space3::Space3()
 {
 	name = "Western Sewers";
 	shortForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n"
-	"There appears to be a fishing basket of some kind in the sewer waterway.";
+	"There appears to be a fishing basket of some kind in the sewer waterway.\n";
 	longForm = "The sewer walkways are grimy and slick. It's not hard to imagine with what. \n"
 	"There appears to be a fishing basket of some kind in the sewer waterway. \n\n"
 	"To the south are stairs leading up to a door \n"

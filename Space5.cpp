@@ -16,7 +16,7 @@ Space5::Space5()
 {
 	name = "Eastern Sewers";
 	shortForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
-	"You see a small corporeal form in the corner.";
+	"You see a small corporeal form in the corner.\n";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
 	"You see a small corporeal form in the corner. \n\n"
 	"To the west down the walkway you see a bright light and an opening to outside. \n"

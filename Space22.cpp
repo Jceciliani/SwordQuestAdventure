@@ -16,10 +16,9 @@ Space22::Space22()
 {
 	name = "Volcano Lvl. 2";
 	shortForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
-	"An old man sits in the middle of the path";
+	"An old man sits in the middle of the path\n";
 	longForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
 	"An old man sits in the middle of the path \n\n"
-	"The path to the west leads back down \n"
 	"The path to the east continues up the volcano \n";
 	id = 22;
 	obj = NULL;

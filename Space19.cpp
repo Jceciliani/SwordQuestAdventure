@@ -17,11 +17,10 @@ Space19::Space19()
 	name = "Volcano Lvl. 5";
 	shortForm = "The air is thick with ash. The trial stops at another landing. In thee face of the \n"
 	"volcano you can see a small locked compartment. Beside it hangs a blue key, red key ,\n"
-	"and a green key.";
+	"and a green key.\n";
 	longForm = "The air is thick with ash. The trial stops at another landing. In thee face of the \n"
 	"volcano you can see a small locked compartment. Beside it hangs a blue key, red key ,\n"
 	"and a green key.\n\n"
-	"The path to the south leads back down \n"
 	"The path to the east continues up the volcano. \n";
 	id = 19;
 	obj = new Key();

@@ -14,9 +14,9 @@ using namespace std;
 
 Space18::Space18()
 {
-	name = "Space18";
-	shortForm = "This is the short form";
-	longForm = "This is the long form";
+	name = "Dragon Keep";
+	shortForm = "This is the short form\n";
+	longForm = "This is the long form\n";
 	id = 18;
 	obj = NULL;
 	combatEncounter = false;

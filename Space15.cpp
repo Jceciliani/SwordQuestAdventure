@@ -16,7 +16,7 @@ Space15::Space15()
 {
 	name = "Crypt";
 	shortForm = "The room is filled with candles that were used up long ago and a plethora of \n"
-	"intricately painted pots and vases. In the center of the room is a large tomb";
+	"intricately painted pots and vases. In the center of the room is a large tomb\n";
 	longForm = "The room is filled with candles that were used up long ago and a plethora of \n"
 	"intricately painted pots and vases. In the center of the room is a large tomb \n\n"
 	"To the west is a doorway to leads to a dimly lit corridor \n";

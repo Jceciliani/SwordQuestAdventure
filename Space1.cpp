@@ -15,7 +15,7 @@ using namespace std;
 Space1::Space1()
 {
 	name = "Fields";
-	shortForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere.";
+	shortForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere.\n";
 	longForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere. \n\n"
 	"To the east you see a cobblestone path\n"
 	"To the south is a trail into the thick brush\n";

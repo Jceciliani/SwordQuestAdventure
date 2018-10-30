@@ -16,7 +16,7 @@ Space16::Space16()
 {
 	name = "Volcano Base";
 	shortForm = " The path continues to curl up the volcano. The scent of sulfur has grown stronger. \n"
-    "In the middle of the path there is a large sign post. There is a pile of bones at its base.";
+        "In the middle of the path there is a large sign post. There is a pile of bones at its base.\n";
 	longForm = " The path continues to curl up the volcano. The scent of sulfur has grown stronger. \n"
 	"In the middle of the path there is a large sign post. There is a pile of bones at its base. \n\n"
 	"The path to the east leads back down. \n"

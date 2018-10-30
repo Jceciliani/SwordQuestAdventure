@@ -16,10 +16,9 @@ Space24::Space24()
 {
 	name = "Volcano Lvl. 4";
 	shortForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
-	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever.";
+	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever.\n";
 	longForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
 	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever. \n\n"
-	"The path to the west leads back down \n"
 	"The path to the north continues up the volcano.\n";
 	id = 24;
 	obj = NULL;
