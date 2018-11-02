@@ -80,10 +80,37 @@ Space* Space::getWest()
 	return west;
 }
 
-Objects* Space::getObject()
+Objects Space::getObject()
 {
-	return obj;
+	return *obj;
 }
+// TEST****************************************8
+void Space::addToContainer(Objects obj)
+{
+	space.push_back(obj);	
+}
+
+void Space::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space.size(); i++)
+	{
+		if(space[i].getName() == obj.getName())
+		{
+			space.erase(space.begin() + i);
+			return;
+		}
+	}
+
+}		
+
+void Space::printContainer()
+{
+	for(int i = 0; i < space.size(); i++)
+	{
+		cout << space[i].getName() << endl;
+	}	
+}
+
 
 void Space::setDirections(Space* N, Space* E, Space* S, Space* W)
 {

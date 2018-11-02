@@ -33,3 +33,29 @@ Space25::~Space25()
 		delete obj;
 	}
 }
+void Space25::addToContainer(Objects obj)
+{
+	space25.push_back(obj);
+}
+
+void Space25::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space25.size(); i++)
+	{
+		if(space25[i].getName() == obj.getName())
+		{
+			space25.erase(space25.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space25::printContainer()
+{
+	for(int i = 0; i < space25.size(); i++)
+	{
+		cout << space25[i].getName() << endl;
+	}	
+}
+

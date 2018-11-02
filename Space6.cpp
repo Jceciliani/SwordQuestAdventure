@@ -35,3 +35,29 @@ Space6::~Space6()
 		delete obj;
 	}
 }
+void Space6::addToContainer(Objects obj)
+{
+	space6.push_back(obj);
+}
+
+void Space6::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space6.size(); i++)
+	{
+		if(space6[i].getName() == obj.getName())
+		{
+			space6.erase(space6.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space6::printContainer()
+{
+	for(int i = 0; i < space6.size(); i++)
+	{
+		cout << space6[i].getName() << endl;
+	}	
+}
+

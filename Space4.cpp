@@ -29,3 +29,29 @@ Space4::Space4()
 
 Space4::~Space4()
 {}
+void Space4::addToContainer(Objects obj)
+{
+	space4.push_back(obj);
+}
+
+void Space4::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space4.size(); i++)
+	{
+		if(space4[i].getName() == obj.getName())
+		{
+			space4.erase(space4.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space4::printContainer()
+{
+	for(int i = 0; i < space4.size(); i++)
+	{
+		cout << space4[i].getName() << endl;
+	}	
+}
+

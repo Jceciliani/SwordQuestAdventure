@@ -35,3 +35,29 @@ Space19::~Space19()
 		delete obj;
 	}
 }
+void Space19::addToContainer(Objects obj)
+{
+	space19.push_back(obj);
+}
+
+void Space19::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space19.size(); i++)
+	{
+		if(space19[i].getName() == obj.getName())
+		{
+			space19.erase(space19.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space19::printContainer()
+{
+	for(int i = 0; i < space19.size(); i++)
+	{
+		cout << space19[i].getName() << endl;
+	}	
+}
+

@@ -35,3 +35,29 @@ Space2::~Space2()
 		delete obj;
 	}
 }
+void Space2::addToContainer(Objects obj)
+{
+	space2.push_back(obj);
+}
+
+void Space2::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space2.size(); i++)
+	{
+		if(space2[i].getName() == obj.getName())
+		{
+			space2.erase(space2.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space2::printContainer()
+{
+	for(int i = 0; i < space2.size(); i++)
+	{
+		cout << space2[i].getName() << endl;
+	}	
+}
+

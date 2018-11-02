@@ -29,3 +29,29 @@ Space14::Space14()
 
 Space14::~Space14()
 {}
+void Space14::addToContainer(Objects obj)
+{
+	space14.push_back(obj);
+}
+
+void Space14::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space14.size(); i++)
+	{
+		if(space14[i].getName() == obj.getName())
+		{
+			space14.erase(space14.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space14::printContainer()
+{
+	for(int i = 0; i < space14.size(); i++)
+	{
+		cout << space14[i].getName() << endl;
+	}	
+}
+

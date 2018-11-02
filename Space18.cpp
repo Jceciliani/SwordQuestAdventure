@@ -25,3 +25,29 @@ Space18::Space18()
 
 Space18::~Space18()
 {}
+void Space18::addToContainer(Objects obj)
+{
+	space18.push_back(obj);
+}
+
+void Space18::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space18.size(); i++)
+	{
+		if(space18[i].getName() == obj.getName())
+		{
+			space18.erase(space18.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space18::printContainer()
+{
+	for(int i = 0; i < space18.size(); i++)
+	{
+		cout << space18[i].getName() << endl;
+	}	
+}
+

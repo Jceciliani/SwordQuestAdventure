@@ -27,3 +27,34 @@ Space1::Space1()
 
 Space1::~Space1()
 {}
+
+void Space1::addToContainer(Objects obj)
+{
+	space1.push_back(obj);
+}
+
+void Space1::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space1.size(); i++)
+	{
+		if(space1[i].getName() == obj.getName())
+		{
+			space1.erase(space1.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space1::printContainer()
+{
+	for(int i = 0; i < space1.size(); i++)
+	{
+		cout << space1[i].getName() << endl;
+	}	
+}
+
+
+
+
+

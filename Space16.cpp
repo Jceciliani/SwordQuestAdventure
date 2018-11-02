@@ -29,3 +29,29 @@ Space16::Space16()
 
 Space16::~Space16()
 {}
+void Space16::addToContainer(Objects obj)
+{
+	space16.push_back(obj);
+}
+
+void Space16::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space16.size(); i++)
+	{
+		if(space16[i].getName() == obj.getName())
+		{
+			space16.erase(space16.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space16::printContainer()
+{
+	for(int i = 0; i < space16.size(); i++)
+	{
+		cout << space16[i].getName() << endl;
+	}	
+}
+

@@ -31,3 +31,29 @@ Space9::Space9()
 
 Space9::~Space9()
 {}
+void Space9::addToContainer(Objects obj)
+{
+	space9.push_back(obj);
+}
+
+void Space9::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space9.size(); i++)
+	{
+		if(space9[i].getName() == obj.getName())
+		{
+			space9.erase(space9.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space9::printContainer()
+{
+	for(int i = 0; i < space9.size(); i++)
+	{
+		cout << space9[i].getName() << endl;
+	}	
+}
+

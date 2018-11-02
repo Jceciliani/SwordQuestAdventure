@@ -26,3 +26,29 @@ Space11::Space11()
 
 Space11::~Space11()
 {}
+void Space11::addToContainer(Objects obj)
+{
+	space11.push_back(obj);
+}
+
+void Space11::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space11.size(); i++)
+	{
+		if(space11[i].getName() == obj.getName())
+		{
+			space11.erase(space11.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space11::printContainer()
+{
+	for(int i = 0; i < space11.size(); i++)
+	{
+		cout << space11[i].getName() << endl;
+	}	
+}
+

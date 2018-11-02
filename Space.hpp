@@ -29,6 +29,7 @@ class Space
 		Objects *obj;
 		bool combatEncounter;
 		bool visited;
+		vector<Objects> space;
 	public:
 		Space();
 		~Space();
@@ -43,7 +44,10 @@ class Space
 		Space* getSouth();
 		Space* getWest();
 		// Objects
-		Objects* getObject();
+		Objects getObject();
+		virtual void addToContainer(Objects obj);
+		virtual void deleteFromContainer(Objects obj);
+		virtual void printContainer();
 		void setDirections(Space* N, Space* E, Space* S, Space* W);
 		bool getVisited();
 		bool getEncounter();

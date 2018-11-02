@@ -17,8 +17,13 @@ using namespace std;
 
 class Space17 : public Space
 {
-public:
-	Space17();
-	~Space17();
+	private:
+		vector<Objects> space17;
+	public:
+		Space17();
+		~Space17();
+		void addToContainer(Objects obj);
+		void deleteFromContainer(Objects obj);
+		void printContainer();
 };
 #endif // !SPACE17_HPP

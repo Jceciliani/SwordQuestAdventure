@@ -28,3 +28,29 @@ Space24::Space24()
 
 Space24::~Space24()
 {}
+void Space24::addToContainer(Objects obj)
+{
+	space24.push_back(obj);
+}
+
+void Space24::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space24.size(); i++)
+	{
+		if(space24[i].getName() == obj.getName())
+		{
+			space24.erase(space24.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space24::printContainer()
+{
+	for(int i = 0; i < space24.size(); i++)
+	{
+		cout << space24[i].getName() << endl;
+	}	
+}
+

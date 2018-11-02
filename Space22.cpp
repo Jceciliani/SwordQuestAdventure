@@ -28,3 +28,29 @@ Space22::Space22()
 
 Space22::~Space22()
 {}
+void Space22::addToContainer(Objects obj)
+{
+	space22.push_back(obj);
+}
+
+void Space22::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space22.size(); i++)
+	{
+		if(space22[i].getName() == obj.getName())
+		{
+			space22.erase(space22.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space22::printContainer()
+{
+	for(int i = 0; i < space22.size(); i++)
+	{
+		cout << space22[i].getName() << endl;
+	}	
+}
+

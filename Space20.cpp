@@ -30,3 +30,29 @@ Space20::Space20()
 
 Space20::~Space20()
 {}
+void Space20::addToContainer(Objects obj)
+{
+	space20.push_back(obj);
+}
+
+void Space20::deleteFromContainer(Objects obj)
+{
+	for(int i = 0; i < space20.size(); i++)
+	{
+		if(space20[i].getName() == obj.getName())
+		{
+			space20.erase(space20.begin() + i);
+			return;
+		}
+	}
+
+}
+
+void Space20::printContainer()
+{
+	for(int i = 0; i < space20.size(); i++)
+	{
+		cout << space20[i].getName() << endl;
+	}	
+}
+
