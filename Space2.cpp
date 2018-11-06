@@ -26,6 +26,7 @@ Space2::Space2()
 	obj = new Forge_Hammer();
 	combatEncounter = false;
 	visited = false;
+	hammerFound = false;
 }
 
 Space2::~Space2()
@@ -61,3 +62,31 @@ void Space2::printContainer()
 	}	
 }
 
+void Space2::look(string thing)
+{
+	if(strcmp(thing, "ruins") || strcmp(thing, "remains"))
+		{
+			cout << "youre no architect, so youre not really sure what kind of building this could" << endl;
+			cout << "have been. The are interesting remains poking through." << endl;	
+		}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}	
+}
+
+
+void Space2::search(string thing)
+{
+	if(strcmp(thing, "ruins") || strcmp(thing, "remains"))
+		{
+			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
+			cout << "bones from a severed arm. There is handle that upon further inspection is" << endl;
+			cout << "attached to a forge hammer." << endl;
+			hammerFound = true;	
+		}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}

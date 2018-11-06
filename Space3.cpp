@@ -25,6 +25,7 @@ Space3::Space3()
 	obj = new Bronze_Armor();
 	combatEncounter = false;
 	visited = false;
+	ropePulled = false;
 }
 
 Space3::~Space3()
@@ -60,3 +61,58 @@ void Space3::printContainer()
 	}	
 }
 
+void Space3::look(string thing)
+{
+	if(strcmp(thing, "walkways"))
+		{
+			cout << "dont. Its gross" << endl;
+			
+		}
+	else if (strcmp(thing, "basket") || strcmp(thing, "fishing basket"))
+		{
+			cout << " a small wooden  box design to catch things flowing through the dirty" << endl;
+			cout << " waterways. It is tied to the side of the walk way with a rope." << endl;
+		}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}
+		void Space3::take(string thing)
+		{
+			if (strcmp(thing, "basket") || strcmp(thing, "fishing basket"))
+			{
+				if (!ropePulled)
+				{
+					cout << "it is too far to reach. There must be a way to get it closer" << endl;
+				}
+				else
+				{
+					cout <<" the basket is to big to carry. there is some bronze armor in the trap though!" << endl;
+				}
+			}
+			else
+			{
+				cout << "you cant do that" << endl;
+			}
+		}
+		void Space3::pull(string thing)
+		{
+			if (strcmp(thing, "rope"))
+			{
+				if (!ropePulled)
+				{
+					cout << "you pull the basket up to the side of the walkway, and look" << endl;
+					cout << "into the basket. Somehow bronze armor got caught in the trap. Lucky!" << endl;
+				}
+				else
+				{
+					cout << "the basket is already next to the walkway. you can reach it and see"<< endl;
+					cout << "that Somehow bronze armor got caught in the trap. Lucky!" << endl;
+				}
+			}
+			else
+			{
+				cout << "you cant do that" << endl;
+			}
+		}

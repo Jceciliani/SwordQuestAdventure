@@ -60,3 +60,26 @@ void Space5::printContainer()
 	}	
 }
 
+void Space5::look(string thing)
+{
+	if(strcmp(thing, "walkways"))
+		{
+			cout << "dont. Its gross" << endl;
+			
+		}
+	else if (strcmp(thing, "walls"))
+		{
+			cout << "they are covered in moss  and mildew. Its hard to understand how things can grow" << endl;
+			cout << "in such a disgusting place. The wonders of nature." << endl;
+		}
+	else if (strcmp(thing, "walls") || strcmp(thing, "form"))
+	{
+		cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
+		cout << "silver sword sticking out of his chest its not hard to tell how he died." << endl;
+		cout << "The question is did he put it there, or someone else?" << endl;
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}

@@ -55,6 +55,37 @@ void Space1::printContainer()
 }
 
 
+void Space1::look(string thing)
+{
+	if(strcmp(thing, "grass"))
+	{
+		cout << "the long grass come up to your waist. Maybe there is something hidden within it." << endl; 
+		cout << "Like rupees! " << endl;
+	}
+	else if(strcmp(thing, "wind"))
+	{
+		cout << "no matter where you look, the wind has zero colors." << endl;	
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}
+
+
+void attack(string thing)
+{
+	if(strcmp(thing, "grass"))
+	{
+		cout << "with a “ hiyayaya!!!” you arc your sword around trimming the grass and clearing a" << endl;
+		cout << "patch around you. Unfortunatly, this is not that game, so you find zero rupees" << endl;
+		cout << ". What would you even do with one?" << endl;	
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}
 
 
 
