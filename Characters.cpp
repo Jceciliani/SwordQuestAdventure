@@ -10,6 +10,9 @@ Description: All characters located throughout the game - this includes the hero
 
 using namespace std;
 
+// Equipped Object
+Equipped equip;
+
 Characters::Characters()
 {
 	strength = 5;
@@ -73,17 +76,32 @@ Hero::~Hero()
 
 int Hero::attack()
 {
+	int totalAttack;
 	// Two-Handed Wooden Sword Equipped
-	int totalAttack = (rand() % 4) + 1;
-
+	if(equip.getSword() == "Two-Handed Wooden Sword")
+	{
+		totalAttack = (rand() % 4) + 1;
+	}
 	// Two-Handed Bronze Sword Equipped
-
+	else if(equip.getSword() == "Two-Handed Bronze Sword")
+	{
+		totalAttack = (rand() % 8) + 5; 
+	}
 	// Two-Handed Silver Sword Equipped
-
+	else if(equip.getSword() == "Two-Handed Silver Sword")
+	{
+		totalAttack = (rand() % 12) + 9;
+	}
 	// Two-Handed Gold Sword Equipped
-
+	else if(equip.getSword() == "Two-Handed Gold Sword")
+	{
+		totalAttack = (rand() % 16) + 13;
+	}
 	// Two-Handed Ultimate Sword Equipped
-
+	else if(equip.getSword() == "Two-Handed Ultimate Sword")
+	{
+		totalAttack = (rand() % 24) + 21;
+	}	
 	cout << name << " attacked for " << totalAttack << endl;
 
 	return totalAttack;
@@ -91,17 +109,32 @@ int Hero::attack()
 
 void Hero::defense(int damage)
 {
+	int totaldefense;
 	// Tunic Armor Equipped
-	int totaldefense = (rand() % 3) + 1;
-	
+	if(equip.getArmor() == "Tunic Armor")
+	{
+		totaldefense = (rand() % 4) + 3;
+	}
 	// Bronze Armor Equipped
-
+	else if(equip.getArmor() == "Bronze Armor")
+	{
+		totaldefense = (rand() % 8) + 7;
+	}
 	// Silver Armor Equipped
-
+	else if(equip.getArmor() == "Silver Armor")
+	{
+		totaldefense = (rand() % 12) + 11;
+	}
 	// Gold Armor Eqipped
-
+	else if(equip.getArmor() == "Gold Armor")
+	{
+		totaldefense = (rand() % 16) + 15;
+	}
 	// Ultimate Armor Equipped
-
+	else if(equip.getArmor() == "Ultimate Armor")
+	{
+		totaldefense = (rand() % 24) + 23;
+	}
 	int d = damage - totaldefense;
 
 	cout << totaldefense << endl;

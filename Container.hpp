@@ -93,5 +93,7 @@ class Equipped : public Container
 		void deleteFromContainer(Objects obj);
 		void printContainer();
 		void transferToBag(Objects obj1, Objects obj2);
+		string getSword();
+		string getArmor();
 		void insert(int, Objects obj);
 };

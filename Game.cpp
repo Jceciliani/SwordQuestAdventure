@@ -471,6 +471,7 @@ void Game::play()
 		else if (playerLoc == spaceArr[7])
 		{
 			//TEST
+			cout << "Space Container" << endl;
 			s1.addToContainer(s2.getObject());
 			s1.addToContainer(s19.getObject());
 			s1.printContainer();
@@ -537,7 +538,8 @@ void Game::play()
 		else if (playerLoc == spaceArr[12])
 		{
 			//TEST
-			s1.deleteFromContainer(s8.getObject());
+			cout << "Space Container" << endl;
+			s1.deleteFromContainer(s2.getObject());
 			s1.printContainer();
 			if(s13.getVisited() == false)
 			{

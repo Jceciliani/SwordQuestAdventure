@@ -127,7 +127,7 @@ void Bag::transferToEquipped(Objects obj1, Objects obj2)
 		// Delete Armor from equipped
 		e.deleteFromContainer(obj1);
 
-		// Add New Armor to Equipped - position 0
+		// Add New Armor to Equipped - position 1
 		e.insert(1, obj2);
 
 		// Delete new armor from bag
@@ -352,12 +352,22 @@ void Equipped::transferToBag(Objects obj1, Objects obj2)
 		// Delete Armor from equipped
 		e.deleteFromContainer(obj2);
 
-		// Add New Armor to Equipped - position 0
+		// Add New Armor to Equipped - position 1
 		e.insert(1, obj1);
 
 		// Delete new armor from bag
 		b.deleteFromContainer(obj1);
 	}
+}
+
+string Equipped::getSword()
+{
+	return equipped[0].getName();
+}
+
+string Equipped::getArmor()
+{
+	return equipped[1].getName();
 }
 
 void Equipped::insert(int i, Objects obj)
