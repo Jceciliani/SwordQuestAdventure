@@ -126,20 +126,61 @@ int Game::move(string input)
 	// Input validation: break out into separate function
 	if (input.length() > 50/*maxInputLength*/)
 	{
-		cout << "Input must be 50 characters or less" << endl << endl;
+		cout << "Input must be 50 characters or less" << endl;
 		return -1;
 	}
 	if (input.find("don't") < 50/*maxInputLength*/ || input.find("Don't") < 50/*maxInputLength*/)
 	{
-		cout << "Please don't say don't. It confuses me." << endl << endl;
+		cout << "Please don't say don't. It confuses me." << endl;
 		return -1;
 	}
 	// end of input validation 
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
-	if (input.find("North") < 50/*maxInputLength*/ || input.find("north") < 50/*maxInputLength*/)
+	// Create variables that recognize direction names
+	string northLocationName;
+	string eastLocationName;
+	string southLocationName;
+	string westLocationName;
+	// Assign values if they exist ie: is there a room that direction?
+	if (playerLoc->getNorth() == NULL)
+	{
+		northLocationName = "-- There is nothing to the north --";
+	}
+	else
+	{
+		northLocationName = playerLoc->getNorth()->getName();
+	}
+	if (playerLoc->getEast() == NULL)
+	{
+		eastLocationName = "-- There is nothing to the East --";
+	}
+	else
+	{
+		eastLocationName = playerLoc->getEast()->getName();
+	}
+	if (playerLoc->getSouth() == NULL)
+	{
+		southLocationName = "-- There is nothing to the South --";
+	}
+	else
+	{
+		southLocationName = playerLoc->getSouth()->getName();
+	}
+	if (playerLoc->getWest() == NULL)
+	{
+		westLocationName = "-- There is nothing to the West --";
+	}
+	else
+	{
+		westLocationName = playerLoc->getWest()->getName();
+	}
+	//cout << "The room to the north is: " << northLocationName << endl;
+	//cout << "The result of input.find(northLocationName) is: " << input.find(northLocationName) << endl;
+	if (input.find("North") < 50/*maxInputLength*/ || input.find("north") < 50 || input.find(northLocationName) < 50/*maxInputLength*/)
 	{
 		if (playerLoc->getNorth() == NULL)
 		{
+			cout << "It is forbidden to go there" << endl;
 			return -1;
 		}
 		else
@@ -148,10 +189,11 @@ int Game::move(string input)
 			return 0;
 		}
 	}
-	else if (input.find("East") < 50/*maxInputLength*/ || input.find("east") < 50/*maxInputLength*/)
+	else if (input.find("East") < 50/*maxInputLength*/ || input.find("east") < 50 || input.find(eastLocationName) < 50/*maxInputLength*/)
 	{
 		if (playerLoc->getEast() == NULL)
-		{
+		{	
+			cout << "It is forbidden to go there" << endl;
 			return -1;
 		}
 		else
@@ -160,10 +202,11 @@ int Game::move(string input)
 			return 0;
 		}
 	}
-	else if (input.find("South") < 50/*maxInputLength*/ || input.find("south") < 50/*maxInputLength*/)
+	else if (input.find("South") < 50/*maxInputLength*/ || input.find("south") < 50 || input.find(southLocationName) < 50/*maxInputLength*/)
 	{
 		if (playerLoc->getSouth() == NULL)
 		{
+			cout << "It is forbidden to go there" << endl;
 			return -1;
 		}
 		else
@@ -172,10 +215,11 @@ int Game::move(string input)
 			return 0;
 		}
 	}
-	else if (input.find("West") < 50/*maxInputLength*/ || input.find("west") < 50/*maxInputLength*/)
+	else if (input.find("West") < 50/*maxInputLength*/ || input.find("west") < 50 || input.find(westLocationName) < 50/*maxInputLength*/)
 	{
 		if (playerLoc->getWest() == NULL)
 		{
+			cout << "It is forbidden to go there" << endl;
 			return -1;
 		}
 		else
@@ -390,7 +434,7 @@ void Game::play()
 		// Shows locations
 		if (playerLoc->getNorth() == NULL)
 		{
-			cout << "There is nothing there" << endl;
+			cout << "North: There is nothing there" << endl;
 		}
 		else
 		{
@@ -398,7 +442,7 @@ void Game::play()
  		}
 		if (playerLoc->getEast() == NULL)
 		{
-			cout << "There is nothing there" << endl;
+			cout << "East: There is nothing there" << endl;
 		}
 		else
 		{
@@ -406,7 +450,7 @@ void Game::play()
 		}
 		if (playerLoc->getSouth() == NULL)
 		{
-			cout << "There is nothing there" << endl;
+			cout << "South: There is nothing there" << endl;
 		}
 		else
 		{
@@ -414,7 +458,7 @@ void Game::play()
 		}
 		if (playerLoc->getWest() == NULL)
 		{
-			cout << "There is nothing there" << endl;
+			cout << "West: There is nothing there" << endl;
 		}
 		else
 		{
@@ -430,7 +474,7 @@ void Game::play()
 			int res = move(input);
 			if (res == -1)
 			{
-				cout << "It is forbidden to go there" << endl;
+				//cout << "It is forbidden to go there" << endl;
 
 			}
 			else
