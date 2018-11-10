@@ -52,6 +52,11 @@ class Game
 		void play();
 		int move(string input);
 		void fight();
+		void transfer(Objects, Objects); // Object 1 Equipped, Object 2 Bag
+		void bagToForge(Objects);
+		void bagToStash(Objects);
+		void forgeToBag(Objects);
+		void stashToBag(Objects);
 };
 #endif // !GAME_HPP
 

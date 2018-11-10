@@ -135,6 +135,11 @@ void Bag::transferToEquipped(Objects obj1, Objects obj2)
 	}
 }
 
+int Bag::getSize()
+{
+	return bag.size();
+}
+
 // Forge*******************************************************************
 Forge::Forge()
 {
@@ -184,6 +189,7 @@ bool Forge::startForge()
 	if(forge[0].getName() == "Flint" || forge[0].getName() == "Steel" && forge[1].getName() == "Flint" || forge[1].getName() == "Steel")
 	{
 		forgeStart = true;
+		cout << "The beacon is lit!" << endl;
 		return true;
 	}
 	else
@@ -302,6 +308,20 @@ void Equipped::addToContainer(Objects obj)
 	equipped.push_back(obj);
 }
 
+
+
+void Equipped::addEquipment(Objects obj)
+{
+	if(obj.getName().find("Sword") != -1)
+	{
+		equipped.insert(equipped.begin() + 0, obj);
+	}
+	else if(obj.getName().find("Armor") != -1)
+	{
+		equipped.insert(equipped.begin() + 1, obj);
+	}	
+}	
+
 void Equipped::deleteFromContainer(Objects obj)
 {
 	for(int i = 0; i < equipped.size(); i++)
@@ -337,7 +357,9 @@ void Equipped::transferToBag(Objects obj1, Objects obj2)
 
 		// Delete Sword from equipped
 		e.deleteFromContainer(obj2);
-
+		cout << "Inserting new sword" << endl;	
+		cout << "Object 1: " << obj1.getName() << endl;
+		cout << "Object 2: " << obj2.getName() << endl;
 		// Add New Sword to Equipped - position 0
 		e.insert(0, obj1);
 
@@ -359,20 +381,49 @@ void Equipped::transferToBag(Objects obj1, Objects obj2)
 		b.deleteFromContainer(obj1);
 	}
 }
+//TEST - global string variables to hold weapon and armor names
+string sword = "Two-Handed Wooden Sword";
+string armor = "Tunic Armor";
+
+
+void Equipped::setSword(Objects obj)
+{
+	sword = obj.getName();
+}
+
+void Equipped::setArmor(Objects obj)
+{
+	armor = obj.getName();
+}	
 
 string Equipped::getSword()
 {
-	return equipped[0].getName();
+
+	return sword;
+
+	//return equipped[0].getName();
 }
 
 string Equipped::getArmor()
 {
-	return equipped[1].getName();
+	return armor;
+
+	//return equipped[1].getName();
 }
 
 void Equipped::insert(int i, Objects obj)
 {
 	equipped.insert(equipped.begin() + i, obj);
+}
+
+Objects Equipped::getObject1()
+{
+	return *obj1;
+}
+
+Objects Equipped::getObject2()
+{
+	return *obj2;
 }
 
 

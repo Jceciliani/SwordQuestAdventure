@@ -13,6 +13,12 @@ Description: This controls the flow of the game and all of the interactions
 
 using namespace std;
 
+// Container objects
+Equipped eq;
+Forge fg;
+Bag ba;
+Stash st;
+
 Game::Game()
 {
 	// Create game board
@@ -104,34 +110,6 @@ Game::Game()
 //  Delete board memory 
 Game::~Game()
 {
-/*
-	// Hard coded deletion
-	delete spaceArr[0];
-	delete spaceArr[1];
-	delete spaceArr[2];
-	delete spaceArr[3];
-	delete spaceArr[4];
-	delete spaceArr[5];
-	delete spaceArr[6];
-	delete spaceArr[7];
-	delete spaceArr[8];
-	delete spaceArr[9];
-	delete spaceArr[10];
-	delete spaceArr[11];
-	delete spaceArr[12];
-	delete spaceArr[13];
-	delete spaceArr[14];
-	delete spaceArr[15];
-	delete spaceArr[16];
-	delete spaceArr[17];
-	delete spaceArr[18];
-	delete spaceArr[19];
-	delete spaceArr[20];
-	delete spaceArr[21];
-	delete spaceArr[22];
-	delete spaceArr[23];
-	delete spaceArr[24];
-*/
 	// Loop deletion - buggy when used last time
 	for (int i = 0; i < 25; i++)
 	{
@@ -223,12 +201,15 @@ void Game::fight()
 	bool p1Death = false;
 	bool p2Death = false;
 
+	cout << "Entering the fight function" << endl;	
+
 	while (p1Death == false && p2Death == false)
 	{
 		cout << char1->getName() << " attack: ";
 		damage = char1->attack();
 		cout << char2->getName() << " defense: ";
 		char2->defense(damage);
+
 
 		// check if player 2 died
 		p2Death = char2->fatalBlow();
@@ -266,6 +247,82 @@ void Game::fight()
 
 }
 
+// Container utiization functions *****************************************************
+void Game::transfer(Objects obj1, Objects obj2)
+{
+	// Object 1 is in equipped, Object 2 is in bag
+
+	// Transferring two objects at once
+	// If the object is a sword
+	if(obj1.getName().find("Sword") != -1)
+	{
+		// Add Sword to Bag
+		ba.addToContainer(obj1);
+
+		// Delete Sword from equipped
+		eq.deleteFromContainer(obj1);
+
+		// Add New Sword to Equipped - position 0
+		eq.insert(0, obj2);
+
+		// Delete new sword from bag
+		ba.deleteFromContainer(obj2);
+
+		//TEST
+		eq.setSword(obj2);
+	}
+	//If the object is armor
+	else if(obj1.getName().find("Armor") != -1)	
+	{
+		// Add Armor to bag
+		ba.addToContainer(obj1);
+		// Delete Armor from equipped
+		eq.deleteFromContainer(obj1);
+
+		// Add New Armor to Equipped - position 1
+		eq.insert(1, obj2);
+
+		// Delete new armor from bag
+		ba.deleteFromContainer(obj2);
+
+		//TEST
+		eq.setArmor(obj2);
+	}
+
+	
+}
+
+void Game::bagToForge(Objects obj)
+{
+	ba.deleteFromContainer(obj);
+	fg.addToContainer(obj);	
+}
+
+void Game::bagToStash(Objects obj)
+{
+	ba.deleteFromContainer(obj);
+	st.addToContainer(obj);
+}
+
+void Game::forgeToBag(Objects obj)
+{	
+	fg.deleteFromContainer(obj);
+	ba.addToContainer(obj);	
+}
+
+void Game::stashToBag(Objects obj)
+{
+	if(ba.getSize() < 5)
+	{
+		st.deleteFromContainer(obj);
+		ba.addToContainer(obj);	
+	}
+	else
+	{
+		cout << "To bag can only hold 5 items" << endl;
+	}	
+}
+//*********************************************************************************
 
 void Game::play()
 {
@@ -417,7 +474,16 @@ void Game::play()
 		{
 			if(s3.getVisited() == false)
 			{
-				cout << s3.getLongForm() << endl;	
+				cout << s3.getLongForm() << endl;
+
+
+				ba.addToContainer(s3.getObject());
+				transfer(eq.getObject2(), s3.getObject());
+	
+				cout << "Equipped" << endl;
+				eq.printContainer();
+				cout << "Bag" << endl;
+				ba.printContainer();	
 			}
 			else
 			{
@@ -428,6 +494,13 @@ void Game::play()
 		{
 			if(s4.getVisited() == false)
 			{
+				if(s4.getEncounter() == false)
+				{
+					cout << "A GOBLIN APPEARED!\n\n" << endl;
+					char2 = new Goblin();
+					fight();
+					char2 = NULL;
+				}
 				cout << s4.getLongForm() << endl;
 			}
 			else
@@ -471,10 +544,19 @@ void Game::play()
 		else if (playerLoc == spaceArr[7])
 		{
 			//TEST
-			cout << "Space Container" << endl;
-			s1.addToContainer(s2.getObject());
-			s1.addToContainer(s19.getObject());
-			s1.printContainer();
+			cout << "Equipped" << endl;
+			fg.addToContainer(s25.getObject());
+			fg.addToContainer(s2.getObject());
+			if(fg.startForge())
+			{
+				cout << "Nice" << endl;
+			}
+			else
+			{
+				cout << "Bummer" << endl;
+			}
+			// Print current equipment 
+			eq.printContainer();
 			if(s8.getVisited() == false)
 			{
 				if(s8.getEncounter() == false)
@@ -483,6 +565,14 @@ void Game::play()
 					char2 = new Rat();
 					fight();
 					char2 = NULL;
+					// Put wooden sword in bag, equip bronze sword
+					transfer(eq.getObject1(), s8.getObject());	
+					// Print equipped
+					cout << "Equipped" << endl;
+					eq.printContainer();
+					// Print Bag
+					cout << "Bag" << endl;
+					ba.printContainer();
 				}
 				cout << s8.getLongForm() << endl;
 			}

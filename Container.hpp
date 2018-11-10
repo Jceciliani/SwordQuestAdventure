@@ -42,6 +42,7 @@ class Bag : public Container
 		void transferToStash(Objects obj);
 		void transferToEquipped(Objects obj1, Objects obj2);
 		void insert(int, Objects obj);
+		int getSize();
 };
 
 // Forge*******************************************************************************
@@ -90,10 +91,15 @@ class Equipped : public Container
 		Equipped();
 		~Equipped();
 		void addToContainer(Objects obj);
+		void addEquipment(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
 		void transferToBag(Objects obj1, Objects obj2);
+		void setSword(Objects);
+		void setArmor(Objects);
 		string getSword();
 		string getArmor();
 		void insert(int, Objects obj);
+		Objects getObject1();
+		Objects getObject2();
 };

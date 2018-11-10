@@ -76,7 +76,9 @@ Hero::~Hero()
 
 int Hero::attack()
 {
-	int totalAttack;
+	cout << "Attack function, hero current weapon: " << equip.getSword() << endl;	
+
+	int totalAttack = 0;
 	// Two-Handed Wooden Sword Equipped
 	if(equip.getSword() == "Two-Handed Wooden Sword")
 	{
@@ -85,6 +87,8 @@ int Hero::attack()
 	// Two-Handed Bronze Sword Equipped
 	else if(equip.getSword() == "Two-Handed Bronze Sword")
 	{
+		cout << "In Bronze Sword" << endl;
+
 		totalAttack = (rand() % 8) + 5; 
 	}
 	// Two-Handed Silver Sword Equipped
@@ -109,7 +113,10 @@ int Hero::attack()
 
 void Hero::defense(int damage)
 {
-	int totaldefense;
+
+	cout << "Defense function, hero current armor: " << equip.getArmor() << endl;
+
+	int totaldefense = 0;
 	// Tunic Armor Equipped
 	if(equip.getArmor() == "Tunic Armor")
 	{
@@ -118,6 +125,8 @@ void Hero::defense(int damage)
 	// Bronze Armor Equipped
 	else if(equip.getArmor() == "Bronze Armor")
 	{
+		cout << "In bronze armor" << endl;
+
 		totaldefense = (rand() % 8) + 7;
 	}
 	// Silver Armor Equipped
