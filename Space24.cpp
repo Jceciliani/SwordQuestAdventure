@@ -16,7 +16,7 @@ Space24::Space24()
 {
 	name = "Volcano Lvl. 4";
 	shortForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
-	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever.\n";
+	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a lever.\n";
 	longForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
 	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever. \n\n"
 	"The path to the north continues up the volcano.\n";
@@ -54,3 +54,34 @@ void Space24::printContainer()
 	}	
 }
 
+void Space24::look(string thing)
+{
+	if (strcmp(thing, "lever"))
+	{
+			cout << "a large metal lever. the area seems bare so youre not reall sure" << endl;
+			cout << "what it could trigger." << endl;
+	}
+
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space24::pull(string thing)
+{
+	if (strcmp(thing, "lever"))
+	{
+			cout << "as you move the lever you hear large gears begin to grinding, though you are not sure" << endl;
+			cout << "where it is coming from. as you finish pulling you hear a large THUD and you feel the " << endl;
+			cout << "ground shift. an instant later you feel the entire landing lift up and hurl you through" << endl;
+			cout << "the air, like a catapult. you are sent soaring down the mountian and impact the ground" << endl;
+			cout << "HARD. when you are able to resurvey your surrounding you find that you have been thrown" << endl;
+			cout << "back to the base of the volcano." << endl;
+	}
+
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

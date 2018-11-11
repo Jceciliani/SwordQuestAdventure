@@ -55,3 +55,48 @@ void Space17::printContainer()
 	}	
 }
 
+void Space17::look(string thing)
+{
+if (strcmp(thing, "fountian"))
+	{
+		if(fountianUsed)
+		{
+			cout << "the fountian is dry" << endl;
+		}
+		else
+		{
+			cout << "The fountian is filled with water. It looks very refreashing" << endl;
+		}
+	}
+
+	else if(strcmp(thing, "volcano"))
+	{
+			cout << "its a volcano… in a dungeon? Anyways it seems to be still active. Maybe theres " << endl; 
+			cout << "something that will help up there?" << endl; 
+	}
+else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space17::drink(string thing)
+{
+if (strcmp(thing, "from fountian"))
+	{
+		if(!fountianUsed)
+		{
+		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+		fountianUsed = true;
+		}
+		else
+		{
+			cout << "The fountian is dry" << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

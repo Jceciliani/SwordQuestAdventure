@@ -25,5 +25,7 @@ class Space12 : public Space
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void dig(string thing);
 };
 #endif // !SPACE12_HPP

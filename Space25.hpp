@@ -19,11 +19,14 @@ class Space25 : public Space
 {
 	private:
 		vector<Objects> space25;
+		bool flintFound;
 	public:
 		Space25();
 		~Space25();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void attack(string thing);
 };
 #endif // !SPACE25_HPP

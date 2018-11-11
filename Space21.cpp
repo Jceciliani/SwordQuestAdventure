@@ -59,3 +59,37 @@ void Space21::printContainer()
 	}	
 }
 
+void Space21::look(string thing)
+{
+	if (strcmp(thing, "boulder"))
+	{
+
+			cout << "a large rock . not much to say. You could probably move it if you wanted" << endl;
+
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space21::push(string thing)
+{
+	if (strcmp(thing, "boulder"))
+	{
+		if(boulderMoved)
+		{
+			cout << "you had enough excitment moving it the first time" << endl;
+		}
+		else
+		{
+			cout << "like something out of a training montage you some how manage " << endl;
+			cout << "to move the boulder a few feet. It feels a bit anti-climatic" << endl;
+			cout << "but then you see a gold sword in the spot that the boulder used to be in. LUCKY! " << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

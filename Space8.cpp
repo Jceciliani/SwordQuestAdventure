@@ -61,3 +61,50 @@ void Space8::printContainer()
 	}	
 }
 
+void Space8::look(string thing)
+{
+	if(strcmp(thing, "papers") || strcmp(thing, "desk")))
+		{
+			cout << "the papers strewn across the desk seem to be schedules for the guards," << endl; 
+			cout << "albeit very very old ones. Seems that the most recent one only one guard" << endl;
+			cout <<  "one only one guard was off duty. Bob - locker 13" << endl;
+		}
+
+	else if(strcmp(thing, "lockers"))
+		{
+			cout << "a large number of small lockers. around 30. Luckily they dont have locks!" << endl;
+		}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space8::search(string thing)
+{
+	if(strcmp(thing, "lockers"))
+		{
+			cout << "but which locker do you want to search?" << endl;
+		}
+	else if(strcmp(thing, "locker 1") || strcmp(thing, "locker 2") || strcmp(thing, "locker 3") || strcmp(thing, "locker 4") ||
+	strcmp(thing, "locker 5") || strcmp(thing, "locker 6") || strcmp(thing, "locker 7") || strcmp(thing, "locker 8") ||
+	strcmp(thing, "locker 9") || strcmp(thing, "locker 10") || strcmp(thing, "locker 11") || strcmp(thing, "locker 12") ||
+	strcmp(thing, "locker 14") || strcmp(thing, "locker 15") || strcmp(thing, "locker 16") || strcmp(thing, "locker 17") ||
+	strcmp(thing, "locker 18") || strcmp(thing, "locker 19") || strcmp(thing, "locker 20") || strcmp(thing, "locker 21") ||
+	strcmp(thing, "locker 22") || strcmp(thing, "locker 23") || strcmp(thing, "locker 24") || strcmp(thing, "locker 25") ||
+	strcmp(thing, "locker 26") || strcmp(thing, "locker 27") || strcmp(thing, "locker 28") || strcmp(thing, "locker 29") ||
+	strcmp(thing, "locker 30"))
+	{
+		cout << "nothing here" << endl;
+	}
+
+	else if (strcmp(thing, "locker 13"))
+	{
+		cout << " you find a bronze sword" << endl;
+		swordFound = true;
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

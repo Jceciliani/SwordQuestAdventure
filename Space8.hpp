@@ -19,11 +19,14 @@ class Space8 : public Space
 {
 	private:
 		vector<Objects> space8;
+		bool swordFound;
 	public:
 		Space8();
 		~Space8();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void search(string thing);
 };
 #endif // !SPACE8_HPP

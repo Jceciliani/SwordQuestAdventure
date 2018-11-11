@@ -54,3 +54,65 @@ void Space22::printContainer()
 	}	
 }
 
+void Space22::look(string thing)
+{
+	if (strcmp(thing, "old man"))
+	{
+
+			cout << "he is clothed in rags. The old man is also bald  with a long white beard. Why he" << endl;
+			cout << "is sitting cross legged in the middle of the  path you have no idea" << endl;
+	
+
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space22::talk(string thing)
+{
+	if (strcmp(thing, "to old man"))
+	{
+
+			if(!answered)
+			{
+				cout <<" the old man speaks:" << endl;
+				cout <<" The more of me you take, the more of me you leave behind. what am i?" << endl;
+			}
+			else
+			{
+				cout <<" the old man is silent" << endl;
+			}
+
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space22::answer(string thing)
+{
+	answered = true;
+	if (strcmp(thing, "footsteps"))
+	{
+
+			if(!answered)
+			{
+				cout <<" the old man smiles, and snaps his fingers. you feel warmness come over your body" << endl;
+				answered = true;
+				correct = true;
+			}
+			else
+			{
+				cout <<"the old man is silent" << endl;
+			}
+
+	}
+	else
+		{
+			cout << "the old man shakes his head" << endl;
+			answered = true;
+		}
+}

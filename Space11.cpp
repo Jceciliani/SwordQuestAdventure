@@ -52,3 +52,32 @@ void Space11::printContainer()
 	}	
 }
 
+void Space11::look(string thing)
+{
+if(strcmp(thing, "cave") || strcmp(thing, "piles"))
+		{
+			cout << "small piles are scattered all over the small cave. hard to tell at a glance" << endl; 
+			cout << "if there is anything useful in them" << endl;
+			
+		}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space11::search(string thing)
+{
+if(strcmp(thing, "cave") || strcmp(thing, "piles"))
+		{
+			cout << "While searching you find a large drawing on what used to be the top of a " << endl;
+			cout << "cairrage.  It looks like crude picture math. It depicts four swords" << endl; 
+			cout << " plus a inrecognisable black smudge equals a single sword. Just the fact that" << endl;
+			cout << " this creature attempted math means its much more inttelligent than you would" << endl; 
+			cout << " have guessed" << endl; 
+		}	
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

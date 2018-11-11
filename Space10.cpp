@@ -54,4 +54,33 @@ void Space10::printContainer()
 		cout << space10[i].getName() << endl;
 	}	
 }
+void Space10::look(string thing)
+{
+if(strcmp(thing, "corner") || strcmp(thing, "hovel")))
+		{
+			cout << "the hovel is very disgusting, there is a small sack next to what you can" << endl; 
+			cout << "guess is a bed" << endl;
+			
+		}
 
+	else if(strcmp(thing, "sack"))
+		{
+			cout << "a small burlap full of something. you cant tell what just from looking" << endl;
+		}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space10::search(string thing)
+{
+if(strcmp(thing, "corner") || strcmp(thing, "hovel")))
+		{
+			cout << "nope. Nothing useful. Just more feces." << endl; 
+		}	
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

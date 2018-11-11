@@ -19,11 +19,16 @@ class Space7 : public Space
 {
 	private:
 		vector<Objects> space7;
+		bool jumped;
+		bool crossed;
 	public:
 		Space7();
 		~Space7();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void jump(string thing);
+		void run(string thing);
 };
 #endif // !SPACE7_HPP

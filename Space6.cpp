@@ -26,6 +26,7 @@ Space6::Space6()
 	obj = new Silver_Armor();
 	combatEncounter = false;
 	visited = false;
+	vineCut = false;
 }
 
 Space6::~Space6()
@@ -61,3 +62,39 @@ void Space6::printContainer()
 	}	
 }
 
+	void Space6::look(string thing)
+	{
+		if(strcmp(thing, "canopy"))
+		{
+			cout << "you still cant see the top, but something up above seems to be caught in a bundle of vines" << endl; 
+
+		}
+		else if(strcmp(thing, "vegitation") || strcmp(thing, "trees"))
+		{
+			cout << "the vegiatition seems to be growing fairly well here, barring the high number" << endl;
+			cout <<  "of snags. But even those are creating holds for vines and other vegitation." << endl;	
+		}
+		else if(strcmp(thing, "vines"))
+		{
+			cout << "they are thick rope like vegitation, and it is very abundant here." << endl;
+			cout << "One vine on the tree next to you seems taught." << endl;	
+		}
+		else
+		{
+			cout << "you cant do that" << endl;
+		}
+	}
+
+	void Space6::attack(string thing)
+	{
+		if(strcmp(thing, "vines"))
+		{
+			cout << " you hack at the vine a few times before it separates and one end shoots into the canopy." << endl;
+			cout << " A second later a ball of vines crashes down to the ground next to you." << endl;
+			cout << "You see in it a set of silver armor." << endl;	
+		}
+		else
+		{
+			cout << "you cant do that" << endl;
+		}
+	}

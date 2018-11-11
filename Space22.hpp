@@ -19,12 +19,17 @@ class Space22 : public Space
 {
 	private:
 		vector<Objects> space22;
+		bool answered;
+		bool correct;
 	public:
 		Space22();
 		~Space22();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void talk(string thing);
+		void answer(string thing);
 };
 #endif // !SPACE22_HPP
 

@@ -57,3 +57,92 @@ void Space9::printContainer()
 	}	
 }
 
+void Space9::look(string thing)
+{
+	if (strcmp(thing, "fountian"))
+	{
+		if(fountianUsed)
+		{
+			cout << "the fountian is dry" << endl;
+		}
+		else
+		{
+			cout << "The fountian is filled with water. It looks very refreashing" << endl;
+		}
+	}
+	else if (strcmp(thing, "tubes"))
+	{
+		cout << "there are many of them. Likely for sewage disposal. There looks to be a" << endl;
+		cout << "maintenince hatch on one of them" << endl;
+	}
+	else if (strcmp(thing, "hatch"))
+	{
+		if (hatchOpened)
+		{
+		cout << "the large metal door is closed but luckily its not locked" << endl;
+		}
+		else
+		{
+			cout << "The hatch is open. You could enter the tube" << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space9::enter(string thing)
+{
+if (strcmp(thing, "tube"))
+	{
+		cout << "you slowly enter the tube. To the south you see that it comes down from a room" << endl;
+		cout << "above. As you turn to look north you slip in gunk and are carried down the tubes path." << endl;
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space9::open(string thing)
+{
+if (strcmp(thing, "hatch"))
+	{
+		if(!hatchOpen)
+		{
+		cout << "the door is heavy but with some effort it slowly creaks open. " << endl;
+		cout << "The hatch is now open" << endl;
+		hatchOpen = true;
+		}
+		else
+		{
+			cout << "The hatch is already open" << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space9::drink(string thing)
+{
+if (strcmp(thing, "from fountian"))
+	{
+		if(!fountianUsed)
+		{
+		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+		fountianUsed = true;
+		}
+		else
+		{
+			cout << "The fountian is dry" << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

@@ -19,11 +19,15 @@ class Space21 : public Space
 {
 	private:
 		vector<Objects> space21;
+		bool boulderMoved
 	public:
 		Space21();
 		~Space21();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(string thing);
+		void push(string thing);
+
 };
 #endif // !SPACE21_HPP
