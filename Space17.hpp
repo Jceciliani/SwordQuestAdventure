@@ -19,11 +19,14 @@ class Space17 : public Space
 {
 	private:
 		vector<Objects> space17;
+		bool fountianUsed;
 	public:
 		Space17();
 		~Space17();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void drink(char* thing);
 };
 #endif // !SPACE17_HPP

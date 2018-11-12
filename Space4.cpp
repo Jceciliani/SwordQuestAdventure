@@ -8,6 +8,7 @@ Description: Space 4 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -55,3 +56,22 @@ void Space4::printContainer()
 	}	
 }
 
+void Space4::look(char* thing)
+{
+	if (strcmp(thing, "ocean") || strcmp(thing, "opening"))
+	{
+		cout << "you see the ocean. Between the rough waves and glimpses of shark fins" << endl;
+		cout << " its probably best to not try your luck out there" << endl;
+
+	}
+	else if (strcmp(thing, "bridge"))
+	{
+		cout << " The wood the bridge is made from definitely looks old, but by no means" << endl;
+		cout << " rotted or weak. This seems strange considering the environment," << endl;
+		cout << " but there are more pressing issues. " << endl;
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}

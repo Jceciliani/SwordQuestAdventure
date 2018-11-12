@@ -8,6 +8,7 @@ Description: Space 17 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -25,6 +26,7 @@ Space17::Space17()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	fountianUsed = false;
 }
 
 Space17::~Space17()
@@ -55,3 +57,48 @@ void Space17::printContainer()
 	}	
 }
 
+void Space17::look(char* thing)
+{
+if (strcmp(thing, "fountian"))
+	{
+		if(fountianUsed)
+		{
+			cout << "the fountian is dry" << endl;
+		}
+		else
+		{
+			cout << "The fountian is filled with water. It looks very refreashing" << endl;
+		}
+	}
+
+	else if(strcmp(thing, "volcano"))
+	{
+			cout << "its a volcano… in a dungeon? Anyways it seems to be still active. Maybe theres " << endl; 
+			cout << "something that will help up there?" << endl; 
+	}
+else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space17::drink(char* thing)
+{
+if (strcmp(thing, "from fountian"))
+	{
+		if(!fountianUsed)
+		{
+		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+		fountianUsed = true;
+		}
+		else
+		{
+			cout << "The fountian is dry" << endl;
+		}
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

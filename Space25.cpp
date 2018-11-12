@@ -8,6 +8,7 @@ Description: Space 25 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -24,6 +25,7 @@ Space25::Space25()
 	obj = new Flint();
 	combatEncounter = false;
 	visited = false;
+	flintFound = false;
 }
 
 Space25::~Space25()
@@ -58,4 +60,36 @@ void Space25::printContainer()
 		cout << space25[i].getName() << endl;
 	}	
 }
+void Space25::look(char* thing)
+{
+	if (strcmp(thing, "lake"))
+	{
+			cout << "a lake made of lava. you are in a volcano after all. trying to go any closer to it" << endl;
+			cout << "would not bode well for you." << endl;
+	}
+	else if(strcmp(thing, "stalagtite"))
+	{
+			cout << "small towers of a weird black substance. they seem to spark everyso often. they seem" << endl;
+			cout << "like they would be easy enough to break if you needed to" << endl;
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
 
+void Space25::attack(char* thing)
+{
+	if (strcmp(thing, "stalagtite"))
+	{
+			cout << "you swing down with your sword at one of the stalagtites. upon impact a shower of sparks" << endl;
+			cout << "erupts from it. a large chunk of the stalagtite falls to the ground. from what just occured" << endl;
+			cout << "you can guess that they are made of flint" << endl;
+			flintFound = true;
+	}
+
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}

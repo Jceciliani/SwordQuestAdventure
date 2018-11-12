@@ -19,11 +19,17 @@ class Space9 : public Space
 {
 	private:
 		vector<Objects> space9;
+		bool hatchOpen;
+		bool fountianUsed;
 	public:
 		Space9();
 		~Space9();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void drink(char* thing);
+		void enter(char* thing);
+		void open(char* thing);
 };
 #endif // !SPACE9_HPP

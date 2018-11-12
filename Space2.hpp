@@ -19,11 +19,14 @@ class Space2 : public Space
 {
 	private:
 		vector<Objects> space2;
+		bool hammerFound;
 	public:
 		Space2();
 		~Space2();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void search(char* thing);
 };
 #endif // !SPACE2_HPP

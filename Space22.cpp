@@ -8,6 +8,7 @@ Description: Space 22 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -24,6 +25,8 @@ Space22::Space22()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	answered = false;
+	correct = false;
 }
 
 Space22::~Space22()
@@ -54,3 +57,65 @@ void Space22::printContainer()
 	}	
 }
 
+void Space22::look(char* thing)
+{
+	if (strcmp(thing, "old man"))
+	{
+
+			cout << "he is clothed in rags. The old man is also bald  with a long white beard. Why he" << endl;
+			cout << "is sitting cross legged in the middle of the  path you have no idea" << endl;
+	
+
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space22::talk(char* thing)
+{
+	if (strcmp(thing, "to old man"))
+	{
+
+			if(!answered)
+			{
+				cout <<" the old man speaks:" << endl;
+				cout <<" The more of me you take, the more of me you leave behind. what am i?" << endl;
+			}
+			else
+			{
+				cout <<" the old man is silent" << endl;
+			}
+
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space22::answer(char* thing)
+{
+	answered = true;
+	if (strcmp(thing, "footsteps"))
+	{
+
+			if(!answered)
+			{
+				cout <<" the old man smiles, and snaps his fingers. you feel warmness come over your body" << endl;
+				answered = true;
+				correct = true;
+			}
+			else
+			{
+				cout <<"the old man is silent" << endl;
+			}
+
+	}
+	else
+		{
+			cout << "the old man shakes his head" << endl;
+			answered = true;
+		}
+}

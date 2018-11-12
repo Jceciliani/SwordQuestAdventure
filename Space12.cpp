@@ -8,6 +8,7 @@ Description: Space 12 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -58,3 +59,43 @@ void Space12::printContainer()
 	}	
 }
 
+void Space12::look(char* thing)
+{
+	if (strcmp(thing, "plot"))
+	{
+		cout << "a plot of dirt. the ground look freasher here that outside the fence. maybe" << endl;
+		cout << "someone is trying to grow something? i wonder what?" << endl;
+	}
+	else if (strcmp(thing, "sign"))
+	{
+		cout << "a small worn signpost. and in a dungeon? how big is this place? the sign pointed" << endl;
+		cout << "north reads SWAMP: CAREFUL OF THE PIRAHNAS" << endl;
+		cout << "the south sign reads VOLCANO: CAREFUL OF LEVERS" << endl;
+		cout << "the east sign reads SANCTUARY: CAREFUL OF FLOORS" << endl;
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}
+
+void Space12::dig(char* thing)
+{
+	if (strcmp(thing, "plot"))
+	{
+		cout << "you get down on your hands and knees and start digging through the plot. hoping to find something" << endl;
+		cout << "but this action feels oddly familiar. like youve done this exact thing before. you start to remember" << endl;
+		cout << "you used to be a farmer..." << endl;
+		cout << "but then something crashed into some nearby ruins..." << endl;
+		cout << "you went to check it out..." << endl;
+		cout << "but then..." << endl;
+		cout << "then..." << endl;
+		cout << "no idea. but you can figure it out when you make it out of here!" << endl;
+
+	}
+
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}

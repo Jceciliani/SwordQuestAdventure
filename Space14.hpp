@@ -19,11 +19,16 @@ class Space14 : public Space
 {
 	private:
 		vector<Objects> space14;
+		bool crossed;
 	public:
 		Space14();
 		~Space14();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void run(char* thing);
+		void jump(char* thing);
+
 };
 #endif // !SPACE14_HPP

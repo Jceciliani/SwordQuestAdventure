@@ -19,11 +19,17 @@ class Space15 : public Space
 {
 	private:
 		vector<Objects> space15;
+		bool steelFound;
+		bool tombOpen;
 	public:
 		Space15();
 		~Space15();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void search(char* thing);
+		void open(char* thing);
+		void attack(char* thing);
 };
 #endif // !SPACE15_HPP

@@ -19,11 +19,14 @@ class Space6 : public Space
 {
 	private:
 		vector<Objects> space6;
+		bool vineCut;
 	public:
 		Space6();
 		~Space6();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void attack(char* thing);
 };
 #endif // !SPACE6_HPP

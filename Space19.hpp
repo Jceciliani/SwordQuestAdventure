@@ -19,11 +19,18 @@ class Space19 : public Space
 {
 	private:
 		vector<Objects> space19;
+		bool containerOpen;
+		bool lock1Open;
+		bool lock2Open;
+		bool lock3Open;
 	public:
 		Space19();
 		~Space19();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void pull(char* thing);
+		void open(char* thing);
 };
 #endif // !SPACE19_HPP

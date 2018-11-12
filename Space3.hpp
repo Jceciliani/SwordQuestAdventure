@@ -19,11 +19,15 @@ class Space3 : public Space
 {
 	private:
 		vector<Objects> space3;
+		bool ropePulled;
 	public:
 		Space3();
 		~Space3();
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		void look(char* thing);
+		void take(char* thing);
+		void pull(char* thing);
 };
 #endif // !SPACE3_HPP

@@ -8,6 +8,7 @@ Description: Space 23 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -61,3 +62,33 @@ void Space23::printContainer()
 	}	
 }
 
+void Space23::look(char* thing)
+{
+	if (strcmp(thing, "trail"))
+	{
+			cout << "the path ahead looks perilous. be cautious." << endl;
+	}
+	else if (strcmp(thing, "piles") || strcmp(thing, "valuables") )
+	{
+			cout << "a small hoard that could rival king Midas. it must have taken ages" << endl;
+			cout << "to collect it all. maybe there is something useful in there, besides gold" << endl;
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
+
+void Space23::search(char* thing)
+{
+	if (strcmp(thing, "piles") || strcmp(thing, "valuables") )
+	{
+			cout << "shoveling through piles of coins like they were dirt gets old really quickly" << endl;
+			cout << "luckily it doesnt take too long to find something useful. the coins and chalices part to" << endl;
+			cout << "reveal a fancy set of golden armor" << endl;
+	}
+	else
+		{
+			cout << "you cant do that" << endl;
+		}
+}
