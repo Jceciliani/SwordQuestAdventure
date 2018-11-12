@@ -8,6 +8,7 @@ Description: Space 14 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -25,6 +26,7 @@ Space14::Space14()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	crossed = false;
 }
 
 Space14::~Space14()
@@ -55,99 +57,99 @@ void Space14::printContainer()
 	}	
 }
 
-void Space14::look(string thing)
+void Space14::look(char* thing)
 {
-if(strcmp(thing, "walls"))
-		{
-			cout << "the walls look to be etched with a number of name. Middle. Jason. Of. Kevin. Floor. " << endl; 
-			cout << "Joshua. Death. And many more" << endl;	
-		}
-
-	else if(strcmp(thing, "floor"))
+	if (strcmp(thing, "walls"))
 	{
-			cout << "upon closer inspection the floor seems to slightly slope towards the middle of the hall. " << endl; 
-			cout << "The floor there definitly looks unstable" << endl;	
+		cout << "the walls look to be etched with a number of name. Middle. Jason. Of. Kevin. Floor. " << endl;
+		cout << "Joshua. Death. And many more" << endl;
+	}
+
+	else if (strcmp(thing, "floor"))
+	{
+		cout << "upon closer inspection the floor seems to slightly slope towards the middle of the hall. " << endl;
+		cout << "The floor there definitly looks unstable" << endl;
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space14::run(string thing)
+void Space14::run(char* thing)
 {
-if(strcmp(thing, "across"))
+	if (strcmp(thing, "across"))
+	{
+		cout << "you sprint across the room. You reach the other side unscathed" << endl;
+		if (crossed)
 		{
-			cout << "you sprint across the room. You reach the other side unscathed" << endl; 
-			if(crossed)
-			{
-				crossed = false;
-			}
-			else
-			{
-				crossed = true;
-			}
+			crossed = false;
+		}
+		else
+		{
+			crossed = true;
+		}
 
-		}
-		else if(strcmp(thing, "west"))
+	}
+	else if (strcmp(thing, "west"))
+	{
+		if (crossed)
 		{
-			if(crossed)
-			{
-				cout << "you sprint across the room. You reach the other side unscathed" << endl; 
-				crossed = false;
-			}
-			else{
-				cout << "you are on the west side of the room" << endl;
-			}
+			cout << "you sprint across the room. You reach the other side unscathed" << endl;
+			crossed = false;
 		}
-		else if(strcmp(thing, "east"))
+		else {
+			cout << "you are on the west side of the room" << endl;
+		}
+	}
+	else if (strcmp(thing, "east"))
+	{
+		if (crossed)
 		{
-			if(crossed)
-			{
-				cout << "you sprint across the room. You reach the other side unscathed" << endl; 
-				crossed = true;
-			}
-			else{
-				cout << "you are on the east side of the room" << endl;
-			}
+			cout << "you sprint across the room. You reach the other side unscathed" << endl;
+			crossed = true;
 		}
+		else {
+			cout << "you are on the east side of the room" << endl;
+		}
+	}
 }
 
-void Space14::jump(string thing)
+void Space14::jump(char* thing)
 {
-if(strcmp(thing, "across"))
+	if (strcmp(thing, "across"))
+	{
+		cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl;
+		if (crossed)
 		{
-			cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl; 
-			if(crossed)
-			{
-				crossed = false;
-			}
-			else
-			{
-				crossed = true;
-			}
+			crossed = false;
+		}
+		else
+		{
+			crossed = true;
+		}
 
-		}
-		else if(strcmp(thing, "west"))
+	}
+	else if (strcmp(thing, "west"))
+	{
+		if (crossed)
 		{
-			if(crossed)
-			{
-				cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl; 
-				crossed = false;
-			}
-			else{
-				cout << "you are on the west side of the room" << endl;
-			}
+			cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl;
+			crossed = false;
 		}
-		else if(strcmp(thing, "east"))
+		else {
+			cout << "you are on the west side of the room" << endl;
+		}
+	}
+	else if (strcmp(thing, "east"))
+	{
+		if (crossed)
 		{
-			if(crossed)
-			{
-				cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl; 
-				crossed = true;
-			}
-			else{
-				cout << "you are on the east side of the room" << endl;
-			}
+			cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl;
+			crossed = true;
 		}
+		else {
+			cout << "you are on the east side of the room" << endl;
+		}
+	}
 }

@@ -26,8 +26,8 @@ class Space20 : public Space
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void look(string thing);
-		void drink(string thing);
-		void enter(string thing);
+		void look(char* thing);
+		void drink(char* thing);
+		void enter(char* thing);
 };
 #endif // !SPACE20_HPP

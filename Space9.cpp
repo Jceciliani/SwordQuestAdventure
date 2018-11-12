@@ -8,6 +8,7 @@ Description: Space 9 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -27,6 +28,8 @@ Space9::Space9()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	hatchOpen = false;
+	fountianUsed = false;
 }
 
 Space9::~Space9()
@@ -57,11 +60,11 @@ void Space9::printContainer()
 	}	
 }
 
-void Space9::look(string thing)
+void Space9::look(char* thing)
 {
 	if (strcmp(thing, "fountian"))
 	{
-		if(fountianUsed)
+		if (fountianUsed)
 		{
 			cout << "the fountian is dry" << endl;
 		}
@@ -77,9 +80,9 @@ void Space9::look(string thing)
 	}
 	else if (strcmp(thing, "hatch"))
 	{
-		if (hatchOpened)
+		if (hatchOpen)
 		{
-		cout << "the large metal door is closed but luckily its not locked" << endl;
+			cout << "the large metal door is closed but luckily its not locked" << endl;
 		}
 		else
 		{
@@ -87,33 +90,33 @@ void Space9::look(string thing)
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space9::enter(string thing)
+void Space9::enter(char* thing)
 {
-if (strcmp(thing, "tube"))
+	if (strcmp(thing, "tube"))
 	{
 		cout << "you slowly enter the tube. To the south you see that it comes down from a room" << endl;
 		cout << "above. As you turn to look north you slip in gunk and are carried down the tubes path." << endl;
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space9::open(string thing)
+void Space9::open(char* thing)
 {
-if (strcmp(thing, "hatch"))
+	if (strcmp(thing, "hatch"))
 	{
-		if(!hatchOpen)
+		if (!hatchOpen)
 		{
-		cout << "the door is heavy but with some effort it slowly creaks open. " << endl;
-		cout << "The hatch is now open" << endl;
-		hatchOpen = true;
+			cout << "the door is heavy but with some effort it slowly creaks open. " << endl;
+			cout << "The hatch is now open" << endl;
+			hatchOpen = true;
 		}
 		else
 		{
@@ -121,20 +124,20 @@ if (strcmp(thing, "hatch"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space9::drink(string thing)
+void Space9::drink(char* thing)
 {
-if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "from fountian"))
 	{
-		if(!fountianUsed)
+		if (!fountianUsed)
 		{
-		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
-		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
-		fountianUsed = true;
+			cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+			cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+			fountianUsed = true;
 		}
 		else
 		{
@@ -142,7 +145,7 @@ if (strcmp(thing, "from fountian"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }

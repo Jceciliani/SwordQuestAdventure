@@ -8,6 +8,7 @@ Description: Space 5 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -60,18 +61,18 @@ void Space5::printContainer()
 	}	
 }
 
-void Space5::look(string thing)
+void Space5::look(char* thing)
 {
-	if(strcmp(thing, "walkways"))
-		{
-			cout << "dont. Its gross" << endl;
-			
-		}
+	if (strcmp(thing, "walkways"))
+	{
+		cout << "dont. Its gross" << endl;
+
+	}
 	else if (strcmp(thing, "walls"))
-		{
-			cout << "they are covered in moss  and mildew. Its hard to understand how things can grow" << endl;
-			cout << "in such a disgusting place. The wonders of nature." << endl;
-		}
+	{
+		cout << "they are covered in moss  and mildew. Its hard to understand how things can grow" << endl;
+		cout << "in such a disgusting place. The wonders of nature." << endl;
+	}
 	else if (strcmp(thing, "walls") || strcmp(thing, "form"))
 	{
 		cout << "the body appears to have been a guard here at some point. Looking at the" << endl;

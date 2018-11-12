@@ -8,6 +8,7 @@ Description: Space 13 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -63,11 +64,11 @@ void Space13::printContainer()
 	}	
 }
 
-void Space13::look(string thing)
+void Space13::look(char* thing)
 {
 	if (strcmp(thing, "fountian"))
 	{
-		if(fountianUsed)
+		if (fountianUsed)
 		{
 			cout << "the fountian is dry" << endl;
 		}
@@ -76,39 +77,39 @@ void Space13::look(string thing)
 			cout << "The fountian is filled with water. It looks very refreashing" << endl;
 		}
 	}
-	else if(strcmp(thing, "forge") || strcmp(thing, "anvil"))
+	else if (strcmp(thing, "forge") || strcmp(thing, "anvil"))
 	{
-			cout << "a forge and anvil used for crafting weapons and armor" << endl;
-			if(forgeLit)
-			{
-				cout << "you can feel the heat of the fires within it" << endl;
-			}
-			else
-			{
-				cout << "it is not currently functioning though. it looks cold and sad" << endl;
-			}
-			
+		cout << "a forge and anvil used for crafting weapons and armor" << endl;
+		if (forgeLit)
+		{
+			cout << "you can feel the heat of the fires within it" << endl;
+		}
+		else
+		{
+			cout << "it is not currently functioning though. it looks cold and sad" << endl;
+		}
+
 	}
-	else if(strcmp(thing, "chest") || strcmp(thing, "wooden chest"))
+	else if (strcmp(thing, "chest") || strcmp(thing, "wooden chest"))
 	{
-			cout << "the wooden chest looks worn, but still very usable. since it isnt locked you could" << endl;
-			cout << "probably store some of your extra things here" << endl;
+		cout << "the wooden chest looks worn, but still very usable. since it isnt locked you could" << endl;
+		cout << "probably store some of your extra things here" << endl;
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space13::drink(string thing)
+void Space13::drink(char* thing)
 {
-if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "from fountian"))
 	{
-		if(!fountianUsed)
+		if (!fountianUsed)
 		{
-		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
-		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
-		fountianUsed = true;
+			cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+			cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+			fountianUsed = true;
 		}
 		else
 		{
@@ -116,20 +117,20 @@ if (strcmp(thing, "from fountian"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space13::start(string thing)
+void Space13::start(char* thing)
 {
-if (strcmp(thing, "forge"))
+	if (strcmp(thing, "forge"))
 	{
-		if(!forgeLit)
+		if (!forgeLit)
 		{
-		cout << "you strike the steel on the flint a few times. the sparks catch quickly" << endl;
-		cout << "and the forge roars to life. you set the forge hammer down, ready to use it in the future" << endl;
-		forge = true;
+			cout << "you strike the steel on the flint a few times. the sparks catch quickly" << endl;
+			cout << "and the forge roars to life. you set the forge hammer down, ready to use it in the future" << endl;
+			forgeLit = true;
 		}
 		else
 		{
@@ -137,18 +138,18 @@ if (strcmp(thing, "forge"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space13::use(string thing)
+void Space13::use(char* thing)
 {
-if (strcmp(thing, "forge"))
+	if (strcmp(thing, "forge"))
 	{
-		if(!forgeLit)
+		if (!forgeLit)
 		{
-		cout << "the forge is cold. try starting the forge before you use it" << endl;
+			cout << "the forge is cold. try starting the forge before you use it" << endl;
 		}
 		else
 		{
@@ -158,29 +159,29 @@ if (strcmp(thing, "forge"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space13::open(string thing)
+void Space13::open(char* thing)
 {
-if (strcmp(thing, "gate"))
+	if (strcmp(thing, "gate"))
 	{
-		if(!gateOpened)
+		if (!gateOpened)
 		{
-		cout << "as you use the large key, the large lock falls to the floor and the gates loudly creak open" << endl;
-		cout << "you hear a loud deep growl from beyond the doorway. this is it." << endl;
-		gateOpened = true;
+			cout << "as you use the large key, the large lock falls to the floor and the gates loudly creak open" << endl;
+			cout << "you hear a loud deep growl from beyond the doorway. this is it." << endl;
+			gateOpened = true;
 		}
 		else
 		{
 			cout << "the gate is already open" << endl;
-			
+
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }

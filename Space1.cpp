@@ -8,6 +8,7 @@ Description: Space 1 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -55,7 +56,7 @@ void Space1::printContainer()
 }
 
 
-void Space1::look(string thing)
+void Space1::look(char* thing)
 {
 	if(strcmp(thing, "grass"))
 	{
@@ -73,7 +74,7 @@ void Space1::look(string thing)
 }
 
 
-void attack(string thing)
+void attack(char* thing)
 {
 	if(strcmp(thing, "grass"))
 	{

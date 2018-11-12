@@ -8,6 +8,7 @@ Description: Space 25 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -24,6 +25,7 @@ Space25::Space25()
 	obj = new Flint();
 	combatEncounter = false;
 	visited = false;
+	flintFound = false;
 }
 
 Space25::~Space25()
@@ -58,7 +60,7 @@ void Space25::printContainer()
 		cout << space25[i].getName() << endl;
 	}	
 }
-void Space25::look(string thing)
+void Space25::look(char* thing)
 {
 	if (strcmp(thing, "lake"))
 	{
@@ -76,7 +78,7 @@ void Space25::look(string thing)
 		}
 }
 
-void Space25::attack(string thing)
+void Space25::attack(char* thing)
 {
 	if (strcmp(thing, "stalagtite"))
 	{

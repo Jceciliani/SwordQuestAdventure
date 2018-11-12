@@ -8,6 +8,7 @@ Description: Space 19 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -26,6 +27,10 @@ Space19::Space19()
 	obj = new Key();
 	combatEncounter = false;
 	visited = false;
+	containerOpen = false;
+	lock1Open = false;
+	lock2Open = false;
+	lock3Open = false;
 }
 
 Space19::~Space19()
@@ -61,7 +66,7 @@ void Space19::printContainer()
 	}	
 }
 
-void Space19::look(string thing)
+void Space19::look(char* thing)
 {
 if (strcmp(thing, "compartment"))
 	{
@@ -113,7 +118,7 @@ else
 		}
 }
 
-void Space19::look(string thing)
+void Space19::pull(char* thing)
 {
 if(strcmp(thing, "red lever"))
 	{
@@ -160,21 +165,25 @@ if(strcmp(thing, "red lever"))
 	}
 }
 
-void Space19::open(string thing)
+
+
+void Space19::open(char* thing)
 {
-if (strcmp(thing, "compartment"))
+	if (strcmp(thing, "compartment"))
 	{
-		if(!containerOpen){
-		if(lock1Open && lock2Open && lock3Open)
-		{
-			cout << "the door is stiff but with effort it opens. the container is now open" << endl;
-			containerOpen = true;
+		if (!containerOpen) {
+			if (lock1Open && lock2Open && lock3Open)
+			{
+				cout << "the door is stiff but with effort it opens. the container is now open" << endl;
+				containerOpen = true;
+			}
+			else
+			{
+				cout << "the door to the compartment wont budge" << endl;
+			}
 		}
-		else
-		{
-			cout << "the door to the compartment wont budge" << endl;
-		}}
-		else{
+		else {
 			cout << "the door is already open" << endl;
 		}
 	}
+}

@@ -8,6 +8,7 @@ Description: Space 22 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -24,6 +25,8 @@ Space22::Space22()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	answered = false;
+	correct = false;
 }
 
 Space22::~Space22()
@@ -54,7 +57,7 @@ void Space22::printContainer()
 	}	
 }
 
-void Space22::look(string thing)
+void Space22::look(char* thing)
 {
 	if (strcmp(thing, "old man"))
 	{
@@ -70,7 +73,7 @@ void Space22::look(string thing)
 		}
 }
 
-void Space22::talk(string thing)
+void Space22::talk(char* thing)
 {
 	if (strcmp(thing, "to old man"))
 	{
@@ -92,7 +95,7 @@ void Space22::talk(string thing)
 		}
 }
 
-void Space22::answer(string thing)
+void Space22::answer(char* thing)
 {
 	answered = true;
 	if (strcmp(thing, "footsteps"))

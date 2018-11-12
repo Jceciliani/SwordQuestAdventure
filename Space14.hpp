@@ -26,9 +26,9 @@ class Space14 : public Space
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void look(string thing);
-		void run(string thing);
-		void jump(string thing);
+		void look(char* thing);
+		void run(char* thing);
+		void jump(char* thing);
 
 };
 #endif // !SPACE14_HPP

@@ -27,8 +27,8 @@ class Space7 : public Space
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void look(string thing);
-		void jump(string thing);
-		void run(string thing);
+		void look(char* thing);
+		void jump(char* thing);
+		void run(char* thing);
 };
 #endif // !SPACE7_HPP

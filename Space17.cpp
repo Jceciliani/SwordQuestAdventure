@@ -8,6 +8,7 @@ Description: Space 17 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -25,6 +26,7 @@ Space17::Space17()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	fountianUsed = false;
 }
 
 Space17::~Space17()
@@ -55,7 +57,7 @@ void Space17::printContainer()
 	}	
 }
 
-void Space17::look(string thing)
+void Space17::look(char* thing)
 {
 if (strcmp(thing, "fountian"))
 	{
@@ -80,7 +82,7 @@ else
 		}
 }
 
-void Space17::drink(string thing)
+void Space17::drink(char* thing)
 {
 if (strcmp(thing, "from fountian"))
 	{

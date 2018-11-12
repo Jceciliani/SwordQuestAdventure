@@ -26,8 +26,8 @@ class Space3 : public Space
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void look(string thing);
-		void take(string thing);
-		void pull(string thing);
+		void look(char* thing);
+		void take(char* thing);
+		void pull(char* thing);
 };
 #endif // !SPACE3_HPP

@@ -8,6 +8,7 @@ Description: Space 21 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -24,6 +25,7 @@ Space21::Space21()
 	obj = new Two_Handed_Gold_Sword();
 	combatEncounter = false;
 	visited = false;
+	boulderMoved = false;
 }
 
 Space21::~Space21()
@@ -59,7 +61,7 @@ void Space21::printContainer()
 	}	
 }
 
-void Space21::look(string thing)
+void Space21::look(char* thing)
 {
 	if (strcmp(thing, "boulder"))
 	{
@@ -73,7 +75,7 @@ void Space21::look(string thing)
 		}
 }
 
-void Space21::push(string thing)
+void Space21::push(char* thing)
 {
 	if (strcmp(thing, "boulder"))
 	{
@@ -86,6 +88,7 @@ void Space21::push(string thing)
 			cout << "like something out of a training montage you some how manage " << endl;
 			cout << "to move the boulder a few feet. It feels a bit anti-climatic" << endl;
 			cout << "but then you see a gold sword in the spot that the boulder used to be in. LUCKY! " << endl;
+			boulderMoved = true;
 		}
 	}
 	else

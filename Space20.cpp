@@ -8,6 +8,7 @@ Description: Space 20 of 25 in the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <stdio.h>
 
 using namespace std;
@@ -26,6 +27,7 @@ Space20::Space20()
 	obj = NULL;
 	combatEncounter = false;
 	visited = false;
+	fountianUsed = false;
 }
 
 Space20::~Space20()
@@ -56,7 +58,7 @@ void Space20::printContainer()
 	}	
 }
 
-void Space20::look(string thing)
+void Space20::look(char* thing)
 {
 	if (strcmp(thing, "fountian"))
 	{
@@ -83,29 +85,29 @@ void Space20::look(string thing)
 			cout << "you cant do that" << endl;
 		}
 }
-void Space20::enter(string thing)
+void Space20::enter(char* thing)
 {
-if (strcmp(thing, "gateway"))
+	if (strcmp(thing, "gateway"))
 	{
 		cout << "as you cross through you are consumed by a bright light. You close your eyes " << endl;
 		cout << "to no be blinded. You feel warm, but not in a “im on a volcano” way." << endl;
 		cout << "When you open your eyes again you have returned to the sanctuary." << endl;
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
 
-void Space20::drink(string thing)
+void Space20::drink(char* thing)
 {
-if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "from fountian"))
 	{
-		if(!fountianUsed)
+		if (!fountianUsed)
 		{
-		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
-		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
-		fountianUsed = true;
+			cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
+			cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+			fountianUsed = true;
 		}
 		else
 		{
@@ -113,7 +115,7 @@ if (strcmp(thing, "from fountian"))
 		}
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "you cant do that" << endl;
+	}
 }
