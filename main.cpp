@@ -16,6 +16,20 @@ int main()
 
 	while (1)
 	{
+		cout << endl;
+		cout << "You awaken." << endl;
+		cout << "You are sore and broken." << endl;
+		cout << "You do not recognise your surroundings" << endl;
+		cout << "All you do recognise is a need deep inside you" << endl;
+		cout << "A need to complete your" << endl;
+		cout << endl;
+		cout << "  _________                       .___ ________                          __   " << endl;
+		cout << " /   _____/_  _  _____________  __| _/ \\_____  \\__  _  __ ____   _______/  |_ " << endl;
+		cout << " \\_____  \\\\ \\/ \\/ /  _ \\_  __ \\/ __ |   /  / \\  \\ \\/ \\/ // __ \\ /  ___/\\   __\\ " << endl;
+		cout << " /        \\\\     (  <_> )  | \\/ /_/ |  /   \\_/.  \\     /\\  ___/ \\___ \\  |  |  " << endl;
+		cout << "/_______  / \\/\\_/ \\____/|__|  \\____ |  \\_____\\ \\_/\\/\\_/  \\___  >____  > |__|  " << endl;
+		cout << "        \\/                         \\/         \\__>           \\/     \\/        " << endl;
+		cout << endl;
 		cout << "1. Play Sword Quest" << endl;
 		cout << "2. Exit" << endl;
 		getline(cin, choice);
