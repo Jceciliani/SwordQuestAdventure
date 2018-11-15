@@ -83,6 +83,13 @@ void Bag::printContainer()
 	}
 }
 
+string Bag::printItem(int i)
+{
+	
+		return bag[i].getName();
+
+}
+
 void Bag::transferToForge(Objects obj)
 {
 	// Add object to forge
@@ -178,6 +185,13 @@ void Forge::printContainer()
 	}
 }
 
+string Forge::printItem(int i)
+{
+	
+		return forge[i].getName();
+
+}
+
 bool Forge::getForgeStart()
 {
 	return forgeStart;
@@ -233,6 +247,11 @@ void Forge::transferToBag(Objects obj)
 	f.deleteFromContainer(obj);	
 }
 
+int Forge::getSize()
+{
+	return forge.size();
+}
+
 // Stash*******************************************************************
 Stash::Stash()
 {}
@@ -268,12 +287,23 @@ void Stash::printContainer()
 	
 }
 
+string Stash::printItem(int i)
+{
+	
+		return stash[i].getName();
+
+}
+
 void Stash::transferToBag(Objects obj)
 {
 	// Add object to bag
 	b.addToContainer(obj);
 	// Delete object from stash
 	s.deleteFromContainer(obj);
+}
+int Stash::getSize()
+{
+	return stash.size();
 }
 
 // Equipped******************************************************************

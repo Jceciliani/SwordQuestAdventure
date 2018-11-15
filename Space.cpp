@@ -154,3 +154,20 @@ bool Space::getVisited()
 		return true;
 	}
 }
+
+bool Space::checkVisited()
+{
+	return visited;
+}
+
+string Space::printItem(int i)
+{
+	
+		return space[i].getName();
+
+}
+
+int Space::getSize()
+{
+	return space.size();
+}

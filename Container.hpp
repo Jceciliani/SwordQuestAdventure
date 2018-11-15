@@ -42,6 +42,7 @@ class Bag : public Container
 		void transferToStash(Objects obj);
 		void transferToEquipped(Objects obj1, Objects obj2);
 		void insert(int, Objects obj);
+		string printItem(int i);
 		int getSize();
 };
 
@@ -63,7 +64,9 @@ class Forge: public Container
 		bool startForge();
 		bool ultWeaponCrafted();
 		bool ultArmorCrafted();
+		string printItem(int i);
 		void transferToBag(Objects obj);
+		int getSize();
 };
 
 // Stash*******************************************************************************
@@ -77,7 +80,9 @@ class Stash : public Container
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
+		string printItem(int i);
 		void transferToBag(Objects obj);
+		int getSize();
 };
 
 // Equipped****************************************************************************
