@@ -24,9 +24,7 @@ class Space7 : public Space
 	public:
 		Space7();
 		~Space7();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void jump(char* thing);
 		void run(char* thing);

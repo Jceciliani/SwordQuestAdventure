@@ -35,31 +35,6 @@ Space21::~Space21()
 		delete obj;
 	}
 }
-void Space21::addToContainer(Objects obj)
-{
-	space21.push_back(obj);
-}
-
-void Space21::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space21.size(); i++)
-	{
-		if(space21[i].getName() == obj.getName())
-		{
-			space21.erase(space21.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space21::printContainer()
-{
-	for(int i = 0; i < space21.size(); i++)
-	{
-		cout << space21[i].getName() << endl;
-	}	
-}
 
 void Space21::look(char* thing)
 {

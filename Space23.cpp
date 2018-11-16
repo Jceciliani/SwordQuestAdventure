@@ -36,31 +36,6 @@ Space23::~Space23()
 		delete obj;
 	}
 }
-void Space23::addToContainer(Objects obj)
-{
-	space23.push_back(obj);
-}
-
-void Space23::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space23.size(); i++)
-	{
-		if(space23[i].getName() == obj.getName())
-		{
-			space23.erase(space23.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space23::printContainer()
-{
-	for(int i = 0; i < space23.size(); i++)
-	{
-		cout << space23[i].getName() << endl;
-	}	
-}
 
 void Space23::look(char* thing)
 {

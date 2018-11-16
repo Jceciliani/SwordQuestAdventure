@@ -23,9 +23,7 @@ class Space6 : public Space
 	public:
 		Space6();
 		~Space6();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void attack(char* thing);
 };

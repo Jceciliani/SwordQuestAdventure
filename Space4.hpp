@@ -22,9 +22,8 @@ class Space4 : public Space
 	public:
 		Space4();
 		~Space4();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
+		
 };
 #endif // !SPACE4_HPP

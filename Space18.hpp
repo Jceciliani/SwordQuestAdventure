@@ -22,8 +22,6 @@ class Space18 : public Space
 	public:
 		Space18();
 		~Space18();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 };
 #endif // !SPACE18_HPP
