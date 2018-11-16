@@ -200,7 +200,12 @@ bool Forge::getForgeStart()
 bool Forge::startForge()
 {
 
-	if(forge[0].getName() == "Flint" || forge[0].getName() == "Steel" && forge[1].getName() == "Flint" || forge[1].getName() == "Steel")
+	if(forge.size() < 2)
+	{
+		return false;
+	}
+
+	else if(forge[0].getName() == "Flint" || forge[0].getName() == "Steel" && forge[1].getName() == "Flint" || forge[1].getName() == "Steel")
 	{
 		forgeStart = true;
 		cout << "The beacon is lit!" << endl;
@@ -214,7 +219,11 @@ bool Forge::startForge()
 
 bool Forge::ultWeaponCrafted()
 {
-	if(getForgeStart() == true && forge[0].getName() == "Two-Handed Wooden Sword" || forge[0].getName() == "Two-handed Bronze Sword" || forge[0].getName() == "Two-handed Silver Sword" || forge[0].getName() == "Two-Handed Gold Sword" && forge[1].getName() == "Two-Handed Wooden Sword" || forge[1].getName() == "Two-handed Bronze Sword" || forge[1].getName() == "Two-handed Silver Sword" || forge[1].getName() == "Two-Handed Gold Sword" && forge[2].getName() == "Two-Handed Wooden Sword" || forge[2].getName() == "Two-handed Bronze Sword" || forge[2].getName() == "Two-handed Silver Sword" || forge[2].getName() == "Two-Handed Gold Sword" && forge[3].getName() == "Two-Handed Wooden Sword" || forge[3].getName() == "Two-handed Bronze Sword" || forge[3].getName() == "Two-handed Silver Sword" || forge[3].getName() == "Two-Handed Gold Sword")
+	if(forge.size() < 5)
+	{
+		return false;
+	}	
+	else if(getForgeStart() == true && forge[0].getName() == "Two-Handed Wooden Sword" || forge[0].getName() == "Two-handed Bronze Sword" || forge[0].getName() == "Two-handed Silver Sword" || forge[0].getName() == "Two-Handed Gold Sword" || forge[0].getName() == "Forge Hammer" && forge[1].getName() == "Two-Handed Wooden Sword" || forge[1].getName() == "Two-handed Bronze Sword" || forge[1].getName() == "Two-handed Silver Sword" || forge[1].getName() == "Two-Handed Gold Sword" || forge[1].getName() == "Forge Hammer" && forge[2].getName() == "Two-Handed Wooden Sword" || forge[2].getName() == "Two-handed Bronze Sword" || forge[2].getName() == "Two-handed Silver Sword" || forge[2].getName() == "Two-Handed Gold Sword" || forge[2].getName() == "Forge Hammer" && forge[3].getName() == "Two-Handed Wooden Sword" || forge[3].getName() == "Two-handed Bronze Sword" || forge[3].getName() == "Two-handed Silver Sword" || forge[3].getName() == "Two-Handed Gold Sword" || forge[3].getName() == "Forge Hammer" && forge[4].getName() == "Two-Handed Wooden Sword" || forge[4].getName() == "Two-Handed Bronze Sword" || forge[4].getName() == "Two-Handed Silver Sword" || forge[4].getName() == "Two-Handed Gold Sword" || forge[4].getName() == "Forge Hammer")
 	{
 		craftUltWeapon = true;
 		return true;	
@@ -228,7 +237,12 @@ bool Forge::ultWeaponCrafted()
 bool Forge::ultArmorCrafted()
 {
 
-	if(getForgeStart() == true && forge[0].getName() == "Tunic Armor" || forge[0].getName() == "Bronze Armor" || forge[0].getName() == "Silver Armor" || forge[0].getName() == "Gold Armor" && forge[1].getName() == "Tunic Armor" || forge[1].getName() == "Bronze Armor" || forge[1].getName() == "Silver Armor" || forge[1].getName() == "Gold Armor" && forge[2].getName() == "Tunic Armor" || forge[2].getName() == "Bronze Armor" || forge[2].getName() == "Silver Armor" || forge[2].getName() == "Gold Armor" && forge[3].getName() == "Tunic Armor" || forge[3].getName() == "Bronze Armor" || forge[3].getName() == "Silver Armor" || forge[3].getName() == "Gold Armor")
+	if(forge.size() < 5)
+	{
+		return false;
+	}		
+
+	else if(getForgeStart() == true && forge[0].getName() == "Tunic Armor" || forge[0].getName() == "Bronze Armor" || forge[0].getName() == "Silver Armor" || forge[0].getName() == "Gold Armor" || forge[0].getName() == "Forge Hammer" && forge[1].getName() == "Tunic Armor" || forge[1].getName() == "Bronze Armor" || forge[1].getName() == "Silver Armor" || forge[1].getName() == "Gold Armor" || forge[1].getName() == "Forge Hammer" && forge[2].getName() == "Tunic Armor" || forge[2].getName() == "Bronze Armor" || forge[2].getName() == "Silver Armor" || forge[2].getName() == "Gold Armor" || forge[2].getName() == "Forge Hammer" && forge[3].getName() == "Tunic Armor" || forge[3].getName() == "Bronze Armor" || forge[3].getName() == "Silver Armor" || forge[3].getName() == "Gold Armor" || forge[3].getName() == "Forge Hammer" && forge[4].getName() == "Tunic Armor" || forge[4].getName() == "Bronze Armor" || forge[4].getName() == "Silver Armor" || forge[4].getName() == "Gold Armor" || forge[4].getName() == "Forge Hammer")
 	{
 		craftUltArmor = true;
 		return true;

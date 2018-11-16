@@ -62,6 +62,11 @@ int Characters::getHealth()
 	return strength;
 }
 
+void Characters::setHealth(int hp)
+{
+	strength = hp;
+}	
+
 // Hero**********************************************************************
 Hero::Hero()
 {
@@ -76,7 +81,6 @@ Hero::~Hero()
 
 int Hero::attack()
 {
-	cout << "Attack function, hero current weapon: " << equip.getSword() << endl;	
 
 	int totalAttack = 0;
 	// Two-Handed Wooden Sword Equipped
@@ -87,24 +91,22 @@ int Hero::attack()
 	// Two-Handed Bronze Sword Equipped
 	else if(equip.getSword() == "Two-Handed Bronze Sword")
 	{
-		cout << "In Bronze Sword" << endl;
-
-		totalAttack = (rand() % 8) + 5; 
+		totalAttack = (rand() % 4) + 5; 
 	}
 	// Two-Handed Silver Sword Equipped
 	else if(equip.getSword() == "Two-Handed Silver Sword")
 	{
-		totalAttack = (rand() % 12) + 9;
+		totalAttack = (rand() % 4) + 9;
 	}
 	// Two-Handed Gold Sword Equipped
 	else if(equip.getSword() == "Two-Handed Gold Sword")
 	{
-		totalAttack = (rand() % 16) + 13;
+		totalAttack = (rand() % 4) + 13;
 	}
 	// Two-Handed Ultimate Sword Equipped
 	else if(equip.getSword() == "Two-Handed Ultimate Sword")
 	{
-		totalAttack = (rand() % 24) + 21;
+		totalAttack = (rand() % 4) + 21;
 	}	
 	cout << name << " attacked for " << totalAttack << endl;
 
@@ -113,8 +115,6 @@ int Hero::attack()
 
 void Hero::defense(int damage)
 {
-
-	cout << "Defense function, hero current armor: " << equip.getArmor() << endl;
 
 	int totaldefense = 0;
 	// Tunic Armor Equipped
@@ -125,24 +125,22 @@ void Hero::defense(int damage)
 	// Bronze Armor Equipped
 	else if(equip.getArmor() == "Bronze Armor")
 	{
-		cout << "In bronze armor" << endl;
-
-		totaldefense = (rand() % 8) + 7;
+		totaldefense = (rand() % 4) + 7;
 	}
 	// Silver Armor Equipped
 	else if(equip.getArmor() == "Silver Armor")
 	{
-		totaldefense = (rand() % 12) + 11;
+		totaldefense = (rand() % 4) + 11;
 	}
 	// Gold Armor Eqipped
 	else if(equip.getArmor() == "Gold Armor")
 	{
-		totaldefense = (rand() % 16) + 15;
+		totaldefense = (rand() % 4) + 15;
 	}
 	// Ultimate Armor Equipped
 	else if(equip.getArmor() == "Ultimate Armor")
 	{
-		totaldefense = (rand() % 24) + 23;
+		totaldefense = (rand() % 4) + 23;
 	}
 	int d = damage - totaldefense;
 
@@ -230,7 +228,7 @@ int Goblin::attack()
 
 void Goblin::defense(int damage)
 {
-	int totaldefense = (rand() % 6) + 4;
+	int totaldefense = (rand() % 4) + 4;
 
 	int d = damage - totaldefense;
 
@@ -265,7 +263,7 @@ Hobgoblin::~Hobgoblin()
 
 int Hobgoblin::attack()
 {
-	int totalAttack = (rand() % 10) + 5;
+	int totalAttack = (rand() % 7) + 5;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -274,7 +272,7 @@ int Hobgoblin::attack()
 
 void Hobgoblin::defense(int damage)
 {
-	int totaldefense = (rand() % 8) + 4;
+	int totaldefense = (rand() % 6) + 4;
 
 	int d = damage - totaldefense;
 
@@ -309,7 +307,7 @@ Naga::~Naga()
 
 int Naga::attack()
 {
-	int totalAttack = (rand() % 14) + 9;
+	int totalAttack = (rand() % 7) + 9;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -318,7 +316,7 @@ int Naga::attack()
 
 void Naga::defense(int damage)
 {
-	int totaldefense = (rand() % 5) + 4;
+	int totaldefense = (rand() % 4) + 4;
 
 	int d = damage - totaldefense;
 
@@ -353,7 +351,7 @@ Troll::~Troll()
 
 int Troll::attack()
 {
-	int totalAttack = (rand() % 15) + 8;
+	int totalAttack = (rand() % 8) + 8;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -362,7 +360,7 @@ int Troll::attack()
 
 void Troll::defense(int damage)
 {
-	int totaldefense = (rand() % 13) + 7;
+	int totaldefense = (rand() % 7) + 7;
 
 	int d = damage - totaldefense;
 
@@ -397,7 +395,7 @@ Wizard::~Wizard()
 
 int Wizard::attack()
 {
-	int totalAttack = (rand() % 18) + 10;
+	int totalAttack = (rand() % 10) + 10;
 	
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -406,7 +404,7 @@ int Wizard::attack()
 
 void Wizard::defense(int damage)
 {
-	int totaldefense = (rand() % 8) + 4;
+	int totaldefense = (rand() % 6) + 4;
 
 	int d = damage - totaldefense;
 
@@ -442,9 +440,9 @@ Gang_of_Bandits::~Gang_of_Bandits()
 
 int Gang_of_Bandits::attack()
 {
-	int attack1 = (rand() % 6) + 4;
-	int attack2 = (rand() % 6) + 4;
-	int attack3 = (rand() % 6) + 4;
+	int attack1 = (rand() % 3) + 4;
+	int attack2 = (rand() % 3) + 4;
+	int attack3 = (rand() % 3) + 4;
 
 	int twoAttack = attack1 + attack2;
 	int totalAttack = attack1 + attack2 + attack3;
@@ -469,9 +467,9 @@ int Gang_of_Bandits::attack()
 
 void Gang_of_Bandits::defense(int damage)
 {
-	int defense1 = (rand() % 5) + 2;
-	int defense2 = (rand() % 5) + 2;
-	int defense3 = (rand() % 5) + 2;
+	int defense1 = (rand() % 4) + 2;
+	int defense2 = (rand() % 4) + 2;
+	int defense3 = (rand() % 4) + 2;
 
 	int twoDefense = defense1 + defense2;
 	int totaldefense = defense1 + defense2 + defense3;
@@ -522,7 +520,7 @@ Mountain_Giant::~Mountain_Giant()
 
 int Mountain_Giant::attack()
 {
-	int totalAttack = (rand() % 20) + 12;
+	int totalAttack = (rand() % 9) + 12;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -531,7 +529,7 @@ int Mountain_Giant::attack()
 
 void Mountain_Giant::defense(int damage)
 {
-	int totaldefense = (rand() % 16) + 10;
+	int totaldefense = (rand() % 7) + 10;
 
 	int d = damage - totaldefense;
 
@@ -566,7 +564,7 @@ Lesser_Drake::~Lesser_Drake()
 
 int Lesser_Drake::attack()
 {
-	int totalAttack = (rand() % 20) + 14;
+	int totalAttack = (rand() % 7) + 14;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -575,7 +573,7 @@ int Lesser_Drake::attack()
 
 void Lesser_Drake::defense(int damage)
 {
-	int totaldefense = (rand() % 14) + 10;
+	int totaldefense = (rand() % 5) + 10;
 
 	int d = damage - totaldefense;
 
@@ -610,7 +608,7 @@ Dragon::~Dragon()
 
 int Dragon::attack()
 {
-	int totalAttack = (rand() % 25) + 18;
+	int totalAttack = (rand() % 8) + 18;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -619,7 +617,7 @@ int Dragon::attack()
 
 void Dragon::defense(int damage)
 {
-	int totaldefense = (rand() % 23) + 13;
+	int totaldefense = (rand() % 11) + 13;
 
 	int d = damage - totaldefense;
 
