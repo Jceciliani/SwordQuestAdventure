@@ -27,34 +27,9 @@ Space10::Space10()
 	combatEncounter = false;
 	visited = false;
 }
-
 Space10::~Space10()
 {}
-void Space10::addToContainer(Objects obj)
-{
-	space10.push_back(obj);
-}
 
-void Space10::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space10.size(); i++)
-	{
-		if(space10[i].getName() == obj.getName())
-		{
-			space10.erase(space10.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space10::printContainer()
-{
-	for(int i = 0; i < space10.size(); i++)
-	{
-		cout << space10[i].getName() << endl;
-	}	
-}
 void Space10::look(char* thing)
 {
 	if (strcmp(thing, "corner") || strcmp(thing, "hovel"))

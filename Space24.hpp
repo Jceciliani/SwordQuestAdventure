@@ -22,9 +22,7 @@ class Space24 : public Space
 	public:
 		Space24();
 		~Space24();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void pull(char* thing);
 };

@@ -31,31 +31,6 @@ Space17::Space17()
 
 Space17::~Space17()
 {}
-void Space17::addToContainer(Objects obj)
-{
-	space17.push_back(obj);
-}
-
-void Space17::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space17.size(); i++)
-	{
-		if(space17[i].getName() == obj.getName())
-		{
-			space17.erase(space17.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space17::printContainer()
-{
-	for(int i = 0; i < space17.size(); i++)
-	{
-		cout << space17[i].getName() << endl;
-	}	
-}
 
 void Space17::look(char* thing)
 {

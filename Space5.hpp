@@ -22,9 +22,7 @@ class Space5 : public Space
 	public:
 		Space5();
 		~Space5();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look (char* thing);
 };
 #endif // !SPACE5_HPP

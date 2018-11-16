@@ -26,9 +26,7 @@ class Space19 : public Space
 	public:
 		Space19();
 		~Space19();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void pull(char* thing);
 		void open(char* thing);

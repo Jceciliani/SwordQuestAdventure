@@ -33,31 +33,6 @@ Space12::Space12()
 
 Space12::~Space12()
 {}
-void Space12::addToContainer(Objects obj)
-{
-	space12.push_back(obj);
-}
-
-void Space12::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space12.size(); i++)
-	{
-		if(space12[i].getName() == obj.getName())
-		{
-			space12.erase(space12.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space12::printContainer()
-{
-	for(int i = 0; i < space12.size(); i++)
-	{
-		cout << space12[i].getName() << endl;
-	}	
-}
 
 void Space12::look(char* thing)
 {

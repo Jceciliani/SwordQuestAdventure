@@ -34,31 +34,6 @@ Space7::Space7()
 
 Space7::~Space7()
 {}
-void Space7::addToContainer(Objects obj)
-{
-	space7.push_back(obj);
-}
-
-void Space7::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space7.size(); i++)
-	{
-		if(space7[i].getName() == obj.getName())
-		{
-			space7.erase(space7.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space7::printContainer()
-{
-	for(int i = 0; i < space7.size(); i++)
-	{
-		cout << space7[i].getName() << endl;
-	}	
-}
 
 void Space7::look(char* thing)
 {

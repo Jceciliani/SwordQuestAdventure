@@ -405,7 +405,9 @@ void Game::play()
 	{
 		// Clear screen after every iteration
 		//cout << string(50, '\n');
-
+		Steel steel;
+		s1.addToContainer(steel);
+		save();
 		//cout << endl;
 		// Shows locations
 		if (playerLoc->getNorth() == NULL)
@@ -807,228 +809,228 @@ void Game::save()
 
 	ofstream savefile ("SaveGame.txt");
 
-	savefile << char1->getName() << "\n";
-	savefile << char1->getLevel() << "\n";
-	savefile << char1->getStrength() << "\n";
-	savefile << char1->getHealth() << "\n";
+	savefile << char1->getName() << ",";
+	savefile << char1->getLevel() << ",";
+	savefile << char1->getStrength() << ",";
+	savefile << char1->getHealth() << ",";
 
-	savefile << eq.getArmor() << "\n";
-	savefile << eq.getSword() << "\n";
+	savefile << eq.getArmor() << ",";
+	savefile << eq.getSword() << ",";
 
-	savefile << ba.getSize()  << "\n";
+	savefile << ba.getSize()  << ",";
 	for(int i = 0; i < ba.getSize(); i++)
 	{
-		savefile << ba.printItem(i) << "\n";
+		savefile << ba.printItem(i) << ",";
 	}
 
-	savefile << st.getSize()  << "\n";
+	savefile << st.getSize()  << ",";
 	for(int i = 0; i < st.getSize(); i++)
 	{
-		savefile << st.printItem(i) << "\n";
+		savefile << st.printItem(i) << ",";
 	}
 
-	savefile << fg.getSize()  << "\n";
+	savefile << fg.getSize()  << ",";
     for(int i = 0; i < fg.getSize(); i++)
 	{
-		savefile << fg.printItem(i) << "\n";
+		savefile << fg.printItem(i) << ",";
 	}
 
-	savefile << fg.getForgeStart() << "\n";
-	savefile << fg.ultArmorCrafted() << "\n";
-	savefile << fg.ultWeaponCrafted() << "\n";
+	savefile << fg.getForgeStart() << ",";
+	savefile << fg.ultArmorCrafted() << ",";
+	savefile << fg.ultWeaponCrafted() << ",";
 	
 	
-	savefile << s1.checkVisited() << "\n";
-	savefile << s1.getEncounter() << "\n";
-	savefile << s1.getSize()  << "\n";
+	savefile << s1.checkVisited() << ",";
+	savefile << s1.getEncounter() << ",";
+	savefile << s1.getSize()  << ",";
     for(int i = 0; i < s1.getSize(); i++)
 	{
-		savefile << s1.printItem(i) << "\n";
-	}
+		savefile << s1.printItem(i) << ",";
+	}/*
 
-	savefile << s2.checkVisited() << "\n";
-	savefile << s2.getEncounter() << "\n";
-	savefile << s2.getSize()  << "\n";
+	savefile << s2.checkVisited() << ",";
+	savefile << s2.getEncounter() << ",";
+	savefile << s2.getSize()  << ",";
     for(int i = 0; i < s2.getSize(); i++)
 	{
-		savefile << s2.printItem(i) << "\n";
+		savefile << s2.printItem(i) << ",";
 	}
-	savefile << s3.checkVisited() << "\n";
-	savefile << s3.getEncounter() << "\n";
-	savefile << s3.getSize()  << "\n";
+	savefile << s3.checkVisited() << ",";
+	savefile << s3.getEncounter() << ",";
+	savefile << s3.getSize()  << ",";
     for(int i = 0; i < s3.getSize(); i++)
 	{
-		savefile << s3.printItem(i) << "\n";
+		savefile << s3.printItem(i) << ",";
 	}
 
-	savefile << s4.checkVisited() << "\n";
-	savefile << s4.getEncounter() << "\n";
-	savefile << s4.getSize()  << "\n";
+	savefile << s4.checkVisited() << ",";
+	savefile << s4.getEncounter() << ",";
+	savefile << s4.getSize()  << ",";
     for(int i = 0; i < s4.getSize(); i++)
 	{
-		savefile << s4.printItem(i) << "\n";
+		savefile << s4.printItem(i) << ",";
 	}
 
-	savefile << s5.checkVisited() << "\n";
-	savefile << s5.getEncounter() << "\n";
-	savefile << s5.getSize()  << "\n";
+	savefile << s5.checkVisited() << ",";
+	savefile << s5.getEncounter() << ",";
+	savefile << s5.getSize()  << ",";
     for(int i = 0; i < s5.getSize(); i++)
 	{
-		savefile << s5.printItem(i) << "\n";
+		savefile << s5.printItem(i) << ",";
 	}
 
-	savefile << s6.checkVisited() << "\n";
-	savefile << s6.getEncounter() << "\n";
-	savefile << s6.getSize()  << "\n";
+	savefile << s6.checkVisited() << ",";
+	savefile << s6.getEncounter() << ",";
+	savefile << s6.getSize()  << ",";
     for(int i = 0; i < s6.getSize(); i++)
 	{
-		savefile << s6.printItem(i) << "\n";
+		savefile << s6.printItem(i) << ",";
 	}
 
 
-	savefile << s7.checkVisited() << "\n";
-	savefile << s7.getEncounter() << "\n";
-	savefile << s7.getSize()  << "\n";
+	savefile << s7.checkVisited() << ",";
+	savefile << s7.getEncounter() << ",";
+	savefile << s7.getSize()  << ",";
     for(int i = 0; i < s7.getSize(); i++)
 	{
-		savefile << s7.printItem(i) << "\n";
+		savefile << s7.printItem(i) << ",";
 	}
 
-	savefile << s8.checkVisited() << "\n";
-	savefile << s8.getEncounter() << "\n";
-	savefile << s8.getSize()  << "\n";
+	savefile << s8.checkVisited() << ",";
+	savefile << s8.getEncounter() << ",";
+	savefile << s8.getSize()  << ",";
     for(int i = 0; i < s8.getSize(); i++)
 	{
-		savefile << s8.printItem(i) << "\n";
+		savefile << s8.printItem(i) << ",";
 	}
 
-	savefile << s9.checkVisited() << "\n";
-	savefile << s9.getEncounter() << "\n";
-	savefile << s9.getSize()  << "\n";
+	savefile << s9.checkVisited() << ",";
+	savefile << s9.getEncounter() << ",";
+	savefile << s9.getSize()  << ",";
     for(int i = 0; i < s9.getSize(); i++)
 	{
-		savefile << s9.printItem(i) << "\n";
+		savefile << s9.printItem(i) << ",";
 	}
 
-	savefile << s10.checkVisited() << "\n";
-	savefile << s10.getEncounter() << "\n";
-	savefile << s10.getSize()  << "\n";
+	savefile << s10.checkVisited() << ",";
+	savefile << s10.getEncounter() << ",";
+	savefile << s10.getSize()  << ",";
     for(int i = 0; i < s10.getSize(); i++)
 	{
-		savefile << s10.printItem(i) << "\n";
+		savefile << s10.printItem(i) << ",";
 	}
 
-	savefile << s11.checkVisited() << "\n";
-	savefile << s11.getEncounter() << "\n";
-	savefile << s11.getSize()  << "\n";
+	savefile << s11.checkVisited() << ",";
+	savefile << s11.getEncounter() << ",";
+	savefile << s11.getSize()  << ",";
     for(int i = 0; i < s11.getSize(); i++)
 	{
-		savefile << s11.printItem(i) << "\n";
+		savefile << s11.printItem(i) << ",";
 	}
 
-	savefile << s12.checkVisited() << "\n";
-	savefile << s12.getEncounter() << "\n";
-	savefile << s12.getSize()  << "\n";
+	savefile << s12.checkVisited() << ",";
+	savefile << s12.getEncounter() << ",";
+	savefile << s12.getSize()  << ",";
     for(int i = 0; i < s12.getSize(); i++)
 	{
-		savefile << s12.printItem(i) << "\n";
+		savefile << s12.printItem(i) << ",";
 	}
 
-	savefile << s13.checkVisited() << "\n";
-	savefile << s13.getEncounter() << "\n";
-	savefile << s13.getSize()  << "\n";
+	savefile << s13.checkVisited() << ",";
+	savefile << s13.getEncounter() << ",";
+	savefile << s13.getSize()  << ",";
     for(int i = 0; i < s13.getSize(); i++)
 	{
-		savefile << s13.printItem(i) << "\n";
+		savefile << s13.printItem(i) << ",";
 	}
 
-	savefile << s14.checkVisited() << "\n";
-	savefile << s14.getEncounter() << "\n";
-	savefile << s14.getSize()  << "\n";
+	savefile << s14.checkVisited() << ",";
+	savefile << s14.getEncounter() << ",";
+	savefile << s14.getSize()  << ",";
     for(int i = 0; i < s14.getSize(); i++)
 	{
-		savefile << s14.printItem(i) << "\n";
+		savefile << s14.printItem(i) << ",";
 	}
 
-	savefile << s15.checkVisited() << "\n";
-	savefile << s15.getEncounter() << "\n";
-	savefile << s15.getSize()  << "\n";
+	savefile << s15.checkVisited() << ",";
+	savefile << s15.getEncounter() << ",";
+	savefile << s15.getSize()  << ",";
     for(int i = 0; i < s15.getSize(); i++)
 	{
-		savefile << s15.printItem(i) << "\n";
+		savefile << s15.printItem(i) << ",";
 	}
 
-	savefile << s16.checkVisited() << "\n";
-	savefile << s16.getEncounter() << "\n";
-	savefile << s16.getSize()  << "\n";
+	savefile << s16.checkVisited() << ",";
+	savefile << s16.getEncounter() << ",";
+	savefile << s16.getSize()  << ",";
     for(int i = 0; i < s16.getSize(); i++)
 	{
-		savefile << s16.printItem(i) << "\n";
+		savefile << s16.printItem(i) << ",";
 	}
 
-	savefile << s17.checkVisited() << "\n";
-	savefile << s17.getEncounter() << "\n";
-	savefile << s17.getSize()  << "\n";
+	savefile << s17.checkVisited() << ",";
+	savefile << s17.getEncounter() << ",";
+	savefile << s17.getSize()  << ",";
     for(int i = 0; i < s17.getSize(); i++)
 	{
-		savefile << s17.printItem(i) << "\n";
+		savefile << s17.printItem(i) << ",";
 	}
 
-	savefile << s19.checkVisited() << "\n";
-	savefile << s19.getEncounter() << "\n";
-	savefile << s19.getSize()  << "\n";
+	savefile << s19.checkVisited() << ",";
+	savefile << s19.getEncounter() << ",";
+	savefile << s19.getSize()  << ",";
     for(int i = 0; i < s19.getSize(); i++)
 	{
-		savefile << s19.printItem(i) << "\n";
+		savefile << s19.printItem(i) << ",";
 	}
 
-	savefile << s20.checkVisited() << "\n";
-	savefile << s20.getEncounter() << "\n";
-	savefile << s20.getSize()  << "\n";
+	savefile << s20.checkVisited() << ",";
+	savefile << s20.getEncounter() << ",";
+	savefile << s20.getSize()  << ",";
     for(int i = 0; i < s20.getSize(); i++)
 	{
-		savefile << s20.printItem(i) << "\n";
+		savefile << s20.printItem(i) << ",";
 	}
 
-	savefile << s21.checkVisited() << "\n";
-	savefile << s21.getEncounter() << "\n";
-	savefile << s21.getSize()  << "\n";
+	savefile << s21.checkVisited() << ",";
+	savefile << s21.getEncounter() << ",";
+	savefile << s21.getSize()  << ",";
     for(int i = 0; i < s21.getSize(); i++)
 	{
-		savefile << s21.printItem(i) << "\n";
+		savefile << s21.printItem(i) << ",";
 	}
 
-	savefile << s22.checkVisited() << "\n";
-	savefile << s22.getEncounter() << "\n";
-	savefile << s22.getSize()  << "\n";
+	savefile << s22.checkVisited() << ",";
+	savefile << s22.getEncounter() << ",";
+	savefile << s22.getSize()  << ",";
     for(int i = 0; i < s22.getSize(); i++)
 	{
-		savefile << s22.printItem(i) << "\n";
+		savefile << s22.printItem(i) << ",";
 	}
 
-	savefile << s23.checkVisited() << "\n";
-	savefile << s23.getEncounter() << "\n";
-	savefile << s23.getSize()  << "\n";
+	savefile << s23.checkVisited() << ",";
+	savefile << s23.getEncounter() << ",";
+	savefile << s23.getSize()  << ",";
     for(int i = 0; i < s23.getSize(); i++)
 	{
-		savefile << s23.printItem(i) << "\n";
+		savefile << s23.printItem(i) << ",";
 	}
 
-	savefile << s24.checkVisited() << "\n";
-	savefile << s24.getEncounter() << "\n";
-	savefile << s24.getSize()  << "\n";
+	savefile << s24.checkVisited() << ",";
+	savefile << s24.getEncounter() << ",";
+	savefile << s24.getSize()  << ",";
     for(int i = 0; i < s24.getSize(); i++)
 	{
-		savefile << s24.printItem(i) << "\n";
+		savefile << s24.printItem(i) << ",";
 	}
 
-	savefile << s25.checkVisited() << "\n";
-	savefile << s25.getEncounter() << "\n";
-	savefile << s25.getSize()  << "\n";
+	savefile << s25.checkVisited() << ",";
+	savefile << s25.getEncounter() << ",";
+	savefile << s25.getSize()  << ",";
     for(int i = 0; i < s25.getSize(); i++)
 	{
-		savefile << s25.printItem(i) << "\n";
-	}
+		savefile << s25.printItem(i) << ",";
+	}*/
 
 	savefile.close();
 

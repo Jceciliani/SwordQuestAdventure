@@ -1,0 +1,1 @@
+Hero,1,10,10,Tunic Armor,Two-Handed Wooden Sword,0,0,0,0,0,0,0,0,1,Steel,

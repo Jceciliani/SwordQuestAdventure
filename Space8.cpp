@@ -37,31 +37,6 @@ Space8::~Space8()
 		delete obj;
 	}
 }
-void Space8::addToContainer(Objects obj)
-{
-	space8.push_back(obj);
-}
-
-void Space8::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space8.size(); i++)
-	{
-		if(space8[i].getName() == obj.getName())
-		{
-			space8.erase(space8.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space8::printContainer()
-{
-	for(int i = 0; i < space8.size(); i++)
-	{
-		cout << space8[i].getName() << endl;
-	}	
-}
 
 void Space8::look(char* thing)
 {

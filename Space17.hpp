@@ -23,9 +23,7 @@ class Space17 : public Space
 	public:
 		Space17();
 		~Space17();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void drink(char* thing);
 };

@@ -23,9 +23,7 @@ class Space8 : public Space
 	public:
 		Space8();
 		~Space8();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void search(char* thing);
 };

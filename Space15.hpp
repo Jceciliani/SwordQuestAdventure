@@ -24,9 +24,7 @@ class Space15 : public Space
 	public:
 		Space15();
 		~Space15();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void search(char* thing);
 		void open(char* thing);

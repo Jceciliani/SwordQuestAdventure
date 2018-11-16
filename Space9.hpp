@@ -24,9 +24,7 @@ class Space9 : public Space
 	public:
 		Space9();
 		~Space9();
-		void addToContainer(Objects obj);
-		void deleteFromContainer(Objects obj);
-		void printContainer();
+
 		void look(char* thing);
 		void drink(char* thing);
 		void enter(char* thing);

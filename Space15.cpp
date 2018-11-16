@@ -36,31 +36,6 @@ Space15::~Space15()
 		delete obj;
 	}
 }
-void Space15::addToContainer(Objects obj)
-{
-	space15.push_back(obj);
-}
-
-void Space15::deleteFromContainer(Objects obj)
-{
-	for(int i = 0; i < space15.size(); i++)
-	{
-		if(space15[i].getName() == obj.getName())
-		{
-			space15.erase(space15.begin() + i);
-			return;
-		}
-	}
-
-}
-
-void Space15::printContainer()
-{
-	for(int i = 0; i < space15.size(); i++)
-	{
-		cout << space15[i].getName() << endl;
-	}	
-}
 
 
 void Space15::look(char* thing)
