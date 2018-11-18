@@ -18,11 +18,13 @@ class Objects
 	protected:
 		string name;
 		string description;
+		int id;
 	public:
 		Objects();
 		~Objects();
 		string getName();
 		string getDescription();
+		int getId();
 		void printObject();
 
 };

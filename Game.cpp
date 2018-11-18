@@ -11,6 +11,7 @@ Description: This controls the flow of the game and all of the interactions
 #include <stdio.h>
 #include <cstdlib>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -369,13 +370,18 @@ void Game::stashToBag(Objects obj)
 }
 //*********************************************************************************
 
-void Game::play()
+void Game::play(bool loadgame)
 {
 	// Create Space objects
 
 	int turns = 0;
 
 	char choice;
+	if (loadgame == true)
+	{
+		cout <<"shouldnt get here";
+		load();
+	}
 	
 	cout << "You are falling before you can even stand." << endl;
     cin.ignore();
@@ -405,8 +411,7 @@ void Game::play()
 	{
 		// Clear screen after every iteration
 		//cout << string(50, '\n');
-		Steel steel;
-		s1.addToContainer(steel);
+
 		save();
 		//cout << endl;
 		// Shows locations
@@ -651,7 +656,6 @@ void Game::play()
 		{
 			//TEST
 			cout << "Space Container" << endl;
-			s1.deleteFromContainer(s2.getObject());
 			s1.printContainer();
 			if(s13.getVisited() == false)
 			{
@@ -812,27 +816,27 @@ void Game::save()
 	savefile << char1->getName() << ",";
 	savefile << char1->getLevel() << ",";
 	savefile << char1->getStrength() << ",";
-	savefile << char1->getHealth() << ",";
 
-	savefile << eq.getArmor() << ",";
-	savefile << eq.getSword() << ",";
+
+	savefile << eq.getObject1().getId() << ",";
+	savefile << eq.getObject2().getId() << ",";
 
 	savefile << ba.getSize()  << ",";
 	for(int i = 0; i < ba.getSize(); i++)
 	{
-		savefile << ba.printItem(i) << ",";
+		savefile << (ba.printItem(i)).getId() << ",";
 	}
 
 	savefile << st.getSize()  << ",";
 	for(int i = 0; i < st.getSize(); i++)
 	{
-		savefile << st.printItem(i) << ",";
+		savefile << (st.printItem(i)).getId() << ",";
 	}
 
 	savefile << fg.getSize()  << ",";
     for(int i = 0; i < fg.getSize(); i++)
 	{
-		savefile << fg.printItem(i) << ",";
+		savefile << (fg.printItem(i)).getId() << ",";
 	}
 
 	savefile << fg.getForgeStart() << ",";
@@ -845,8 +849,9 @@ void Game::save()
 	savefile << s1.getSize()  << ",";
     for(int i = 0; i < s1.getSize(); i++)
 	{
-		savefile << s1.printItem(i) << ",";
-	}/*
+		savefile << (s1.printItem(i)).getId() << ",";
+	}
+	/*
 
 	savefile << s2.checkVisited() << ",";
 	savefile << s2.getEncounter() << ",";
@@ -1035,4 +1040,550 @@ void Game::save()
 	savefile.close();
 
 	cout << "Done" << endl;
+}
+
+void Game::load()
+{
+	ifstream loadfile;
+	const char* filename = "SaveGame.txt";
+	loadfile.open (filename, ifstream::in);
+	int temparray[2];
+	int *arraypointer;
+	arraypointer = temparray;
+
+
+	if(loadfile.is_open())
+	{
+		string temp;
+		int count = 0;
+		char chararray[32];
+		int number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		char1->setName(chararray);
+
+	
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		char1->setLevel(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		char1->setStrength(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		eq.addEquipment(finditem(number));
+
+		
+				count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		eq.addEquipment(finditem(number));
+		
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		int size = number;
+
+		for(int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+			number;
+
+			while(loadfile.good())
+			{
+				temp = (char) loadfile.get();
+
+				if(temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else{
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+	
+			number = atoi(chararray);
+			ba.addToContainer(finditem(number));
+			
+		}
+
+				count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		size = number;
+
+		for(int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+			number;
+
+			while(loadfile.good())
+			{
+				temp = (char) loadfile.get();
+
+				if(temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else{
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+	
+			number = atoi(chararray);
+			st.addToContainer(finditem(number));
+			
+		}
+
+				count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		size = number;
+
+		for(int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+			number;
+
+			while(loadfile.good())
+			{
+				temp = (char) loadfile.get();
+
+				if(temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else{
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+	
+			number = atoi(chararray);
+			fg.addToContainer(finditem(number));
+			
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		fg.setUltA(number);
+		
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		fg.setUltW(number);
+
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		s1.setVisited(number);
+		loadfile.seekg(arraypointer[1]);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		s1.setEncounter(number);
+		
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+		number = atoi(chararray);
+		size = number;
+		
+		for(int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while(loadfile.good())
+			{
+				temp = (char) loadfile.get();
+
+				if(temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else{
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+	
+			number = atoi(chararray);
+			s1.addToContainer(finditem(number));
+			
+		}
+
+
+		loadfile.close();
+	}
+
+
+
+	
+}
+
+int intlength(int num)
+{
+	int count = 0;
+	while(num)
+	{
+		num = num / 10;
+		count++;
+	}
+	return count;
+}
+
+int* Game::LoadInt(const char *filename, int filepos)
+{
+	ifstream loadfile;
+	int *tempp;
+	int temparray[2];
+	tempp = temparray;
+	loadfile.open (filename, ifstream::in);
+	loadfile.seekg(filepos);
+
+	string temp;
+	int count = 0;
+	char chararray[32];
+	int number;
+
+	while(loadfile.good())
+		{
+			temp = (char) loadfile.get();
+
+			if(temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else{
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+	
+	number = atoi(chararray);
+	temparray[0] = number;
+	temparray[1] = loadfile.tellg();
+	return tempp;
+}
+
+Objects Game::finditem(int name)
+{
+	if(name == 1)
+	{
+		return Two_Handed_Wooden_Sword();
+	}
+	else if(name == 2)
+	{
+		return Two_Handed_Bronze_Sword();
+	}
+	else if(name == 3)
+	{
+		return Two_Handed_Silver_Sword();
+	}
+	else if(name == 4)
+	{
+		return Two_Handed_Gold_Sword();
+	}
+	else if(name == 5)
+		{
+		return Two_Handed_Ultimate_Sword();
+	}
+	else if(name == 6)
+	{
+		return Tunic_Armor();
+	}
+	else if(name == 7)
+	{
+		return Bronze_Armor();
+	}
+	else if(name == 8)
+	{
+		return Silver_Armor();
+	}
+	else if(name == 9)
+	{
+		return Gold_Armor();
+	}
+	else if(name == 10)
+	{
+		return Ultimate_Armor();
+	}
+	else if(name == 11)
+	{
+		return Forge_Hammer();
+	}
+	else if(name == 12)
+	{
+		return Flint();
+	}
+	else if(name == 13)
+	{
+		return Steel();
+	}
+	else if(name == 14)
+	{
+		return  Key();
+	}
+
 }

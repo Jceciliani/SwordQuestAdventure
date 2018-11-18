@@ -8,6 +8,7 @@ Description: All containers used throughout the game
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
@@ -83,10 +84,10 @@ void Bag::printContainer()
 	}
 }
 
-string Bag::printItem(int i)
+Objects Bag::printItem(int i)
 {
 	
-		return bag[i].getName();
+		return bag[i];
 
 }
 
@@ -185,10 +186,10 @@ void Forge::printContainer()
 	}
 }
 
-string Forge::printItem(int i)
+Objects Forge::printItem(int i)
 {
 	
-		return forge[i].getName();
+		return forge[i];
 
 }
 
@@ -199,8 +200,27 @@ bool Forge::getForgeStart()
 
 bool Forge::startForge()
 {
+	bool flint = false;
+	bool steel = false;
+	bool hammer = false;
+	
+	for(int i = 0; i < forge.size(); i ++)
+{
 
-	if(forge[0].getName() == "Flint" || forge[0].getName() == "Steel" && forge[1].getName() == "Flint" || forge[1].getName() == "Steel")
+	if(strcmp((forge[i].getName()).c_str(), "Flint") == 0)
+	{
+		flint = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Steel") == 0)
+	{
+		steel = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
+	{
+		hammer = true;
+	}
+}
+	if(flint == true && steel == true && hammer == true)
 	{
 		forgeStart = true;
 		cout << "The beacon is lit!" << endl;
@@ -214,11 +234,30 @@ bool Forge::startForge()
 
 bool Forge::ultWeaponCrafted()
 {
-		if(forge.size() < 3)
+	bool wood = false;
+	bool bronze = false;
+	bool silver = false;
+	bool gold = false;
+		for(int i = 0; i < forge.size(); i ++)
+{
+	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Wooden Sword") == 0)
 	{
-		return false;
+		wood = true;
 	}
-	if(getForgeStart() == true && forge[0].getName() == "Two-Handed Wooden Sword" || forge[0].getName() == "Two-handed Bronze Sword" || forge[0].getName() == "Two-handed Silver Sword" || forge[0].getName() == "Two-Handed Gold Sword" && forge[1].getName() == "Two-Handed Wooden Sword" || forge[1].getName() == "Two-handed Bronze Sword" || forge[1].getName() == "Two-handed Silver Sword" || forge[1].getName() == "Two-Handed Gold Sword" && forge[2].getName() == "Two-Handed Wooden Sword" || forge[2].getName() == "Two-handed Bronze Sword" || forge[2].getName() == "Two-handed Silver Sword" || forge[2].getName() == "Two-Handed Gold Sword" && forge[3].getName() == "Two-Handed Wooden Sword" || forge[3].getName() == "Two-handed Bronze Sword" || forge[3].getName() == "Two-handed Silver Sword" || forge[3].getName() == "Two-Handed Gold Sword")
+	if(strcmp((forge[i].getName()).c_str(), "Two-handed Bronze Sword") == 0)
+	{
+		bronze = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Two-handed Silver Sword") == 0)
+	{
+		silver = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Two-handed Gold Sword") == 0)
+	{
+		gold = true;
+	}
+}
+	if(wood == true && bronze == true && silver == true && gold == true)
 	{
 		craftUltWeapon = true;
 		return true;	
@@ -232,11 +271,30 @@ bool Forge::ultWeaponCrafted()
 bool Forge::ultArmorCrafted()
 {
 
-	if(forge.size() < 3)
+	bool tunic = false;
+	bool bronze = false;
+	bool silver = false;
+	bool gold = false;
+	for(int i = 0; i < forge.size(); i++)
+{
+	if(strcmp((forge[i].getName()).c_str(), "Tunic Armor") == 0)
 	{
-		return false;
+		tunic = true;
 	}
-	if(getForgeStart() == true && forge[0].getName() == "Tunic Armor" || forge[0].getName() == "Bronze Armor" || forge[0].getName() == "Silver Armor" || forge[0].getName() == "Gold Armor" && forge[1].getName() == "Tunic Armor" || forge[1].getName() == "Bronze Armor" || forge[1].getName() == "Silver Armor" || forge[1].getName() == "Gold Armor" && forge[2].getName() == "Tunic Armor" || forge[2].getName() == "Bronze Armor" || forge[2].getName() == "Silver Armor" || forge[2].getName() == "Gold Armor" && forge[3].getName() == "Tunic Armor" || forge[3].getName() == "Bronze Armor" || forge[3].getName() == "Silver Armor" || forge[3].getName() == "Gold Armor")
+	if(strcmp((forge[i].getName()).c_str(), "Bronze Armor") == 0)
+	{
+		bronze = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Silver Armor") == 0)
+	{
+		silver = true;
+	}
+	if(strcmp((forge[i].getName()).c_str(), "Gold Armor") == 0)
+	{
+		gold = true;
+	}
+}
+	if(tunic == true && bronze == true && silver == true && gold == true)
 	{
 		craftUltArmor = true;
 		return true;
@@ -295,10 +353,10 @@ void Stash::printContainer()
 	
 }
 
-string Stash::printItem(int i)
+Objects Stash::printItem(int i)
 {
 	
-		return stash[i].getName();
+		return stash[i];
 
 }
 
@@ -352,13 +410,17 @@ void Equipped::addEquipment(Objects obj)
 {
 	if(obj.getName().find("Sword") != -1)
 	{
-		equipped.insert(equipped.begin() + 0, obj);
+		equipped[0] = obj;
+		setSword(obj);
 	}
 	else if(obj.getName().find("Armor") != -1)
 	{
-		equipped.insert(equipped.begin() + 1, obj);
+		equipped[1] = obj;
+		setArmor(obj);
 	}	
 }	
+
+
 
 void Equipped::deleteFromContainer(Objects obj)
 {
@@ -456,12 +518,12 @@ void Equipped::insert(int i, Objects obj)
 
 Objects Equipped::getObject1()
 {
-	return *obj1;
+	return equipped[0];
 }
 
 Objects Equipped::getObject2()
 {
-	return *obj2;
+	return equipped[1];
 }
 
 

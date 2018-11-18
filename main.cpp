@@ -31,23 +31,32 @@ int main()
 		cout << "        \\/                         \\/         \\__>           \\/     \\/        " << endl;
 		cout << endl;
 		cout << "1. Play Sword Quest" << endl;
-		cout << "2. Exit" << endl;
+		cout << "2. Load Saved Game" << endl;
+		cout << "3. Exit" << endl;
 		getline(cin, choice);
 
 		// Start game
 		if (choice == "1")
 		{
 			Game *game = new Game();
-			game->play();
+			bool loadg = false;
+			game->play(loadg);
 			delete game;
 		}
 		else if (choice == "2")
 		{
-			return 0;
+			Game *game = new Game();
+			bool loadg = true;
+			game->play(loadg);
+			delete game;
+		}
+		else if (choice == "3")
+		{
+
 		}
 		else
 		{
-			cout << "Invalid - Please enter 1 or 2" << endl;
+			cout << "Invalid - Please enter 1, 2 or 3" << endl;
 			ifError = true;
 		}
 

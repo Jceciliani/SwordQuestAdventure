@@ -41,14 +41,29 @@ string Characters::getName()
 	return name;
 }
 
+void Characters::setName(string thing)
+{
+	name = thing;
+}
+
 int Characters::getStrength()
 {
 	return strength;
 }
 
+void Characters::setStrength(int num)
+{
+	strength = num;
+}
+
 int Characters::getLevel()
 {
 	return level;
+}
+
+void Characters::setLevel(int num)
+{
+	level = num;
 }
 
 void Characters::levelUp()

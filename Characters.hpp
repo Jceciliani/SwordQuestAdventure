@@ -29,7 +29,10 @@ class Characters
 		virtual void defense(int) = 0;
 		bool fatalBlow();
 		string getName();
+		void setName(string thing);
 		int getStrength();
+		void setStrength(int num);
+		void setLevel(int num);
 		int getLevel();
 		void levelUp();
 		int getHealth();

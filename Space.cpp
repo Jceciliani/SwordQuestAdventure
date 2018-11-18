@@ -160,10 +160,10 @@ bool Space::checkVisited()
 	return visited;
 }
 
-string Space::printItem(int i)
+Objects Space::printItem(int i)
 {
 	
-		return space[i].getName();
+		return space[i];
 
 }
 

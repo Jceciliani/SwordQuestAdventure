@@ -48,11 +48,13 @@ class Space
 		virtual void addToContainer(Objects obj);
 		virtual void deleteFromContainer(Objects obj);
 		virtual void printContainer();
-		string printItem(int i);
+		Objects printItem(int i);
 		int getSize();
 		void setDirections(Space* N, Space* E, Space* S, Space* W);
 		bool getVisited();
 		bool checkVisited();
+		void setVisited(int num){if(num == 1){visited = true;} else {visited = false;}}
+		void setEncounter(int num){if(num == 1){combatEncounter = true;} else {combatEncounter = false;}}
 		bool getEncounter();
 		void setEncounter();
 };

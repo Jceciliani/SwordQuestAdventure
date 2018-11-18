@@ -74,7 +74,7 @@ class Game
 	public:
 		Game();
 		~Game();
-		void play();
+		void play(bool loadgame);
 		int move(string input);
 		void fight();
 		void transfer(Objects, Objects); // Object 1 Equipped, Object 2 Bag
@@ -83,6 +83,9 @@ class Game
 		void forgeToBag(Objects);
 		void stashToBag(Objects);
 		void save();
+		void load();
+		int* LoadInt(const char *filename, int filepos);
+		Objects finditem(int name);
 };
 #endif // !GAME_HPP
 
