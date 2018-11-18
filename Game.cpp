@@ -479,6 +479,14 @@ void Game::play(bool loadgame)
 		{
 			if(s1.getVisited() == false)
 			{
+				if(s1.getEncounter() == false)
+				{
+					cout << "A NAGA APPEARED!\n\n" << endl;
+					char2 = new Naga();
+					fight();
+					char2 = NULL;
+
+				}
 				cout << s1.getLongForm() << endl;
 			}
 			else
@@ -491,6 +499,12 @@ void Game::play(bool loadgame)
 			if(s2.getVisited() == false)
 			{
 				cout << s2.getLongForm() << endl;
+				// Pick up Forge Hammer
+				ba.addToContainer(s2.getObject());
+				cout << "Equipped" << endl;
+				eq.printContainer();
+				cout << "Bag" << endl;
+				ba.printContainer();	
 			}
 			else
 			{
@@ -502,9 +516,9 @@ void Game::play(bool loadgame)
 			if(s3.getVisited() == false)
 			{
 				cout << s3.getLongForm() << endl;
-
-
+				// Pick up Bronze Armor
 				ba.addToContainer(s3.getObject());
+				// Equip Bronze Armor
 				transfer(eq.getObject2(), s3.getObject());
 	
 				cout << "Equipped" << endl;
@@ -540,6 +554,16 @@ void Game::play(bool loadgame)
 			if(s5.getVisited() == false)
 			{
 				cout << s5.getLongForm() << endl;
+			
+				// Pick up Silver Sword
+				ba.addToContainer(s5.getObject());
+				// Equip Silver Sword
+				transfer(s8.getObject(), s5.getObject());
+
+				cout << "Equipped" << endl;
+				eq.printContainer();
+				cout << "Bag" << endl;
+				ba.printContainer();
 			}
 			else
 			{
@@ -550,7 +574,18 @@ void Game::play(bool loadgame)
 		{
 			if(s6.getVisited() == false)
 			{
+				
 				cout << s6.getLongForm() << endl;
+
+				// Pick up Silver Armor
+				ba.addToContainer(s6.getObject());
+				// Equip Silver Armor
+				transfer(s3.getObject(), s6.getObject());
+				cout << "Equipped" << endl;
+				eq.printContainer();
+				cout << "Bag" << endl;
+				ba.printContainer();
+
 			}
 			else
 			{
@@ -571,16 +606,36 @@ void Game::play(bool loadgame)
 		else if (playerLoc == spaceArr[7])
 		{
 			//TEST
-			cout << "Equipped" << endl;
-			fg.addToContainer(s25.getObject());
-			fg.addToContainer(s2.getObject());
-			if(fg.startForge())
+			fg.addToContainer(s5.getObject());
+			fg.addToContainer(s15.getObject());
+			fg.printContainer();
+			if(fg.startForge() == true)
 			{
 				cout << "Nice" << endl;
 			}
 			else
 			{
 				cout << "Bummer" << endl;
+			}
+			// Clear container for another test
+			fg.deleteFromContainer(s5.getObject());
+			fg.deleteFromContainer(s15.getObject());
+
+			//Check if Ult Weapon Craft Works
+			fg.addToContainer(eq.getObject1());
+			fg.addToContainer(s8.getObject());
+			fg.addToContainer(s5.getObject());
+			fg.addToContainer(s21.getObject());
+			fg.addToContainer(s2.getObject());
+			// Print forge
+			//fg.printContainer();		
+			if(fg.ultWeaponCrafted() == true)
+			{
+				cout << "I HAVE THE POWER!" << endl;
+			}
+			else
+			{
+				cout << "Sad" << endl;
 			}
 			// Print current equipment 
 			eq.printContainer();
@@ -613,6 +668,9 @@ void Game::play(bool loadgame)
 			if(s9.getVisited() == false)
 			{
 				cout << s9.getLongForm() << endl;
+				cout << "HEALING" << endl;
+				char1->setHealth(16);
+				cout << "Hero Health after healing: " << char1->getHealth() << endl;	
 			}
 			else
 			{
@@ -623,6 +681,13 @@ void Game::play(bool loadgame)
 		{
 			if(s10.getVisited() == false)
 			{
+				if(s10.getEncounter() == false)
+				{				
+					cout << "A HOBGOBLIN APPEARED!\n\n" << endl;
+					char2 = new Hobgoblin();
+					fight();
+					char2 = NULL;
+				}
 				cout << s10.getLongForm() << endl;
 			}
 			else
@@ -654,9 +719,7 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[12])
 		{
-			//TEST
-			cout << "Space Container" << endl;
-			s1.printContainer();
+
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;
@@ -682,6 +745,14 @@ void Game::play(bool loadgame)
 			if(s15.getVisited() == false)
 			{
 				cout << s15.getLongForm() << endl;
+				// Place Steel in Bag
+				ba.addToContainer(s15.getObject());
+				cout << "Equipped" << endl;
+				eq.printContainer();
+				// Print Bag
+				cout << "Bag" << endl;
+				ba.printContainer();
+				
 			}
 			else
 			{
@@ -704,6 +775,9 @@ void Game::play(bool loadgame)
 			if(s17.getVisited() == false)
 			{
 				cout << s17.getLongForm() << endl;
+				cout << "HEALING" << endl;
+				char1->setHealth(18);
+				cout << "Hero Health after healing: " << char1->getHealth() << endl;	
 			}
 			else
 			{
@@ -714,6 +788,14 @@ void Game::play(bool loadgame)
 		{
 			if(s18.getVisited() == false)
 			{
+				if(s18.getEncounter() == false)
+				{
+					cout << "A DRAGON APPEARED!" << endl;
+					char2 = new Dragon();
+					fight();
+					char2 = NULL;
+		
+				}
 				cout << s18.getLongForm() << endl;
 			}
 			else
@@ -725,6 +807,13 @@ void Game::play(bool loadgame)
 		{
 			if(s19.getVisited() == false)
 			{
+				if(s19.getEncounter() == false)
+				{
+					cout << "A MOUNTAIN GIANT APPEARED!\n\n" << endl;
+					char2 = new Mountain_Giant();
+					fight();
+					char2 = NULL;
+				}
 				cout << s19.getLongForm() << endl;
 			}
 			else
@@ -737,6 +826,11 @@ void Game::play(bool loadgame)
 			if(s20.getVisited() == false)
 			{
 				cout << s20.getLongForm() << endl;
+				cout << "HEALING" << endl;
+				char1->setHealth(26);
+				cout << "Hero Health after healing: " << char1->getHealth() << endl;	
+				cout << "TELEPORTING BACK TO SANCTUARY" << endl;
+				playerLoc = spaceArr[12];
 			}
 			else
 			{
@@ -747,6 +841,25 @@ void Game::play(bool loadgame)
 		{
 			if(s21.getVisited() == false)
 			{
+				if(s21.getEncounter() == false)
+				{
+					cout << "A WIZARD APPEARED!\n\n" << endl;
+					char2 = new Wizard();
+					fight();
+					char2 = NULL;
+				
+					// Pick up Gold Sword
+					ba.addToContainer(s21.getObject());
+					// Equipped Gold Sword
+					transfer(s5.getObject(), s21.getObject());	
+					cout << "Equipped" << endl;
+					eq.printContainer();
+					// Print Bag
+					cout << "Bag" << endl;
+					ba.printContainer();
+	
+				}
+
 				cout << s21.getLongForm() << endl;
 			}
 			else
@@ -769,6 +882,24 @@ void Game::play(bool loadgame)
 		{
 			if(s23.getVisited() == false)
 			{
+				if(s23.getEncounter() == false)
+				{
+					cout << "A GANG OF BANDITS!\n\n" << endl;
+					char2 = new Gang_of_Bandits();
+					fight();
+					char2 = NULL;
+
+					// Pick up Gold Armor
+					ba.addToContainer(s23.getObject());
+					// Equip Gold Armor
+					transfer(s6.getObject(), s23.getObject());
+
+					cout << "Equipped" << endl;
+					eq.printContainer();
+					// Print Bag
+					cout << "Bag" << endl;
+					ba.printContainer();
+				}
 				cout << s23.getLongForm() << endl;
 			}
 			else
@@ -780,6 +911,14 @@ void Game::play(bool loadgame)
 		{
 			if(s24.getVisited() == false)
 			{
+				// WRONG LOCATION FOR LESSER DRAKE - ONLY FOR TESTING
+				if(s24.getEncounter() == false)
+				{
+					cout << "A LESSER DRAKE APPEARED!\n\n" << endl;
+					char2 = new Lesser_Drake();
+					fight();
+					char2 = NULL;
+				}
 				cout << s24.getLongForm() << endl;
 			}
 			else
