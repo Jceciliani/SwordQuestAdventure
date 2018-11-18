@@ -240,7 +240,7 @@ bool Forge::ultArmorCrafted()
 	{
 		return false;
 	}		
-
+	// Hardcoded check if all items are in the forge
 	else if(getForgeStart() == true && forge[0].getName() == "Tunic Armor" || forge[0].getName() == "Bronze Armor" || forge[0].getName() == "Silver Armor" || forge[0].getName() == "Gold Armor" || forge[0].getName() == "Forge Hammer" && forge[1].getName() == "Tunic Armor" || forge[1].getName() == "Bronze Armor" || forge[1].getName() == "Silver Armor" || forge[1].getName() == "Gold Armor" || forge[1].getName() == "Forge Hammer" && forge[2].getName() == "Tunic Armor" || forge[2].getName() == "Bronze Armor" || forge[2].getName() == "Silver Armor" || forge[2].getName() == "Gold Armor" || forge[2].getName() == "Forge Hammer" && forge[3].getName() == "Tunic Armor" || forge[3].getName() == "Bronze Armor" || forge[3].getName() == "Silver Armor" || forge[3].getName() == "Gold Armor" || forge[3].getName() == "Forge Hammer" && forge[4].getName() == "Tunic Armor" || forge[4].getName() == "Bronze Armor" || forge[4].getName() == "Silver Armor" || forge[4].getName() == "Gold Armor" || forge[4].getName() == "Forge Hammer")
 	{
 		craftUltArmor = true;
