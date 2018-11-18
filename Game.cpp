@@ -956,6 +956,7 @@ void Game::save()
 	savefile << char1->getLevel() << ",";
 	savefile << char1->getStrength() << ",";
 
+	savefile << playerLoc.getId() << ",";
 
 	savefile << eq.getObject1().getId() << ",";
 	savefile << eq.getObject2().getId() << ",";
@@ -990,7 +991,7 @@ void Game::save()
 	{
 		savefile << (s1.printItem(i)).getId() << ",";
 	}
-	/*
+	
 
 	savefile << s2.checkVisited() << ",";
 	savefile << s2.getEncounter() << ",";
@@ -1174,7 +1175,7 @@ void Game::save()
     for(int i = 0; i < s25.getSize(); i++)
 	{
 		savefile << s25.printItem(i) << ",";
-	}*/
+	}
 
 	savefile.close();
 
@@ -1264,6 +1265,28 @@ void Game::load()
 		number = atoi(chararray);
 		char1->setStrength(number);
 
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		playerLoc = spaceArr[(number - 1)];
 
 		count = 0;
 		chararray[0] = 0;
@@ -1610,6 +1633,1154 @@ void Game::load()
 			
 		}
 
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s2.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s3.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s4.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s5.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s6.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s7.addToContainer(finditem(number));
+
+		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s8.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s9.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s10.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s11.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s12.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s13.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s14.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s15.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s16.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s17.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s19.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s20.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s21.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s22.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s23.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s24.addToContainer(finditem(number));
+
+		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		size = number;
+
+		for (int i = 0; i < size; i++)
+		{
+			count = 0;
+			chararray[0] = 0;
+
+
+			while (loadfile.good())
+			{
+				temp = (char)loadfile.get();
+
+				if (temp[0] == ',')
+				{
+					chararray[count] = 0;
+					count = 0;
+					break;
+				}
+				else {
+					chararray[count] = temp[0];
+					count++;
+				}
+			}
+
+			number = atoi(chararray);
+			s25.addToContainer(finditem(number));
+
+		}
 
 		loadfile.close();
 	}
