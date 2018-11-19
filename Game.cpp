@@ -1557,7 +1557,7 @@ void Game::load()
 	
 		number = atoi(chararray);
 		s1.setVisited(number);
-		loadfile.seekg(arraypointer[1]);
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -1580,6 +1580,7 @@ void Game::load()
 		}
 	
 		number = atoi(chararray);
+		cout << number;
 		s1.setEncounter(number);
 		
 
@@ -1604,6 +1605,7 @@ void Game::load()
 		}
 	
 		number = atoi(chararray);
+		cout << number;
 		size = number;
 		
 		for(int i = 0; i < size; i++)
@@ -1629,6 +1631,7 @@ void Game::load()
 			}
 	
 			number = atoi(chararray);
+
 			s1.addToContainer(finditem(number));
 			
 		}
