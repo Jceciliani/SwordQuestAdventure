@@ -956,7 +956,7 @@ void Game::save()
 	savefile << char1->getLevel() << ",";
 	savefile << char1->getStrength() << ",";
 
-	savefile << playerLoc.getId() << ",";
+	savefile << playerLoc->getId() << ",";
 
 	savefile << eq.getObject1().getId() << ",";
 	savefile << eq.getObject2().getId() << ",";
@@ -998,14 +998,14 @@ void Game::save()
 	savefile << s2.getSize()  << ",";
     for(int i = 0; i < s2.getSize(); i++)
 	{
-		savefile << s2.printItem(i) << ",";
+		savefile << s2.printItem(i).getId() << ",";
 	}
 	savefile << s3.checkVisited() << ",";
 	savefile << s3.getEncounter() << ",";
 	savefile << s3.getSize()  << ",";
     for(int i = 0; i < s3.getSize(); i++)
 	{
-		savefile << s3.printItem(i) << ",";
+		savefile << s3.printItem(i).getId() << ",";
 	}
 
 	savefile << s4.checkVisited() << ",";
@@ -1013,7 +1013,7 @@ void Game::save()
 	savefile << s4.getSize()  << ",";
     for(int i = 0; i < s4.getSize(); i++)
 	{
-		savefile << s4.printItem(i) << ",";
+		savefile << s4.printItem(i).getId() << ",";
 	}
 
 	savefile << s5.checkVisited() << ",";
@@ -1021,7 +1021,7 @@ void Game::save()
 	savefile << s5.getSize()  << ",";
     for(int i = 0; i < s5.getSize(); i++)
 	{
-		savefile << s5.printItem(i) << ",";
+		savefile << s5.printItem(i).getId() << ",";
 	}
 
 	savefile << s6.checkVisited() << ",";
@@ -1029,7 +1029,7 @@ void Game::save()
 	savefile << s6.getSize()  << ",";
     for(int i = 0; i < s6.getSize(); i++)
 	{
-		savefile << s6.printItem(i) << ",";
+		savefile << s6.printItem(i).getId() << ",";
 	}
 
 
@@ -1038,7 +1038,7 @@ void Game::save()
 	savefile << s7.getSize()  << ",";
     for(int i = 0; i < s7.getSize(); i++)
 	{
-		savefile << s7.printItem(i) << ",";
+		savefile << s7.printItem(i).getId() << ",";
 	}
 
 	savefile << s8.checkVisited() << ",";
@@ -1046,7 +1046,7 @@ void Game::save()
 	savefile << s8.getSize()  << ",";
     for(int i = 0; i < s8.getSize(); i++)
 	{
-		savefile << s8.printItem(i) << ",";
+		savefile << s8.printItem(i).getId() << ",";
 	}
 
 	savefile << s9.checkVisited() << ",";
@@ -1054,7 +1054,7 @@ void Game::save()
 	savefile << s9.getSize()  << ",";
     for(int i = 0; i < s9.getSize(); i++)
 	{
-		savefile << s9.printItem(i) << ",";
+		savefile << s9.printItem(i).getId() << ",";
 	}
 
 	savefile << s10.checkVisited() << ",";
@@ -1062,7 +1062,7 @@ void Game::save()
 	savefile << s10.getSize()  << ",";
     for(int i = 0; i < s10.getSize(); i++)
 	{
-		savefile << s10.printItem(i) << ",";
+		savefile << s10.printItem(i).getId() << ",";
 	}
 
 	savefile << s11.checkVisited() << ",";
@@ -1070,7 +1070,7 @@ void Game::save()
 	savefile << s11.getSize()  << ",";
     for(int i = 0; i < s11.getSize(); i++)
 	{
-		savefile << s11.printItem(i) << ",";
+		savefile << s11.printItem(i).getId() << ",";
 	}
 
 	savefile << s12.checkVisited() << ",";
@@ -1078,7 +1078,7 @@ void Game::save()
 	savefile << s12.getSize()  << ",";
     for(int i = 0; i < s12.getSize(); i++)
 	{
-		savefile << s12.printItem(i) << ",";
+		savefile << s12.printItem(i).getId() << ",";
 	}
 
 	savefile << s13.checkVisited() << ",";
@@ -1086,7 +1086,7 @@ void Game::save()
 	savefile << s13.getSize()  << ",";
     for(int i = 0; i < s13.getSize(); i++)
 	{
-		savefile << s13.printItem(i) << ",";
+		savefile << s13.printItem(i).getId() << ",";
 	}
 
 	savefile << s14.checkVisited() << ",";
@@ -1094,7 +1094,7 @@ void Game::save()
 	savefile << s14.getSize()  << ",";
     for(int i = 0; i < s14.getSize(); i++)
 	{
-		savefile << s14.printItem(i) << ",";
+		savefile << s14.printItem(i).getId() << ",";
 	}
 
 	savefile << s15.checkVisited() << ",";
@@ -1102,7 +1102,7 @@ void Game::save()
 	savefile << s15.getSize()  << ",";
     for(int i = 0; i < s15.getSize(); i++)
 	{
-		savefile << s15.printItem(i) << ",";
+		savefile << s15.printItem(i).getId() << ",";
 	}
 
 	savefile << s16.checkVisited() << ",";
@@ -1110,7 +1110,7 @@ void Game::save()
 	savefile << s16.getSize()  << ",";
     for(int i = 0; i < s16.getSize(); i++)
 	{
-		savefile << s16.printItem(i) << ",";
+		savefile << s16.printItem(i).getId() << ",";
 	}
 
 	savefile << s17.checkVisited() << ",";
@@ -1118,7 +1118,7 @@ void Game::save()
 	savefile << s17.getSize()  << ",";
     for(int i = 0; i < s17.getSize(); i++)
 	{
-		savefile << s17.printItem(i) << ",";
+		savefile << s17.printItem(i).getId() << ",";
 	}
 
 	savefile << s19.checkVisited() << ",";
@@ -1126,7 +1126,7 @@ void Game::save()
 	savefile << s19.getSize()  << ",";
     for(int i = 0; i < s19.getSize(); i++)
 	{
-		savefile << s19.printItem(i) << ",";
+		savefile << s19.printItem(i).getId() << ",";
 	}
 
 	savefile << s20.checkVisited() << ",";
@@ -1134,7 +1134,7 @@ void Game::save()
 	savefile << s20.getSize()  << ",";
     for(int i = 0; i < s20.getSize(); i++)
 	{
-		savefile << s20.printItem(i) << ",";
+		savefile << s20.printItem(i).getId() << ",";
 	}
 
 	savefile << s21.checkVisited() << ",";
@@ -1142,7 +1142,7 @@ void Game::save()
 	savefile << s21.getSize()  << ",";
     for(int i = 0; i < s21.getSize(); i++)
 	{
-		savefile << s21.printItem(i) << ",";
+		savefile << s21.printItem(i).getId() << ",";
 	}
 
 	savefile << s22.checkVisited() << ",";
@@ -1150,7 +1150,7 @@ void Game::save()
 	savefile << s22.getSize()  << ",";
     for(int i = 0; i < s22.getSize(); i++)
 	{
-		savefile << s22.printItem(i) << ",";
+		savefile << s22.printItem(i).getId() << ",";
 	}
 
 	savefile << s23.checkVisited() << ",";
@@ -1158,7 +1158,7 @@ void Game::save()
 	savefile << s23.getSize()  << ",";
     for(int i = 0; i < s23.getSize(); i++)
 	{
-		savefile << s23.printItem(i) << ",";
+		savefile << s23.printItem(i).getId() << ",";
 	}
 
 	savefile << s24.checkVisited() << ",";
@@ -1166,7 +1166,7 @@ void Game::save()
 	savefile << s24.getSize()  << ",";
     for(int i = 0; i < s24.getSize(); i++)
 	{
-		savefile << s24.printItem(i) << ",";
+		savefile << s24.printItem(i).getId() << ",";
 	}
 
 	savefile << s25.checkVisited() << ",";
@@ -1174,7 +1174,7 @@ void Game::save()
 	savefile << s25.getSize()  << ",";
     for(int i = 0; i < s25.getSize(); i++)
 	{
-		savefile << s25.printItem(i) << ",";
+		savefile << s25.printItem(i).getId() << ",";
 	}
 
 	savefile.close();
