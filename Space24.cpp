@@ -16,11 +16,12 @@ using namespace std;
 Space24::Space24()
 {
 	name = "Volcano Lvl. 4";
-	shortForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
-	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a lever.\n";
+	shortForm = "There is a small landing before the trail cuts in and up the volcano.\n"
+	"  In the middle of the landing is a lever.\n";
 	longForm = "The path starts to wind up the mountain at a much steeper pace. There is a small\n"
-	"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever. \n\n"
-	"The path to the north continues up the volcano.\n";
+		"landing before the trail cuts in and up the volcano.  In the middle of the landing is a small lever. \n"
+		"its hard to tell what it could do.\n\n";
+
 	id = 24;
 	obj = NULL;
 	combatEncounter = false;
@@ -37,7 +38,11 @@ void Space24::look(char* thing)
 			cout << "a large metal lever. the area seems bare so youre not reall sure" << endl;
 			cout << "what it could trigger." << endl;
 	}
-
+	if (strcmp(thing, "landing"))
+	{
+		cout << "the isnt really anything on the landing besides the lever, though the fact that there" << endl;
+		cout << "is a landing at all is strange. almost like a hunk of the mountian was torn out" << endl;
+	}
 	else
 		{
 			cout << "you cant do that" << endl;

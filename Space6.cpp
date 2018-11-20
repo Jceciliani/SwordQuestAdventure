@@ -19,10 +19,9 @@ Space6::Space6()
 	shortForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
 	"vines. The canopy is so think you are not sure if there is even a ceiling anymore.\n";
 	longForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
-	"vines. The canopy is so think you are not sure if there is even a ceiling anymore. \n\n"
-	"To the east is a small opening through the brush \n"
-	"To the south is a wide path marked with broken branches \n"
-	"To the north is you can see a small clearing through the brush\n";
+		"vines. The canopy is so think you are not sure if there is even a ceiling anymore. the symphony of the jungle envelops you. \n"
+		"you can hear the songs of birds, the buzz of insects and the movement of mammals. mostly small ones, though sometimes not.";
+
 	id = 6;
 	obj = new Silver_Armor();
 	combatEncounter = false;

@@ -16,12 +16,11 @@ using namespace std;
 Space14::Space14()
 {
 	name = "Mausoleum";
-	shortForm = "There is sparse light in the corridor. The walls seem to be etched with something. \n"
-	"The floor of the room feels slightly uneven\n";
-	longForm = "There is sparse light in the corridor. The walls seem to be etched with something. \n"
-	"The floor of the room feels slightly uneven \n\n"
-	"To the west is the entrance to the corridor \n"
-	"To the east is a doorway to a small room\n";
+	shortForm = " The walls seem to be etched with something. The floor of the room feels slightly uneven\n";
+	longForm = "There is sparse light in the corridor. The walls seem to be etched with something, \n"
+		"scarring the walls of the passage way. The floor of the room feels slightly uneven. makes you feel \n"
+		"unsettled as though you were stepping onto a boat\n\n";
+
 	id = 14;
 	obj = NULL;
 	combatEncounter = false;

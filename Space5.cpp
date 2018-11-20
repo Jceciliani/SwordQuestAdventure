@@ -16,12 +16,11 @@ using namespace std;
 Space5::Space5()
 {
 	name = "Eastern Sewers";
-	shortForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
-	"You see a small corporeal form in the corner.\n";
+	shortForm = "Moss and mildew cover the sewer walls.You see a small corporeal form in the corner.\n";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
-	"You see a small corporeal form in the corner. \n\n"
-	"To the west down the walkway you see a bright light and an opening to outside. \n"
-	"To the south there is a ladder leading up \n";
+		"You see a small corporeal form in the corner. you hope you do not meet a similar fate anytime soon \n"
+		"or all really.";
+
 	id = 5;
 	obj = new Two_Handed_Silver_Sword();
 	combatEncounter = false;
@@ -48,7 +47,7 @@ void Space5::look(char* thing)
 		cout << "they are covered in moss  and mildew. Its hard to understand how things can grow" << endl;
 		cout << "in such a disgusting place. The wonders of nature." << endl;
 	}
-	else if (strcmp(thing, "walls") || strcmp(thing, "form"))
+	else if (strcmp(thing, "corner") || strcmp(thing, "form"))
 	{
 		cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
 		cout << "silver sword sticking out of his chest its not hard to tell how he died." << endl;

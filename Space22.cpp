@@ -16,11 +16,10 @@ using namespace std;
 Space22::Space22()
 {
 	name = "Volcano Lvl. 2";
-	shortForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
-	"An old man sits in the middle of the path\n";
+	shortForm =	"An old man sits in the middle of the path\n";
 	longForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
-	"An old man sits in the middle of the path \n\n"
-	"The path to the east continues up the volcano \n";
+		"An old man sits in the middle of the path \n\n";
+
 	id = 22;
 	obj = NULL;
 	combatEncounter = false;
@@ -43,6 +42,15 @@ void Space22::look(char* thing)
 	
 
 	}
+	if (strcmp(thing, "mountian") || strcmp(thing, "volcano"))
+	{
+
+		cout << "with the heat you are feeling it is becoming much mor apparent that you are infact on a volcano \n" << endl;
+		cout << "but there is no turning back now. you must push on \n\n" << endl;
+
+
+	}
+
 	else
 		{
 			cout << "you cant do that" << endl;

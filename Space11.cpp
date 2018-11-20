@@ -16,9 +16,10 @@ using namespace std;
 Space11::Space11()
 {
 	name = "Cave";
-	shortForm = " You find a small cave. It is covered it piles of broken tools, torn clothes, and bones.\n";
-	longForm = " You find a small cave. It is covered it piles of broken tools, torn clothes, and bones. \n\n"
-	"To the north is a wide path marked with broken branches \n";
+	shortForm = " there are piles of broken tools, torn clothes, and bones. to the side you see a book\n";
+	longForm = " You find a small cave. it is dark, dank and you can hear your footsteps echo through it \n"
+		"It is also covered it piles of broken tools, torn clothes, and bones. to the side you see a book\n\n";
+
 	id = 11;
 	obj = NULL;
 	combatEncounter = false;
@@ -36,6 +37,12 @@ void Space11::look(char* thing)
 		cout << "if there is anything useful in them" << endl;
 
 	}
+	if (strcmp(thing, "book") )
+	{
+		cout << "the book is labeled 'How to Serve Humans'. maybe the creature was trying to learn" << endl;
+		cout << "how to be i society. maybe he was good" << endl;
+
+	}
 	else
 	{
 		cout << "you cant do that" << endl;
@@ -51,6 +58,19 @@ void Space11::search(char* thing)
 		cout << " plus a inrecognisable black smudge equals a single sword. Just the fact that" << endl;
 		cout << " this creature attempted math means its much more inttelligent than you would" << endl;
 		cout << " have guessed" << endl;
+	}
+	else
+	{
+		cout << "you cant do that" << endl;
+	}
+}
+
+void Space11::read(char* thing)
+{
+	if (strcmp(thing, "book"))
+	{
+		cout << "wait a minute... THIS IS A COOK BOOK! \n" << endl;
+
 	}
 	else
 	{

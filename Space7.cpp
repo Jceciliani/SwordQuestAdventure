@@ -16,14 +16,14 @@ using namespace std;
 Space7::Space7()
 {
 	name = "Swamp";
-	shortForm = "The room is covered in moss and vegetation. Majority of the room is submerged\n"
-	"in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n"
+	shortForm = "the majority of the room is submerged in a murky liquid.\n"
+	" There is a narrow rope bridge that crosses to the eastern wall. A small \n"
 	"mossy island is in the middle of the room\n";
-	longForm = "The room is covered in moss and vegetation. Majority of the room is submerged\n"
-	"in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n"
-	"mossy island is in the middle of the room \n\n"
-	"To the east is a small opening through the brush \n"
-	"To the south is path thick with vegetation\n";
+	longForm = "The room is covered in moss and vegetation. the hot, moist air causes \n"
+		" you clothes and armor to sick uncomfortable to your skin. the majority of the room \n"
+		" is submerged in a murky liquid. There is a narrow rope bridge that crosses to the eastern wall. A small \n"
+		"mossy island is in the middle of the room \n\n";
+
 	id = 7;
 	obj = NULL;
 	combatEncounter = false;

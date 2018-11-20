@@ -17,16 +17,15 @@ Space13::Space13()
 {
 	name = "Sanctuary";
 	shortForm = "In the center of the room is a small ornate fountain \n"
-	"In the south western corner is an anvil and furnace. Along the northern wall there is a large wooden chest \n";
-	longForm = "You awake to the sound of trickling water and the taste of rubble in your mouth. \n"
-	"You are sore, but not as sore as you would expect. You wince as you stand and begin to take \n"
-	"in your surroundings.The room itself seems fairly nice, despite being in an extreme state of disuse.\n"
-	"The majority of the room is covered in thick coat of dust.In the center of the room is a small ornate fountain \n"
-	"In the south western corner is an anvil and furnace. Along the northern wall there is a large wooden chest \n \n"
-	"To the south there is a large ominously gated doorway \n"
-	"To the west is a doorway that leads down a well lit corridor \n"
-	"To the north is a set of moist stairs that lead downward \n"
-	"To the east is a doorway that leads through a small dimly lit passage \n";
+		"In the south western corner is an anvil and furnace. Along the northern wall there is a large wooden chest \n"
+		"A large gate on the southern wall looms over the room\n";
+		longForm = "You awake to the sound of trickling water and the taste of rubble in your mouth. \n"
+		"You are sore, but not as sore as you would expect. You wince as you stand and begin to take \n"
+		"in your surroundings.The room itself seems fairly nice, despite being in an extreme state of disuse.\n"
+		"The majority of the room is covered in thick coat of dust.In the center of the room is a small ornate fountain \n"
+		"In the south western corner is an anvil and furnace. Along the northern wall there is a large wooden chest \n"
+		"A large gate on the southern wall looms over the room, striking unease into your heart \n";
+
 	id = 13;
 	obj = NULL;
 	combatEncounter = false;

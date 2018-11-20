@@ -16,10 +16,10 @@ using namespace std;
 Space1::Space1()
 {
 	name = "Fields";
-	shortForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere.\n";
-	longForm = "You arrive in a grassy clearing. A pleasant breeze blows from seemingly nowhere. \n\n"
-	"To the east you see a cobblestone path\n"
-	"To the south is a trail into the thick brush\n";
+	shortForm = "there are many tussocks of gras. A pleasant breeze blows from seemingly nowhere.\n";
+	longForm = "You arrive in a grassy clearing. there are many tussocks of grass. A pleasant breeze blows from seemingly nowhere. \n"
+		"you watch it ripple through the sea of green. the sight feels oddly nostalgic.";
+
 	id = 1;
 	obj = NULL;
 	combatEncounter = false;

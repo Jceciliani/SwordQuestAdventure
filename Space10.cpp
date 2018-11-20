@@ -16,12 +16,10 @@ using namespace std;
 Space10::Space10()
 {
 	name = "Upper Maintenance";
-	shortForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n"
-	"platform. In the corner you see a small hovel made of bone,. Metal scraps, and literal dung.\n";
+	shortForm = " In the corner you see a small hovel made of bone,. Metal scraps, and dung.\n";
 	longForm = "You arrive on the end of the walkway. There it is a moderately sized stone \n"
-	"platform. In the corner you see a small hovel made of bone,. Metal scraps, and literal shit. \n\n"
-	"To the west there is a walkway \n"
-	"To the north is a ladder leading down\n";
+		"platform. In the corner you see a small hovel made of bone,. Metal scraps, and dung. \n\n";
+
 	id = 10;
 	obj = NULL;
 	combatEncounter = false;
@@ -51,7 +49,7 @@ void Space10::look(char* thing)
 
 void Space10::search(char* thing)
 {
-	if (strcmp(thing, "corner") || strcmp(thing, "hovel"))
+	if (strcmp(thing, "sack"))
 		{
 		cout << "nope. Nothing useful. Just more feces." << endl;
 		}

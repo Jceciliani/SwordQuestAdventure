@@ -16,11 +16,10 @@ using namespace std;
 Space21::Space21()
 {
 	name = "Volcano Lvl. 1";
-	shortForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n"
-	"float in the air around you. On the side of the path you see a large boulder.\n";
+	shortForm = "On the side of the path you see a large boulder.\n";
 	longForm = "The path  widens a bit before tapering back an continuing up. Small flakes of ash \n"
-	"float in the air around you. On the side of the path you see a large boulder. \n\n"
-	"The path to the east continues up the volcano \n";
+		"float in the air around you. On the side of the path you see a large boulder. \n\n";
+
 	id = 21;
 	obj = new Two_Handed_Gold_Sword();
 	combatEncounter = false;

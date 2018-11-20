@@ -16,11 +16,11 @@ using namespace std;
 Space15::Space15()
 {
 	name = "Crypt";
-	shortForm = "The room is filled with candles that were used up long ago and a plethora of \n"
-	"intricately painted pots and vases. In the center of the room is a large tomb\n";
+	shortForm = "The room is filled with candles and intricately painted pots and vases. In the center of the room is a large tomb\n";
 	longForm = "The room is filled with candles that were used up long ago and a plethora of \n"
-	"intricately painted pots and vases. In the center of the room is a large tomb \n\n"
-	"To the west is a doorway to leads to a dimly lit corridor \n";
+		"intricately painted pots and vases. the room feel very ceremonial In the center of the \n"
+		"room is a large tomb. an air of death lingers in the room \n\n";
+
 	id = 15;
 	obj = new Steel();
 	combatEncounter = false;
