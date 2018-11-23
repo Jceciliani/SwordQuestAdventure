@@ -38,9 +38,6 @@ class Bag : public Container
 		void addToContainer(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void transferToForge(Objects obj);
-		void transferToStash(Objects obj);
-		void transferToEquipped(Objects obj1, Objects obj2);
 		void insert(int, Objects obj);
 		Objects printItem(int i);
 		int getSize();
@@ -54,6 +51,8 @@ class Forge: public Container
 		bool forgeStart;
 		bool craftUltWeapon;
 		bool craftUltArmor;
+		Objects *ultSword;
+		Objects *ultArmor;
 	public:
 		Forge();
 		~Forge();
@@ -65,10 +64,11 @@ class Forge: public Container
 		bool ultWeaponCrafted();
 		bool ultArmorCrafted();
 		Objects printItem(int i);
-		void transferToBag(Objects obj);
 		int getSize();
 		void setUltA(int num){if(num == 1){craftUltArmor = true;} else{craftUltArmor = false;}}
 		void setUltW(int num){if(num == 1){craftUltWeapon = true;} else{craftUltWeapon = false;}}
+		Objects getUltSword();
+		Objects getUltArmor();
 };
 
 // Stash*******************************************************************************
@@ -83,7 +83,6 @@ class Stash : public Container
 		void deleteFromContainer(Objects obj);
 		void printContainer();
 		Objects printItem(int i);
-		void transferToBag(Objects obj);
 		int getSize();
 };
 
@@ -98,10 +97,9 @@ class Equipped : public Container
 		Equipped();
 		~Equipped();
 		void addToContainer(Objects obj);
-		void addEquipment(Objects obj);
 		void deleteFromContainer(Objects obj);
 		void printContainer();
-		void transferToBag(Objects obj1, Objects obj2);
+		void addEquipment(Objects obj);
 		void setSword(Objects);
 		void setArmor(Objects);
 		string getSword();

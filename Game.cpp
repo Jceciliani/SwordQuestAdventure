@@ -605,6 +605,9 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[7])
 		{
+
+			
+
 			if(s8.getVisited() == false)
 			{
 				if(s8.getEncounter() == false)
@@ -614,7 +617,7 @@ void Game::play(bool loadgame)
 					fight();
 					char2 = NULL;
 					// Put wooden sword in bag, equip bronze sword
-					transfer(eq.getObject1(), s8.getObject());	
+					transfer(eq.getObject1(), fg.getUltSword());	
 					// Print equipped
 					cout << "Equipped" << endl;
 					eq.printContainer();

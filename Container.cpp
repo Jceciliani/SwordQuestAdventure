@@ -91,58 +91,6 @@ Objects Bag::printItem(int i)
 
 }
 
-void Bag::transferToForge(Objects obj)
-{
-	// Add object to forge
-	f.addToContainer(obj);
-	// Delete objct from bag
-	b.deleteFromContainer(obj);
-}
-
-void Bag::transferToStash(Objects obj)
-{
-	// Add object to stash
-	s.addToContainer(obj);
-	// Delete object from bag
-	b.deleteFromContainer(obj);
-}
-
-void Bag::transferToEquipped(Objects obj1, Objects obj2)
-{
-	// Object 1 is in equipped, Object 2 is in bag
-
-	// Transferring two objects at once
-	// If the object is a sword
-	if(obj1.getName().find("Sword") != -1)
-	{
-		// Add Sword to Bag
-		b.addToContainer(obj1);
-
-		// Delete Sword from equipped
-		e.deleteFromContainer(obj1);
-
-		// Add New Sword to Equipped - position 0
-		e.insert(0, obj2);
-
-		// Delete new sword from bag
-		b.deleteFromContainer(obj2);
-	}
-	//If the object is armor
-	else if(obj1.getName().find("Armor") != -1)	
-	{
-		// Add Armor to bag
-		b.addToContainer(obj1);
-		// Delete Armor from equipped
-		e.deleteFromContainer(obj1);
-
-		// Add New Armor to Equipped - position 1
-		e.insert(1, obj2);
-
-		// Delete new armor from bag
-		b.deleteFromContainer(obj2);
-	}
-}
-
 int Bag::getSize()
 {
 	return bag.size();
@@ -154,6 +102,8 @@ Forge::Forge()
 	forgeStart = false;
 	craftUltWeapon = false;
 	craftUltArmor = false;	
+	ultSword = new Two_Handed_Ultimate_Sword();
+	ultArmor = new Ultimate_Armor();	
 }
 
 Forge::~Forge()
@@ -312,18 +262,21 @@ bool Forge::ultArmorCrafted()
 	}
 }
 
-void Forge::transferToBag(Objects obj)
-{	
-	// Add object to bag
-	b.addToContainer(obj);
-	// Delete object from forge
-	f.deleteFromContainer(obj);	
-}
-
 int Forge::getSize()
 {
 	return forge.size();
 }
+
+Objects Forge::getUltSword()
+{
+	return *ultSword;
+}
+
+Objects Forge::getUltArmor()
+{
+	return *ultArmor;
+}
+
 
 // Stash*******************************************************************
 Stash::Stash()
@@ -367,13 +320,6 @@ Objects Stash::printItem(int i)
 
 }
 
-void Stash::transferToBag(Objects obj)
-{
-	// Add object to bag
-	b.addToContainer(obj);
-	// Delete object from stash
-	s.deleteFromContainer(obj);
-}
 int Stash::getSize()
 {
 	return stash.size();
@@ -411,24 +357,6 @@ void Equipped::addToContainer(Objects obj)
 	equipped.push_back(obj);
 }
 
-
-
-void Equipped::addEquipment(Objects obj)
-{
-	if(obj.getName().find("Sword") != -1)
-	{
-		equipped[0] = obj;
-		setSword(obj);
-	}
-	else if(obj.getName().find("Armor") != -1)
-	{
-		equipped[1] = obj;
-		setArmor(obj);
-	}	
-}	
-
-
-
 void Equipped::deleteFromContainer(Objects obj)
 {
 	for(int i = 0; i < equipped.size(); i++)
@@ -451,44 +379,21 @@ void Equipped::printContainer()
 
 }
 
-void Equipped::transferToBag(Objects obj1, Objects obj2)
+void Equipped::addEquipment(Objects obj)
 {
-	// Object 1 is in bag, Object 2 is in equipped
-
-	// Transferring two objects at once
-	// If the object is a sword
-	if(obj2.getName().find("Sword") != -1)
+	if(obj.getName().find("Sword") != -1)
 	{
-		// Add Sword to Bag
-		b.addToContainer(obj2);
-
-		// Delete Sword from equipped
-		e.deleteFromContainer(obj2);
-		cout << "Inserting new sword" << endl;	
-		cout << "Object 1: " << obj1.getName() << endl;
-		cout << "Object 2: " << obj2.getName() << endl;
-		// Add New Sword to Equipped - position 0
-		e.insert(0, obj1);
-
-		// Delete new sword from bag
-		b.deleteFromContainer(obj1);
+		equipped[0] = obj;
+		setSword(obj);
 	}
-	//If the object is armor
-	else if(obj1.getName().find("Armor") != -1)	
+	else if(obj.getName().find("Armor") != -1)
 	{
-		// Add Armor to bag
-		b.addToContainer(obj2);
-		// Delete Armor from equipped
-		e.deleteFromContainer(obj2);
-
-		// Add New Armor to Equipped - position 1
-		e.insert(1, obj1);
-
-		// Delete new armor from bag
-		b.deleteFromContainer(obj1);
-	}
+		equipped[1] = obj;
+		setArmor(obj);
+	}	
 }
-//TEST - global string variables to hold weapon and armor names
+
+//test - global string variables to hold weapon and armor names
 string sword = "Two-Handed Wooden Sword";
 string armor = "Tunic Armor";
 
@@ -507,15 +412,11 @@ string Equipped::getSword()
 {
 
 	return sword;
-
-	//return equipped[0].getName();
 }
 
 string Equipped::getArmor()
 {
 	return armor;
-
-	//return equipped[1].getName();
 }
 
 void Equipped::insert(int i, Objects obj)
