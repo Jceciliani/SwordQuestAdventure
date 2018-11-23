@@ -122,17 +122,6 @@ void Space::setDirections(Space* N, Space* E, Space* S, Space* W)
 
 bool Space::getEncounter()
 {
-/*
-	if (combatEncounter == false)
-	{
-		combatEncounter = true;
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-*/
 	return combatEncounter;
 }
 

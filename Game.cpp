@@ -605,40 +605,6 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[7])
 		{
-			//TEST
-			fg.addToContainer(s5.getObject());
-			fg.addToContainer(s15.getObject());
-			fg.printContainer();
-			if(fg.startForge() == true)
-			{
-				cout << "Nice" << endl;
-			}
-			else
-			{
-				cout << "Bummer" << endl;
-			}
-			// Clear container for another test
-			fg.deleteFromContainer(s5.getObject());
-			fg.deleteFromContainer(s15.getObject());
-
-			//Check if Ult Weapon Craft Works
-			fg.addToContainer(eq.getObject1());
-			fg.addToContainer(s8.getObject());
-			fg.addToContainer(s5.getObject());
-			fg.addToContainer(s21.getObject());
-			fg.addToContainer(s2.getObject());
-			// Print forge
-			//fg.printContainer();		
-			if(fg.ultWeaponCrafted() == true)
-			{
-				cout << "I HAVE THE POWER!" << endl;
-			}
-			else
-			{
-				cout << "Sad" << endl;
-			}
-			// Print current equipment 
-			eq.printContainer();
 			if(s8.getVisited() == false)
 			{
 				if(s8.getEncounter() == false)

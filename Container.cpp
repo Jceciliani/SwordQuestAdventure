@@ -202,7 +202,6 @@ bool Forge::startForge()
 {
 	bool flint = false;
 	bool steel = false;
-	bool hammer = false;
 	
 	for(int i = 0; i < forge.size(); i ++)
 {
@@ -215,12 +214,8 @@ bool Forge::startForge()
 	{
 		steel = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
-	{
-		hammer = true;
-	}
 }
-	if(flint == true && steel == true && hammer == true)
+	if(flint == true && steel == true)
 	{
 		forgeStart = true;
 		cout << "The beacon is lit!" << endl;
@@ -238,26 +233,32 @@ bool Forge::ultWeaponCrafted()
 	bool bronze = false;
 	bool silver = false;
 	bool gold = false;
+	bool hammer = false;
+
 		for(int i = 0; i < forge.size(); i ++)
 {
 	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Wooden Sword") == 0)
 	{
 		wood = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-handed Bronze Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Bronze Sword") == 0)
 	{
 		bronze = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-handed Silver Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Silver Sword") == 0)
 	{
 		silver = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-handed Gold Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Gold Sword") == 0)
 	{
 		gold = true;
 	}
+	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
+	{
+		hammer = true;
+	}		
 }
-	if(wood == true && bronze == true && silver == true && gold == true)
+	if(wood == true && bronze == true && silver == true && gold == true && hammer == true)
 	{
 		craftUltWeapon = true;
 		return true;	
@@ -275,6 +276,8 @@ bool Forge::ultArmorCrafted()
 	bool bronze = false;
 	bool silver = false;
 	bool gold = false;
+	bool hammer = false;
+
 	for(int i = 0; i < forge.size(); i++)
 {
 	if(strcmp((forge[i].getName()).c_str(), "Tunic Armor") == 0)
@@ -293,8 +296,12 @@ bool Forge::ultArmorCrafted()
 	{
 		gold = true;
 	}
+	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
+	{
+		hammer = true;
+	}		
 }
-	if(tunic == true && bronze == true && silver == true && gold == true)
+	if(tunic == true && bronze == true && silver == true && gold == true && hammer == true)
 	{
 		craftUltArmor = true;
 		return true;

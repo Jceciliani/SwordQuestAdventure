@@ -25,5 +25,6 @@ class Space11 : public Space
 
 		void look(char* thing);
 		void search(char* thing);
+		void read(char*);
 };
 #endif // !SPACE11_HPP

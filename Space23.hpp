@@ -25,5 +25,6 @@ class Space23 : public Space
 
 		void look(char* thing);
 		void search(char* thiing);
+		void eat(char*);
 };
 #endif // !SPACE23_HPP
