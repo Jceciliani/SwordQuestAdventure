@@ -479,6 +479,29 @@ void Game::play(bool loadgame)
 						cout << "You can't do that to grass." << endl;
 					}
 				}
+				else if(input.find("naga") < 50)
+				{
+					if(input.find("attack") < 50)
+					{
+						// attack the naga
+					}
+					else if(input.find("look"))
+					{
+						cout << "You look at the scary naga." << endl;
+					}
+					else if (input.find("talk"))
+					{
+						cout << "The naga laughs at your attempt to converse. It readies to strike" << endl;
+					}
+					else
+					{
+						cout << "You can't do that to the naga" << endl;
+					}	
+				}
+			}
+			if(playerLoc == spaceArr[1])
+			{
+				// repeat format
 			}
 			break;
 			//}
