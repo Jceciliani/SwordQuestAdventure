@@ -462,7 +462,7 @@ void Game::play(bool loadgame)
 			//}
 			//else
 			//{
-			if(playerLoc == spaceArr[0])
+			if(playerLoc == spaceArr[0]) // Space1 Fields
 			{
 				if(input.find("grass") < 50)
 				{
@@ -499,9 +499,131 @@ void Game::play(bool loadgame)
 					}	
 				}
 			}
-			if(playerLoc == spaceArr[1])
+			if(playerLoc == spaceArr[1]) // Space2 Ruins
 			{
-				// repeat format
+				if(input.find("ruin") < 50)
+				{
+					if(input.find("look") < 50)
+					{
+						cout << "You look at the ruins" << endl;
+					}
+					else if(input.find("take") < 50)
+					{
+						cout << "They're too big to take with you" << endl;
+					}
+					else
+					{
+						cout << "You can't do that to ruins" << endl;
+					}
+				}
+				else if(input.find("hammer") < 50)
+				{
+					// Do something with the forge hammer
+				}
+			}
+			if(playerLoc == spaceArr[2]) // Space3 Western Sewers
+			{
+				if(input.find("basket") < 50)
+				{
+					if(input.find("take") < 50)
+					{
+						// find and take what's in the basket
+					}
+					else if(input.find("look") < 50)
+					{
+						cout << "Looks like there's something in it..." << endl;
+					}
+					else if(input.find("open") < 50)
+					{
+						cout << "Text about opening it" << endl;
+					}
+					else
+					{
+						cout << "You can't do that with the basket" << endl;
+					}
+				}
+				else if(input.find("rope") < 50)
+				{
+					if(input.find("take") < 50)
+					{
+						// Get the rope
+						cout << "You get the rope!" << endl;
+					}
+					else if(input.find("look") < 50)
+					{
+						cout << "Looks to be a perfectly usable rope. You should take it" << endl;
+					}
+					else
+					{
+						cout << "That won't work with the rope." << endl;
+					}
+				}
+			}
+			if(playerLoc == spaceArr[3]) // Space4 Sewer Depths
+			{
+				if(input.find("ocean") < 50)
+				{
+					if(input.find("look") < 50)
+					{
+						cout << "You look out at the ocean" << endl;
+					}
+					else if(input.find("take") < 50)
+					{
+						cout << "It's too big to take with you!" << endl;
+					}
+					else
+					{
+						cout << "You can't do that with the ocean" << endl;
+					}
+				}
+				else if(input.find("bridge") < 50)
+				{
+					if(input.find("look") < 50)
+					{
+						cout << "You look at the bridge" << endl;
+					}
+					else if(input.find("use") < 50)
+					{
+						cout << "You use the bridge" << endl;
+					}
+					else
+					{
+						cout << "You can't do that with the bridge" << endl;
+					}
+				}
+			}
+			if(playerLoc == spaceArr[4]) // Space5 Eastern Sewers
+			{
+				if(input.find("wall") < 50)
+				{
+					if(input.find("look") < 50)
+					{
+						cout << "Something appears to be written on the wall" << endl;
+					}
+					else if(input.find("Read") < 50)
+					{
+						cout << "There's text scrawled out in blood. It's hard to read" << endl;
+					}
+					else
+					{
+						cout << "You can't do that with the wall" << endl;
+					}
+				}
+				else if(input.find("form") < 50)
+				{
+					if(input.find("look") < 50)
+					{
+						cout << "It appears to be a body" << endl;
+					}
+					else if(input.find("eat") < 50)
+					{
+						cout << "Well... desperate times..." << endl;
+					}
+					else
+					{
+						cout << "You can't do that" << endl;
+					}
+				}
 			}
 			break;
 			//}
