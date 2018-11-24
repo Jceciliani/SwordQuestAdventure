@@ -34,12 +34,12 @@ Space1::~Space1()
 
 void Space1::look(char* thing)
 {
-	if(strcmp(thing, "grass"))
+	if(strcmp(thing, "grass") == 0)
 	{
 		cout << "the long grass come up to your waist. Maybe there is something hidden within it." << endl; 
 		cout << "Like rupees! " << endl;
 	}
-	else if(strcmp(thing, "wind"))
+	else if(strcmp(thing, "wind") == 0)
 	{
 		cout << "no matter where you look, the wind has zero colors." << endl;	
 	}
@@ -52,7 +52,7 @@ void Space1::look(char* thing)
 
 void attack(char* thing)
 {
-	if(strcmp(thing, "grass"))
+	if(strcmp(thing, "grass") == 0)
 	{
 		cout << "with a “ hiyayaya!!!” you arc your sword around trimming the grass and clearing a" << endl;
 		cout << "patch around you. Unfortunatly, this is not that game, so you find zero rupees" << endl;

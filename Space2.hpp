@@ -26,5 +26,7 @@ class Space2 : public Space
 
 		void look(char* thing);
 		void search(char* thing);
+		void setHammer(int set){if (set == 1){hammerFound = true;} else {hammerFound = false;}}
+		bool getHammer(){return hammerFound;}
 };
 #endif // !SPACE2_HPP

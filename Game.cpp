@@ -469,16 +469,26 @@ void Game::play(bool loadgame)
 					if(input.find("look") < 50)
 					{	
 						cout << "You look at the grass." << endl;
+						s1.look("grass");
 					}
 					else if(input.find("attack") < 50)
 					{
 						cout << "You attack the grass" << endl;
+						s1.attack("grass");
 					}
 					else
 					{
 						cout << "You can't do that to grass." << endl;
 					}
 				}
+				if(input.find("wind") < 50)
+				{
+					if(input.find("look") < 50)
+					{	
+						s1.look("wind");
+					}
+					}
+
 				else if(input.find("naga") < 50)
 				{
 					if(input.find("attack") < 50)
@@ -501,15 +511,20 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[1]) // Space2 Ruins
 			{
-				if(input.find("ruin") < 50)
+				if(input.find("ruin") < 50 || input.find("remains") < 50)
 				{
 					if(input.find("look") < 50)
 					{
 						cout << "You look at the ruins" << endl;
+						s2.look("ruins");
 					}
 					else if(input.find("take") < 50)
 					{
 						cout << "They're too big to take with you" << endl;
+					}
+					else if(input.find("search") < 50)
+					{
+						s2.search("ruins");
 					}
 					else
 					{
@@ -518,7 +533,25 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("hammer") < 50)
 				{
-					// Do something with the forge hammer
+					else if(input.find("take") < 50)
+					{
+						if(s2.getHammer() == true)
+						{
+							if(bag.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+							cout << "You pickup the Forge Hammer" << endl;
+							bag.addToContainer(s2.getObject());
+						}}
+						}
+						else
+						{
+							cout << "You haven't found a hammer here" << endl;
+						}
+					}
 				}
 			}
 			if(playerLoc == spaceArr[2]) // Space3 Western Sewers

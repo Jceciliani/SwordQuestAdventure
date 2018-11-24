@@ -39,7 +39,7 @@ Space2::~Space2()
 
 void Space2::look(char* thing)
 {
-	if(strcmp(thing, "ruins") || strcmp(thing, "remains"))
+	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0 )
 		{
 			cout << "youre no architect, so youre not really sure what kind of building this could" << endl;
 			cout << "have been. The are interesting remains poking through." << endl;	
@@ -53,7 +53,7 @@ void Space2::look(char* thing)
 
 void Space2::search(char* thing)
 {
-	if(strcmp(thing, "ruins") || strcmp(thing, "remains"))
+	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0)
 		{
 			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
 			cout << "bones from a severed arm. There is handle that upon further inspection is" << endl;
