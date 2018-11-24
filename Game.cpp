@@ -462,14 +462,25 @@ void Game::play(bool loadgame)
 			//}
 			//else
 			//{
-				if(playerLoc == spaceArr[0])
+			if(playerLoc == spaceArr[0])
+			{
+				if(input.find("grass") < 50)
 				{
-					if(input.find("grass") < 50 && input.find("look") < 50)
-					{
+					if(input.find("look") < 50)
+					{	
 						cout << "You look at the grass." << endl;
 					}
+					else if(input.find("attack") < 50)
+					{
+						cout << "You attack the grass" << endl;
+					}
+					else
+					{
+						cout << "You can't do that to grass." << endl;
+					}
 				}
-				break;
+			}
+			break;
 			//}
 		/*
 			else
