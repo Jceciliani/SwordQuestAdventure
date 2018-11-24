@@ -452,18 +452,25 @@ void Game::play(bool loadgame)
 		while (1)
 		{
 			string input;
-			cout << "Where do you want to go?" << endl;
+			cout << "What do you want to do?" << endl;
 			getline(cin, input);
 			int res = move(input);
-			if (res == -1)
-			{
+			//if (res == -1)
+			//{
 				//cout << "It is forbidden to go there" << endl;
 
-			}
-			else
-			{
+			//}
+			//else
+			//{
+				if(playerLoc == spaceArr[0])
+				{
+					if(input.find("grass") < 50 && input.find("look") < 50)
+					{
+						cout << "You look at the grass." << endl;
+					}
+				}
 				break;
-			}
+			//}
 		/*
 			else
 			{
