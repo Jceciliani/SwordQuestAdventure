@@ -754,6 +754,139 @@ void Game::play(bool loadgame)
 
 				}
 			}
+			if(playerLoc == spaceArr[10]) // Space11 Cave
+			{
+				if(input.find("cave") < 50)
+				{
+
+				}
+				else if(input.find("pile") < 50)
+				{
+
+				}
+				else if(input.find("book") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[11]) // Space12 Crossroads
+			{
+				if(input.find("plot") < 50)
+				{
+
+				}
+				else if(input.find("sign") < 50)
+				{
+
+				}
+				/*else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[12]) // Space13 Sanctuary
+			{
+				if(input.find("fountain") < 50)
+				{
+
+				}
+				else if(input.find("forge") < 50)
+				{
+
+				}
+				else if(input.find("chest") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[13]) // Space14 Mausoleum
+			{
+				if(input.find("wall") < 50)
+				{
+
+				}
+				else if(input.find("floor") < 50)
+				{
+
+				}
+				/*else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[14]) // Space15 Crypt
+			{
+				if(input.find("candle") < 50)
+				{
+
+				}
+				else if(input.find("vase") < 50)
+				{
+
+				}
+				else if(input.find("tomb") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[15]) // Space16 Volcano Base
+			{
+				if(input.find("sign") < 50)
+				{
+
+				}
+				else if(input.find("bone") < 50)
+				{
+
+				}
+				/*else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[16]) // Space17 Volcano Foothills
+			{
+				if(input.find("fountain") < 50)
+				{
+
+				}
+				else if(input.find("path") < 50)
+				{
+
+				}
+				else if(input.find("volcano") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
 
 			break;
 			//}
