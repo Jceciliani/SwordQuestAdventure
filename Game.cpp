@@ -232,7 +232,7 @@ int Game::move(string input)
 	}
 	else
 	{
-		cout << "Sorry, I did not understand your input" << endl << endl;
+		// cout << "Sorry, I did not understand your input" << endl << endl;
 		return -1;
 	}
 }
@@ -659,6 +659,102 @@ void Game::play(bool loadgame)
 					}
 				}
 			}
+			if(playerLoc == spaceArr[5]) // Space6 Jungle
+			{
+				if(input.find("canopy") < 50)
+				{
+					// if(input.find("action word"))
+				}
+				else if(input.find("vegitation") < 50)
+				{
+
+				}
+				else if(input.find("vines") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[6]) // Space7 Swamp
+			{
+				if(input.find("moss") < 50)
+				{
+
+				}
+				else if(input.find("bridge") < 50)
+				{
+
+				}
+				else if(input.find("liquid") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[7]) // Space8 Guard Quarters
+			{
+				if(input.find("papers") < 50)
+				{
+
+				}
+				else if(input.find("desk") < 50)
+				{
+
+				}
+				else if(input.find("locker") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[8]) // Space9 Lower Maintenance
+			{
+				if(input.find("fountain") < 50)
+				{
+
+				}
+				else if(input.find("tubes") < 50)
+				{
+
+				}
+				else if(input.find("hatch") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[9]) // Space10 Upper Maintenance
+			{
+				if(input.find("hovel") < 50)
+				{
+
+				}
+				else if(input.find("corner") < 50)
+				{
+
+				}
+				else if(input.find("sack") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+
 			break;
 			//}
 		/*
