@@ -50,7 +50,7 @@ void Space1::look(char* thing)
 }
 
 
-void attack(char* thing)
+void Space1::attack(char* thing)
 {
 	if(strcmp(thing, "grass") == 0)
 	{
