@@ -887,6 +887,162 @@ void Game::play(bool loadgame)
 
 				}
 			}
+			if(playerLoc == spaceArr[17]) // Space18 Dragon Keep
+			{
+				/*if(input.find("papers") < 50)
+				{
+
+				}
+				else if(input.find("desk") < 50)
+				{
+
+				}
+				else if(input.find("locker") < 50)
+				{
+
+				}
+				else
+				{
+
+				}*/
+			}
+			if(playerLoc == spaceArr[18]) // Space19 Volcano lvl 5
+			{
+				if(input.find("compartment") < 50)
+				{
+
+				}
+				else if(input.find("red lever") < 50)
+				{
+
+				}
+				else if(input.find("green lever") < 50)
+				{
+
+				}
+				else if(input.find("blue lever") < 50)
+				{
+	
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[19]) // Space20 Volcano Summit
+			{
+				if(input.find("fountain") < 50)
+				{
+
+				}
+				else if(input.find("rock") < 50)
+				{
+
+				}
+				else if(input.find("gateway") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[20]) // Space21 Volcano Lvl 1
+			{
+				if(input.find("boulder") < 50)
+				{
+
+				}
+				/*else if(input.find("desk") < 50)
+				{
+
+				}
+				else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[21]) // Space22 Volcano Lvl 2
+			{
+				if(input.find("old man") < 50)
+				{
+
+				}
+				else if(input.find("mountain") < 50)
+				{
+
+				}
+				else if(input.find("volcano") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[22]) // Space23 Volcano Lvl3
+			{
+				if(input.find("valuable") < 50)
+				{
+
+				}
+				else if(input.find("pile") < 50)
+				{
+
+				}
+				else if(input.find("trail") < 50)
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[23]) // Space24 Volcano Lvl 4
+			{
+				if(input.find("lever") < 50)
+				{
+
+				}
+				else if(input.find("landing") < 50)
+				{
+
+				}
+				/*else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
+			if(playerLoc == spaceArr[24]) // Space25 Volcanic Chamber
+			{
+				if(input.find("lake") < 50)
+				{
+
+				}
+				else if(input.find("stalagtite") < 50)
+				{
+
+				}
+				/*else if(input.find("locker") < 50)
+				{
+
+				}*/
+				else
+				{
+
+				}
+			}
 
 			break;
 			//}
