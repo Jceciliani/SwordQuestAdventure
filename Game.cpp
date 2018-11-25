@@ -533,20 +533,21 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("hammer") < 50)
 				{
-					else if(input.find("take") < 50)
+					if(input.find("take") < 50)
 					{
 						if(s2.getHammer() == true)
 						{
-							if(bag.getSize() >= 5)
+							if(ba.getSize() >= 5)
 							{
 								cout << " the bag is full. you cant pick that up." << endl;
 							}
 							else
 							{
 							cout << "You pickup the Forge Hammer" << endl;
-							bag.addToContainer(s2.getObject());
-						}}
+							ba.addToContainer(s2.getObject());
+							}
 						}
+						
 						else
 						{
 							cout << "You haven't found a hammer here" << endl;
