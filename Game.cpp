@@ -136,7 +136,14 @@ int Game::move(string input)
 		cout << "Please don't say don't. It confuses me." << endl;
 		return -1;
 	}
-	// end of input validation 
+	// end of input validation
+	// Check for Save Game
+	if(input.find("savegame") < 50)
+	{
+		// Call save game function
+		save();
+		return 1;
+	} 
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
 	string northLocationName;
