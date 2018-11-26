@@ -152,7 +152,8 @@ int Game::move(string input)
 	if(input.find("exit") < 50)
 	{
 		//exit game
-		cout << "add code to exit game" << endl;
+		cout << "exiting game" << endl;
+		exit(0);
 	} 
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
