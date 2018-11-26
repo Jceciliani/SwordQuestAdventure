@@ -136,6 +136,10 @@ int Game::move(string input)
 		cout << "Please don't say don't. It confuses me." << endl;
 		return -1;
 	}
+	if (input == "look")
+	{
+		cout << playerLoc->getLongForm();
+	}
 	// end of input validation
 	// Check for Save or Load Game command
 	if(input.find("savegame") < 50)
