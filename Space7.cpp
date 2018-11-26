@@ -35,19 +35,19 @@ Space7::Space7()
 Space7::~Space7()
 {}
 
-void Space7::look(char* thing)
+void Space7::look(const char* thing)
 {
-	if (strcmp(thing, "moss") || strcmp(thing, "vegetation"))
+	if (strcmp(thing, "moss") == 0 || strcmp(thing, "vegetation") == 0)
 		{
 		cout << "plants, not too interesting." << endl;
 
 		}
-	else if (strcmp(thing, "rope bridge") || strcmp(thing, "bridge"))
+	else if (strcmp(thing, "rope bridge") == 0 || strcmp(thing, "bridge") == 0)
 	{
 		cout << "a bridge made from rope and wooden planks. The bridge is fairly low," << endl;
 		cout << "almost touching the water. Seems sturdy enough to cross" << endl;
 	}
-	else if (strcmp(thing, "murky liquid"))
+	else if (strcmp(thing, "liquid") == 0)
 	{
 		cout << "its a pale brown-green color. That plus the thin film across the" << endl;
 		cout << " top makes it difficult to discern anything beneath the surface. Mysterious bubbles" << endl;
@@ -61,16 +61,16 @@ void Space7::look(char* thing)
 
 
 
-void Space7::jump(char* thing)
+void Space7::jump(const char* thing)
 {
-	if (strcmp(thing, "to island"))
+	if (strcmp(thing, "island") == 0)
 	{
 		cout << "you cross over the murky waters to the solid island." << endl;
 		cout << "You could probably make it to either opening from here" << endl;
 		jumped = true;
 
 	}
-	else if (strcmp(thing, "west") || strcmp(thing, "south"))
+	else if (strcmp(thing, "west") == 0 || strcmp(thing, "south") == 0)
 	{
 		if (jumped)
 		{
@@ -88,10 +88,10 @@ void Space7::jump(char* thing)
 	}
 }
 
-void Space7::run(char* thing)
+void Space7::run(const char* thing)
 {
 
-	if (strcmp(thing, "across bridge"))
+	if (strcmp(thing, "bridge") == 0)
 	{
 		cout << "you run across the bridge. You can feel something barely" << endl;
 		cout << "grazing your heels but you make it across without incident." << endl;
@@ -105,7 +105,7 @@ void Space7::run(char* thing)
 		}
 
 	}
-	else if (strcmp(thing, "west"))
+	else if (strcmp(thing, "west") == 0)
 	{
 		if (!crossed)
 		{
@@ -117,7 +117,7 @@ void Space7::run(char* thing)
 			cout << "you cant do that. the bridge heads south from here" << endl;
 		}
 	}
-	else if (strcmp(thing, "south"))
+	else if (strcmp(thing, "south") == 0)
 	{
 		if (crossed)
 		{

@@ -32,9 +32,9 @@ Space9::Space9()
 Space9::~Space9()
 {}
 
-void Space9::look(char* thing)
+void Space9::look(const char* thing)
 {
-	if (strcmp(thing, "fountian"))
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if (fountianUsed)
 		{
@@ -45,12 +45,12 @@ void Space9::look(char* thing)
 			cout << "The fountian is filled with water. It looks very refreashing" << endl;
 		}
 	}
-	else if (strcmp(thing, "tubes"))
+	else if (strcmp(thing, "tubes") == 0)
 	{
 		cout << "there are many of them. Likely for sewage disposal. There looks to be a" << endl;
 		cout << "maintenince hatch on one of them" << endl;
 	}
-	else if (strcmp(thing, "hatch"))
+	else if (strcmp(thing, "hatch") == 0)
 	{
 		if (hatchOpen)
 		{
@@ -67,12 +67,20 @@ void Space9::look(char* thing)
 	}
 }
 
-void Space9::enter(char* thing)
+void Space9::enter(const char* thing)
 {
-	if (strcmp(thing, "tube"))
+	if (strcmp(thing, "tube") == 0)
 	{
-		cout << "you slowly enter the tube. To the south you see that it comes down from a room" << endl;
-		cout << "above. As you turn to look north you slip in gunk and are carried down the tubes path." << endl;
+		if (hatchOpen)
+		{
+			cout << "you slowly enter the tube. To the south you see that it comes down from a room" << endl;
+			cout << "above. As you turn to look north you slip in gunk and are carried down the tubes path." << endl;
+			cout << "you launch out of the tube and into a wall before falling to the ground. you find yourself in the Sewer Depths" << endl;
+		}
+		else
+		{
+			cout << "the hatch to the tube is closed" << endl;
+		}
 	}
 	else
 	{
@@ -80,9 +88,9 @@ void Space9::enter(char* thing)
 	}
 }
 
-void Space9::open(char* thing)
+void Space9::open(const char* thing)
 {
-	if (strcmp(thing, "hatch"))
+	if (strcmp(thing, "hatch") == 0)
 	{
 		if (!hatchOpen)
 		{
@@ -101,9 +109,9 @@ void Space9::open(char* thing)
 	}
 }
 
-void Space9::drink(char* thing)
+void Space9::drink(const char* thing)
 {
-	if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if (!fountianUsed)
 		{

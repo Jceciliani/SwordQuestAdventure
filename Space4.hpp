@@ -23,7 +23,7 @@ class Space4 : public Space
 		Space4();
 		~Space4();
 
-		void look(char* thing);
+		void look(const char* thing);
 		
 };
 #endif // !SPACE4_HPP

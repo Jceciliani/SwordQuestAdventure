@@ -36,7 +36,7 @@ Space3::~Space3()
 	}
 }
 
-void Space3::look(char* thing)
+void Space3::look(const char* thing)
 {
 	if (strcmp(thing, "walkways") == 0)
 	{
@@ -48,7 +48,7 @@ void Space3::look(char* thing)
 		cout << " a small wooden  box design to catch things flowing through the dirty" << endl;
 		cout << " waterways. It is tied to the side of the walk way with a rope." << endl;
 	}
-	else if (strcmp(thing, "rope"))
+	else if (strcmp(thing, "rope") == 0)
 	{
 		cout << "Looks to be a perfectly usable rope. it is currently attachec to the fishing basket" << endl;
 	}
@@ -57,7 +57,7 @@ void Space3::look(char* thing)
 		cout << "you cant do that" << endl;
 	}
 }
-void Space3::take(char* thing)
+void Space3::take(const char* thing)
 {
 	if (strcmp(thing, "basket") == 0 || strcmp(thing, "fishing basket") == 0)
 	{
@@ -75,7 +75,7 @@ void Space3::take(char* thing)
 		cout << "you cant do that" << endl;
 	}
 }
-void Space3::pull(char* thing)
+void Space3::pull(const char* thing)
 {
 	if (strcmp(thing, "rope") == 0)
 	{

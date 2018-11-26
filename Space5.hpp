@@ -24,7 +24,7 @@ class Space5 : public Space
 		Space5();
 		~Space5();
 
-		void look (char* thing);
+		void look (const char* thing);
 		void setSword(int set) { if (set == 1) {swordFound = true; } else { swordFound = false; } }
 		bool getSword() { return swordFound; }
 };

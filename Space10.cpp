@@ -28,16 +28,16 @@ Space10::Space10()
 Space10::~Space10()
 {}
 
-void Space10::look(char* thing)
+void Space10::look(const char* thing)
 {
-	if (strcmp(thing, "corner") || strcmp(thing, "hovel"))
+	if (strcmp(thing, "corner") == 0|| strcmp(thing, "hovel") == 0)
 		{
 		cout << "the hovel is very disgusting, there is a small sack next to what you can" << endl;
 		cout << "guess is a bed" << endl;
 
 		}
 
-	else if (strcmp(thing, "sack"))
+	else if (strcmp(thing, "sack") == 0)
 	{
 		cout << "a small burlap full of something. you cant tell what just from looking" << endl;
 	}
@@ -47,9 +47,9 @@ void Space10::look(char* thing)
 	}
 }
 
-void Space10::search(char* thing)
+void Space10::search(const char* thing)
 {
-	if (strcmp(thing, "sack"))
+	if (strcmp(thing, "sack") == 0)
 		{
 		cout << "nope. Nothing useful. Just more feces." << endl;
 		}

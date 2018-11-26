@@ -24,7 +24,9 @@ class Space8 : public Space
 		Space8();
 		~Space8();
 
-		void look(char* thing);
-		void search(char* thing);
+		void look(const char* thing);
+		void search(const char* thing);
+		void setSword(int set) { if (set == 1) { swordFound = true; } else { swordFound = false; } }
+		bool getSword() { return swordFound; }
 };
 #endif // !SPACE8_HPP

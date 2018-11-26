@@ -37,19 +37,19 @@ Space6::~Space6()
 	}
 }
 
-void Space6::look(char* thing)
+void Space6::look(const char* thing)
 {
-	if (strcmp(thing, "canopy"))
+	if (strcmp(thing, "canopy") == 0)
 	{
 		cout << "you still cant see the top, but something up above seems to be caught in a bundle of vines" << endl;
 
 	}
-	else if (strcmp(thing, "vegitation") || strcmp(thing, "trees"))
+	else if (strcmp(thing, "vegitation") == 0 || strcmp(thing, "trees") == 0)
 	{
 		cout << "the vegiatition seems to be growing fairly well here, barring the high number" << endl;
 		cout << "of snags. But even those are creating holds for vines and other vegitation." << endl;
 	}
-	else if (strcmp(thing, "vines"))
+	else if (strcmp(thing, "vines") == 0)
 	{
 		cout << "they are thick rope like vegitation, and it is very abundant here." << endl;
 		cout << "One vine on the tree next to you seems taught." << endl;
@@ -60,9 +60,9 @@ void Space6::look(char* thing)
 	}
 }
 
-void Space6::attack(char* thing)
+void Space6::attack(const char* thing)
 {
-	if (strcmp(thing, "vines"))
+	if (strcmp(thing, "vines") == 0)
 	{
 		cout << " you hack at the vine a few times before it separates and one end shoots into the canopy." << endl;
 		cout << " A second later a ball of vines crashes down to the ground next to you." << endl;

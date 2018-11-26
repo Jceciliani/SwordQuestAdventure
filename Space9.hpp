@@ -25,9 +25,13 @@ class Space9 : public Space
 		Space9();
 		~Space9();
 
-		void look(char* thing);
-		void drink(char* thing);
-		void enter(char* thing);
-		void open(char* thing);
+		void look(const char* thing);
+		void drink(const char* thing);
+		void enter(const char* thing);
+		void open(const char* thing);
+		void setFountian(int set) { if (set == 1) { fountianUsed = true; } else { fountianUsed = false; } }
+		bool getFountian() { return fountianUsed; }
+		void setHatch(int set) { if (set == 1) { hatchOpen = true; } else { hatchOpen = false; } }
+		bool getHatch() { return hatchOpen; }
 };
 #endif // !SPACE9_HPP

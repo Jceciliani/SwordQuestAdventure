@@ -24,9 +24,9 @@ class Space3 : public Space
 		Space3();
 		~Space3();
 
-		void look(char* thing);
-		void take(char* thing);
-		void pull(char* thing);
+		void look(const char* thing);
+		void take(const char* thing);
+		void pull(const char* thing);
 		void setPulled(int set) { if (set == 1) { ropePulled = true; } else { ropePulled = false; } }
 		bool getPulled() { return ropePulled; }
 };

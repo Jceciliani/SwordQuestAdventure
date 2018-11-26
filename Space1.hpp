@@ -23,8 +23,8 @@ class Space1 : public Space
 		Space1();
 		~Space1();
 
-		void look(char* thing);
-		void attack(char* thing);
+		void look(const char* thing);
+		void attack(const char* thing);
 };
 #endif // !SPACE1_HPP
 

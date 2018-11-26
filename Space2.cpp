@@ -37,7 +37,7 @@ Space2::~Space2()
 	}
 }
 
-void Space2::look(char* thing)
+void Space2::look(const char* thing)
 {
 	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0 )
 		{
@@ -51,7 +51,7 @@ void Space2::look(char* thing)
 }
 
 
-void Space2::search(char* thing)
+void Space2::search(const char* thing)
 {
 	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0)
 		{

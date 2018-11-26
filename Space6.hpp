@@ -24,7 +24,9 @@ class Space6 : public Space
 		Space6();
 		~Space6();
 
-		void look(char* thing);
-		void attack(char* thing);
+		void look(const char* thing);
+		void attack(const char* thing);
+		void setVine(int set) { if (set == 1) { vineCut = true; } else { vineCut = false; } }
+		bool getVine() { return vineCut; }
 };
 #endif // !SPACE6_HPP

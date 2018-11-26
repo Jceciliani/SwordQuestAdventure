@@ -25,8 +25,12 @@ class Space7 : public Space
 		Space7();
 		~Space7();
 
-		void look(char* thing);
-		void jump(char* thing);
-		void run(char* thing);
+		void look(const char* thing);
+		void jump(const char* thing);
+		void run(const char* thing);
+		void setCross(int set) { if (set == 1) { crossed = true; } else { crossed = false; } }
+		bool getCross() { return crossed; }
+		void setJump(int set) { if (set == 1) { jumped = true; } else { jumped = false; } }
+		bool getJump() { return jumped; }
 };
 #endif // !SPACE7_HPP

@@ -36,7 +36,7 @@ Space5::~Space5()
 	}
 }
 
-void Space5::look(char* thing)
+void Space5::look(const char* thing)
 {
 	if (strcmp(thing, "walkways") == 0)
 	{

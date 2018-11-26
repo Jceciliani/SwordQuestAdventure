@@ -688,7 +688,7 @@ void Game::play(bool loadgame)
 
 						else
 						{
-							cout << "You haven't found armor here" << endl;
+							cout << "You haven't found a sword here" << endl;
 						}
 					}
 				}
@@ -697,15 +697,51 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("canopy") < 50)
 				{
-					// if(input.find("action word"))
+					if (input.find("look") < 50)
+					{
+						s6.look("canopy");
+					}
 				}
 				else if(input.find("vegitation") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s6.look("vegitation");
+					}
 				}
 				else if(input.find("vines") < 50)
 				{
+					if (input.find("look") < 50)
+					{
+						s6.look("vines");
+					}
+					else if (input.find("attack") < 50)
+					{
+						s6.attack("vines");
+					}
+				}
+				else if (input.find("armor") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s6.getVine() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Silver Armor" << endl;
+								ba.addToContainer(s6.getObject());
+							}
+						}
 
+						else
+						{
+							cout << "You haven't found armor here" << endl;
+						}
+					}
 				}
 				else
 				{
@@ -716,15 +752,61 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("moss") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s7.look("moss");
+					}
 				}
 				else if(input.find("bridge") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s7.look("bridge");
+					}
+					if (input.find("run") < 50)
+					{
+						s7.run("bridge");
+					}
+					if (input.find("use") < 50)
+					{
+						//damage character
+					}
 				}
 				else if(input.find("liquid") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s7.look("liquid");
+					}
+				}
+				else if (input.find("island") < 50)
+				{
+					if (input.find("jump") < 50)
+					{
+						s7.jump("island");
+					}
+				}
+				else if (input.find("west") < 50)
+				{
+					if (input.find("jump") < 50)
+					{
+						s7.jump("west");
+					}
+					if (input.find("run") < 50)
+					{
+						s7.run("west");
+					}
+				}
+				else if (input.find("south") < 50)
+				{
+					if (input.find("jump") < 50)
+					{
+						s7.jump("south");
+					}
+					if (input.find("run") < 50)
+					{
+						s7.run("south");
+					}
 				}
 				else
 				{
@@ -735,15 +817,69 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("papers") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s8.look("papers");
+					}
 				}
 				else if(input.find("desk") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s8.look("desk");
+					}
 				}
 				else if(input.find("locker") < 50)
 				{
+					if (input.find("look") < 50)
+					{
+						s8.look("locker");
+					}
+					else if (input.find("search") < 50)
+					{
+						if (input.find("13") < 50)
+						{
+							s8.search("locker 13");
+						}
+						else if (input.find("locker 1") < 50 || input.find("locker 2") < 50 || input.find("locker 3") < 50 || input.find("locker 4") < 50 ||
+							input.find("locker 5") < 50 || input.find("locker 6") < 50 || input.find("locker 7") < 50 || input.find("locker 8") < 50 ||
+							input.find("locker 9") < 50 || input.find("locker 10") < 50 || input.find("locker 11") < 50 || input.find("locker 12") < 50 ||
+							input.find("locker 14") < 50 || input.find("locker 15") < 50 || input.find("locker 16") < 50 || input.find("locker 17") < 50 ||
+							input.find("locker 18") < 50 || input.find("locker 19") < 50 || input.find("locker 20") < 50 || input.find("locker 21") < 50 ||
+							input.find("locker 22") < 50 || input.find("locker 23") < 50 || input.find("locker 24") < 50 || input.find("locker 25") < 50 ||
+							input.find("locker 26") < 50 || input.find("locker 27") < 50 || input.find("locker 28") < 50 || input.find("locker 29") < 50 ||
+							input.find("locker 30") < 50)
+						{
+							s8.search("locker 1");
+						}
+						else if (input.find("lockers") < 50)
+						{
+							s8.search("lockers");
+						}
+					}
+				}
+				else if (input.find("sword") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s8.getSword() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Bronze Sword" << endl;
+								ba.addToContainer(s8.getObject());
+							}
+						}
 
+						else
+						{
+							cout << "You haven't found a sword here" << endl;
+						}
+					}
 				}
 				else
 				{
@@ -754,15 +890,42 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s9.look("fountian");
+					}
+					else if (input.find("drink") < 50)
+					{
+						s9.drink("fountian");
+					}
 				}
-				else if(input.find("tubes") < 50)
+				else if(input.find("tube") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s9.look("tubes");
+					}
+					else if (input.find("enter") < 50)
+					{
+						s9.enter("tube");
+						playerLoc == spaceArr[3];
+					}
 				}
 				else if(input.find("hatch") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s9.look("hatch");
+					}
+					else if (input.find("open") < 50)
+					{
+						s9.open("hatch");
+					}
+					else if (input.find("enter") < 50)
+					{
+						s9.enter("tube");
+						playerLoc == spaceArr[3];
+					}
 				}
 				else
 				{
@@ -773,15 +936,28 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("hovel") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s10.look("hovel");
+					}
 				}
 				else if(input.find("corner") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s10.look("corner");
+					}
 				}
 				else if(input.find("sack") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s10.look("sack");
+					}
+					else if (input.find("search") < 50)
+					{
+						s10.search("sack");
+					}
 				}
 				else
 				{

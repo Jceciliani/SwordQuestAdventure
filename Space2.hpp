@@ -24,8 +24,8 @@ class Space2 : public Space
 		Space2();
 		~Space2();
 
-		void look(char* thing);
-		void search(char* thing);
+		void look(const char* thing);
+		void search(const char* thing);
 		void setHammer(int set){if (set == 1){hammerFound = true;} else {hammerFound = false;}}
 		bool getHammer(){return hammerFound;}
 };

@@ -30,7 +30,7 @@ Space4::~Space4()
 {}
 
 
-void Space4::look(char* thing)
+void Space4::look(const char* thing)
 {
 	if (strcmp(thing, "ocean") == 0 || strcmp(thing, "opening") == 0)
 	{
