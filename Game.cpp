@@ -137,12 +137,22 @@ int Game::move(string input)
 		return -1;
 	}
 	// end of input validation
-	// Check for Save Game
+	// Check for Save or Load Game command
 	if(input.find("savegame") < 50)
 	{
 		// Call save game function
 		save();
 		return 1;
+	}
+	if(input.find("loadgame") < 50)
+	{
+		load();
+		return 1;
+	}
+	if(input.find("exit") < 50)
+	{
+		//exit game
+		cout << "add code to exit game" << endl;
 	} 
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
