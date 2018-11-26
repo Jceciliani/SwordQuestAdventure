@@ -19,10 +19,13 @@ class Space5 : public Space
 {
 	private:
 		vector<Objects> space5;
+		bool swordFound;
 	public:
 		Space5();
 		~Space5();
 
 		void look (char* thing);
+		void setSword(int set) { if (set == 1) {swordFound = true; } else { swordFound = false; } }
+		bool getSword() { return swordFound; }
 };
 #endif // !SPACE5_HPP

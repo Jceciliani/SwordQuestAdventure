@@ -27,5 +27,7 @@ class Space3 : public Space
 		void look(char* thing);
 		void take(char* thing);
 		void pull(char* thing);
+		void setPulled(int set) { if (set == 1) { ropePulled = true; } else { ropePulled = false; } }
+		bool getPulled() { return ropePulled; }
 };
 #endif // !SPACE3_HPP

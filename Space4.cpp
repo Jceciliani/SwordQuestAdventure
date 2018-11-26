@@ -32,13 +32,13 @@ Space4::~Space4()
 
 void Space4::look(char* thing)
 {
-	if (strcmp(thing, "ocean") || strcmp(thing, "opening"))
+	if (strcmp(thing, "ocean") == 0 || strcmp(thing, "opening") == 0)
 	{
 		cout << "you see the ocean. Between the rough waves and glimpses of shark fins" << endl;
 		cout << " its probably best to not try your luck out there" << endl;
 
 	}
-	else if (strcmp(thing, "bridge"))
+	else if (strcmp(thing, "bridge") == 0)
 	{
 		cout << " The wood the bridge is made from definitely looks old, but by no means" << endl;
 		cout << " rotted or weak. This seems strange considering the environment," << endl;

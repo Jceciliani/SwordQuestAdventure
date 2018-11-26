@@ -481,33 +481,14 @@ void Game::play(bool loadgame)
 						cout << "You can't do that to grass." << endl;
 					}
 				}
-				if(input.find("wind") < 50)
+				else if(input.find("wind") < 50)
 				{
 					if(input.find("look") < 50)
 					{	
 						s1.look("wind");
 					}
-					}
-
-				else if(input.find("naga") < 50)
-				{
-					if(input.find("attack") < 50)
-					{
-						// attack the naga
-					}
-					else if(input.find("look"))
-					{
-						cout << "You look at the scary naga." << endl;
-					}
-					else if (input.find("talk"))
-					{
-						cout << "The naga laughs at your attempt to converse. It readies to strike" << endl;
-					}
-					else
-					{
-						cout << "You can't do that to the naga" << endl;
-					}	
 				}
+
 			}
 			if(playerLoc == spaceArr[1]) // Space2 Ruins
 			{
@@ -561,15 +542,11 @@ void Game::play(bool loadgame)
 				{
 					if(input.find("take") < 50)
 					{
-						// find and take what's in the basket
+						s3.take("basket");
 					}
 					else if(input.find("look") < 50)
 					{
-						cout << "Looks like there's something in it..." << endl;
-					}
-					else if(input.find("open") < 50)
-					{
-						cout << "Text about opening it" << endl;
+						s3.look("basket");
 					}
 					else
 					{
@@ -578,18 +555,40 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("rope") < 50)
 				{
-					if(input.find("take") < 50)
+					if(input.find("pull") < 50)
 					{
-						// Get the rope
-						cout << "You get the rope!" << endl;
+						s3.pull("rope");
 					}
 					else if(input.find("look") < 50)
 					{
-						cout << "Looks to be a perfectly usable rope. You should take it" << endl;
+						s3.look("rope");
 					}
 					else
 					{
 						cout << "That won't work with the rope." << endl;
+					}
+				}
+				else if (input.find("armor") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s3.getPulled() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Bronze Armor" << endl;
+								ba.addToContainer(s3.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found armor here" << endl;
+						}
 					}
 				}
 			}
@@ -599,7 +598,7 @@ void Game::play(bool loadgame)
 				{
 					if(input.find("look") < 50)
 					{
-						cout << "You look out at the ocean" << endl;
+						s4.look("ocean");
 					}
 					else if(input.find("take") < 50)
 					{
@@ -614,12 +613,9 @@ void Game::play(bool loadgame)
 				{
 					if(input.find("look") < 50)
 					{
-						cout << "You look at the bridge" << endl;
+						s4.look("bridge");
 					}
-					else if(input.find("use") < 50)
-					{
-						cout << "You use the bridge" << endl;
-					}
+					
 					else
 					{
 						cout << "You can't do that with the bridge" << endl;
@@ -632,11 +628,7 @@ void Game::play(bool loadgame)
 				{
 					if(input.find("look") < 50)
 					{
-						cout << "Something appears to be written on the wall" << endl;
-					}
-					else if(input.find("Read") < 50)
-					{
-						cout << "There's text scrawled out in blood. It's hard to read" << endl;
+						s5.look("walls");
 					}
 					else
 					{
@@ -647,15 +639,39 @@ void Game::play(bool loadgame)
 				{
 					if(input.find("look") < 50)
 					{
-						cout << "It appears to be a body" << endl;
+						s5.look("form");
 					}
 					else if(input.find("eat") < 50)
 					{
 						cout << "Well... desperate times..." << endl;
+						//damage character
 					}
 					else
 					{
 						cout << "You can't do that" << endl;
+					}
+				}
+				else if (input.find("sword") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s5.getSword() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Silver Sword" << endl;
+								ba.addToContainer(s5.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found armor here" << endl;
+						}
 					}
 				}
 			}
