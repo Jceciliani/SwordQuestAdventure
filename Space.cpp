@@ -87,11 +87,15 @@ Objects Space::getObject()
 // TEST****************************************8
 void Space::addToContainer(Objects obj)
 {
+	cout << "You drop the " << obj.getName() << endl;	
+	
 	space.push_back(obj);	
 }
 
 void Space::deleteFromContainer(Objects obj)
 {
+	cout << "You pick up the " << obj.getName() << endl;
+
 	for(int i = 0; i < space.size(); i++)
 	{
 		if(space[i].getName() == obj.getName())
