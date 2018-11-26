@@ -84,7 +84,6 @@ class Game
 		void stashToBag(Objects);
 		void save();
 		void load();
-		int* LoadInt(const char *filename, int filepos);
 		Objects finditem(int name);
 };
 #endif // !GAME_HPP

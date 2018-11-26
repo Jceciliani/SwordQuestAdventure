@@ -41,6 +41,7 @@ class Bag : public Container
 		void insert(int, Objects obj);
 		Objects printItem(int i);
 		int getSize();
+		void clear() { bag.clear(); }
 };
 
 // Forge*******************************************************************************
@@ -67,8 +68,10 @@ class Forge: public Container
 		int getSize();
 		void setUltA(int num){if(num == 1){craftUltArmor = true;} else{craftUltArmor = false;}}
 		void setUltW(int num){if(num == 1){craftUltWeapon = true;} else{craftUltWeapon = false;}}
+		void setForgeStart(int num) { if (num == 1) { forgeStart = true; } else { forgeStart = false; } }
 		Objects getUltSword();
 		Objects getUltArmor();
+		void clear() { forge.clear(); }
 };
 
 // Stash*******************************************************************************
@@ -84,6 +87,7 @@ class Stash : public Container
 		void printContainer();
 		Objects printItem(int i);
 		int getSize();
+		void clear() { stash.clear(); }
 };
 
 // Equipped****************************************************************************
@@ -107,4 +111,5 @@ class Equipped : public Container
 		void insert(int, Objects obj);
 		Objects getObject1();
 		Objects getObject2();
+		
 };

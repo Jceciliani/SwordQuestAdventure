@@ -587,6 +587,34 @@ void Game::play(bool loadgame)
 						s1.look("wind");
 					}
 				}
+				else if (input.find("drop") < 50) 
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s1.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+							
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+					
+
+					for (int i = 0; i < s1.getSize(); i++)
+					{
+						if (input.find(s1.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << ba.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s1.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 
 			}
 			if(playerLoc == spaceArr[1]) // Space2 Ruins
@@ -631,6 +659,33 @@ void Game::play(bool loadgame)
 						else
 						{
 							cout << "You haven't found a hammer here" << endl;
+						}
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s2.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s2.getSize(); i++)
+					{
+						if (input.find(s2.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s2.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s2.deleteFromContainer(ba.printItem(i));
 						}
 					}
 				}
@@ -691,6 +746,33 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s3.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s3.getSize(); i++)
+					{
+						if (input.find(s3.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s3.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s3.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 			}
 			if(playerLoc == spaceArr[3]) // Space4 Sewer Depths
 			{
@@ -719,6 +801,33 @@ void Game::play(bool loadgame)
 					else
 					{
 						cout << "You can't do that with the bridge" << endl;
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s4.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s4.getSize(); i++)
+					{
+						if (input.find(s4.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s4.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s4.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 			}
@@ -960,6 +1069,33 @@ void Game::play(bool loadgame)
 						else
 						{
 							cout << "You haven't found a sword here" << endl;
+						}
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s8.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s8.getSize(); i++)
+					{
+						if (input.find(s8.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s8.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s8.deleteFromContainer(ba.printItem(i));
 						}
 					}
 				}
@@ -2493,7 +2629,10 @@ void Game::load()
 	
 		number = atoi(chararray);
 		int size = number;
-
+		count = 0;
+		chararray[0] = 0;
+		number;
+		ba.clear();
 		for(int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -2521,7 +2660,7 @@ void Game::load()
 			
 		}
 
-				count = 0;
+		count = 0;
 		chararray[0] = 0;
 		number;
 
@@ -2543,7 +2682,10 @@ void Game::load()
 	
 		number = atoi(chararray);
 		size = number;
-
+		count = 0;
+		chararray[0] = 0;
+		number;
+		st.clear();
 		for(int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -2593,7 +2735,10 @@ void Game::load()
 	
 		number = atoi(chararray);
 		size = number;
-
+		count = 0;
+		chararray[0] = 0;
+		number;
+		fg.clear();
 		for(int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -2620,6 +2765,29 @@ void Game::load()
 			fg.addToContainer(finditem(number));
 			
 		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		fg.setForgeStart(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -2742,7 +2910,10 @@ void Game::load()
 		number = atoi(chararray);
 		
 		size = number;
-		
+		count = 0;
+		chararray[0] = 0;
+		number;
+		s1.clear();
 		for(int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -2767,12 +2938,13 @@ void Game::load()
 	
 			number = atoi(chararray);
 
-			s2.addToContainer(finditem(number));
+			s1.addToContainer(finditem(number));
 			
 		}
 		count = 0;
 		chararray[0] = 0;
 		number;
+		
 		while (loadfile.good())
 		{
 			temp = (char)loadfile.get();
@@ -2790,7 +2962,7 @@ void Game::load()
 		}
 
 		number = atoi(chararray);
-		s1.setVisited(number);
+		s2.setVisited(number);
 
 
 		count = 0;
@@ -2866,6 +3038,10 @@ void Game::load()
 		number = atoi(chararray);
 		size = number;
 
+		s2.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -2988,6 +3164,10 @@ void Game::load()
 		number = atoi(chararray);
 		size = number;
 
+		s3.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3083,7 +3263,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s4.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3207,7 +3390,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s5.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3332,6 +3518,10 @@ void Game::load()
 		number = atoi(chararray);
 		size = number;
 
+		s6.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3479,7 +3669,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s7.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3601,7 +3794,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s8.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3747,6 +3943,10 @@ void Game::load()
 		number = atoi(chararray);
 		size = number;
 
+		s9.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3843,7 +4043,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s10.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -3940,7 +4143,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s11.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4037,7 +4243,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s12.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4206,7 +4415,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s13.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4329,7 +4541,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s14.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4478,7 +4693,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s15.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4575,7 +4793,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s16.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4697,7 +4918,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s17.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -4890,7 +5114,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s19.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5011,7 +5238,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s20.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5132,7 +5362,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s21.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5278,6 +5511,10 @@ void Game::load()
 		number = atoi(chararray);
 		size = number;
 
+		s22.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5398,7 +5635,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s23.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5495,7 +5735,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s24.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5616,7 +5859,10 @@ void Game::load()
 
 		number = atoi(chararray);
 		size = number;
-
+		s25.clear();
+		count = 0;
+		chararray[0] = 0;
+		number;
 		for (int i = 0; i < size; i++)
 		{
 			count = 0;
@@ -5650,53 +5896,6 @@ void Game::load()
 
 
 	
-}
-
-int intlength(int num)
-{
-	int count = 0;
-	while(num)
-	{
-		num = num / 10;
-		count++;
-	}
-	return count;
-}
-
-int* Game::LoadInt(const char *filename, int filepos)
-{
-	ifstream loadfile;
-	int *tempp;
-	int temparray[2];
-	tempp = temparray;
-	loadfile.open (filename, ifstream::in);
-	loadfile.seekg(filepos);
-
-	string temp;
-	int count = 0;
-	char chararray[32];
-	int number;
-
-	while(loadfile.good())
-		{
-			temp = (char) loadfile.get();
-
-			if(temp[0] == ',')
-			{
-				chararray[count] = 0;
-				count = 0;
-				break;
-			}
-			else{
-				chararray[count] = temp[0];
-				count++;
-			}
-		}
-	
-	number = atoi(chararray);
-	temparray[0] = number;
-	temparray[1] = loadfile.tellg();
-	return tempp;
 }
 
 Objects Game::finditem(int name)

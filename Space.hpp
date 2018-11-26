@@ -56,6 +56,7 @@ class Space
 		void setVisited(int num){if(num == 1){visited = true;} else {visited = false;}}
 		void setEncounter(int num){if(num == 1){combatEncounter = true;} else {combatEncounter = false;}}
 		bool getEncounter();
-		void setEncounter();
+		void clear() { space.clear(); }
+		
 };
 #endif // !SPACE_HPP
