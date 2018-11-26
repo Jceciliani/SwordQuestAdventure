@@ -25,9 +25,13 @@ class Space22 : public Space
 		Space22();
 		~Space22();
 
-		void look(char* thing);
-		void talk(char* thing);
-		void answer(char* thing);
+		void look(const char* thing);
+		void talk(const char* thing);
+		void answer(const char* thing);
+		void setAnswered(int set) { if (set == 1) { answered = true; } else { answered = false; } }
+		bool getAnswered() { return answered; }
+		void setCorrect(int set) { if (set == 1) { correct = true; } else { correct = false; } }
+		bool getCorrect() { return correct; }
 };
 #endif // !SPACE22_HPP
 

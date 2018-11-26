@@ -251,7 +251,11 @@ int Game::move(string input)
 		{
 			if (playerLoc == spaceArr[6])
 			{
-				if (s7.getCross() == false)
+				if(s7.getJump() == true)
+				{
+					cout << "you cant walk anywhere from this island. try jumping!" << endl;
+				}
+				else if (s7.getCross() == false )
 				{
 					playerLoc = playerLoc->getSouth();
 				}
@@ -298,7 +302,12 @@ int Game::move(string input)
 			}
 			else if (playerLoc == spaceArr[6])
 			{
-				if (s7.getCross() == true)
+				
+				if (s7.getJump() == true)
+				{
+					cout << "you cant walk anywhere from this island. try jumping!" << endl;
+				}
+				else if (s7.getCross() == true)
 				{
 					playerLoc = playerLoc->getWest();
 				}
@@ -468,7 +477,7 @@ void Game::play(bool loadgame)
 	char choice;
 	if (loadgame == true)
 	{
-		cout <<"shouldnt get here";
+
 		load();
 	}
 	
@@ -499,7 +508,7 @@ void Game::play(bool loadgame)
 	while (turns < 100)
 	{
 
-		save();
+
 		// Shows locations
 		if (playerLoc->getNorth() == NULL)
 		{
@@ -621,6 +630,7 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+
 			}
 			if(playerLoc == spaceArr[2]) // Space3 Western Sewers
 			{
@@ -1496,16 +1506,38 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("boulder") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s21.look("boulder");
+					}
+					else if (input.find("push") < 50)
+					{
+						s21.push("boulder");
+					}
 				}
-				/*else if(input.find("desk") < 50)
+				else if (input.find("sword") < 50)
 				{
+					if (input.find("take") < 50)
+					{
+						if (s21.getBoulder() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Gold Sword" << endl;
+								ba.addToContainer(s21.getObject());
+							}
+						}
 
+						else
+						{
+							cout << "You haven't found a sword here" << endl;
+						}
+					}
 				}
-				else if(input.find("locker") < 50)
-				{
-
-				}*/
 				else
 				{
 
@@ -1515,15 +1547,41 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("old man") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s22.look("old man");
+					}
+					else if (input.find("talk") < 50)
+					{
+						s22.talk("to old man");
+					}
+					
 				}
 				else if(input.find("mountain") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s22.look("mountian");
+					}
 				}
 				else if(input.find("volcano") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s22.look("volcano");
+					}
+				}
+				else if (input.find("answer") < 50)
+				{
+					if (input.find("footsteps") < 50)
+					{
+						s22.answer("footsteps");
+						//heal
+					}
+					else
+					{
+						s22.answer("wrong");
+					}
 				}
 				else
 				{
@@ -1534,15 +1592,43 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("valuable") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s23.look("valuables");
+					}
+					else if (input.find("search") < 50)
+					{
+						s23.search("valuables");
+					}
 				}
 				else if(input.find("pile") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s23.look("piles");
+					}
+					else if (input.find("search") < 50)
+					{
+						s23.search("piles");
+					}
 				}
 				else if(input.find("trail") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s23.look("trail");
+					}
+				}
+				else if (input.find("bread") < 50)
+				{
+					if (input.find("look") < 50)
+					{
+						s23.look("bread");
+					}
+					else if (input.find("eat") < 50)
+					{
+						s23.eat("bread");
+					}
 				}
 				else
 				{
@@ -1553,11 +1639,23 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("lever") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s24.look("lever");
+					}
+					else if (input.find("pull") < 50)
+					{
+						s24.pull("lever");
+						//damage
+						playerLoc = spaceArr[15];
+					}
 				}
 				else if(input.find("landing") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s24.look("landing");
+					}
 				}
 				/*else if(input.find("locker") < 50)
 				{
@@ -1572,16 +1670,23 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("lake") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s25.look("lake");
+					}
 				}
 				else if(input.find("stalagtite") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s25.look("stalagtite");
+					}
+					else if (input.find("attack") < 50)
+					{
+						s25.attack("stalagtite");
+					}
 				}
-				/*else if(input.find("locker") < 50)
-				{
 
-				}*/
 				else
 				{
 
@@ -1952,7 +2057,7 @@ void Game::save()
 
 	ofstream savefile ("SaveGame.txt");
 
-	savefile << char1->getName() << ",";
+	savefile << char1->getName() << ",";//character vars
 	savefile << char1->getLevel() << ",";
 	savefile << char1->getStrength() << ",";
 
@@ -1961,7 +2066,7 @@ void Game::save()
 	savefile << eq.getObject1().getId() << ",";
 	savefile << eq.getObject2().getId() << ",";
 
-	savefile << ba.getSize()  << ",";
+	savefile << ba.getSize()  << ",";//containers
 	for(int i = 0; i < ba.getSize(); i++)
 	{
 		savefile << (ba.printItem(i)).getId() << ",";
@@ -1983,7 +2088,7 @@ void Game::save()
 	savefile << fg.ultArmorCrafted() << ",";
 	savefile << fg.ultWeaponCrafted() << ",";
 	
-	
+	//rooms
 	savefile << s1.checkVisited() << ",";
 	savefile << s1.getEncounter() << ",";
 	savefile << s1.getSize()  << ",";
@@ -1995,6 +2100,7 @@ void Game::save()
 
 	savefile << s2.checkVisited() << ",";
 	savefile << s2.getEncounter() << ",";
+	savefile << s2.getHammer() << ",";
 	savefile << s2.getSize()  << ",";
     for(int i = 0; i < s2.getSize(); i++)
 	{
@@ -2002,6 +2108,7 @@ void Game::save()
 	}
 	savefile << s3.checkVisited() << ",";
 	savefile << s3.getEncounter() << ",";
+	savefile << s3.getPulled() << ",";
 	savefile << s3.getSize()  << ",";
     for(int i = 0; i < s3.getSize(); i++)
 	{
@@ -2018,6 +2125,7 @@ void Game::save()
 
 	savefile << s5.checkVisited() << ",";
 	savefile << s5.getEncounter() << ",";
+	savefile << s5.getSword() << ",";
 	savefile << s5.getSize()  << ",";
     for(int i = 0; i < s5.getSize(); i++)
 	{
@@ -2026,6 +2134,7 @@ void Game::save()
 
 	savefile << s6.checkVisited() << ",";
 	savefile << s6.getEncounter() << ",";
+	savefile << s6.getVine() << ",";
 	savefile << s6.getSize()  << ",";
     for(int i = 0; i < s6.getSize(); i++)
 	{
@@ -2035,6 +2144,8 @@ void Game::save()
 
 	savefile << s7.checkVisited() << ",";
 	savefile << s7.getEncounter() << ",";
+	savefile << s7.getCross() << ",";
+	savefile << s7.getJump() << ",";
 	savefile << s7.getSize()  << ",";
     for(int i = 0; i < s7.getSize(); i++)
 	{
@@ -2043,6 +2154,7 @@ void Game::save()
 
 	savefile << s8.checkVisited() << ",";
 	savefile << s8.getEncounter() << ",";
+	savefile << s8.getSword() << ",";
 	savefile << s8.getSize()  << ",";
     for(int i = 0; i < s8.getSize(); i++)
 	{
@@ -2051,6 +2163,8 @@ void Game::save()
 
 	savefile << s9.checkVisited() << ",";
 	savefile << s9.getEncounter() << ",";
+	savefile << s9.getFountian() << ",";
+	savefile << s9.getHatch() << ",";
 	savefile << s9.getSize()  << ",";
     for(int i = 0; i < s9.getSize(); i++)
 	{
@@ -2083,6 +2197,9 @@ void Game::save()
 
 	savefile << s13.checkVisited() << ",";
 	savefile << s13.getEncounter() << ",";
+	savefile << s13.getFountian() << ",";
+	savefile << s13.getGate() << ",";
+	savefile << s13.getForge() << ",";
 	savefile << s13.getSize()  << ",";
     for(int i = 0; i < s13.getSize(); i++)
 	{
@@ -2091,6 +2208,7 @@ void Game::save()
 
 	savefile << s14.checkVisited() << ",";
 	savefile << s14.getEncounter() << ",";
+	savefile << s14.getCross() << ",";
 	savefile << s14.getSize()  << ",";
     for(int i = 0; i < s14.getSize(); i++)
 	{
@@ -2099,6 +2217,8 @@ void Game::save()
 
 	savefile << s15.checkVisited() << ",";
 	savefile << s15.getEncounter() << ",";
+	savefile << s15.getSteel() << ",";
+	savefile << s15.getTomb() << ",";
 	savefile << s15.getSize()  << ",";
     for(int i = 0; i < s15.getSize(); i++)
 	{
@@ -2115,6 +2235,7 @@ void Game::save()
 
 	savefile << s17.checkVisited() << ",";
 	savefile << s17.getEncounter() << ",";
+	savefile << s17.getFountian() << ",";
 	savefile << s17.getSize()  << ",";
     for(int i = 0; i < s17.getSize(); i++)
 	{
@@ -2123,6 +2244,10 @@ void Game::save()
 
 	savefile << s19.checkVisited() << ",";
 	savefile << s19.getEncounter() << ",";
+	savefile << s19.getContainerOpen() << ",";
+	savefile << s19.getLock1() << ",";
+	savefile << s19.getLock2() << ",";
+	savefile << s19.getLock3() << ",";
 	savefile << s19.getSize()  << ",";
     for(int i = 0; i < s19.getSize(); i++)
 	{
@@ -2131,6 +2256,7 @@ void Game::save()
 
 	savefile << s20.checkVisited() << ",";
 	savefile << s20.getEncounter() << ",";
+	savefile << s20.getFountian() << ",";
 	savefile << s20.getSize()  << ",";
     for(int i = 0; i < s20.getSize(); i++)
 	{
@@ -2139,6 +2265,7 @@ void Game::save()
 
 	savefile << s21.checkVisited() << ",";
 	savefile << s21.getEncounter() << ",";
+	savefile << s21.getBoulder() << ",";
 	savefile << s21.getSize()  << ",";
     for(int i = 0; i < s21.getSize(); i++)
 	{
@@ -2147,6 +2274,8 @@ void Game::save()
 
 	savefile << s22.checkVisited() << ",";
 	savefile << s22.getEncounter() << ",";
+	savefile << s22.getAnswered() << ",";
+	savefile << s22.getCorrect() << ",";
 	savefile << s22.getSize()  << ",";
     for(int i = 0; i < s22.getSize(); i++)
 	{
@@ -2155,6 +2284,7 @@ void Game::save()
 
 	savefile << s23.checkVisited() << ",";
 	savefile << s23.getEncounter() << ",";
+	savefile << s23.getFound() << ",";
 	savefile << s23.getSize()  << ",";
     for(int i = 0; i < s23.getSize(); i++)
 	{
@@ -2171,6 +2301,7 @@ void Game::save()
 
 	savefile << s25.checkVisited() << ",";
 	savefile << s25.getEncounter() << ",";
+	savefile << s25.getFlint() << ",";
 	savefile << s25.getSize()  << ",";
     for(int i = 0; i < s25.getSize(); i++)
 	{
@@ -2194,7 +2325,7 @@ void Game::load()
 
 	if(loadfile.is_open())
 	{
-		string temp;
+		string temp; //character vars
 		int count = 0;
 		char chararray[32];
 		int number;
@@ -2288,7 +2419,7 @@ void Game::load()
 		number = atoi(chararray);
 		playerLoc = spaceArr[(number - 1)];
 
-		count = 0;
+		count = 0;//containers
 		chararray[0] = 0;
 		number;
 
@@ -2535,7 +2666,7 @@ void Game::load()
 
 
 
-		count = 0;
+		count = 0;//rooms
 		chararray[0] = 0;
 		number;
 
@@ -2580,7 +2711,7 @@ void Game::load()
 		}
 	
 		number = atoi(chararray);
-		cout << number;
+		
 		s1.setEncounter(number);
 		
 
@@ -2605,7 +2736,7 @@ void Game::load()
 		}
 	
 		number = atoi(chararray);
-		cout << number;
+		
 		size = number;
 		
 		for(int i = 0; i < size; i++)
@@ -2632,9 +2763,81 @@ void Game::load()
 	
 			number = atoi(chararray);
 
-			s1.addToContainer(finditem(number));
+			s2.addToContainer(finditem(number));
 			
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s1.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s2.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s2.setHammer(number);
+
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -2685,6 +2888,78 @@ void Game::load()
 			s2.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s3.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s3.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s3.setPulled(number);
+
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -2735,6 +3010,52 @@ void Game::load()
 			s3.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s4.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s4.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -2807,6 +3128,80 @@ void Game::load()
 		}
 
 		number = atoi(chararray);
+		s5.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s5.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s5.setSword(number);
+
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
 		size = number;
 
 		for (int i = 0; i < size; i++)
@@ -2835,6 +3230,80 @@ void Game::load()
 			s5.addToContainer(finditem(number));
 
 		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s6.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s6.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s6.setVine(number);
+
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -2907,6 +3376,104 @@ void Game::load()
 		}
 
 		number = atoi(chararray);
+		s7.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s7.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s7.setCross(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s7.setJump(number);
+
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
 		size = number;
 
 		for (int i = 0; i < size; i++)
@@ -2935,6 +3502,79 @@ void Game::load()
 			s7.addToContainer(finditem(number));
 
 		}
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s8.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s8.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s8.setSword(number);
+
 		count = 0;
 		chararray[0] = 0;
 		number;
@@ -2984,6 +3624,101 @@ void Game::load()
 			s8.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s9.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s9.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s9.setFountian(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s9.setHatch(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3034,6 +3769,53 @@ void Game::load()
 			s9.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s10.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s10.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3084,6 +3866,53 @@ void Game::load()
 			s10.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s11.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s11.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3134,6 +3963,53 @@ void Game::load()
 			s11.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s12.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s12.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3184,6 +4060,125 @@ void Game::load()
 			s12.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s13.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s13.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s13.setFountian(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s13.setGate(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s13.setForge(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3234,6 +4229,79 @@ void Game::load()
 			s13.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s14.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s14.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s14.setCross(number);
+
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -3284,6 +4352,105 @@ void Game::load()
 			s14.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s15.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s15.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s15.setSteel(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s15.setTomb(number);
+
+
+
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -3334,6 +4501,53 @@ void Game::load()
 			s15.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s16.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s16.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3384,6 +4598,78 @@ void Game::load()
 			s16.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s17.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s17.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s17.setFountian(number);
+
 
 		count = 0;
 		chararray[0] = 0;
@@ -3434,6 +4720,149 @@ void Game::load()
 			s17.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s19.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s19.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s19.setContainerOpen(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s19.setLock1(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s19.setLock2(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s19.setLock3(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3484,6 +4913,77 @@ void Game::load()
 			s19.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s20.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s20.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s20.setFountian(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3534,6 +5034,77 @@ void Game::load()
 			s20.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s21.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s21.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s21.setBoulder(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3584,6 +5155,101 @@ void Game::load()
 			s21.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s22.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s22.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s22.setAnswered(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s22.setCorrect(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3634,6 +5300,77 @@ void Game::load()
 			s22.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s23.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s23.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s23.setFound(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3684,6 +5421,53 @@ void Game::load()
 			s23.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s24.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s24.setEncounter(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -3734,6 +5518,77 @@ void Game::load()
 			s24.addToContainer(finditem(number));
 
 		}
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		s25.setVisited(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s25.setEncounter(number);
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+		
+		s25.setFlint(number);
 
 		count = 0;
 		chararray[0] = 0;

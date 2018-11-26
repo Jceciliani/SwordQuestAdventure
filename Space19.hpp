@@ -32,7 +32,7 @@ class Space19 : public Space
 		void open(const char* thing);
 		void setContainerOpen(int set) { if (set == 1) { containerOpen = true; } else { containerOpen = false; } }
 		bool getContainerOpen() { return containerOpen; }
-		void setLockl(int set) { if (set == 1) { lock1Open = true; } else { lock1Open = false; } }
+		void setLock1(int set) { if (set == 1) { lock1Open = true; } else { lock1Open = false; } }
 		bool getLock1() { return lock1Open; }
 		void setLock2(int set) { if (set == 1) { lock2Open = true; } else { lock2Open = false; } }
 		bool getLock2() { return lock2Open; }

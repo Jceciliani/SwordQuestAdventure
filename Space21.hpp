@@ -24,8 +24,10 @@ class Space21 : public Space
 		Space21();
 		~Space21();
 
-		void look(char* thing);
-		void push(char* thing);
+		void look(const char* thing);
+		void push(const char* thing);
+		void setBoulder(int set) { if (set == 1) { boulderMoved = true; } else { boulderMoved = false; } }
+		bool getBoulder() { return boulderMoved; }
 
 };
 #endif // !SPACE21_HPP

@@ -35,7 +35,7 @@ Space25::~Space25()
 		delete obj;
 	}
 }
-void Space25::look(char* thing)
+void Space25::look(const char* thing)
 {
 	if (strcmp(thing, "lake"))
 	{
@@ -53,7 +53,7 @@ void Space25::look(char* thing)
 		}
 }
 
-void Space25::attack(char* thing)
+void Space25::attack(const char* thing)
 {
 	if (strcmp(thing, "stalagtite"))
 	{

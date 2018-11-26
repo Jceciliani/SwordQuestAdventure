@@ -32,9 +32,9 @@ Space22::~Space22()
 {}
 
 
-void Space22::look(char* thing)
+void Space22::look(const char* thing)
 {
-	if (strcmp(thing, "old man"))
+	if (strcmp(thing, "old man") == 0)
 	{
 
 			cout << "he is clothed in rags. The old man is also bald  with a long white beard. Why he" << endl;
@@ -42,7 +42,7 @@ void Space22::look(char* thing)
 	
 
 	}
-	if (strcmp(thing, "mountian") || strcmp(thing, "volcano"))
+	if (strcmp(thing, "mountian") == 0 || strcmp(thing, "volcano") == 0)
 	{
 
 		cout << "with the heat you are feeling it is becoming much mor apparent that you are infact on a volcano \n" << endl;
@@ -57,9 +57,9 @@ void Space22::look(char* thing)
 		}
 }
 
-void Space22::talk(char* thing)
+void Space22::talk(const char* thing)
 {
-	if (strcmp(thing, "to old man"))
+	if (strcmp(thing, "to old man") == 0)
 	{
 
 			if(!answered)
@@ -69,8 +69,16 @@ void Space22::talk(char* thing)
 			}
 			else
 			{
-				cout <<" the old man is silent" << endl;
+				if (!correct) 
+				{
+					cout << " the old man silently frowns at you" << endl;
+				}
+				else
+				{
+					cout << " the old man silently smiles at you" << endl;
+				}
 			}
+
 
 	}
 	else
@@ -79,10 +87,10 @@ void Space22::talk(char* thing)
 		}
 }
 
-void Space22::answer(char* thing)
+void Space22::answer(const char* thing)
 {
 	answered = true;
-	if (strcmp(thing, "footsteps"))
+	if (strcmp(thing, "footsteps") == 0)
 	{
 
 			if(!answered)
@@ -93,13 +101,34 @@ void Space22::answer(char* thing)
 			}
 			else
 			{
-				cout <<"the old man is silent" << endl;
+				if (!correct)
+				{
+					cout << " the old man silently frowns at you" << endl;
+				}
+				else
+				{
+					cout << " the old man silently smiles at you" << endl;
+				}
 			}
 
 	}
 	else
+	{
+		if (!answered)
 		{
 			cout << "the old man shakes his head" << endl;
 			answered = true;
 		}
+		else
+		{
+			if (!correct)
+			{
+				cout << " the old man silently frowns at you" << endl;
+			}
+			else
+			{
+				cout << " the old man silently smiles at you" << endl;
+			}
+		}
+	}
 }

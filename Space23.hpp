@@ -19,12 +19,15 @@ class Space23 : public Space
 {
 	private:
 		vector<Objects> space23;
+		bool armorFound;
 	public:
 		Space23();
 		~Space23();
 
-		void look(char* thing);
-		void search(char* thiing);
-		void eat(char*);
+		void look(const char* thing);
+		void search(const char* thiing);
+		void eat(const char* thing);
+		void setFound(int set) { if (set == 1) { armorFound = true; } else { armorFound = false; } }
+		bool getFound() { return armorFound; }
 };
 #endif // !SPACE23_HPP

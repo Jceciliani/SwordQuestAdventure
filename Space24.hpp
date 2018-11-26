@@ -23,7 +23,7 @@ class Space24 : public Space
 		Space24();
 		~Space24();
 
-		void look(char* thing);
-		void pull(char* thing);
+		void look(const char* thing);
+		void pull(const char* thing);
 };
 #endif // !SPACE24_HPP

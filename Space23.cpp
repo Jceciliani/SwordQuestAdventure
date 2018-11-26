@@ -25,6 +25,7 @@ Space23::Space23()
 	obj = new Gold_Armor();
 	combatEncounter = false;
 	visited = false;
+	armorFound = false;
 }
 
 Space23::~Space23()
@@ -35,18 +36,18 @@ Space23::~Space23()
 	}
 }
 
-void Space23::look(char* thing)
+void Space23::look(const char* thing)
 {
-	if (strcmp(thing, "trail"))
+	if (strcmp(thing, "trail") == 0)
 	{
 			cout << "the path ahead looks perilous. be cautious." << endl;
 	}
-	else if (strcmp(thing, "piles") || strcmp(thing, "valuables") )
+	else if (strcmp(thing, "piles") == 0 || strcmp(thing, "valuables") == 0 )
 	{
 			cout << "a small hoard that could rival king Midas. it must have taken ages" << endl;
 			cout << "to collect it all. maybe there is something useful in there, besides gold" << endl;
 	}
-	else if (strcmp(thing, "bread"))
+	else if (strcmp(thing, "bread") == 0)
 	{
 		cout << "bandits must have been eating before you arrived. though not well" << endl;
 		cout << "the bread appears slight moldy and very stale" << endl;
@@ -57,13 +58,14 @@ void Space23::look(char* thing)
 		}
 }
 
-void Space23::search(char* thing)
+void Space23::search(const char* thing)
 {
-	if (strcmp(thing, "piles") || strcmp(thing, "valuables") )
+	if (strcmp(thing, "piles") == 0 || strcmp(thing, "valuables") == 0 )
 	{
 			cout << "shoveling through piles of coins like they were dirt gets old really quickly" << endl;
 			cout << "luckily it doesnt take too long to find something useful. the coins and chalices part to" << endl;
 			cout << "reveal a fancy set of golden armor" << endl;
+			armorFound = true;
 	}
 	else
 		{
@@ -71,9 +73,9 @@ void Space23::search(char* thing)
 		}
 }
 
-void Space23::eat(char* thing)
+void Space23::eat(const char* thing)
 {
-	if (strcmp(thing, "bread"))
+	if (strcmp(thing, "bread") == 0)
 	{
 		cout << "moldy bread! YUM! you do not feel healthier but you feel full \n" << endl;
 

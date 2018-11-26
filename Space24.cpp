@@ -31,7 +31,7 @@ Space24::Space24()
 Space24::~Space24()
 {}
 
-void Space24::look(char* thing)
+void Space24::look(const char* thing)
 {
 	if (strcmp(thing, "lever"))
 	{
@@ -49,7 +49,7 @@ void Space24::look(char* thing)
 		}
 }
 
-void Space24::pull(char* thing)
+void Space24::pull(const char* thing)
 {
 	if (strcmp(thing, "lever"))
 	{

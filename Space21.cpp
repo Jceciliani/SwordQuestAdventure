@@ -35,9 +35,9 @@ Space21::~Space21()
 	}
 }
 
-void Space21::look(char* thing)
+void Space21::look(const char* thing)
 {
-	if (strcmp(thing, "boulder"))
+	if (strcmp(thing, "boulder") == 0)
 	{
 
 			cout << "a large rock . not much to say. You could probably move it if you wanted" << endl;
@@ -49,9 +49,9 @@ void Space21::look(char* thing)
 		}
 }
 
-void Space21::push(char* thing)
+void Space21::push(const char* thing)
 {
-	if (strcmp(thing, "boulder"))
+	if (strcmp(thing, "boulder") == 0)
 	{
 		if(boulderMoved)
 		{

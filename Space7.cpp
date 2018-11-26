@@ -72,7 +72,7 @@ void Space7::jump(const char* thing)
 	}
 	else if (strcmp(thing, "west") == 0 || strcmp(thing, "south") == 0)
 	{
-		if (jumped)
+		if (jumped == true)
 		{
 			cout << "you make it to the landing" << endl;
 			jumped = false;
@@ -93,40 +93,60 @@ void Space7::run(const char* thing)
 
 	if (strcmp(thing, "bridge") == 0)
 	{
-		cout << "you run across the bridge. You can feel something barely" << endl;
-		cout << "grazing your heels but you make it across without incident." << endl;
-		if (crossed)
+		if (jumped == true)
 		{
-			crossed = false;
+			cout << "you cant reach anything from the island. try jumping back to a shore" << endl;
 		}
-		else
-		{
-			crossed = true;
-		}
-
-	}
-	else if (strcmp(thing, "west") == 0)
-	{
-		if (!crossed)
+		else 
 		{
 			cout << "you run across the bridge. You can feel something barely" << endl;
 			cout << "grazing your heels but you make it across without incident." << endl;
-			crossed = true;
+			if (crossed)
+			{
+				crossed = false;
+			}
+			else
+			{
+				crossed = true;
+			}
 		}
-		else {
-			cout << "you cant do that. the bridge heads south from here" << endl;
+	}
+	else if (strcmp(thing, "west") == 0)
+	{
+		if (jumped == true)
+		{
+			cout << "you cant reach anything from the island. try jumping back to a shore" << endl;
+		}
+		else
+		{
+			if (!crossed)
+			{
+				cout << "you run across the bridge. You can feel something barely" << endl;
+				cout << "grazing your heels but you make it across without incident." << endl;
+				crossed = true;
+			}
+			else {
+				cout << "you cant do that. the bridge heads south from here" << endl;
+			}
 		}
 	}
 	else if (strcmp(thing, "south") == 0)
 	{
-		if (crossed)
+		if (jumped == true)
 		{
-			cout << "you run across the bridge. You can feel something barely" << endl;
-			cout << "grazing your heels but you make it across without incident." << endl;
-			crossed = false;
+			cout << "you cant reach anything from the island. try jumping back to a shore" << endl;
 		}
-		else {
-			cout << "you cant do that. the bridge heads west from here" << endl;
+		else
+		{
+			if (crossed)
+			{
+				cout << "you run across the bridge. You can feel something barely" << endl;
+				cout << "grazing your heels but you make it across without incident." << endl;
+				crossed = false;
+			}
+			else {
+				cout << "you cant do that. the bridge heads west from here" << endl;
+			}
 		}
 	}
 }

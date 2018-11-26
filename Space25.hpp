@@ -24,7 +24,9 @@ class Space25 : public Space
 		Space25();
 		~Space25();
 
-		void look(char* thing);
-		void attack(char* thing);
+		void look(const char* thing);
+		void attack(const char* thing);
+		void setFlint(int set) { if (set == 1) { flintFound = true; } else { flintFound = false; } }
+		bool getFlint() { return flintFound; }
 };
 #endif // !SPACE25_HPP
