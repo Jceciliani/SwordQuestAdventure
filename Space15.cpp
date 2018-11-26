@@ -38,24 +38,24 @@ Space15::~Space15()
 }
 
 
-void Space15::look(char* thing)
+void Space15::look(const char* thing)
 {
-if(strcmp(thing, "candles"))
+if(strcmp(thing, "candles") == 0)
 		{
 			cout << "used up candles. Kinda pointless to collect the wax" << endl; 
 		}
 
-	else if(strcmp(thing, "vases"))
+	else if(strcmp(thing, "vases") == 0)
 	{
 			cout << "a bunch of pots and vases. Most of them are painted very well, maybe as an" << endl; 
 			cout << "offering. Or is the offering inside of them?" << endl;	
 	}
-	else if(strcmp(thing, "tomb"))
+	else if(strcmp(thing, "tomb") == 0)
 	{
 			cout << "a large tomb made of stone. The patterns on the lid makes you think it is not royalty" << endl; 
 			cout << "with in, but probably someone important" << endl;	
 	}
-	else if(strcmp(thing, "in tomb"))
+	else if(strcmp(thing, "in tomb") == 0)
 	{
 			if(tombOpen){
 			cout << "inside you find a skeleton. Shocker. The skeleton is dressed in simple clothes." << endl; 
@@ -65,27 +65,41 @@ if(strcmp(thing, "candles"))
 				cout << "the tomb is closed" << endl;
 			}
 	}
+	else if (strcmp(thing, "skeleton") == 0)
+{
+	if (tombOpen) {
+		cout << "the bones of someone that used to be living. nothing special here" << endl;
+		cout << "or maybe there is? check if they were buried with anything interesting" << endl;
+	}
+	else {
+		cout << "the tomb is closed" << endl;
+	}
+}
 	else
 		{
 			cout << "you cant do that" << endl;
 		}
 }
 
-void Space15::search(char* thing)
+void Space15::search(const char* thing)
 {
-	if (strcmp(thing, "vases"))
+	if (strcmp(thing, "vases") == 0)
 	{
 		cout << "used up candles. Kinda pointless to collect the wax" << endl;
 	}
-	else if (strcmp(thing, "skeleton") || strcmp(thing, "clothes"))
+	else if (strcmp(thing, "skeleton") == 0|| strcmp(thing, "clothes") == 0)
 	{
-		cout << "in one of the skeletons pockets you find a note. It is a letter to the" << endl;
-		cout << "new forge master. It reads" << endl;
-		cout << "now that you are replacing me as forge master you should know a few things. Our forge is in" << endl;
-		cout << "bad condition and dies every few days. Its easy enough to get restarted though. Just hit some" << endl;
-		cout << "flint and steel together and that ought to spark it up! Then you can continue banging away with " << endl;
-		cout << "your forge hammer as usual. Good luck!" << endl;
-
+		if (tombOpen) {
+			cout << "in one of the skeletons pockets you find a note. It is a letter to the" << endl;
+			cout << "new forge master. It reads" << endl;
+			cout << "now that you are replacing me as forge master you should know a few things. Our forge is in" << endl;
+			cout << "bad condition and dies every few days. Its easy enough to get restarted though. Just hit some" << endl;
+			cout << "flint and steel together and that ought to spark it up! Then you can continue banging away with " << endl;
+			cout << "your forge hammer as usual. Good luck!" << endl;
+		}
+		else {
+			cout << "the tomb is closed" << endl;
+		}
 	}
 	else
 	{
@@ -93,9 +107,9 @@ void Space15::search(char* thing)
 	}
 }
 
-void Space15::attack(char* thing)
+void Space15::attack(const char* thing)
 {
-	if (strcmp(thing, "vases"))
+	if (strcmp(thing, "vases") == 0)
 	{
 		cout << "like a true hylian you start hurling jar after jar after at the wall. After a few you" << endl;
 		cout << "feel kinda bad so you stop. But one of the busted pots had a bunch of steel!" << endl;
@@ -109,9 +123,9 @@ void Space15::attack(char* thing)
 	}
 }
 
-void Space15::open(char* thing)
+void Space15::open(const char* thing)
 {
-	if (strcmp(thing, "tomb"))
+	if (strcmp(thing, "tomb") == 0)
 	{
 		if (tombOpen)
 		{

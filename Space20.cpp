@@ -33,9 +33,9 @@ Space20::~Space20()
 {}
 
 
-void Space20::look(char* thing)
+void Space20::look(const char* thing)
 {
-	if (strcmp(thing, "fountian"))
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if(fountianUsed)
 		{
@@ -46,11 +46,11 @@ void Space20::look(char* thing)
 			cout << "The fountian is filled with water. It looks very refreashing" << endl;
 		}
 	}
-	else if (strcmp(thing, "rocks"))
+	else if (strcmp(thing, "rocks") == 0)
 	{
 		cout << "they glow because they're hot. Look but don't touch" << endl;
 	}
-	else if (strcmp(thing, "gateway"))
+	else if (strcmp(thing, "gateway") == 0)
 	{
 		cout << "large pillars in the shape of a doorframe contain the purplish portal. You feel " << endl;
 		cout << "like it will take you somewhere safe." << endl;
@@ -60,9 +60,9 @@ void Space20::look(char* thing)
 			cout << "you cant do that" << endl;
 		}
 }
-void Space20::enter(char* thing)
+void Space20::enter(const char* thing)
 {
-	if (strcmp(thing, "gateway"))
+	if (strcmp(thing, "gateway") == 0)
 	{
 		cout << "as you cross through you are consumed by a bright light. You close your eyes " << endl;
 		cout << "to no be blinded. You feel warm, but not in a “im on a volcano” way." << endl;
@@ -74,9 +74,9 @@ void Space20::enter(char* thing)
 	}
 }
 
-void Space20::drink(char* thing)
+void Space20::drink(const char* thing)
 {
-	if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "from fountian") == 0)
 	{
 		if (!fountianUsed)
 		{

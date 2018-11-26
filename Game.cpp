@@ -218,7 +218,25 @@ int Game::move(string input)
 		}
 		else
 		{
-			playerLoc = playerLoc->getEast();
+			if (playerLoc == spaceArr[13])
+			{
+				if (s14.getCross() == true)
+				{
+					playerLoc = playerLoc->getEast();
+				}
+				else
+				{
+					cout << "as you cross the room you hear a loud THUNK. sunddenly the floor dissapears from beneith you" << endl;
+					cout << "and you begin to fall. the sensation feels familiar. you are whisked down a large metal tube" << endl;
+					cout << "getting coated with its innards in the process. you launch out of the tube and into a wall before falling to the ground." << endl;
+					cout << "you find yourself in the Sewer Depths" << endl;
+					playerLoc = spaceArr[3];
+				}
+			}
+			else
+			{
+				playerLoc = playerLoc->getEast();
+			}
 			return 0;
 		}
 	}
@@ -231,7 +249,26 @@ int Game::move(string input)
 		}
 		else
 		{
-			playerLoc = playerLoc->getSouth();
+			if (playerLoc == spaceArr[6])
+			{
+				if (s7.getCross() == false)
+				{
+					playerLoc = playerLoc->getSouth();
+				}
+				else
+				{
+					cout << "you slowly meander across the bridge. it dipps beneith your weight to the point it is partially submerged" << endl;
+					cout << "about half way across the bridge, the creatures living hear find you. Pirahnas being launching themselves at you" << endl;
+					cout << "biting at your ankles, hands, butt. whatever they can get at. You sprint to get away, but youve already" << endl;
+					cout << "been torn to ribbons" << endl;
+					playerLoc = playerLoc->getSouth();
+					//damage
+				}
+			}
+			else
+			{
+				playerLoc = playerLoc->getSouth();
+			}
 			return 0;
 		}
 	}
@@ -244,7 +281,41 @@ int Game::move(string input)
 		}
 		else
 		{
-			playerLoc = playerLoc->getWest();
+			if (playerLoc == spaceArr[13])
+			{
+				if (s14.getCross() == false)
+				{
+					playerLoc = playerLoc->getWest();
+				}
+				else
+				{
+					cout << "as you cross the room you hear a loud THUNK. sunddenly the floor dissapears from beneith you" << endl;
+					cout << "and you begin to fall. the sensation feels familiar. you are whisked down a large metal tube" << endl;
+					cout << "getting coated with its innards in the process. you launch out of the tube and into a wall before falling to the ground." << endl;
+					cout << "you find yourself in the Sewer Depths" << endl;
+					playerLoc = spaceArr[3];
+				}
+			}
+			else if (playerLoc == spaceArr[6])
+			{
+				if (s7.getCross() == true)
+				{
+					playerLoc = playerLoc->getWest();
+				}
+				else
+				{
+					cout << "you slowly meander across the bridge. it dipps beneith your weight to the point it is partially submerged" << endl;
+					cout << "about half way across the bridge, the creatures living hear find you. Pirahnas being launching themselves at you" << endl;
+					cout << "biting at your ankles, hands, butt. whatever they can get at. You sprint to get away, but youve already" << endl;
+					cout << "been torn to ribbons" << endl;
+					playerLoc = playerLoc->getWest();
+					//damage
+				}
+			}
+			else
+			{
+				playerLoc = playerLoc->getWest();
+			}
 			return 0;
 		}
 	}
@@ -965,15 +1036,36 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("cave") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s11.look("cave");
+					}
+					else if (input.find("search") < 50)
+					{
+						s11.search("cave");
+					}
 				}
 				else if(input.find("pile") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s11.look("cave");
+					}
+					else if (input.find("read") < 50)
+					{
+						s11.search("cave");
+					}
 				}
 				else if(input.find("book") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s11.look("book");
+					}
+					else if (input.find("read") < 50)
+					{
+						s11.read("book");
+					}
 				}
 				else
 				{
@@ -984,16 +1076,23 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("plot") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s12.look("plot");
+					}
+					else if (input.find("dig") < 50)
+					{
+						s12.dig("plot");
+					}
 				}
 				else if(input.find("sign") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s12.look("sign");
+					}
 				}
-				/*else if(input.find("locker") < 50)
-				{
 
-				}*/
 				else
 				{
 
@@ -1003,7 +1102,14 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s13.look("fountian");
+					}
+					else if (input.find("drink") < 50)
+					{
+						s13.drink("fountian");
+					}
 				}
 				else if(input.find("forge") < 50)
 				{
@@ -1022,16 +1128,51 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("wall") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s14.look("walls");
+					}
 				}
 				else if(input.find("floor") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s14.look("floor");
+					}
 				}
-				/*else if(input.find("locker") < 50)
+				else if (input.find("across") < 50)
 				{
-
-				}*/
+					if (input.find("jump") < 50)
+					{
+						s14.jump("across");
+					}
+					else if (input.find("run") < 50)
+					{
+						s14.run("across");
+					}
+				}
+				else if (input.find("west") < 50)
+				{
+					if (input.find("jump") < 50)
+					{
+						s14.jump("west");
+					}
+					else if (input.find("run") < 50)
+					{
+						s14.run("west");
+					}
+				}
+				else if (input.find("east") < 50)
+				{
+					if (input.find("jump") < 50)
+					{
+						s14.jump("east");
+					}
+					else if (input.find("run") < 50)
+					{
+						s14.run("east");
+					}
+				}
 				else
 				{
 
@@ -1041,15 +1182,77 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("candle") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s15.look("candles");
+					}
 				}
 				else if(input.find("vase") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s15.look("vases");
+					}
+					else if (input.find("attack") < 50)
+					{
+						s15.attack("vases");
+					}
+					else if (input.find("search") < 50)
+					{
+						s15.search("vases");
+					}
 				}
 				else if(input.find("tomb") < 50)
 				{
+					if (input.find("look") < 50)
+					{
+						if (input.find("in") < 50)
+						{
+							s15.look("in tomb");
+						}
+						else
+						{
+							s15.look("tomb");
+						}
+					}
+					else if (input.find("open") < 50)
+					{
+						s15.open("tomb");
+					}
+				}
+				else if (input.find("skeleton") < 50)
+				{
+					if (input.find("look") < 50)
+					{
+						s15.look("skeleton");
+					}
+					else if (input.find("search") < 50)
+					{
+						s15.search("skeleton");
+					}
+				}
+				else if (input.find("steel") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s15.getSteel() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Steel" << endl;
+								ba.addToContainer(s15.getObject());
+							}
+						}
 
+						else
+						{
+							cout << "You haven't found steel here" << endl;
+						}
+					}
 				}
 				else
 				{
@@ -1060,16 +1263,23 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("sign") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s16.look("sign");
+					}
 				}
 				else if(input.find("bone") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s16.look("bones");
+					}
+					else if (input.find("search") < 50)
+					{
+						s16.search("bones");
+					}
 				}
-				/*else if(input.find("locker") < 50)
-				{
 
-				}*/
 				else
 				{
 
@@ -1079,15 +1289,21 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-
-				}
-				else if(input.find("path") < 50)
-				{
-
+					if (input.find("look") < 50)
+					{
+						s17.look("fountian");
+					}
+					else if (input.find("drink") < 50)
+					{
+						s17.drink("fountian");
+					}
 				}
 				else if(input.find("volcano") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s17.look("volcano");
+					}
 				}
 				else
 				{
@@ -1117,19 +1333,84 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("compartment") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						if (input.find("in") < 50)
+						{
+							s19.look("in compartment");
+						}
+						else
+						{
+							s19.look("compartment");
+						}
+					}
+					else if (input.find("open") < 50)
+					{
+						s19.open("compartment");
+					}
 				}
 				else if(input.find("red lever") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s19.look("red lever");
+					}
+					else if(input.find("pull") < 50)
+					{
+						s19.pull("red lever");
+					}
 				}
 				else if(input.find("green lever") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s19.look("green lever");
+					}
+					else if (input.find("pull") < 50)
+					{
+						s19.pull("green lever");
+					}
 				}
 				else if(input.find("blue lever") < 50)
 				{
-	
+					if (input.find("look") < 50)
+					{
+						s19.look("blue lever");
+					}
+					else if (input.find("pull") < 50)
+					{
+						s19.pull("blue lever");
+					}
+				}
+				else if (input.find("lever") < 50)
+				{
+					if (input.find("look") < 50)
+					{
+						s19.look("levers");
+					}
+				}
+				else if (input.find("key") < 50)
+				{
+					if (input.find("take") < 50)
+					{
+						if (s19.getContainerOpen() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Key" << endl;
+								ba.addToContainer(s19.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found a key here" << endl;
+						}
+					}
 				}
 				else
 				{
@@ -1140,15 +1421,33 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s20.look("fountian");
+					}
+					else if (input.find("drink") < 50)
+					{
+						s20.drink("fountian");
+					}
 				}
 				else if(input.find("rock") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s20.look("rocks");
+					}
 				}
 				else if(input.find("gateway") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s20.look("gateway");
+					}
+					else if (input.find("enter") < 50)
+					{
+						s20.enter("gateway");
+						playerLoc = spaceArr[12];
+					}
 				}
 				else
 				{

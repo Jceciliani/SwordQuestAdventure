@@ -23,8 +23,8 @@ class Space11 : public Space
 		Space11();
 		~Space11();
 
-		void look(char* thing);
-		void search(char* thing);
-		void read(char*);
+		void look(const char* thing);
+		void search(const char* thing);
+		void read(const char* thing);
 };
 #endif // !SPACE11_HPP

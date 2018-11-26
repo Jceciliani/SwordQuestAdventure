@@ -29,9 +29,9 @@ Space11::Space11()
 Space11::~Space11()
 {}
 
-void Space11::look(char* thing)
+void Space11::look(const char* thing)
 {
-	if (strcmp(thing, "cave") || strcmp(thing, "piles"))
+	if (strcmp(thing, "cave") == 0|| strcmp(thing, "piles") == 0)
 	{
 		cout << "small piles are scattered all over the small cave. hard to tell at a glance" << endl;
 		cout << "if there is anything useful in them" << endl;
@@ -49,9 +49,9 @@ void Space11::look(char* thing)
 	}
 }
 
-void Space11::search(char* thing)
+void Space11::search(const char* thing)
 {
-	if (strcmp(thing, "cave") || strcmp(thing, "piles"))
+	if (strcmp(thing, "cave")  == 0|| strcmp(thing, "piles") == 0)
 	{
 		cout << "While searching you find a large drawing on what used to be the top of a " << endl;
 		cout << "cairrage.  It looks like crude picture math. It depicts four swords" << endl;
@@ -65,9 +65,9 @@ void Space11::search(char* thing)
 	}
 }
 
-void Space11::read(char* thing)
+void Space11::read(const char* thing)
 {
-	if (strcmp(thing, "book"))
+	if (strcmp(thing, "book") == 0)
 	{
 		cout << "wait a minute... THIS IS A COOK BOOK! \n" << endl;
 

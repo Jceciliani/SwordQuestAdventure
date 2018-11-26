@@ -32,9 +32,9 @@ Space17::Space17()
 Space17::~Space17()
 {}
 
-void Space17::look(char* thing)
+void Space17::look(const char* thing)
 {
-if (strcmp(thing, "fountian"))
+if (strcmp(thing, "fountian") == 0)
 	{
 		if(fountianUsed)
 		{
@@ -46,7 +46,7 @@ if (strcmp(thing, "fountian"))
 		}
 	}
 
-	else if(strcmp(thing, "volcano"))
+	else if(strcmp(thing, "volcano") == 0)
 	{
 			cout << "its a volcano… in a dungeon? Anyways it seems to be still active. Maybe theres " << endl; 
 			cout << "something that will help up there?" << endl; 
@@ -57,9 +57,9 @@ else
 		}
 }
 
-void Space17::drink(char* thing)
+void Space17::drink(const char* thing)
 {
-if (strcmp(thing, "from fountian"))
+if (strcmp(thing, "from fountian") == 0)
 	{
 		if(!fountianUsed)
 		{

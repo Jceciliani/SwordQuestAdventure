@@ -24,7 +24,9 @@ class Space17 : public Space
 		Space17();
 		~Space17();
 
-		void look(char* thing);
-		void drink(char* thing);
+		void look(const char* thing);
+		void drink(const char* thing);
+		void setFountian(int set) { if (set == 1) { fountianUsed = true; } else { fountianUsed = false; } }
+		bool getFountian() { return fountianUsed; }
 };
 #endif // !SPACE17_HPP

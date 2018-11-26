@@ -27,8 +27,16 @@ class Space19 : public Space
 		Space19();
 		~Space19();
 
-		void look(char* thing);
-		void pull(char* thing);
-		void open(char* thing);
+		void look(const char* thing);
+		void pull(const char* thing);
+		void open(const char* thing);
+		void setContainerOpen(int set) { if (set == 1) { containerOpen = true; } else { containerOpen = false; } }
+		bool getContainerOpen() { return containerOpen; }
+		void setLockl(int set) { if (set == 1) { lock1Open = true; } else { lock1Open = false; } }
+		bool getLock1() { return lock1Open; }
+		void setLock2(int set) { if (set == 1) { lock2Open = true; } else { lock2Open = false; } }
+		bool getLock2() { return lock2Open; }
+		void setLock3(int set) { if (set == 1) { lock3Open = true; } else { lock3Open = false; } }
+		bool getLock3() { return lock3Open; }
 };
 #endif // !SPACE19_HPP
