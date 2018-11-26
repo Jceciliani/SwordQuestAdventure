@@ -29,14 +29,14 @@ Space16::Space16()
 Space16::~Space16()
 {}
 
-void Space16::look(char* thing)
+void Space16::look(const char* thing)
 {
-	if (strcmp(thing, "sign"))
+	if (strcmp(thing, "sign") == 0)
 	{
 		cout << "the sign reads 'BEWARE the GAUNTLET starts here.'" << endl;
 	}
 
-	else if (strcmp(thing, "bones"))
+	else if (strcmp(thing, "bones") == 0)
 	{
 		cout << "looks like human bones. Possibly victims of the path ahead?" << endl;
 	}
@@ -46,9 +46,9 @@ void Space16::look(char* thing)
 	}
 }
 
-void Space16::search(char* thing)
+void Space16::search(const char* thing)
 {
-	if (strcmp(thing, "bones"))
+	if (strcmp(thing, "bones") == 0)
 	{
 		cout << "you find a note hidden in one of the skulls. It reads " << endl;
 		cout << "Hey steven i know we said to meet here but we found a better spot up ahead." << endl;

@@ -32,15 +32,15 @@ Space14::~Space14()
 {}
 
 
-void Space14::look(char* thing)
+void Space14::look(const char* thing)
 {
-	if (strcmp(thing, "walls"))
+	if (strcmp(thing, "walls") == 0)
 	{
 		cout << "the walls look to be etched with a number of name. Middle. Jason. Of. Kevin. Floor. " << endl;
 		cout << "Joshua. Death. And many more" << endl;
 	}
 
-	else if (strcmp(thing, "floor"))
+	else if (strcmp(thing, "floor") == 0)
 	{
 		cout << "upon closer inspection the floor seems to slightly slope towards the middle of the hall. " << endl;
 		cout << "The floor there definitly looks unstable" << endl;
@@ -51,9 +51,9 @@ void Space14::look(char* thing)
 	}
 }
 
-void Space14::run(char* thing)
+void Space14::run(const char* thing)
 {
-	if (strcmp(thing, "across"))
+	if (strcmp(thing, "across") == 0)
 	{
 		cout << "you sprint across the room. You reach the other side unscathed" << endl;
 		if (crossed)
@@ -66,7 +66,7 @@ void Space14::run(char* thing)
 		}
 
 	}
-	else if (strcmp(thing, "west"))
+	else if (strcmp(thing, "west") == 0)
 	{
 		if (crossed)
 		{
@@ -90,9 +90,9 @@ void Space14::run(char* thing)
 	}
 }
 
-void Space14::jump(char* thing)
+void Space14::jump( const char* thing)
 {
-	if (strcmp(thing, "across"))
+	if (strcmp(thing, "across") == 0)
 	{
 		cout << " you make a small run and leap over the majority of the room. You cross unscathed" << endl;
 		if (crossed)
@@ -105,7 +105,7 @@ void Space14::jump(char* thing)
 		}
 
 	}
-	else if (strcmp(thing, "west"))
+	else if (strcmp(thing, "west") == 0)
 	{
 		if (crossed)
 		{
@@ -116,7 +116,7 @@ void Space14::jump(char* thing)
 			cout << "you are on the west side of the room" << endl;
 		}
 	}
-	else if (strcmp(thing, "east"))
+	else if (strcmp(thing, "east") == 0)
 	{
 		if (crossed)
 		{

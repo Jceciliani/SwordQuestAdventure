@@ -30,14 +30,14 @@ Space12::Space12()
 Space12::~Space12()
 {}
 
-void Space12::look(char* thing)
+void Space12::look(const char* thing)
 {
-	if (strcmp(thing, "plot"))
+	if (strcmp(thing, "plot") == 0)
 	{
 		cout << "a plot of dirt. the ground look freasher here that outside the fence. maybe" << endl;
 		cout << "someone is trying to grow something? i wonder what?" << endl;
 	}
-	else if (strcmp(thing, "sign"))
+	else if (strcmp(thing, "sign") == 0)
 	{
 		cout << "a small worn signpost. and in a dungeon? how big is this place? the sign pointed" << endl;
 		cout << "north reads SWAMP: CAREFUL OF THE PIRAHNAS" << endl;
@@ -50,9 +50,9 @@ void Space12::look(char* thing)
 	}
 }
 
-void Space12::dig(char* thing)
+void Space12::dig(const char* thing)
 {
-	if (strcmp(thing, "plot"))
+	if (strcmp(thing, "plot") == 0)
 	{
 		cout << "you get down on your hands and knees and start digging through the plot. hoping to find something" << endl;
 		cout << "but this action feels oddly familiar. like youve done this exact thing before. you start to remember" << endl;

@@ -23,7 +23,7 @@ class Space12 : public Space
 		Space12();
 		~Space12();
 
-		void look(char* thing);
-		void dig(char* thing);
+		void look(const char* thing);
+		void dig(const char* thing);
 };
 #endif // !SPACE12_HPP

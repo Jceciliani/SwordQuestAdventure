@@ -24,8 +24,10 @@ class Space20 : public Space
 		Space20();
 		~Space20();
 
-		void look(char* thing);
-		void drink(char* thing);
-		void enter(char* thing);
+		void look(const char* thing);
+		void drink(const char* thing);
+		void enter(const char* thing);
+		void setFountian(int set) { if (set == 1) { fountianUsed = true; } else { fountianUsed = false; } }
+		bool getFountian() { return fountianUsed; }
 };
 #endif // !SPACE20_HPP

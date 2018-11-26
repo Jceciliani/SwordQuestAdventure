@@ -25,9 +25,13 @@ class Space15 : public Space
 		Space15();
 		~Space15();
 
-		void look(char* thing);
-		void search(char* thing);
-		void open(char* thing);
-		void attack(char* thing);
+		void look(const char* thing);
+		void search(const char* thing);
+		void open(const char* thing);
+		void attack(const char* thing);
+		void setSteel(int set) { if (set == 1) { steelFound = true; } else { steelFound = false; } }
+		bool getSteel() { return steelFound; }
+		void setTomb(int set) { if (set == 1) { tombOpen = true; } else { tombOpen = false; } }
+		bool getTomb() { return tombOpen; }
 };
 #endif // !SPACE15_HPP

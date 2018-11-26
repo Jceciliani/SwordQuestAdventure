@@ -40,9 +40,9 @@ Space19::~Space19()
 	}
 }
 
-void Space19::look(char* thing)
+void Space19::look(const char* thing)
 {
-if (strcmp(thing, "compartment"))
+if (strcmp(thing, "compartment") == 0)
 	{
 		cout << "a small box set into the face of the mountian." << endl;
 		if(containerOpen)
@@ -54,7 +54,7 @@ if (strcmp(thing, "compartment"))
 			cout << "It has 3 colored locks on it. A red a blue and a green." << endl;
 		}
 	}
-else if (strcmp(thing, "in compartment"))
+else if (strcmp(thing, "in compartment") == 0)
 	{
 		if(containerOpen)
 		{
@@ -65,23 +65,23 @@ else if (strcmp(thing, "in compartment"))
 			cout << "the container is closed and locked" << endl;
 		}
 	}
-	else if(strcmp(thing, "levers"))
+	else if(strcmp(thing, "levers") == 0)
 	{
 			cout << " levers. they probably unlock something. It would be convienient if that lock were close by huh?" << endl; 
 			cout << "there is a red lever, a green lever and a blue lever" << endl; 
 	}
 
-	else if(strcmp(thing, "red lever"))
+	else if(strcmp(thing, "red lever") == 0)
 	{
 			cout << " a red lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
 	}
-	else if(strcmp(thing, "green lever"))
+	else if(strcmp(thing, "green lever") == 0)
 	{
 			cout << " a green lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
 	}
-	else if(strcmp(thing, "blue lever"))
+	else if(strcmp(thing, "blue lever") == 0)
 	{
 			cout << " a blue lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
@@ -92,9 +92,9 @@ else
 		}
 }
 
-void Space19::pull(char* thing)
+void Space19::pull( const char* thing)
 {
-if(strcmp(thing, "red lever"))
+if(strcmp(thing, "red lever") == 0)
 	{
 			if(!lock1Open)
 			{
@@ -109,7 +109,7 @@ if(strcmp(thing, "red lever"))
 				lock3Open = false;
 			}
 	}
-	else if(strcmp(thing, "green lever"))
+	else if(strcmp(thing, "green lever") == 0)
 	{
 			if(lock1Open && !lock2Open){
 			cout << "as you pull you hear a light click" << endl;
@@ -123,7 +123,7 @@ if(strcmp(thing, "red lever"))
 				lock3Open = false;
 			}
 	}
-	else if(strcmp(thing, "blue lever"))
+	else if(strcmp(thing, "blue lever") == 0)
 	{
 			if(lock2Open && lock1Open && !lock3Open){
 			cout << "as you pull you hear a light click" << endl;
@@ -141,9 +141,9 @@ if(strcmp(thing, "red lever"))
 
 
 
-void Space19::open(char* thing)
+void Space19::open(const char* thing)
 {
-	if (strcmp(thing, "compartment"))
+	if (strcmp(thing, "compartment") == 0)
 	{
 		if (!containerOpen) {
 			if (lock1Open && lock2Open && lock3Open)

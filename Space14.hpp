@@ -24,9 +24,11 @@ class Space14 : public Space
 		Space14();
 		~Space14();
 
-		void look(char* thing);
-		void run(char* thing);
-		void jump(char* thing);
+		void look(const char* thing);
+		void run(const char* thing);
+		void jump(const char* thing);
+		void setCross(int set) { if (set == 1) { crossed = true; } else { crossed = false; } }
+		bool getCross() { return crossed; }
 
 };
 #endif // !SPACE14_HPP
