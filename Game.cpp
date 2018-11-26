@@ -883,6 +883,33 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s5.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s5.getSize(); i++)
+					{
+						if (input.find(s5.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s5.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s5.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 			}
 			if(playerLoc == spaceArr[5]) // Space6 Jungle
 			{
@@ -931,6 +958,33 @@ void Game::play(bool loadgame)
 						else
 						{
 							cout << "You haven't found armor here" << endl;
+						}
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s6.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s6.getSize(); i++)
+					{
+						if (input.find(s6.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s6.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s6.deleteFromContainer(ba.printItem(i));
 						}
 					}
 				}
@@ -997,6 +1051,33 @@ void Game::play(bool loadgame)
 					if (input.find("run") < 50)
 					{
 						s7.run("south");
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s7.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s7.getSize(); i++)
+					{
+						if (input.find(s7.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s7.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s7.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1145,6 +1226,33 @@ void Game::play(bool loadgame)
 						playerLoc == spaceArr[3];
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s9.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s9.getSize(); i++)
+					{
+						if (input.find(s9.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s9.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s9.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1175,6 +1283,33 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s10.search("sack");
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s10.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s10.getSize(); i++)
+					{
+						if (input.find(s10.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s10.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s10.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1217,6 +1352,33 @@ void Game::play(bool loadgame)
 						s11.read("book");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s11.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s11.getSize(); i++)
+					{
+						if (input.find(s11.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s11.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s11.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1242,7 +1404,33 @@ void Game::play(bool loadgame)
 						s12.look("sign");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
 
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s12.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s12.getSize(); i++)
+					{
+						if (input.find(s12.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s12.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s12.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1307,6 +1495,33 @@ void Game::play(bool loadgame)
 						s13.open("gate");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s13.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s13.getSize(); i++)
+					{
+						if (input.find(s13.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s13.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s13.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1359,6 +1574,33 @@ void Game::play(bool loadgame)
 					else if (input.find("run") < 50)
 					{
 						s14.run("east");
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s14.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s14.getSize(); i++)
+					{
+						if (input.find(s14.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s14.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s14.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1442,6 +1684,33 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s15.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s15.getSize(); i++)
+					{
+						if (input.find(s15.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s15.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s15.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1467,7 +1736,33 @@ void Game::play(bool loadgame)
 						s16.search("bones");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
 
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s16.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s16.getSize(); i++)
+					{
+						if (input.find(s16.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s16.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s16.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1491,6 +1786,33 @@ void Game::play(bool loadgame)
 					if (input.find("look") < 50)
 					{
 						s17.look("volcano");
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s17.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s17.getSize(); i++)
+					{
+						if (input.find(s17.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s17.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s17.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1600,6 +1922,33 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s19.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s19.getSize(); i++)
+					{
+						if (input.find(s19.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s19.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s19.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1635,6 +1984,33 @@ void Game::play(bool loadgame)
 					{
 						s20.enter("gateway");
 						playerLoc = spaceArr[12];
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s20.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s20.getSize(); i++)
+					{
+						if (input.find(s20.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s20.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s20.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1675,6 +2051,33 @@ void Game::play(bool loadgame)
 						else
 						{
 							cout << "You haven't found a sword here" << endl;
+						}
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s21.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s21.getSize(); i++)
+					{
+						if (input.find(s21.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s21.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s21.deleteFromContainer(ba.printItem(i));
 						}
 					}
 				}
@@ -1721,6 +2124,33 @@ void Game::play(bool loadgame)
 					else
 					{
 						s22.answer("wrong");
+					}
+				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s22.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s22.getSize(); i++)
+					{
+						if (input.find(s22.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s22.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s22.deleteFromContainer(ba.printItem(i));
+						}
 					}
 				}
 				else
@@ -1770,6 +2200,33 @@ void Game::play(bool loadgame)
 						s23.eat("bread");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s23.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s23.getSize(); i++)
+					{
+						if (input.find(s23.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s23.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s23.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1801,6 +2258,33 @@ void Game::play(bool loadgame)
 				{
 
 				}*/
+				else if (input.find("drop") < 50)
+				{
+
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s24.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s24.getSize(); i++)
+					{
+						if (input.find(s24.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s24.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s24.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -1826,7 +2310,33 @@ void Game::play(bool loadgame)
 						s25.attack("stalagtite");
 					}
 				}
+				else if (input.find("drop") < 50)
+				{
 
+					for (int i = 0; i < ba.getSize(); i++)
+					{
+						if (input.find(ba.printItem(i).getName()) < 50)
+						{
+							cout << " you drop " << ba.printItem(i).getName() << endl;
+							s25.addToContainer(ba.printItem(i));
+							ba.deleteFromContainer(ba.printItem(i));
+
+						}
+					}
+				}
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s25.getSize(); i++)
+					{
+						if (input.find(s25.printItem(i).getName()) < 50)
+						{
+							cout << " you pickup " << s25.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s25.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
 				else
 				{
 
@@ -5958,3 +6468,5 @@ Objects Game::finditem(int name)
 	}
 
 }
+
+
