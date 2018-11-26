@@ -26,10 +26,16 @@ class Space13 : public Space
 		Space13();
 		~Space13();
 
-		void look(char* thing);
-		void drink(char* thing);
-		void start(char* thing);
-		void open(char* thing);
-		void use(char* thing);
+		void look(const char* thing);
+		void drink(const char* thing);
+		void start(const char* thing);
+		void open(const char* thing);
+		void use(const char* thing);
+		void setFountian(int set) { if (set == 1) { fountianUsed = true; } else { fountianUsed = false; } }
+		bool getFountian() { return fountianUsed; }
+		void setGate(int set) { if (set == 1) { gateOpened = true; } else { gateOpened = false; } }
+		bool getGate() { return gateOpened; }
+		void setForge(int set) { if (set == 1) { forgeLit = true; } else { forgeLit = false; } }
+		bool getForge() { return forgeLit; }
 };
 #endif // !SPACE13_HPP

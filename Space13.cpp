@@ -38,9 +38,9 @@ Space13::Space13()
 Space13::~Space13()
 {}
 
-void Space13::look(char* thing)
+void Space13::look(const char* thing)
 {
-	if (strcmp(thing, "fountian"))
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if (fountianUsed)
 		{
@@ -51,7 +51,7 @@ void Space13::look(char* thing)
 			cout << "The fountian is filled with water. It looks very refreashing" << endl;
 		}
 	}
-	else if (strcmp(thing, "forge") || strcmp(thing, "anvil"))
+	else if (strcmp(thing, "forge") == 0 || strcmp(thing, "anvil") == 0)
 	{
 		cout << "a forge and anvil used for crafting weapons and armor" << endl;
 		if (forgeLit)
@@ -64,10 +64,24 @@ void Space13::look(char* thing)
 		}
 
 	}
-	else if (strcmp(thing, "chest") || strcmp(thing, "wooden chest"))
+	else if (strcmp(thing, "chest") == 0 || strcmp(thing, "wooden chest") == 0)
 	{
 		cout << "the wooden chest looks worn, but still very usable. since it isnt locked you could" << endl;
 		cout << "probably store some of your extra things here" << endl;
+	}
+	else if (strcmp(thing, "gate") == 0)
+	{
+		cout << "a large ominous gate. the black steel it is made from is sturdy and threatening" << endl;
+		if (!gateOpened)
+		{
+			cout << "the gate is closed an bars your exit" << endl;
+
+		}
+		else
+		{
+			cout << "the gate is open" << endl;
+
+		}
 	}
 	else
 	{
@@ -75,9 +89,9 @@ void Space13::look(char* thing)
 	}
 }
 
-void Space13::drink(char* thing)
+void Space13::drink(const char* thing)
 {
-	if (strcmp(thing, "from fountian"))
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if (!fountianUsed)
 		{
@@ -96,9 +110,9 @@ void Space13::drink(char* thing)
 	}
 }
 
-void Space13::start(char* thing)
+void Space13::start(const char* thing)
 {
-	if (strcmp(thing, "forge"))
+	if (strcmp(thing, "forge") == 0)
 	{
 		if (!forgeLit)
 		{
@@ -117,9 +131,9 @@ void Space13::start(char* thing)
 	}
 }
 
-void Space13::use(char* thing)
+void Space13::use(const char* thing)
 {
-	if (strcmp(thing, "forge"))
+	if (strcmp(thing, "forge") == 0)
 	{
 		if (!forgeLit)
 		{
@@ -138,9 +152,9 @@ void Space13::use(char* thing)
 	}
 }
 
-void Space13::open(char* thing)
+void Space13::open(const char* thing)
 {
-	if (strcmp(thing, "gate"))
+	if (strcmp(thing, "gate") == 0)
 	{
 		if (!gateOpened)
 		{
