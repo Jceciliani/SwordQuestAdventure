@@ -76,7 +76,7 @@ void Space20::enter(const char* thing)
 
 void Space20::drink(const char* thing)
 {
-	if (strcmp(thing, "from fountian") == 0)
+	if (strcmp(thing, "fountian") == 0)
 	{
 		if (!fountianUsed)
 		{

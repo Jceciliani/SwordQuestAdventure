@@ -59,7 +59,7 @@ else
 
 void Space17::drink(const char* thing)
 {
-if (strcmp(thing, "from fountian") == 0)
+if (strcmp(thing, "fountian") == 0)
 	{
 		if(!fountianUsed)
 		{

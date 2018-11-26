@@ -1116,11 +1116,49 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("forge") < 50)
 				{
-
+					if (input.find("look") < 50)
+					{
+						s13.look("forge");
+					}
+					else if (input.find("put") < 50)
+					{
+						
+					}
+					else if (input.find("use") < 50)
+					{
+						
+					}
+					else if (input.find("start") < 50)
+					{
+						
+					}
 				}
 				else if(input.find("chest") < 50)
 				{
+					if (input.find("look") < 50)
+					{
+						s13.look("chest");
+					}
+					else if (input.find("put") < 50)
+					{
 
+					}
+					else if (input.find("take") < 50)
+					{
+
+					}
+				}
+				if (input.find("gate") < 50)
+				{
+					if (input.find("look") < 50)
+					{
+						s13.look("gate");
+					}
+					else if (input.find("open") < 50)
+					{
+						//if() if you have key you can open gate
+						s13.open("gate");
+					}
 				}
 				else
 				{
