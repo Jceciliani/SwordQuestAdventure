@@ -159,6 +159,31 @@ int Game::move(string input)
 		cout << "exiting game" << endl;
 		exit(0);
 	}
+	if(input == "inventory")
+	{
+		cout << "\n-------------------------------------------------------------------------------------------" << endl;
+		cout << "                          Inventory" << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl;
+		cout << "Equiped:" << endl;
+		/*for(int i = 0; i < eq.size(); i++)
+		{
+			cout << eq[i].getName() << endl;
+		}
+		cout << "" << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl;
+		*/
+		cout << "Bag" << endl;
+		//Print out bag contents
+		cout << "Stash" << endl;
+		// Print out stash contents
+	} 
+	if(input == "status")
+	{
+		cout << "\n-------------------------------------------------------------------------------------------" << endl; 
+		cout << "Current Level: " << char1->getLevel() << endl;
+		cout << "Current Health: " << char1->getHealth() << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl;
+	}
 	if(input == "help")
 	{
 		cout << endl;
