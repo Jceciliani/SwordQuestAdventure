@@ -156,11 +156,11 @@ bool Forge::startForge()
 	for(int i = 0; i < forge.size(); i ++)
 {
 
-	if(strcmp((forge[i].getName()).c_str(), "Flint") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "flint") == 0)
 	{
 		flint = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Steel") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "steel") == 0)
 	{
 		steel = true;
 	}
@@ -187,23 +187,23 @@ bool Forge::ultWeaponCrafted()
 
 		for(int i = 0; i < forge.size(); i ++)
 {
-	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Wooden Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "wooden sword") == 0)
 	{
 		wood = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Bronze Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "bronze sword") == 0)
 	{
 		bronze = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Silver Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "silver sword") == 0)
 	{
 		silver = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Two-Handed Gold Sword") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "gold sword") == 0)
 	{
 		gold = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "forge hammer") == 0)
 	{
 		hammer = true;
 	}		
@@ -230,23 +230,23 @@ bool Forge::ultArmorCrafted()
 
 	for(int i = 0; i < forge.size(); i++)
 {
-	if(strcmp((forge[i].getName()).c_str(), "Tunic Armor") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "tunic armor") == 0)
 	{
 		tunic = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Bronze Armor") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "bronze armor") == 0)
 	{
 		bronze = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Silver Armor") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "silver armor") == 0)
 	{
 		silver = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Gold Armor") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "gold armor") == 0)
 	{
 		gold = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "Forge Hammer") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "forge hammer") == 0)
 	{
 		hammer = true;
 	}		
@@ -381,12 +381,12 @@ void Equipped::printContainer()
 
 void Equipped::addEquipment(Objects obj)
 {
-	if(obj.getName().find("Sword") != -1)
+	if(obj.getName().find("sword") != -1)
 	{
 		equipped[0] = obj;
 		setSword(obj);
 	}
-	else if(obj.getName().find("Armor") != -1)
+	else if(obj.getName().find("armor") != -1)
 	{
 		equipped[1] = obj;
 		setArmor(obj);
@@ -394,8 +394,8 @@ void Equipped::addEquipment(Objects obj)
 }
 
 //test - global string variables to hold weapon and armor names
-string sword = "Two-Handed Wooden Sword";
-string armor = "Tunic Armor";
+string sword = "wooden sword";
+string armor = "tunic armor";
 
 
 void Equipped::setSword(Objects obj)

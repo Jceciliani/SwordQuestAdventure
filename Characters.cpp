@@ -104,27 +104,27 @@ int Hero::attack()
 
 	int totalAttack = 0;
 	// Two-Handed Wooden Sword Equipped
-	if(equip.getSword() == "Two-Handed Wooden Sword")
+	if(equip.getSword() == "wooden sword")
 	{
 		totalAttack = (rand() % 4) + 1;
 	}
 	// Two-Handed Bronze Sword Equipped
-	else if(equip.getSword() == "Two-Handed Bronze Sword")
+	else if(equip.getSword() == "bronze sword")
 	{
 		totalAttack = (rand() % 4) + 5; 
 	}
 	// Two-Handed Silver Sword Equipped
-	else if(equip.getSword() == "Two-Handed Silver Sword")
+	else if(equip.getSword() == "silver sword")
 	{
 		totalAttack = (rand() % 4) + 9;
 	}
 	// Two-Handed Gold Sword Equipped
-	else if(equip.getSword() == "Two-Handed Gold Sword")
+	else if(equip.getSword() == "gold sword")
 	{
 		totalAttack = (rand() % 4) + 13;
 	}
 	// Two-Handed Ultimate Sword Equipped
-	else if(equip.getSword() == "Two-Handed Ultimate Sword")
+	else if(equip.getSword() == "ultimate sword")
 	{
 		totalAttack = (rand() % 4) + 21;
 	}	
@@ -138,27 +138,27 @@ void Hero::defense(int damage)
 
 	int totaldefense = 0;
 	// Tunic Armor Equipped
-	if(equip.getArmor() == "Tunic Armor")
+	if(equip.getArmor() == "tunic armor")
 	{
 		totaldefense = (rand() % 4) + 3;
 	}
 	// Bronze Armor Equipped
-	else if(equip.getArmor() == "Bronze Armor")
+	else if(equip.getArmor() == "bronze armor")
 	{
 		totaldefense = (rand() % 4) + 7;
 	}
 	// Silver Armor Equipped
-	else if(equip.getArmor() == "Silver Armor")
+	else if(equip.getArmor() == "silver armor")
 	{
 		totaldefense = (rand() % 4) + 11;
 	}
 	// Gold Armor Eqipped
-	else if(equip.getArmor() == "Gold Armor")
+	else if(equip.getArmor() == "gold armor")
 	{
 		totaldefense = (rand() % 4) + 15;
 	}
 	// Ultimate Armor Equipped
-	else if(equip.getArmor() == "Ultimate Armor")
+	else if(equip.getArmor() == "ultimate armor")
 	{
 		totaldefense = (rand() % 4) + 23;
 	}
