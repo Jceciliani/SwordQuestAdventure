@@ -129,3 +129,4 @@ void Space9::drink(const char* thing)
 		cout << "you cant do that" << endl;
 	}
 }
+

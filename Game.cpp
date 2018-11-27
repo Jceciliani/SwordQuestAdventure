@@ -164,18 +164,15 @@ int Game::move(string input)
 		cout << "\n-------------------------------------------------------------------------------------------" << endl;
 		cout << "                          Inventory" << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl;
-		cout << "Equiped:" << endl;
-		/*for(int i = 0; i < eq.size(); i++)
-		{
-			cout << eq[i].getName() << endl;
-		}
-		cout << "" << endl;
+		cout << "Equipped:" << endl;
+		eq.printContainer();	
 		cout << "-------------------------------------------------------------------------------------------" << endl;
-		*/
 		cout << "Bag" << endl;
 		//Print out bag contents
+		ba.printContainer();	
 		cout << "Stash" << endl;
 		// Print out stash contents
+		st.printContainer();	
 	} 
 	if(input == "status")
 	{
@@ -520,12 +517,63 @@ void Game::stashToBag(Objects obj)
 }
 //*********************************************************************************
 
+// Healing function
+void Game::heal()
+{
+	if(char1->getLevel() == 1)
+	{
+		char1->setHealth(10);
+	}	
+	else if(char1->getLevel() == 2)
+	{
+		char1->setHealth(12);
+	}	
+	else if(char1->getLevel() == 3)
+	{
+		char1->setHealth(14);
+	}
+	else if(char1->getLevel() == 4)
+	{
+		char1->setHealth(16);
+	}
+	else if(char1->getLevel() == 5)
+	{
+		char1->setHealth(18);
+	}
+	else if(char1->getLevel() == 6)
+	{
+		char1->setHealth(20);
+	}
+	else if(char1->getLevel() == 7)
+	{
+		char1->setHealth(22);
+	}
+	else if(char1->getLevel() == 8)
+	{
+		char1->setHealth(24);
+	}
+	else if(char1->getLevel() == 9)
+	{
+		char1->setHealth(26);
+	}
+	else if(char1->getLevel() == 10)
+	{
+		char1->setHealth(28);
+	}
+	else if(char1->getLevel() == 11)
+	{
+		char1->setHealth(30);
+	}
+
+
+}
+
 void Game::play(bool loadgame)
 {
 	// Create Space objects
 
 	int turns = 0;
-
+	string charName;
 	char choice;
 	if (loadgame == true)
 	{
@@ -552,9 +600,16 @@ void Game::play(bool loadgame)
     cin.ignore();
 	cout << "Falling..." << endl;
     cin.ignore();
-	cout << "You impact with a CRACK. Your consciousness fades to the ether." << endl;
+	cout << "You impact with a CRACK. Your consciousness fades to the ether.\n\n" << endl;
     cin.ignore();
-
+	
+	cout << "You wake with a start and everything is fuzzy.... What is your name?" << endl;
+	cout << "> ";
+	getline(cin, charName);
+	// Set name to hero
+	char1->setName(charName);					
+	// Seperator before the game starts
+	cout << "\n\n\n\n\n" << endl;
 	// Randomize the game
 	srand(time(NULL));
 	while (turns < 100)
@@ -1062,7 +1117,8 @@ void Game::play(bool loadgame)
 					}
 					if (input.find("use") < 50)
 					{
-						//damage character
+						// Damage from the trap
+						char1->damage(-2);
 					}
 				}
 				else if(input.find("liquid") < 50)
@@ -1244,6 +1300,10 @@ void Game::play(bool loadgame)
 					else if (input.find("drink") < 50)
 					{
 						s9.drink("fountian");
+						if(s9.getFountian())
+						{
+							heal();
+						}	
 					}
 				}
 				else if(input.find("tube") < 50)
@@ -2008,11 +2068,15 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("look") < 50)
 					{
-						s20.look("fountian");
+						s20.look("fountain");
 					}
 					else if (input.find("drink") < 50)
 					{
-						s20.drink("fountian");
+						s20.drink("fountain");
+						if(s20.getFountian())
+						{
+							heal();
+						}
 					}
 				}
 				else if(input.find("rock") < 50)
@@ -2145,6 +2209,10 @@ void Game::play(bool loadgame)
 					else if (input.find("talk") < 50)
 					{
 						s22.talk("to old man");
+						if(s22.getCorrect())
+						{
+							heal();
+						}
 					}
 					
 				}

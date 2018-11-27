@@ -37,6 +37,7 @@ class Characters
 		void levelUp();
 		int getHealth();
 		void setHealth(int);
+		void damage(int);
 };
 #endif // !CHARACTERS_HPP
 

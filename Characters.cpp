@@ -80,6 +80,11 @@ int Characters::getHealth()
 void Characters::setHealth(int hp)
 {
 	strength = hp;
+}
+
+void Characters::damage(int dmg)
+{
+	strength += dmg;
 }	
 
 // Hero**********************************************************************
