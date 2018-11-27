@@ -153,11 +153,34 @@ int Game::move(string input)
 		load();
 		return 1;
 	}
-	if(input.find("exit") < 50)
+	if(input.find("exit game") < 50)
 	{
 		//exit game
 		cout << "exiting game" << endl;
 		exit(0);
+	}
+	if(input == "help")
+	{
+		cout << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl;
+		cout << "                          AVAILABLE ACTIONS" << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl;
+		cout << "north, east, south, west:               Travel in that direction" << endl;
+		cout << "<room name>:                            Travel to that room" << endl;
+		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
+		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
+		cout << "inventory:                              List your inventory" << endl;
+		cout << "take:                                   Aquire an object, putting it in your inventory" << endl;
+		cout << "eat / drink <object>:                   Attempt to eat or drink something" << endl;
+		cout << "drop <item>:                            Drop the selected item in this room" << endl;
+		cout << "attack <object>:                        Attack something in the room" << endl;
+		cout << "pull <object>:                          Pull on the object (usually a lever)" << endl;
+		cout << "status:                                 View your current level and hit points" << endl;
+		cout << endl;
+		cout << "savegame:                               Save your game" << endl;
+		cout << "loadgame:                               Load saved game" << endl;
+		cout << "exit game:                              Exit the game" << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl << endl;
 	} 
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
