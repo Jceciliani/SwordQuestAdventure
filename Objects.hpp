@@ -162,6 +162,20 @@ class Key : public Objects
 };
 
 
+// Two Handed Wooden Sword **********************************
+class No_Sword : public Objects
+{
+public:
+	No_Sword();
+	~No_Sword();
+};
 
+// No Armor **********************************
+class No_Armor : public Objects
+{
+public:
+	No_Armor();
+	~No_Armor();
+};
 
 

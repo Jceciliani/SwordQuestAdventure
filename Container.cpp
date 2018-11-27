@@ -168,7 +168,7 @@ bool Forge::startForge()
 	if(flint == true && steel == true)
 	{
 		forgeStart = true;
-		cout << "The beacon is lit!" << endl;
+
 		return true;
 	}
 	else

@@ -204,6 +204,74 @@ int Game::move(string input)
 		cout << "exit game:                              Exit the game" << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl << endl;
 	} 
+	if (input.find("unequip") < 50)
+	{
+		if (ba.getSize() >= 5)
+		{
+			cout << "you cannot do that. your bag is full" << endl;
+		}
+		else
+		{ 
+			if (input.find(eq.getObject1().getName()) < 50)
+			{
+				if (eq.getObject1().getName() != "No Sword")
+				{
+					cout << " you unequip " << eq.getObject1().getName() << endl;
+					ba.addToContainer(eq.getObject1());
+					eq.addEquipment(No_Sword());
+				}
+				else
+				{
+					cout << "you have nothing to unequip" << endl;
+				}
+			}
+			else if (input.find(eq.getObject2().getName()) < 50)
+			{
+				if (eq.getObject2().getName() != "No Armor")
+				{
+					cout << " you unequip " << eq.getObject2().getName() << endl;
+					ba.addToContainer(eq.getObject2());
+					eq.addEquipment(No_Armor());
+				}
+			
+				else
+				{
+					cout << "you have nothing to unequip" << endl;
+				}
+			}
+			
+		}
+	}
+	if (input.find("equip") < 50)
+	{
+		for (int i = 0; i < ba.getSize(); i++)
+		{
+			
+			if (input.find(ba.printItem(i).getName()) < 50)
+			{
+				if (ba.printItem(i).getName().find("sword") < 50) {
+					cout << " you equip " << ba.printItem(i).getName() << endl;
+					Objects hold = eq.getObject1();
+					eq.addEquipment(ba.printItem(i));
+					ba.deleteFromContainer(ba.printItem(i));
+					if (eq.getObject1().getName() != "No Sword")
+					{
+						ba.addToContainer(hold);
+					}
+				}
+				else if (ba.printItem(i).getName().find("armor") < 50) {
+					cout << " you equip " << ba.printItem(i).getName() << endl;
+					Objects hold = eq.getObject2();
+					eq.addEquipment(ba.printItem(i));
+					ba.deleteFromContainer(ba.printItem(i));
+					if (eq.getObject2().getName() != "No Armor")
+					{
+						ba.addToContainer(hold);
+					}
+				}
+			}
+		}
+	}
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
 	string northLocationName;
@@ -1525,17 +1593,37 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("forge") < 50)
 				{
+					if (input.find("look in") < 50)
+					{
+						fg.printContainer();
+					}
 					if (input.find("look") < 50)
 					{
 						s13.look("forge");
 					}
 					else if (input.find("put") < 50)
 					{
-						
+						for (int i = 0; i < ba.getSize(); i++)
+						{
+							if (input.find(ba.printItem(i).getName()) < 50)
+							{
+								cout << " you put " << ba.printItem(i).getName() << "into the forge" << endl;
+								fg.addToContainer(ba.printItem(i));
+								ba.deleteFromContainer(ba.printItem(i));
+
+							}
+						}
 					}
 					else if (input.find("use") < 50)
 					{
-						
+						s13.use("forge");
+						if (fg.getForgeStart() == true)
+						{
+							if (fg.ultArmorCrafted()) 
+							{
+
+							}
+						}
 					}
 					else if (input.find("start") < 50)
 					{

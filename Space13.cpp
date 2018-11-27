@@ -118,7 +118,7 @@ void Space13::start(const char* thing)
 		{
 			cout << "you strike the steel on the flint a few times. the sparks catch quickly" << endl;
 			cout << "and the forge roars to life. you set the forge hammer down, ready to use it in the future" << endl;
-			forgeLit = true;
+			
 		}
 		else
 		{
@@ -160,7 +160,7 @@ void Space13::open(const char* thing)
 		{
 			cout << "as you use the large key, the large lock falls to the floor and the gates loudly creak open" << endl;
 			cout << "you hear a loud deep growl from beyond the doorway. this is it." << endl;
-			gateOpened = true;
+			
 		}
 		else
 		{
