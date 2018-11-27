@@ -368,6 +368,7 @@ int Game::move(string input)
 					cout << "been torn to ribbons" << endl;
 					playerLoc = playerLoc->getWest();
 					//damage
+					char1->damage(-2);
 				}
 			}
 			else
@@ -520,51 +521,9 @@ void Game::stashToBag(Objects obj)
 // Healing function
 void Game::heal()
 {
-	if(char1->getLevel() == 1)
-	{
-		char1->setHealth(10);
-	}	
-	else if(char1->getLevel() == 2)
-	{
-		char1->setHealth(12);
-	}	
-	else if(char1->getLevel() == 3)
-	{
-		char1->setHealth(14);
-	}
-	else if(char1->getLevel() == 4)
-	{
-		char1->setHealth(16);
-	}
-	else if(char1->getLevel() == 5)
-	{
-		char1->setHealth(18);
-	}
-	else if(char1->getLevel() == 6)
-	{
-		char1->setHealth(20);
-	}
-	else if(char1->getLevel() == 7)
-	{
-		char1->setHealth(22);
-	}
-	else if(char1->getLevel() == 8)
-	{
-		char1->setHealth(24);
-	}
-	else if(char1->getLevel() == 9)
-	{
-		char1->setHealth(26);
-	}
-	else if(char1->getLevel() == 10)
-	{
-		char1->setHealth(28);
-	}
-	else if(char1->getLevel() == 11)
-	{
-		char1->setHealth(30);
-	}
 
+	int health = 8 + (char1->getLevel() * 2);
+	char1->setHealth(health);
 
 }
 
@@ -955,8 +914,9 @@ void Game::play(bool loadgame)
 					}
 					else if(input.find("eat") < 50)
 					{
-						cout << "Well... desperate times..." << endl;
+						cout << "Well... desperate times...you feel worse now." << endl;
 						//damage character
+						char1->damage(-1);
 					}
 					else
 					{
@@ -1299,11 +1259,12 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
-						s9.drink("fountian");
-						if(s9.getFountian())
+						if (!(s9.getFountian()))
 						{
 							heal();
-						}	
+						}
+						s9.drink("fountian");
+						
 					}
 				}
 				else if(input.find("tube") < 50)
@@ -1554,7 +1515,12 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
+						if (!(s13.getFountian()))
+						{
+							heal()
+						}
 						s13.drink("fountian");
+						
 					}
 				}
 				else if(input.find("forge") < 50)
@@ -1886,6 +1852,10 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
+						if (!(s17.getFountian()))
+						{
+							heal()
+						}
 						s17.drink("fountian");
 					}
 				}
@@ -2072,11 +2042,12 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
-						s20.drink("fountain");
-						if(s20.getFountian())
+						if (!(s20.getFountian()))
 						{
 							heal();
 						}
+						s20.drink("fountain");
+						
 					}
 				}
 				else if(input.find("rock") < 50)
@@ -2209,10 +2180,7 @@ void Game::play(bool loadgame)
 					else if (input.find("talk") < 50)
 					{
 						s22.talk("to old man");
-						if(s22.getCorrect())
-						{
-							heal();
-						}
+						
 					}
 					
 				}
@@ -2235,7 +2203,7 @@ void Game::play(bool loadgame)
 					if (input.find("footsteps") < 50)
 					{
 						s22.answer("footsteps");
-						//heal
+						heal()
 					}
 					else
 					{
@@ -2360,6 +2328,7 @@ void Game::play(bool loadgame)
 					{
 						s24.pull("lever");
 						//damage
+						char1->damage(-5);
 						playerLoc = spaceArr[15];
 					}
 				}
