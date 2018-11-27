@@ -516,7 +516,7 @@ void Game::transfer(Objects obj1, Objects obj2)
 
 	// Transferring two objects at once
 	// If the object is a sword
-	if(obj1.getName().find("Sword") != -1)
+	if(obj1.getName().find("sword") != -1)
 	{
 		// Add Sword to Bag
 		ba.addToContainer(obj1);
@@ -534,7 +534,7 @@ void Game::transfer(Objects obj1, Objects obj2)
 		eq.setSword(obj2);
 	}
 	//If the object is armor
-	else if(obj1.getName().find("Armor") != -1)	
+	else if(obj1.getName().find("armor") != -1)	
 	{
 		// Add Armor to bag
 		ba.addToContainer(obj1);
