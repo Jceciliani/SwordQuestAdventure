@@ -1614,20 +1614,65 @@ void Game::play(bool loadgame)
 							}
 						}
 					}
+					else if (input.find("remove") < 50)
+					{
+						for (int i = 0; i < fg.getSize(); i++)
+						{
+							if (input.find(fg.printItem(i).getName()) < 50)
+							{
+								if (ba.getSize() >= 5)
+								{
+									cout << " you take " << fg.printItem(i).getName() << "from the forge" << endl;
+									ba.addToContainer(fg.printItem(i));
+									fg.deleteFromContainer(fg.printItem(i));
+								}
+								else
+								{
+									cout << " your inventory is full" << endl;
+								}
+							}
+						}
+					}
 					else if (input.find("use") < 50)
 					{
 						s13.use("forge");
 						if (fg.getForgeStart() == true)
 						{
-							if (fg.ultArmorCrafted()) 
+							if (fg.ultArmorCrafted())
 							{
-
+								cout << " you created the ultimate armor" << endl;
+								fg.clear();
+								fg.addToContainer(fg.getUltArmor());
+								fg.addToContainer(Forge_Hammer());
+							}
+						
+							if (fg.ultSwordCrafted())
+							{
+								cout << " you created the ultimate sword" << endl;
+								fg.clear();
+								fg.addToContainer(fg.getUltArmor());
+								fg.addToContainer(Forge_Hammer());
 							}
 						}
 					}
 					else if (input.find("start") < 50)
 					{
-						
+						if(fg.getForgeStart() == true)
+						{
+							s13.start("forge");
+						}
+						else
+						{
+							if (fg.startForge() == true)
+							{
+								s13.start("forge");
+								s13.setForge(1);
+							}
+							else
+							{
+								cout << "you dont have the proper materials in the forge to start it" << endl;
+							}
+						}
 					}
 				}
 				else if(input.find("chest") < 50)
