@@ -1517,7 +1517,7 @@ void Game::play(bool loadgame)
 					{
 						if (!(s13.getFountian()))
 						{
-							heal()
+							heal();
 						}
 						s13.drink("fountian");
 						
@@ -1854,7 +1854,7 @@ void Game::play(bool loadgame)
 					{
 						if (!(s17.getFountian()))
 						{
-							heal()
+							heal();
 						}
 						s17.drink("fountian");
 					}
@@ -2203,7 +2203,7 @@ void Game::play(bool loadgame)
 					if (input.find("footsteps") < 50)
 					{
 						s22.answer("footsteps");
-						heal()
+						heal();
 					}
 					else
 					{
