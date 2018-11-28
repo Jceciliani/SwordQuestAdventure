@@ -192,21 +192,21 @@ int Game::move(string input)
 		cout << "<room name>:                            Travel to that room" << endl;
 		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
 		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
-		cout << "look in:                                " << endl;
-		cout << "search:                                 " << endl;   
+		cout << "look in:                                Investigate an object or feature" << endl;
+		cout << "search:                                 Investigate an object or feature" << endl;   
 		cout << "inventory:                              List your inventory" << endl;
-		cout << "equip:                                  " << endl;
-		cout << "unequip:                                " << endl; 
-		cout << "take:                                   Aquire an object, putting it in your inventory" << endl;
-		cout << "put:                                    " << endl;
+		cout << "equip <item>:                           Use to change weapons and armor" << endl;
+		cout << "unequip <item>:                         Use to change weapons and armor" << endl; 
+		cout << "take:                                   Acquire an object, putting it in your inventory" << endl;
+		cout << "put:                                    Place an object or item" << endl;
 		cout << "eat / drink <object>:                   Attempt to eat or drink something" << endl;
 		cout << "drop <item>:                            Drop the selected item in this room" << endl;
-		cout << "pickup <item>:                          " << endl;
+		cout << "pickup <item>:                          Use to acquire object or item" << endl;
 		cout << "attack <object>:                        Attack something in the room" << endl;
 		cout << "pull <object>:                          Pull on the object (usually a lever)" << endl;
-		cout << "open:                                   " << endl;
-		cout << "use:                                    " << endl;
-		cout << "remove:                                 " << endl; 
+		cout << "open:                                   Use for stash/forge and room interactions" << endl;
+		cout << "use:                                    Interact with some objects and items" << endl;
+		cout << "remove:                                 Take out objects and items" << endl; 
 		cout << "status:                                 View your current level and hit points" << endl;
 		cout << endl;
 		cout << "savegame:                               Save your game" << endl;
@@ -2891,6 +2891,13 @@ void Game::play(bool loadgame)
 		{
 			if(s11.getVisited() == false)
 			{
+				if(s11.getEncounter() == false)
+				{
+					cout << "A TROLL APPEARED!\n\n" << endl;
+					char2 = new Troll();
+					fight();
+					char2 = NULL;
+				}
 				cout << s11.getLongForm() << endl;
 				if (s11.getSize() != 0)
 				{
