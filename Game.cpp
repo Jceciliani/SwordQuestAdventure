@@ -727,10 +727,14 @@ void Game::play(bool loadgame)
 					{	
 						s1.look("wind");
 					}
+					else
+					{
+						cout << "you cant do that" << endl;
+					}
 				}
 				else if (input.find("drop") < 50) 
 				{
-
+					bool candrop = false;
 					for (int i = 0; i < ba.getSize(); i++)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
@@ -738,8 +742,12 @@ void Game::play(bool loadgame)
 							cout << " you drop " << ba.printItem(i).getName() << endl;
 							s1.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
-							
+							candrop = true;
 						}
+					}
+					if (candrop == false)
+					{
+						cout << "you cant do that" << endl;
 					}
 				}
 				else if (input.find("pickup") < 50 || input.find("grab") < 50)
@@ -780,29 +788,7 @@ void Game::play(bool loadgame)
 						cout << "You can't do that to ruins" << endl;
 					}
 				}
-				else if(input.find("hammer") < 50)
-				{
-					if(input.find("take") < 50 || input.find("grab") < 50 || input.find("pick up") < 50)
-					{
-						if(s2.getHammer() == true)
-						{
-							if(ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-							cout << "You pickup the Forge Hammer" << endl;
-							ba.addToContainer(s2.getObject());
-							}
-						}
-						
-						else
-						{
-							cout << "You haven't found a hammer here" << endl;
-						}
-					}
-				}
+				
 				else if (input.find("drop") < 50)
 				{
 
@@ -827,6 +813,29 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s2.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s2.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("hammer") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50 || input.find("pick up") < 50)
+					{
+						if (s2.getHammer() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Forge Hammer" << endl;
+								ba.addToContainer(s2.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found a hammer here" << endl;
 						}
 					}
 				}
@@ -864,29 +873,7 @@ void Game::play(bool loadgame)
 						cout << "That won't work with the rope." << endl;
 					}
 				}
-				else if (input.find("armor") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s3.getPulled() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Bronze Armor" << endl;
-								ba.addToContainer(s3.getObject());
-							}
-						}
-
-						else
-						{
-							cout << "You haven't found armor here" << endl;
-						}
-					}
-				}
+				
 				else if (input.find("drop") < 50)
 				{
 
@@ -911,6 +898,29 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s3.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s3.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("armor") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s3.getPulled() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Bronze Armor" << endl;
+								ba.addToContainer(s3.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found armor here" << endl;
 						}
 					}
 				}
@@ -1002,29 +1012,7 @@ void Game::play(bool loadgame)
 						cout << "You can't do that" << endl;
 					}
 				}
-				else if (input.find("sword") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s5.getSword() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Silver Sword" << endl;
-								ba.addToContainer(s5.getObject());
-							}
-						}
-
-						else
-						{
-							cout << "You haven't found a sword here" << endl;
-						}
-					}
-				}
+				
 				else if (input.find("drop") < 50)
 				{
 
@@ -1049,6 +1037,29 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s5.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s5.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("sword") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s5.getSword() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Silver Sword" << endl;
+								ba.addToContainer(s5.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found a sword here" << endl;
 						}
 					}
 				}
@@ -1080,29 +1091,7 @@ void Game::play(bool loadgame)
 						s6.attack("vines");
 					}
 				}
-				else if (input.find("armor") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s6.getVine() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Silver Armor" << endl;
-								ba.addToContainer(s6.getObject());
-							}
-						}
-
-						else
-						{
-							cout << "You haven't found armor here" << endl;
-						}
-					}
-				}
+				
 				else if (input.find("drop") < 50)
 				{
 
@@ -1127,6 +1116,29 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s6.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s6.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("armor") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s6.getVine() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Silver Armor" << endl;
+								ba.addToContainer(s6.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found armor here" << endl;
 						}
 					}
 				}
@@ -1273,29 +1285,7 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
-				else if (input.find("sword") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s8.getSword() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Bronze Sword" << endl;
-								ba.addToContainer(s8.getObject());
-							}
-						}
 
-						else
-						{
-							cout << "You haven't found a sword here" << endl;
-						}
-					}
-				}
 				else if (input.find("drop") < 50)
 				{
 
@@ -1320,6 +1310,29 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s8.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s8.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("sword") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s8.getSword() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Bronze Sword" << endl;
+								ba.addToContainer(s8.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found a sword here" << endl;
 						}
 					}
 				}
@@ -1625,7 +1638,7 @@ void Game::play(bool loadgame)
 							}
 						}
 					}
-					else if (input.find("remove") < 50)
+					else if (input.find("remove") < 50 || input.find("take") < 50)
 					{
 						for (int i = 0; i < fg.getSize(); i++)
 						{
@@ -1717,7 +1730,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " you take " << st.printItem(i).getName() << "from the forge" << endl;
+									cout << " you take " << st.printItem(i).getName() << "from the stash" << endl;
 									ba.addToContainer(st.printItem(i));
 									st.deleteFromContainer(st.printItem(i));
 								}
@@ -2636,10 +2649,20 @@ void Game::play(bool loadgame)
 
 				}
 				cout << s1.getLongForm() << endl;
+				if (s1.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s1.printContainer();
+				}
 			}
 			else
 			{
 				cout << s1.getShortForm() << endl;
+				if (s1.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s1.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[1])
@@ -2647,10 +2670,20 @@ void Game::play(bool loadgame)
 			if(s2.getVisited() == false)
 			{
 				cout << s2.getLongForm() << endl;
+				if (s2.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s2.printContainer();
+				}
 			}
 			else
 			{
 				cout << s2.getShortForm() << endl;
+				if (s2.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s2.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[2])
@@ -2658,10 +2691,20 @@ void Game::play(bool loadgame)
 			if(s3.getVisited() == false)
 			{
 				cout << s3.getLongForm() << endl;
+				if (s3.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s3.printContainer();
+				}
 			}
 			else
 			{
 				cout << s3.getShortForm() << endl;
+				if (s3.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s3.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[3])
@@ -2676,21 +2719,40 @@ void Game::play(bool loadgame)
 					char2 = NULL;
 				}
 				cout << s4.getLongForm() << endl;
+				if (s4.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s4.printContainer();
+				}
 			}
 			else
 			{
 				cout << s4.getShortForm() << endl;
+				if (s4.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s4.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[4])
 		{
 			if(s5.getVisited() == false)
 			{
-				cout << s5.getLongForm() << endl;
+				cout << s5.getLongForm() << endl; if (s5.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s5.printContainer();
+				}
 			}
 			else
 			{
-				cout << s5.getShortForm() << endl;
+				cout << s5.getShortForm() << endl; 
+				if (s5.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s5.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[5])
@@ -2699,10 +2761,20 @@ void Game::play(bool loadgame)
 			{
 				
 				cout << s6.getLongForm() << endl;
+				if (s6.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s6.printContainer();
+				}
 			}
 			else
 			{
-				cout << s6.getShortForm() << endl;
+				cout << s6.getShortForm() << endl; 
+				if (s6.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s6.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[6])
@@ -2710,10 +2782,20 @@ void Game::play(bool loadgame)
 			if(s7.getVisited() == false)
 			{
 				cout << s7.getLongForm() << endl;
+				if (s7.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s7.printContainer();
+				}
 			}
 			else
 			{
 				cout << s7.getShortForm() << endl;
+				if (s7.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s7.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[7])
@@ -2728,10 +2810,20 @@ void Game::play(bool loadgame)
 					char2 = NULL;
 				}
 				cout << s8.getLongForm() << endl;
+				if (s8.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s8.printContainer();
+				}
 			}
 			else
 			{
 				cout << s8.getShortForm() << endl;
+				if (s8.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s8.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[8])
@@ -2739,10 +2831,20 @@ void Game::play(bool loadgame)
 			if(s9.getVisited() == false)
 			{
 				cout << s9.getLongForm() << endl;
+				if (s9.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s9.printContainer();
+				}
 			}
 			else
 			{
 				cout << s9.getShortForm() << endl;
+				if (s9.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s9.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[9])
@@ -2757,10 +2859,20 @@ void Game::play(bool loadgame)
 					char2 = NULL;
 				}
 				cout << s10.getLongForm() << endl;
+				if (s10.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s10.printContainer();
+				}
 			}
 			else
 			{
 				cout << s10.getShortForm() << endl;
+				if (s10.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s10.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[10])
@@ -2768,10 +2880,20 @@ void Game::play(bool loadgame)
 			if(s11.getVisited() == false)
 			{
 				cout << s11.getLongForm() << endl;
+				if (s11.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s11.printContainer();
+				}
 			}
 			else
 			{
 				cout << s11.getShortForm() << endl;
+				if (s11.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s11.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[11])
@@ -2779,10 +2901,20 @@ void Game::play(bool loadgame)
 			if(s12.getVisited() == false)
 			{
 				cout << s12.getLongForm() << endl;
+				if (s12.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s12.printContainer();
+				}
 			}
 			else
 			{
 				cout << s12.getShortForm() << endl;
+				if (s12.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s12.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[12])
@@ -2791,10 +2923,20 @@ void Game::play(bool loadgame)
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;
+				if (s13.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s13.printContainer();
+				}
 			}
 			else
 			{
 				cout << s13.getShortForm() << endl;
+				if (s13.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s13.printContainer();
+				}
 			}	
 		}
 		else if (playerLoc == spaceArr[13])
@@ -2802,10 +2944,20 @@ void Game::play(bool loadgame)
 			if(s14.getVisited() == false)
 			{
 				cout << s14.getLongForm() << endl;
+				if (s14.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s14.printContainer();
+				}
 			}
 			else
 			{
 				cout << s14.getShortForm() << endl;
+				if (s14.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s14.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[14])
@@ -2813,10 +2965,20 @@ void Game::play(bool loadgame)
 			if(s15.getVisited() == false)
 			{
 				cout << s15.getLongForm() << endl;
+				if (s15.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s15.printContainer();
+				}
 			}
 			else
 			{
 				cout << s15.getShortForm() << endl;
+				if (s15.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s15.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[15])
@@ -2824,10 +2986,20 @@ void Game::play(bool loadgame)
 			if(s16.getVisited() == false)
 			{
 				cout << s16.getLongForm() << endl;
+				if (s16.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s16.printContainer();
+				}
 			}
 			else
 			{
 				cout << s16.getShortForm() << endl;
+				if (s16.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s16.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[16])
@@ -2835,10 +3007,20 @@ void Game::play(bool loadgame)
 			if(s17.getVisited() == false)
 			{
 				cout << s17.getLongForm() << endl;
+				if (s17.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s17.printContainer();
+				}
 			}
 			else
 			{
 				cout << s17.getShortForm() << endl;
+				if (s17.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s17.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[17])
@@ -2854,6 +3036,7 @@ void Game::play(bool loadgame)
 		
 				}
 				cout << s18.getLongForm() << endl;
+
 			}
 			else
 			{
@@ -2872,10 +3055,20 @@ void Game::play(bool loadgame)
 					char2 = NULL;
 				}
 				cout << s19.getLongForm() << endl;
+				if (s19.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s19.printContainer();
+				}
 			}
 			else
 			{
 				cout << s19.getShortForm() << endl;
+				if (s19.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s19.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[19])
@@ -2883,10 +3076,20 @@ void Game::play(bool loadgame)
 			if(s20.getVisited() == false)
 			{
 				cout << s20.getLongForm() << endl;
+				if (s20.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s20.printContainer();
+				}
 			}
 			else
 			{
 				cout << s20.getShortForm() << endl;
+				if (s20.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s20.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[20])
@@ -2902,10 +3105,20 @@ void Game::play(bool loadgame)
 				}
 
 				cout << s21.getLongForm() << endl;
+				if (s21.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s21.printContainer();
+				}
 			}
 			else
 			{
 				cout << s21.getShortForm() << endl;
+				if (s21.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s21.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[21])
@@ -2913,10 +3126,20 @@ void Game::play(bool loadgame)
 			if(s22.getVisited() == false)
 			{
 				cout << s22.getLongForm() << endl;
+				if (s22.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s22.printContainer();
+				}
 			}
 			else
 			{
 				cout << s22.getShortForm() << endl;
+				if (s22.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s22.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[22])
@@ -2931,10 +3154,20 @@ void Game::play(bool loadgame)
 					char2 = NULL;
 				}
 				cout << s23.getLongForm() << endl;
+				if (s23.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s23.printContainer();
+				}
 			}
 			else
 			{
 				cout << s23.getShortForm() << endl;
+				if (s23.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s23.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[23])
@@ -2942,21 +3175,48 @@ void Game::play(bool loadgame)
 			if(s24.getVisited() == false)
 			{
 				cout << s24.getLongForm() << endl;
+				if (s24.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s24.printContainer();
+				}
 			}
 			else
 			{
 				cout << s24.getShortForm() << endl;
+				if (s24.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s24.printContainer();
+				}
 			}
 		}
 		else if (playerLoc == spaceArr[24])
 		{
 			if(s25.getVisited() == false)
 			{
+				if (s23.getEncounter() == false)
+				{
+					cout << "A LESSER DRAKE!\n\n" << endl;
+					char2 = new Lesser_Drake();
+					fight();
+					char2 = NULL;
+				}
 				cout << s25.getLongForm() << endl;
+				if (s25.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s25.printContainer();
+				}
 			}
 			else
 			{
 				cout << s25.getShortForm() << endl;
+				if (s25.getSize() != 0)
+				{
+					cout << "on the ground you see the following items:" << endl;
+					s25.printContainer();
+				}
 			}
 		}
 		else
