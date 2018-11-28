@@ -386,6 +386,17 @@ int Game::move(string input)
 					//damage
 				}
 			}
+			else if (playerLoc == spaceArr[12])
+			{
+				if (s13.getGate() == true)
+				{
+					playerLoc = playerLoc->getSouth();
+				}
+				else
+				{
+					cout << "the gate blocks your path" << endl;
+				}
+			}
 			else
 			{
 				playerLoc = playerLoc->getSouth();
@@ -1597,7 +1608,7 @@ void Game::play(bool loadgame)
 					{
 						fg.printContainer();
 					}
-					if (input.find("look") < 50)
+					else if (input.find("look") < 50)
 					{
 						s13.look("forge");
 					}
@@ -1677,17 +1688,45 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("chest") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look in") < 50)
+					{
+						st.printContainer();
+					}
+					else if (input.find("look") < 50)
 					{
 						s13.look("chest");
 					}
 					else if (input.find("put") < 50)
 					{
+						for (int i = 0; i < ba.getSize(); i++)
+						{
+							if (input.find(ba.printItem(i).getName()) < 50)
+							{
+								cout << " you put " << ba.printItem(i).getName() << "into the stash" << endl;
+								st.addToContainer(ba.printItem(i));
+								ba.deleteFromContainer(ba.printItem(i));
 
+							}
+						}
 					}
 					else if (input.find("take") < 50)
 					{
-
+						for (int i = 0; i < st.getSize(); i++)
+						{
+							if (input.find(st.printItem(i).getName()) < 50)
+							{
+								if (ba.getSize() >= 5)
+								{
+									cout << " you take " << st.printItem(i).getName() << "from the forge" << endl;
+									ba.addToContainer(st.printItem(i));
+									st.deleteFromContainer(st.printItem(i));
+								}
+								else
+								{
+									cout << " your inventory is full" << endl;
+								}
+							}
+						}
 					}
 				}
 				if (input.find("gate") < 50)
@@ -1698,8 +1737,18 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("open") < 50)
 					{
-						//if() if you have key you can open gate
-						s13.open("gate");
+						for (int i = 0; i < ba.getSize(); i++)
+						{
+							if (ba.printItem(i).getName() == "key")
+							{
+								s13.open("gate");
+								s13.setGate(1);
+							}
+						}
+						if (s13.getGate() == false)
+						{
+							cout << "you need a key to open the gate" << endl;
+						}
 					}
 				}
 				else if (input.find("drop") < 50)
