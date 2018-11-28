@@ -628,34 +628,35 @@ void Game::play(bool loadgame)
 
 		load();
 	}
-	
-	cout << "You are falling before you can even stand." << endl;
-    cin.ignore();
-	cout << "CRACK" << endl;
-	cout << "A streak of crimson hits you in the chest. You are sent hurling across the room" << endl;
-	cout << "separated from your beloved farm tool. CRASH you meet the wall in a very unfriendly manner." << endl;
-	cout << "You begin to feel your own shades of crimson begin to leak from your head and your chest." << endl;
-	cout << "You have a loose grip on consciousness, but you can't give up. This may be your one chance." << endl;
-	cout << "As you try to stand, you feel the floor beneath you shift. Suddenly the floor on this side" << endl;
-	cout << "of the throne room begins to give way. You attempt to jump to safety but you are falling" << endl;
-	cout << "before you can even stand." << endl;
-	
-    cin.ignore();
+	else {
+		cout << "You are falling before you can even stand." << endl;
+		cin.ignore();
+		cout << "CRACK" << endl;
+		cout << "A streak of crimson hits you in the chest. You are sent hurling across the room" << endl;
+		cout << "separated from your beloved farm tool. CRASH you meet the wall in a very unfriendly manner." << endl;
+		cout << "You begin to feel your own shades of crimson begin to leak from your head and your chest." << endl;
+		cout << "You have a loose grip on consciousness, but you can't give up. This may be your one chance." << endl;
+		cout << "As you try to stand, you feel the floor beneath you shift. Suddenly the floor on this side" << endl;
+		cout << "of the throne room begins to give way. You attempt to jump to safety but you are falling" << endl;
+		cout << "before you can even stand." << endl;
 
-	cout << "Falling..." << endl;
-    cin.ignore();
-	cout << "Falling..." << endl;
-    cin.ignore();
-	cout << "Falling..." << endl;
-    cin.ignore();
-	cout << "You impact with a CRACK. Your consciousness fades to the ether.\n\n" << endl;
-    cin.ignore();
-	
-	cout << "You wake with a start and everything is fuzzy.... What is your name?" << endl;
-	cout << "> ";
-	getline(cin, charName);
-	// Set name to hero
-	char1->setName(charName);					
+		cin.ignore();
+
+		cout << "Falling..." << endl;
+		cin.ignore();
+		cout << "Falling..." << endl;
+		cin.ignore();
+		cout << "Falling..." << endl;
+		cin.ignore();
+		cout << "You impact with a CRACK. Your consciousness fades to the ether.\n\n" << endl;
+		cin.ignore();
+
+		cout << "You wake with a start and everything is fuzzy.... What is your name?" << endl;
+		cout << "> ";
+		getline(cin, charName);
+		// Set name to hero
+		char1->setName(charName);
+	}
 	// Seperator before the game starts
 	cout << "\n\n\n\n\n" << endl;
 	// Randomize the game
