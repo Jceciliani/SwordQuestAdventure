@@ -209,7 +209,7 @@ Key::~Key()
 // No Sword *****************************************
 No_Sword::No_Sword()
 {
-	name = "No Sword";
+	name = "no sword";
 	description = "you have no sword. that's not great";
 	id = 15;
 }
@@ -220,7 +220,7 @@ No_Sword::~No_Sword()
 // No Armor *****************************************
 No_Armor::No_Armor()
 {
-	name = "No Armor";
+	name = "no armor";
 	description = "you have no armor. fights are gonna hurt";
 	id = 16;
 }
