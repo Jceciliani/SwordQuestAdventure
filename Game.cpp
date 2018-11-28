@@ -1646,7 +1646,7 @@ void Game::play(bool loadgame)
 								fg.addToContainer(Forge_Hammer());
 							}
 						
-							if (fg.ultSwordCrafted())
+							if (fg.ultWeaponCrafted())
 							{
 								cout << " you created the ultimate sword" << endl;
 								fg.clear();
