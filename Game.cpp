@@ -161,15 +161,16 @@ int Game::move(string input)
 	}
 	if(input == "inventory")
 	{
-		cout << "\n-------------------------------------------------------------------------------------------" << endl;
-		cout << "                          Inventory" << endl;
+		cout << "\n-----------------------------------------------------------------------------------------" << endl;
+		cout << "                        	        Inventory" << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl;
 		cout << "Equipped:" << endl;
 		eq.printContainer();	
 		cout << "-------------------------------------------------------------------------------------------" << endl;
 		cout << "Bag" << endl;
 		//Print out bag contents
-		ba.printContainer();	
+		ba.printContainer();
+		cout << "-------------------------------------------------------------------------------------------" << endl;	
 		cout << "Stash" << endl;
 		// Print out stash contents
 		st.printContainer();	
@@ -191,12 +192,21 @@ int Game::move(string input)
 		cout << "<room name>:                            Travel to that room" << endl;
 		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
 		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
+		cout << "look in:                                " << endl;
+		cout << "search:                                 " << endl;   
 		cout << "inventory:                              List your inventory" << endl;
+		cout << "equip:                                  " << endl;
+		cout << "unequip:                                " << endl; 
 		cout << "take:                                   Aquire an object, putting it in your inventory" << endl;
+		cout << "put:                                    " << endl;
 		cout << "eat / drink <object>:                   Attempt to eat or drink something" << endl;
 		cout << "drop <item>:                            Drop the selected item in this room" << endl;
+		cout << "pickup <item>:                          " << endl;
 		cout << "attack <object>:                        Attack something in the room" << endl;
 		cout << "pull <object>:                          Pull on the object (usually a lever)" << endl;
+		cout << "open:                                   " << endl;
+		cout << "use:                                    " << endl;
+		cout << "remove:                                 " << endl; 
 		cout << "status:                                 View your current level and hit points" << endl;
 		cout << endl;
 		cout << "savegame:                               Save your game" << endl;
@@ -214,7 +224,7 @@ int Game::move(string input)
 		{ 
 			if (input.find(eq.getObject1().getName()) < 50)
 			{
-				if (eq.getObject1().getName() != "No Sword")
+				if (eq.getObject1().getName() != "no sword")
 				{
 					cout << " you unequip " << eq.getObject1().getName() << endl;
 					ba.addToContainer(eq.getObject1());
@@ -227,7 +237,7 @@ int Game::move(string input)
 			}
 			else if (input.find(eq.getObject2().getName()) < 50)
 			{
-				if (eq.getObject2().getName() != "No Armor")
+				if (eq.getObject2().getName() != "no armor")
 				{
 					cout << " you unequip " << eq.getObject2().getName() << endl;
 					ba.addToContainer(eq.getObject2());
@@ -254,7 +264,7 @@ int Game::move(string input)
 					Objects hold = eq.getObject1();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
-					if (eq.getObject1().getName() != "No Sword")
+					if (eq.getObject1().getName() != "no sword")
 					{
 						ba.addToContainer(hold);
 					}
@@ -264,7 +274,7 @@ int Game::move(string input)
 					Objects hold = eq.getObject2();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
-					if (eq.getObject2().getName() != "No Armor")
+					if (eq.getObject2().getName() != "no armor")
 					{
 						ba.addToContainer(hold);
 					}
@@ -693,6 +703,7 @@ void Game::play(bool loadgame)
 		{
 			string input;
 			cout << "What do you want to do?" << endl;
+			cout << "> ";
 			getline(cin, input);
 			int res = move(input);
 			//if (res == -1)
@@ -1644,7 +1655,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(fg.printItem(i).getName()) < 50)
 							{
-								if (ba.getSize() >= 5)
+								if (ba.getSize() <= 5)
 								{
 									cout << " you take " << fg.printItem(i).getName() << "from the forge" << endl;
 									ba.addToContainer(fg.printItem(i));
@@ -1667,7 +1678,7 @@ void Game::play(bool loadgame)
 								cout << " you created the ultimate armor" << endl;
 								fg.clear();
 								fg.addToContainer(fg.getUltArmor());
-								fg.addToContainer(Forge_Hammer());
+								fg.addToContainer(s2.getObject());
 							}
 						
 							if (fg.ultWeaponCrafted())
@@ -1675,7 +1686,7 @@ void Game::play(bool loadgame)
 								cout << " you created the ultimate sword" << endl;
 								fg.clear();
 								fg.addToContainer(fg.getUltArmor());
-								fg.addToContainer(Forge_Hammer());
+								fg.addToContainer(s2.getObject());
 							}
 						}
 					}
@@ -1728,7 +1739,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(st.printItem(i).getName()) < 50)
 							{
-								if (ba.getSize() >= 5)
+								if (ba.getSize() <= 5)
 								{
 									cout << " you take " << st.printItem(i).getName() << "from the stash" << endl;
 									ba.addToContainer(st.printItem(i));
