@@ -706,12 +706,12 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("grass") < 50)
 				{
-					if(input.find("look") < 50)
+					if(input.find("look") < 50 || input.find("search") < 50)
 					{	
 						cout << "You look at the grass." << endl;
 						s1.look("grass");
 					}
-					else if(input.find("attack") < 50)
+					else if(input.find("attack") < 50 || input.find("hit") < 50)
 					{
 						cout << "You attack the grass" << endl;
 						s1.attack("grass");
@@ -742,7 +742,7 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
-				else if (input.find("pickup") < 50)
+				else if (input.find("pickup") < 50 || input.find("grab") < 50)
 				{
 					
 
@@ -762,12 +762,12 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("ruin") < 50 || input.find("remains") < 50)
 				{
-					if(input.find("look") < 50)
+					if(input.find("look") < 50 || input.find("gaze") < 50)
 					{
 						cout << "You look at the ruins" << endl;
 						s2.look("ruins");
 					}
-					else if(input.find("take") < 50)
+					else if(input.find("take") < 50 || input.find("grab") < 50)
 					{
 						cout << "They're too big to take with you" << endl;
 					}
@@ -782,7 +782,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("hammer") < 50)
 				{
-					if(input.find("take") < 50)
+					if(input.find("take") < 50 || input.find("grab") < 50 || input.find("pick up") < 50)
 					{
 						if(s2.getHammer() == true)
 						{
@@ -836,7 +836,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("basket") < 50)
 				{
-					if(input.find("take") < 50)
+					if(input.find("take") < 50 || input.find("grab") < 50)
 					{
 						s3.take("basket");
 					}
@@ -851,7 +851,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("rope") < 50)
 				{
-					if(input.find("pull") < 50)
+					if(input.find("pull") < 50 || input.find("tug") < 50 || input.find("yank") < 50)
 					{
 						s3.pull("rope");
 					}
@@ -866,7 +866,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("armor") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s3.getPulled() == true)
 						{
@@ -923,7 +923,7 @@ void Game::play(bool loadgame)
 					{
 						s4.look("ocean");
 					}
-					else if(input.find("take") < 50)
+					else if(input.find("take") < 50 || input.find("grab") < 50)
 					{
 						cout << "It's too big to take with you!" << endl;
 					}
@@ -934,7 +934,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("bridge") < 50)
 				{
-					if(input.find("look") < 50)
+					if(input.find("look") < 50 || input.find("search") < 50)
 					{
 						s4.look("bridge");
 					}
@@ -976,7 +976,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("wall") < 50)
 				{
-					if(input.find("look") < 50)
+					if(input.find("look") < 50 || input.find("search") < 50)
 					{
 						s5.look("walls");
 					}
@@ -987,7 +987,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("form") < 50)
 				{
-					if(input.find("look") < 50)
+					if(input.find("look") < 50 || input.find("search") < 50)
 					{
 						s5.look("form");
 					}
@@ -1004,7 +1004,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("sword") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s5.getSword() == true)
 						{
@@ -1057,32 +1057,32 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("canopy") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s6.look("canopy");
 					}
 				}
 				else if(input.find("vegitation") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s6.look("vegitation");
 					}
 				}
 				else if(input.find("vines") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s6.look("vines");
 					}
-					else if (input.find("attack") < 50)
+					else if (input.find("attack") < 50 || input.find("cut") < 50 || input.find("hack") < 50)
 					{
 						s6.attack("vines");
 					}
 				}
 				else if (input.find("armor") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s6.getVine() == true)
 						{
@@ -1139,18 +1139,18 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("moss") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s7.look("moss");
 					}
 				}
 				else if(input.find("bridge") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s7.look("bridge");
 					}
-					if (input.find("run") < 50)
+					if (input.find("run") < 50 || input.find("sprint") < 50)
 					{
 						s7.run("bridge");
 					}
@@ -1162,21 +1162,21 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("liquid") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s7.look("liquid");
 					}
 				}
 				else if (input.find("island") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s7.jump("island");
 					}
 				}
 				else if (input.find("west") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s7.jump("west");
 					}
@@ -1187,7 +1187,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("south") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s7.jump("south");
 					}
@@ -1232,14 +1232,14 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("papers") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s8.look("papers");
 					}
 				}
 				else if(input.find("desk") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s8.look("desk");
 					}
@@ -1275,7 +1275,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("sword") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s8.getSword() == true)
 						{
@@ -1332,7 +1332,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s9.look("fountian");
 					}
@@ -1348,11 +1348,11 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("tube") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s9.look("tubes");
 					}
-					else if (input.find("enter") < 50)
+					else if (input.find("enter") < 50 || input.find("go in") < 50)
 					{
 						s9.enter("tube");
 						playerLoc == spaceArr[3];
@@ -1360,7 +1360,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("hatch") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s9.look("hatch");
 					}
@@ -1368,7 +1368,7 @@ void Game::play(bool loadgame)
 					{
 						s9.open("hatch");
 					}
-					else if (input.find("enter") < 50)
+					else if (input.find("enter") < 50 || input.find("go in") < 50)
 					{
 						s9.enter("tube");
 						playerLoc == spaceArr[3];
@@ -1410,14 +1410,14 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("hovel") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s10.look("hovel");
 					}
 				}
 				else if(input.find("corner") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s10.look("corner");
 					}
@@ -1489,7 +1489,7 @@ void Game::play(bool loadgame)
 						s11.search("cave");
 					}
 				}
-				else if(input.find("book") < 50)
+				else if(input.find("book") < 50 || input.find("search") < 50)
 				{
 					if (input.find("look") < 50)
 					{
@@ -1536,7 +1536,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("plot") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s12.look("plot");
 					}
@@ -1547,7 +1547,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s12.look("sign");
 					}
@@ -1588,7 +1588,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s13.look("fountian");
 					}
@@ -1801,7 +1801,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("across") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s14.jump("across");
 					}
@@ -1812,7 +1812,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("west") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s14.jump("west");
 					}
@@ -1823,7 +1823,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("east") < 50)
 				{
-					if (input.find("jump") < 50)
+					if (input.find("jump") < 50 || input.find("hop") < 50)
 					{
 						s14.jump("east");
 					}
@@ -1879,7 +1879,7 @@ void Game::play(bool loadgame)
 					{
 						s15.look("vases");
 					}
-					else if (input.find("attack") < 50)
+					else if (input.find("attack") < 50 || input.find("smash") < 50)
 					{
 						s15.attack("vases");
 					}
@@ -1919,7 +1919,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("steel") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s15.getSteel() == true)
 						{
@@ -1976,7 +1976,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s16.look("sign");
 					}
@@ -2028,7 +2028,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s17.look("fountian");
 					}
@@ -2043,7 +2043,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("volcano") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s17.look("volcano");
 					}
@@ -2125,7 +2125,7 @@ void Game::play(bool loadgame)
 					{
 						s19.look("red lever");
 					}
-					else if(input.find("pull") < 50)
+					else if(input.find("pull") < 50 || input.find("grab") < 50)
 					{
 						s19.pull("red lever");
 					}
@@ -2136,7 +2136,7 @@ void Game::play(bool loadgame)
 					{
 						s19.look("green lever");
 					}
-					else if (input.find("pull") < 50)
+					else if (input.find("pull") < 50 || input.find("grab") < 50)
 					{
 						s19.pull("green lever");
 					}
@@ -2147,7 +2147,7 @@ void Game::play(bool loadgame)
 					{
 						s19.look("blue lever");
 					}
-					else if (input.find("pull") < 50)
+					else if (input.find("pull") < 50 || input.find("grab") < 50)
 					{
 						s19.pull("blue lever");
 					}
@@ -2161,7 +2161,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("key") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s19.getContainerOpen() == true)
 						{
@@ -2218,7 +2218,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("fountain") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s20.look("fountain");
 					}
@@ -2234,18 +2234,18 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("rock") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s20.look("rocks");
 					}
 				}
 				else if(input.find("gateway") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s20.look("gateway");
 					}
-					else if (input.find("enter") < 50)
+					else if (input.find("enter") < 50 || input.find("go in") < 50)
 					{
 						s20.enter("gateway");
 						playerLoc = spaceArr[12];
@@ -2298,7 +2298,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("sword") < 50)
 				{
-					if (input.find("take") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
 						if (s21.getBoulder() == true)
 						{
@@ -2359,7 +2359,7 @@ void Game::play(bool loadgame)
 					{
 						s22.look("old man");
 					}
-					else if (input.find("talk") < 50)
+					else if (input.find("talk") < 50 || input.find("speak") < 50 || input.find("call") < 50)
 					{
 						s22.talk("to old man");
 						
@@ -2502,11 +2502,11 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("lever") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s24.look("lever");
 					}
-					else if (input.find("pull") < 50)
+					else if (input.find("pull") < 50 || input.find("grab") < 50)
 					{
 						s24.pull("lever");
 						//damage
@@ -2561,18 +2561,18 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("lake") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s25.look("lake");
 					}
 				}
 				else if(input.find("stalagtite") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s25.look("stalagtite");
 					}
-					else if (input.find("attack") < 50)
+					else if (input.find("attack") < 50 || input.find("hit") < 50)
 					{
 						s25.attack("stalagtite");
 					}
