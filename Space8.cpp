@@ -40,18 +40,18 @@ void Space8::look(const char* thing)
 {
 	if (strcmp(thing, "papers") == 0 || strcmp(thing, "desk") == 0)
 		{
-		cout << "the papers strewn across the desk seem to be schedules for the guards," << endl;
-		cout << "albeit very very old ones. Seems that the most recent one only one guard" << endl;
-		cout << "one only one guard was off duty. Bob - locker 13" << endl;
+		cout << "The papers strewn across the desk seem to be schedules for the guards," << endl;
+		cout << "albeit very very old ones. It seems recently that there was only" << endl;
+		cout << "one guard that was off duty. Bob - locker 13" << endl;
 		}
 
 	else if (strcmp(thing, "lockers" ) == 0)
 	{
-		cout << "a large number of small lockers. around 30. Luckily they dont have locks!" << endl;
+		cout << "A large number of small lockers. Around 30. Luckily they don't have locks!" << endl;
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }
 
@@ -59,26 +59,26 @@ void Space8::search(const char* thing)
 {
 	if (strcmp(thing, "lockers") == 0)
 	{
-		cout << "but which locker do you want to search?" << endl;
+		cout << "But which locker do you want to search?" << endl;
 	}
 	else if (strcmp(thing, "locker 1") == 0)
 	{
-		cout << "nothing here" << endl;
+		cout << "Nothing here" << endl;
 	}
 
 	else if (strcmp(thing, "locker 13") == 0)
 	{
 		if (taken == false) {
-			cout << " you find a bronze sword" << endl;
+			cout << "You find a bronze sword" << endl;
 			swordFound = true;
 		}
 		else
 		{
-			cout << "nothing here" << endl;
+			cout << "Nothing here" << endl;
 		}
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
