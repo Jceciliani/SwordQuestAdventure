@@ -16,9 +16,9 @@ using namespace std;
 Space11::Space11()
 {
 	name = "Cave";
-	shortForm = " there are piles of broken tools, torn clothes, and bones. to the side you see a book\n";
-	longForm = " You find a small cave. it is dark, dank and you can hear your footsteps echo through it \n"
-		"It is also covered it piles of broken tools, torn clothes, and bones. to the side you see a book\n\n";
+	shortForm = "There are piles of broken tools, torn clothes, and bones. To the side you see a book\n";
+	longForm = " You find a small cave. Tt is dark, dank and you can hear your footsteps echo through it. \n"
+		"It is also covered in piles of broken tools, torn clothes, and bones. To the side you see a book\n\n";
 
 	id = 11;
 	obj = NULL;
@@ -33,19 +33,19 @@ void Space11::look(const char* thing)
 {
 	if (strcmp(thing, "cave") == 0|| strcmp(thing, "piles") == 0)
 	{
-		cout << "small piles are scattered all over the small cave. hard to tell at a glance" << endl;
+		cout << "Small piles are scattered all over the small cave. Hard to tell at a glance" << endl;
 		cout << "if there is anything useful in them" << endl;
 
 	}
 	if (strcmp(thing, "book") )
 	{
-		cout << "the book is labeled 'How to Serve Humans'. maybe the creature was trying to learn" << endl;
-		cout << "how to be i society. maybe he was good" << endl;
+		cout << "The book is labeled 'How to Serve Humans'. Maybe the creature was trying to learn" << endl;
+		cout << "how to be in society. Maybe he was good" << endl;
 
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -54,14 +54,14 @@ void Space11::search(const char* thing)
 	if (strcmp(thing, "cave")  == 0|| strcmp(thing, "piles") == 0)
 	{
 		cout << "While searching you find a large drawing on what used to be the top of a " << endl;
-		cout << "cairrage.  It looks like crude picture math. It depicts four swords" << endl;
-		cout << " plus a inrecognisable black smudge equals a single sword. Just the fact that" << endl;
-		cout << " this creature attempted math means its much more inttelligent than you would" << endl;
-		cout << " have guessed" << endl;
+		cout << "carriage.  It looks like crude picture math. It depicts four swords" << endl;
+		cout << "plus a unrecognizable black smudge equals a single sword. Just the fact that" << endl;
+		cout << "this creature attempted math means its much more intelligent than you would" << endl;
+		cout << "have guessed" << endl;
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -69,11 +69,11 @@ void Space11::read(const char* thing)
 {
 	if (strcmp(thing, "book") == 0)
 	{
-		cout << "wait a minute... THIS IS A COOK BOOK! \n" << endl;
+		cout << "Wait a minute... THIS IS A COOK BOOK! \n" << endl;
 
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

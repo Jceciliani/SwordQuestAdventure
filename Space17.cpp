@@ -34,46 +34,46 @@ Space17::~Space17()
 
 void Space17::look(const char* thing)
 {
-if (strcmp(thing, "fountian") == 0)
+if (strcmp(thing, "fountain") == 0)
 	{
 		if(fountianUsed)
 		{
-			cout << "the fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 		else
 		{
-			cout << "The fountian is filled with water. It looks very refreashing" << endl;
+			cout << "The fountain is filled with water. It looks very refreshing" << endl;
 		}
 	}
 
 	else if(strcmp(thing, "volcano") == 0)
 	{
-			cout << "its a volcano… in a dungeon? Anyways it seems to be still active. Maybe theres " << endl; 
+			cout << "Its a volcano… in a dungeon? Anyways, it seems to be still active. Maybe there's " << endl; 
 			cout << "something that will help up there?" << endl; 
 	}
 else
 		{
-			cout << "you cant do that" << endl;
+			cout << "You can't do that" << endl;
 		}
 }
 
 void Space17::drink(const char* thing)
 {
-if (strcmp(thing, "fountian") == 0)
+if (strcmp(thing, "fountain") == 0)
 	{
 		if(!fountianUsed)
 		{
-		cout << "you feel strength return to your body as you drink. You quickly consume all" << endl;
-		cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+		cout << "You feel strength return to your body as you drink. You quickly consume all" << endl;
+		cout << "of the water with in the fountain. The fountain is now dry." << endl;
 		fountianUsed = true;
 		}
 		else
 		{
-			cout << "The fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 	}
 	else
 		{
-			cout << "you cant do that" << endl;
+			cout << "You can't do that" << endl;
 		}
 }

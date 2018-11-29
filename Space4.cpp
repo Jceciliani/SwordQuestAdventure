@@ -34,8 +34,8 @@ void Space4::look(const char* thing)
 {
 	if (strcmp(thing, "ocean") == 0 || strcmp(thing, "opening") == 0)
 	{
-		cout << "you see the ocean. Between the rough waves and glimpses of shark fins" << endl;
-		cout << " its probably best to not try your luck out there" << endl;
+		cout << "You see the ocean. Between the rough waves and glimpses of shark fins," << endl;
+		cout << "it's probably best to not try your luck out there" << endl;
 
 	}
 	else if (strcmp(thing, "bridge") == 0)
@@ -46,6 +46,6 @@ void Space4::look(const char* thing)
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }

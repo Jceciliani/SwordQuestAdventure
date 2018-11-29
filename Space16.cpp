@@ -33,16 +33,16 @@ void Space16::look(const char* thing)
 {
 	if (strcmp(thing, "sign") == 0)
 	{
-		cout << "the sign reads 'BEWARE the GAUNTLET starts here.'" << endl;
+		cout << "The sign reads 'BEWARE the GAUNTLET starts here.'" << endl;
 	}
 
 	else if (strcmp(thing, "bones") == 0)
 	{
-		cout << "looks like human bones. Possibly victims of the path ahead?" << endl;
+		cout << "Looks like human bones. Possibly victims of the path ahead?" << endl;
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -50,15 +50,15 @@ void Space16::search(const char* thing)
 {
 	if (strcmp(thing, "bones") == 0)
 	{
-		cout << "you find a note hidden in one of the skulls. It reads " << endl;
-		cout << "Hey steven i know we said to meet here but we found a better spot up ahead." << endl;
+		cout << "You find a note hidden in one of the skulls. It reads " << endl;
+		cout << "Hey steven, I know we said to meet here but we found a better spot up ahead." << endl;
 		cout << "If you bring your guard armor, we'll only need one more until we can combine " << endl;
-		cout << " them all into something really cool! Then we’ll make bank! Don’t know why" << endl;
-		cout << "i’m writing this all where a stranger can find it. Anyways hurry up!" << endl;
+		cout << "them all into something really cool! Then we’ll make bank! Don’t know why" << endl;
+		cout << "i’m writing this all where a stranger can find it. Anyways, hurry up!" << endl;
 		cout << "-Steve and the gang" << endl;
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

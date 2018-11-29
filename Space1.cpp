@@ -40,16 +40,16 @@ void Space1::look(const char* thing)
 {
 	if(strcmp(thing, "grass") == 0)
 	{
-		cout << "the long grass come up to your waist. Maybe there is something hidden within it." << endl; 
+		cout << "The long grass come up to your waist. Maybe there is something hidden within it." << endl; 
 		cout << "Like rupees! " << endl;
 	}
 	else if(strcmp(thing, "wind") == 0)
 	{
-		cout << "no matter where you look, the wind has zero colors." << endl;	
+		cout << "No matter where you look, the wind has zero colors." << endl;	
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }
 
@@ -58,13 +58,13 @@ void Space1::attack(const char* thing)
 {
 	if(strcmp(thing, "grass") == 0)
 	{
-		cout << "with a “ hiyayaya!!!” you arc your sword around trimming the grass and clearing a" << endl;
-		cout << "patch around you. Unfortunatly, this is not that game, so you find zero rupees" << endl;
-		cout << ". What would you even do with one?" << endl;	
+		cout << "With a “ hiyayaya!!!” you arc your sword around trimming the grass and clearing a" << endl;
+		cout << "patch around you. Unfortunatly, this is not that game, so you find zero rupees." << endl;
+		cout << "What would you even do with one?" << endl;	
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }
 
