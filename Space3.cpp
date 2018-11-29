@@ -16,9 +16,9 @@ using namespace std;
 Space3::Space3()
 {
 	name = "Western Sewers";
-	shortForm = "The walkways are grimy and slick There appears to be a fishing basket of some kind in the sewer waterway.\n"
+	shortForm = "The walkways are grimy and slick. There appears to be a fishing basket of some kind in the sewer waterway.\n\n"
 	"To the south are stairs leading up to the Guard Quarters \n"
-		"Down the walkways to the east there is bright light coming from the Sewer Depths \n";
+	"Down the walkways to the east there is bright light coming from the Sewer Depths \n";
 	longForm = "The walkways are grimy and slick. It's not hard to imagine with what. \n"
 		"old pipes and cobwebs line the sewer walls. There appears to be a fishing basket \n"
 		"of some kind in the sewer waterway. \n\n"
@@ -50,8 +50,8 @@ void Space3::look(const char* thing)
 	}
 	else if (strcmp(thing, "basket") == 0 || strcmp(thing, "fishing basket") == 0)
 	{
-		cout << " a small wooden box design to catch things flows through the dirty" << endl;
-		cout << " waterways. It is tied to the side of the walkway with a rope." << endl;
+		cout << "A small wooden box design to catch things flows through the dirty" << endl;
+		cout << "waterways. It is tied to the side of the walkway with a rope." << endl;
 	}
 	else if (strcmp(thing, "rope") == 0)
 	{
@@ -59,7 +59,7 @@ void Space3::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 void Space3::take(const char* thing)
@@ -73,17 +73,17 @@ void Space3::take(const char* thing)
 		else
 		{
 			if (taken == false) {
-				cout << " The basket is to big to carry. There is some bronze armor in the trap though!" << endl;
+				cout << "The basket is to big to carry. There is some bronze armor in the trap though!" << endl;
 			}
 			else
 			{
-				cout << " The basket is to big to carry." << endl;
+				cout << "The basket is to big to carry." << endl;
 			}
 		}
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 void Space3::pull(const char* thing)
@@ -112,6 +112,6 @@ void Space3::pull(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

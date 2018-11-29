@@ -16,10 +16,10 @@ using namespace std;
 Space4::Space4()
 {
 	name = "Sewer Depths";
-	shortForm = "The mouth of the sewer opens up into the ocean. There is a small wooden bridge .\n"
+	shortForm = "The mouth of the sewer opens up into the ocean. There is a small wooden bridge.\n\n"
 		"To the east you see the tunnels continue to the Eastern Sewers \n"
 		"To the west you see the tunnels continue to the Western Sewers \n";
-	longForm = "The mouth of the sewer opens up into the ocean. you can hear the gulls call somewhere in \n"
+	longForm = "The mouth of the sewer opens up into the ocean. You can hear the gulls call somewhere in \n"
 		"the distance. The waves look rough today. There is a small wooden bridge connecting the eastern and western parts of the sewers. \n\n"
 		"To the east you see the tunnels continue to the Eastern Sewers \n"
 		"To the west you see the tunnels continue to the Western Sewers \n";
@@ -38,8 +38,8 @@ void Space4::look(const char* thing)
 {
 	if (strcmp(thing, "ocean") == 0 || strcmp(thing, "opening") == 0)
 	{
-		cout << "You see the ocean. Between the rough waves and glimpses of shark fins," << endl;
-		cout << "it's probably best to not try your luck out there" << endl;
+		cout << "You see the ocean. Between the rough waves and glimpses of shark fins." << endl;
+		cout << "It's probably best to not try your luck out there" << endl;
 
 	}
 	else if (strcmp(thing, "bridge") == 0)
@@ -50,6 +50,6 @@ void Space4::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

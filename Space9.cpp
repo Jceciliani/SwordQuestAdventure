@@ -16,12 +16,10 @@ using namespace std;
 Space9::Space9()
 {
 	name = "Lower Maintenance";
-	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n"
+	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n\n"
 		"To the east there is a walkway to the Upper Maintenance area\n"
 		"To the west is a door to the Guard Quarters\n";
 	longForm = "You arrive in a large room. There are many large metal tubes crossing through\n"
-		"the room along the walls. They weave in, out and over one another like a man-made spiderweb. \n"
-		"In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes \n\n";
 		"the room along the walls. They weave in, out and over one another like a man made spiderweb. \n"
 		"In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes \n\n"
 		"To the east there is a walkway to the Upper Maintenance area\n"
@@ -122,7 +120,7 @@ void Space9::drink(const char* thing)
 		if (!fountianUsed)
 		{
 			cout << "You feel strength return to your body as you drink. You quickly consume all" << endl;
-			cout << "of the water within the fountian. The fountain is now dry." << endl;
+			cout << "of the water within the fountain. The fountain is now dry." << endl;
 			fountianUsed = true;
 		}
 		else

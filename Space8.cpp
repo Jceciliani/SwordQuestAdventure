@@ -16,7 +16,7 @@ using namespace std;
 Space8::Space8()
 {
 	name = "Guard Quarters";
-	shortForm = "There are papers strewn across the desk. There are a collection of lockers along the west wall\n"
+	shortForm = "There are papers strewn across the desk. There are a collection of lockers along the west wall\n\n"
 		"To the north is a door labeled 'Sewers' \n"
 		"To the east is a door labeled ÅgMaintenanceÅh \n"
 		"To the south is a pair of stairs leading up to the Sanctuary\n";
@@ -57,7 +57,7 @@ void Space8::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
