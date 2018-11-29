@@ -16,10 +16,10 @@ using namespace std;
 Space15::Space15()
 {
 	name = "Crypt";
-	shortForm = "The room is filled with candles and intricately painted pots and vases. In the center of the room is a large tomb\n"
+	shortForm = "The room is filled with candles and intricately painted pots and vases. In the center of the room is a large tomb\n\n"
 		"To the west is a doorway to leads back to the dimly lit corridor of the Mausoleum \n";
 	longForm = "The room is filled with candles that were used up long ago and a plethora of \n"
-		"intricately painted pots and vases. The room feel very ceremonial. In the center of the \n"
+		"intricately painted pots and vases. The room feels very ceremonial. In the center of the \n"
 		"room is a large tomb. An air of death lingers in the room \n\n"
 		"To the west is a doorway to leads back to the dimly lit corridor of the Mausoleum \n";
 
@@ -93,7 +93,7 @@ void Space15::search(const char* thing)
 	else if (strcmp(thing, "skeleton") == 0|| strcmp(thing, "clothes") == 0)
 	{
 		if (tombOpen) {
-			cout << "Nn one of the skeletons pockets you find a note. It is a letter to the" << endl;
+			cout << "In one of the skeletons pockets you find a note. It is a letter to the" << endl;
 			cout << "new forge master. It reads" << endl;
 			cout << "now that you are replacing me as forge master you should know a few things. Our forge is in" << endl;
 			cout << "bad condition and dies every few days. It's easy enough to get restarted though. Just hit some" << endl;

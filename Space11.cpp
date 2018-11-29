@@ -16,9 +16,9 @@ using namespace std;
 Space11::Space11()
 {
 	name = "Cave";
-	shortForm = "There are piles of broken tools, torn clothes, and bones. To the side you see a book\n"
+	shortForm = "There are piles of broken tools, torn clothes, and bones. To the side you see a book\n\n"
 		"To the north is a wide path marked with broken branches leading back into the Jungle \n";
-	longForm = " You find a small cave. Tt is dark, dank and you can hear your footsteps echo through it. \n"
+	longForm = "You find a small cave. Tt is dark, dank and you can hear your footsteps echo through it. \n"
 		"It is also covered in piles of broken tools, torn clothes, and bones. To the side you see a book\n\n"
 		"To the north is a wide path marked with broken branches leading back into the Jungle \n";
 

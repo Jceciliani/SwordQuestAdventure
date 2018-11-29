@@ -18,7 +18,7 @@ Space13::Space13()
 	name = "Sanctuary";
 	shortForm = "In the center of the room is a small ornate fountain. \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest.\n"
-		"A large gate on the southern wall looms over the room \n"
+		"A large gate on the southern wall looms over the room \n\n"
 		"To the south there is a large ominously gated doorway to the Keep \n"
 		"To the west is a doorway that leads down a well lit corridor out into the Crossroads \n"
 		"To the north is a set of moist stairs that lead downward to the Guard Quarters \n"
@@ -28,7 +28,7 @@ Space13::Space13()
 		"in your surroundings. The room itself seems fairly nice, despite being in an extreme state of disuse.\n"
 		"The majority of the room is covered in thick coat of dust. In the center of the room is a small ornate fountain \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest. \n"
-		"A large gate on the southern wall looms over the room, striking unease into your heart \n"
+		"A large gate on the southern wall looms over the room, striking unease into your heart \n\n"
 			"To the south there is a large ominously gated doorway to the Keep \n"
 			"To the west is a doorway that leads down a well lit corridor out into the Crossroads \n"
 			"To the north is a set of moist stairs that lead downward to the Guard Quarters \n"
@@ -82,7 +82,7 @@ void Space13::look(const char* thing)
 		cout << "A large ominous gate. the black steel it is made from is sturdy and threatening" << endl;
 		if (!gateOpened)
 		{
-			cout << "The gate is closed an bars your exit" << endl;
+			cout << "The gate is closed and bars your exit" << endl;
 
 		}
 		else

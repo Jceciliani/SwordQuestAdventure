@@ -16,13 +16,13 @@ using namespace std;
 Space22::Space22()
 {
 	name = "Volcano Lvl. 2";
-	shortForm = "An old man sits in the middle of the path\n"
+	shortForm = "An old man sits in the middle of the path\n\n"
 		"The trail to the east continues up the volcano, the path slowly narrowing as it approaches Volcano Lvl. 3 \n"
-		"The path to the west dissapates behind you into an ominous fog. there is no turning back \n";
+		"The path to the west dissapates behind you into an ominous fog. There is no turning back \n";
 	longForm = "The path continues upward. You can start to feel heat coming off the mountain. \n"
 		"An old man sits in the middle of the path \n\n"
 		"The trail to the east continues up the volcano, the path slowly narrowing as it approaches Volcano Lvl. 3 \n"
-		"The path to the west  dissapates behind you into an ominous fog. there is no turning back \n";
+		"The path to the west  dissapates behind you into an ominous fog. There is no turning back \n";
 
 	id = 22;
 	obj = NULL;

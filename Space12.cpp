@@ -16,7 +16,7 @@ using namespace std;
 Space12::Space12()
 {
 	name = "Crossroads";
-	shortForm = "In the center of the room is a signpost. Along the western wall is a small fenced-off plot of dirt.\n"
+	shortForm = "In the center of the room is a signpost. Along the western wall is a small fenced-off plot of dirt.\n\n"
 		"To the north there is a path slowly encroached by brush of the Swamp \n"
 		"To the south there is a path that slopes upwards through the Volcano Foothills \n"
 		"To the east there is a well lit corridor back to the Sanctuary \n";
