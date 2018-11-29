@@ -129,7 +129,10 @@ bool Space::getEncounter()
 	return combatEncounter;
 }
 
-
+void Space::setVisited()
+{
+	visited = false;
+}
 
 bool Space::getVisited()
 {

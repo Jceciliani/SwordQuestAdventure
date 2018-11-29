@@ -91,17 +91,17 @@ void Space13::look(const char* thing)
 
 void Space13::drink(const char* thing)
 {
-	if (strcmp(thing, "fountian") == 0)
+	if (strcmp(thing, "fountain") == 0)
 	{
 		if (!fountianUsed)
 		{
 			cout << "You feel strength return to your body as you drink. You quickly consume all" << endl;
-			cout << "of the water with in the fountian. The foundtian is now dry." << endl;
+			cout << "of the water with in the fountain. The fountain is now dry." << endl;
 			fountianUsed = true;
 		}
 		else
 		{
-			cout << "The fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 	}
 	else

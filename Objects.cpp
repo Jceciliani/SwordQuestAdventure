@@ -164,8 +164,8 @@ Ultimate_Armor::~Ultimate_Armor()
 // Forge Hammer *****************************************************
 Forge_Hammer::Forge_Hammer()
 {
-	name = "forge hammer";
-	description = " a hammer used to make weapons and aarmor. perhaps you can use this";
+	name = "anvil hammer";
+	description = " a hammer used to make weapons and armor. perhaps you can use this";
 	id = 11;
 }
 

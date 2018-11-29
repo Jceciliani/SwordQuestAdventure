@@ -846,7 +846,7 @@ void Game::play(bool loadgame)
 								}
 								else
 								{
-									cout << "You pickup the Forge Hammer" << endl;
+									cout << "You pickup the Anvil Hammer" << endl;
 									ba.addToContainer(s2.getObject());
 									s2.setTaken(1);
 								}
@@ -1661,7 +1661,7 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
-						if (!(s13.getFountian()))
+						if ((s13.getFountian()) == false)
 						{
 							heal();
 						}
@@ -1685,7 +1685,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(ba.printItem(i).getName()) < 50)
 							{
-								cout << "You put " << ba.printItem(i).getName() << "into the forge" << endl;
+								cout << "You put " << ba.printItem(i).getName() << " into the forge" << endl;
 								fg.addToContainer(ba.printItem(i));
 								ba.deleteFromContainer(ba.printItem(i));
 
@@ -1700,7 +1700,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() <= 5)
 								{
-									cout << "You take " << fg.printItem(i).getName() << "from the forge" << endl;
+									cout << "You take " << fg.printItem(i).getName() << " from the forge" << endl;
 									ba.addToContainer(fg.printItem(i));
 									fg.deleteFromContainer(fg.printItem(i));
 								}
@@ -1790,7 +1790,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() <= 5)
 								{
-									cout << "You take " << st.printItem(i).getName() << "from the stash" << endl;
+									cout << "You take " << st.printItem(i).getName() << " from the stash" << endl;
 									ba.addToContainer(st.printItem(i));
 									st.deleteFromContainer(st.printItem(i));
 								}
@@ -2163,9 +2163,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[17]) // Space18 Dragon Keep
 			{
-				cout << "END" << endl;
-				exit(0);
-				
+				// Magic in the other function	
 			}
 			if(playerLoc == spaceArr[18]) // Space19 Volcano lvl 5
 			{
@@ -2320,7 +2318,7 @@ void Game::play(bool loadgame)
 					{
 						s20.look("gateway");
 					}
-					else if (input.find("enter") < 50 || input.find("go in") < 50)
+					else if (input.find("enter") < 50 || input.find("go in") < 50 || input.find("use") < 50)
 					{
 						s20.enter("gateway");
 						playerLoc = spaceArr[12];
@@ -2676,15 +2674,15 @@ void Game::play(bool loadgame)
 						s25.look("lake");
 					}
 				}
-				else if(input.find("stalagtite") < 50)
+				else if(input.find("stalactite") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
-						s25.look("stalagtite");
+						s25.look("stalactite");
 					}
 					else if (input.find("attack") < 50 || input.find("hit") < 50)
 					{
-						s25.attack("stalagtite");
+						s25.attack("stalactite");
 					
 					}
 				}
@@ -3172,6 +3170,7 @@ void Game::play(bool loadgame)
 		
 				}
 				cout << s18.getLongForm() << endl;
+				exit(0);
 
 			}
 			else
@@ -3199,13 +3198,6 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
-				if(s19.getEncounter() == false)
-				{
-					cout << "A MOUNTAIN GIANT APPEARED!\n\n" << endl;
-					char2 = new Mountain_Giant();
-					fight();
-					char2 = NULL;
-				}
 				cout << s19.getShortForm() << endl;
 				if (s19.getSize() != 0)
 				{
@@ -3216,6 +3208,9 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[19])
 		{
+			// Set space 19 visit back to false to re-encounter fight
+			s19.setVisited();	
+
 			if(s20.getVisited() == false)
 			{
 				cout << s20.getLongForm() << endl;
@@ -3256,13 +3251,6 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
-				if(s21.getEncounter() == false)
-				{
-					cout << "A WIZARD APPEARED!\n\n" << endl;
-					char2 = new Wizard();
-					fight();
-					char2 = NULL;
-				}
 				cout << s21.getShortForm() << endl;
 				if (s21.getSize() != 0)
 				{
@@ -3273,6 +3261,9 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[21])
 		{
+			// Set space 21 visited back to false for reencounter
+			s21.setVisited();
+
 			if(s22.getVisited() == false)
 			{
 				cout << s22.getLongForm() << endl;
@@ -3312,13 +3303,6 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
-				if(s23.getEncounter() == false)
-				{
-					cout << "A GANG OF BANDITS!\n\n" << endl;
-					char2 = new Gang_of_Bandits();
-					fight();
-					char2 = NULL;
-				}
 				cout << s23.getShortForm() << endl;
 				if (s23.getSize() != 0)
 				{
@@ -3329,6 +3313,9 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[23])
 		{
+			// Set space 23 visited to false for reencounter
+			s23.setVisited();
+
 			if(s24.getVisited() == false)
 			{
 				cout << s24.getLongForm() << endl;

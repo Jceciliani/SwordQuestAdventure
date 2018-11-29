@@ -51,6 +51,7 @@ class Space
 		Objects printItem(int i);
 		int getSize();
 		void setDirections(Space* N, Space* E, Space* S, Space* W);
+		void setVisited();
 		bool getVisited();
 		bool checkVisited();
 		void setVisited(int num){if(num == 1){visited = true;} else {visited = false;}}

@@ -203,7 +203,7 @@ bool Forge::ultWeaponCrafted()
 	{
 		gold = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "forge hammer") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "anvil hammer") == 0)
 	{
 		hammer = true;
 	}		
@@ -246,7 +246,7 @@ bool Forge::ultArmorCrafted()
 	{
 		gold = true;
 	}
-	if(strcmp((forge[i].getName()).c_str(), "forge hammer") == 0)
+	if(strcmp((forge[i].getName()).c_str(), "anvil hammer") == 0)
 	{
 		hammer = true;
 	}		

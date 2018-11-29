@@ -16,7 +16,7 @@ using namespace std;
 Space23::Space23()
 {
 	name = "Volcano Lvl. 3";
-	shortForm = " There is a small alcove in the face of the volcano containing various piles of valuables and trinkets.\n"
+	shortForm = "There is a small alcove in the face of the volcano containing various piles of valuables and trinkets.\n"
 		"To the side of the alcove, there is a table of meager bread \n\n";
 		longForm = "The path continues forward. You question the trails integrity as you see a few \n"
 		"chunks separate themselves from the mountain. There is a small alcove in the face of the volcano\n"
