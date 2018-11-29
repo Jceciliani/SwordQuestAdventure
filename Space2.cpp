@@ -19,7 +19,7 @@ Space2::Space2()
 	shortForm = "You arrive at a ruin. You see various remains periodically peeking through the rubble.\n";
 	longForm = "You arrive at the end of the path to find what ages ago must have been a larger\n"
 		"complex, now appears to be a single hulking ruin. You see various remains periodically\n"
-		"peeking through the rubble. the thought that the creature that did this is likly still \n"
+		"peeking through the rubble. The thought that the creature that did this is likely still \n"
 		"here fills you with dread \n";
 
 	id = 2;
@@ -42,12 +42,12 @@ void Space2::look(const char* thing)
 {
 	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0 )
 		{
-			cout << "youre no architect, so youre not really sure what kind of building this could" << endl;
-			cout << "have been. The are interesting remains poking through." << endl;	
+			cout << "You're no architect, so you're not really sure what kind of building this could" << endl;
+			cout << "have been. There are interesting remains poking through." << endl;	
 		}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}	
 }
 
@@ -57,19 +57,19 @@ void Space2::search(const char* thing)
 	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0)
 		{
 		if (hammerFound == false || taken == false) {
-			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
+			cout << "Most of it is less interesting upon further inspection. Broken vases," << endl;
 			cout << "bones from a severed arm. There is handle that upon further inspection is" << endl;
 			cout << "attached to a forge hammer." << endl;
 			hammerFound = true;
 		}
 		else
 		{
-			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
-			cout << "bones from a severed arm. just a whole lot of garbage in your opinion" << endl;
+			cout << "Most of it is less interesting upon further inspection. Broken vases," << endl;
+			cout << "bones from a severed arm. Just a whole lot of garbage in your opinion" << endl;
 		}
 		}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }

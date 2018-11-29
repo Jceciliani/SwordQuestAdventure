@@ -16,10 +16,9 @@ using namespace std;
 Space5::Space5()
 {
 	name = "Eastern Sewers";
-	shortForm = "Moss and mildew cover the sewer walls.You see a small corporeal form in the corner.\n";
+	shortForm = "Moss and mildew cover the sewer walls. You see a small corporeal form in the corner.\n";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
-		"You see a small corporeal form in the corner. you hope you do not meet a similar fate anytime soon \n"
-		"or all really.";
+		"You see a small corporeal form in the corner. You hope you do not meet a similar fate anytime soon";
 
 	id = 5;
 	obj = new Two_Handed_Silver_Sword();
@@ -41,31 +40,31 @@ void Space5::look(const char* thing)
 {
 	if (strcmp(thing, "walkways") == 0)
 	{
-		cout << "dont. Its gross" << endl;
+		cout << "Don't. It's gross" << endl;
 
 	}
 	else if (strcmp(thing, "walls") == 0)
 	{
-		cout << "they are covered in moss  and mildew. Its hard to understand how things can grow" << endl;
+		cout << "They are covered in moss and mildew. It's hard to understand how things can grow" << endl;
 		cout << "in such a disgusting place. The wonders of nature." << endl;
 	}
 	else if (strcmp(thing, "corner") == 0 || strcmp(thing, "form") == 0)
 	{
 		if (taken == false) {
-			cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
-			cout << "silver sword sticking out of his chest its not hard to tell how he died." << endl;
-			cout << "The question is did he put it there, or someone else?" << endl;
+			cout << "The body appears to have been a guard here at some point. Looking at the" << endl;
+			cout << "silver sword sticking out of his chest, it's not hard to tell how he died." << endl;
+			cout << "The question is, did he put it there or someone else?" << endl;
 			swordFound = true;
 		}
 		else
 		{
-			cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
+			cout << "The body appears to have been a guard here at some point. Looking at the" << endl;
 			cout << "sword wound in his chest its not hard to tell how he died." << endl;
-			cout << "The question is did he put it there, or someone else?" << endl;
+			cout << "The question is, did he put it there or someone else?" << endl;
 		}
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You cant do that" << endl;
 	}
 }
