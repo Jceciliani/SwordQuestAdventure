@@ -16,10 +16,14 @@ using namespace std;
 Space3::Space3()
 {
 	name = "Western Sewers";
-	shortForm = "The walkways are grimy and slick There appears to be a fishing basket of some kind in the sewer waterway.\n";
+	shortForm = "The walkways are grimy and slick There appears to be a fishing basket of some kind in the sewer waterway.\n"
+	"To the south are stairs leading up to the Guard Quarters \n"
+		"Down the walkways to the east there is bright light coming from the Sewer Depths \n";
 	longForm = "The walkways are grimy and slick. It's not hard to imagine with what. \n"
 		"old pipes and cobwebs line the sewer walls. There appears to be a fishing basket \n"
-		"of some kind in the sewer waterway. \n\n";
+		"of some kind in the sewer waterway. \n\n"
+		"To the south are stairs leading up to the Guard Quarters \n"
+		"Down the walkways to the east there is bright light coming from the Sewer Depths \n";
 
 	id = 3;
 	obj = new Bronze_Armor();

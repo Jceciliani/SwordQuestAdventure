@@ -16,11 +16,13 @@ using namespace std;
 Space2::Space2()
 {
 	name = "Ruins";
-	shortForm = "You arrive at a ruin. You see various remains periodically peeking through the rubble.\n";
+	shortForm = "You arrive at a ruin. You see various remains periodically peeking through the rubble.\n"
+	"To the west you see a cobblestone path leading to some Fields\n";
 	longForm = "You arrive at the end of the path to find what ages ago must have been a larger\n"
 		"complex, now appears to be a single hulking ruin. You see various remains periodically\n"
 		"peeking through the rubble. the thought that the creature that did this is likly still \n"
-		"here fills you with dread \n";
+		"here fills you with dread \n"
+		"To the west you see a cobblestone path leading to some Fields\n";
 
 	id = 2;
 	obj = new Forge_Hammer();
