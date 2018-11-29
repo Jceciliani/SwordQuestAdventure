@@ -664,6 +664,7 @@ void Game::play(bool loadgame)
 	cout << "Type <help> for list of actions\n\n" << endl;	
 	// Randomize the game
 	srand(time(NULL));
+	s13.getLongForm();
 	while (turns < 10000)
 	{
 
