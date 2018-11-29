@@ -18,7 +18,7 @@ Space25::Space25()
 	name = "Volcanic Chamber";
 	shortForm = "You reach a small platform in the middle of the burning lake. \n"
 	"The stalagtites spark from the heat.\n";
-	longForm = "You reach a small platform in the middle of the burning lake. Noxious gases slowly bubble to the magmas surface \n"
+	longForm = "You reach a small platform in the middle of the burning lake. Noxious gases slowly bubble to the magmas surface. \n"
 		"You won't last long in this heat. The stalagtites spark from the heat. The rock formations litter the small island\n\n";
 
 	id = 25;
@@ -40,35 +40,35 @@ void Space25::look(const char* thing)
 {
 	if (strcmp(thing, "lake") == 0)
 	{
-			cout << "a lake made of lava. you are in a volcano after all. trying to go any closer to it" << endl;
+			cout << "A lake made of lava. You are in a volcano after all. Trying to go any closer to it" << endl;
 			cout << "would not bode well for you." << endl;
 	}
 	else if(strcmp(thing, "stalagtite") == 0)
 	{
-			cout << "small towers of a weird black substance. they seem to spark everyso often. they seem" << endl;
+			cout << "Small towers of a weird black substance. They seem to spark everyso often. They seem" << endl;
 			cout << "like they would be easy enough to break if you needed to" << endl;
 	}
 	else
-		{
-			cout << "you cant do that" << endl;
-		}
+	{
+		cout << "You can't do that" << endl;
+	}
 }
 
 void Space25::attack(const char* thing)
 {
 	if (strcmp(thing, "stalagtite") == 0)
 	{
-			cout << "you swing down with your sword at one of the stalagtites. upon impact a shower of sparks" << endl;
-			cout << "erupts from it. a large chunk of the stalagtite falls to the ground. from what just occured" << endl;
+			cout << "You swing down with your sword at one of the stalagtites. Upon impact a shower of sparks" << endl;
+			cout << "erupts from it. A large chunk of the stalagtite falls to the ground. From what just occured" << endl;
 			cout << "you can guess that they are made of flint" << endl;
 			flintFound = true;
 			if (taken == true) {
-				cout << "you really dont need anymore of it though" << endl;
+				cout << "You really dont need anymore of it though" << endl;
 			}
 	}
 
 	else
 		{
-			cout << "you cant do that" << endl;
+			cout << "You can't do that" << endl;
 		}
 }
