@@ -218,7 +218,7 @@ int Game::move(string input)
 	{
 		if (ba.getSize() >= 5)
 		{
-			cout << "you cannot do that. your bag is full" << endl;
+			cout << "You cannot do that. Your bag is full" << endl;
 		}
 		else
 		{ 
@@ -226,27 +226,27 @@ int Game::move(string input)
 			{
 				if (eq.getObject1().getName() != "no sword")
 				{
-					cout << " you unequip " << eq.getObject1().getName() << endl;
+					cout << "You unequip " << eq.getObject1().getName() << endl;
 					ba.addToContainer(eq.getObject1());
 					eq.addEquipment(No_Sword());
 				}
 				else
 				{
-					cout << "you have nothing to unequip" << endl;
+					cout << "You have nothing to unequip" << endl;
 				}
 			}
 			else if (input.find(eq.getObject2().getName()) < 50)
 			{
 				if (eq.getObject2().getName() != "no armor")
 				{
-					cout << " you unequip " << eq.getObject2().getName() << endl;
+					cout << "You unequip " << eq.getObject2().getName() << endl;
 					ba.addToContainer(eq.getObject2());
 					eq.addEquipment(No_Armor());
 				}
 			
 				else
 				{
-					cout << "you have nothing to unequip" << endl;
+					cout << "You have nothing to unequip" << endl;
 				}
 			}
 			
@@ -260,7 +260,7 @@ int Game::move(string input)
 			if (input.find(ba.printItem(i).getName()) < 50)
 			{
 				if (ba.printItem(i).getName().find("sword") < 50) {
-					cout << " you equip " << ba.printItem(i).getName() << endl;
+					cout << "You equip " << ba.printItem(i).getName() << endl;
 					Objects hold = eq.getObject1();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
@@ -270,7 +270,7 @@ int Game::move(string input)
 					}
 				}
 				else if (ba.printItem(i).getName().find("armor") < 50) {
-					cout << " you equip " << ba.printItem(i).getName() << endl;
+					cout << "You equip " << ba.printItem(i).getName() << endl;
 					Objects hold = eq.getObject2();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
@@ -353,10 +353,10 @@ int Game::move(string input)
 				}
 				else
 				{
-					cout << "as you cross the room you hear a loud THUNK. sunddenly the floor dissapears from beneith you" << endl;
-					cout << "and you begin to fall. the sensation feels familiar. you are whisked down a large metal tube" << endl;
-					cout << "getting coated with its innards in the process. you launch out of the tube and into a wall before falling to the ground." << endl;
-					cout << "you find yourself in the Sewer Depths" << endl;
+					cout << "As you cross the room you hear a loud THUNK. Sunddenly the floor disappears from beneath you" << endl;
+					cout << "and you begin to fall. The sensation feels familiar. You are whisked down a large metal tube" << endl;
+					cout << "getting coated with its innards in the process. You launch out of the tube and into a wall before falling to the ground." << endl;
+					cout << "You find yourself in the Sewer Depths" << endl;
 					playerLoc = spaceArr[3];
 				}
 			}
@@ -380,7 +380,7 @@ int Game::move(string input)
 			{
 				if(s7.getJump() == true)
 				{
-					cout << "you cant walk anywhere from this island. try jumping!" << endl;
+					cout << "You can't walk anywhere from this island. Try jumping!" << endl;
 				}
 				else if (s7.getCross() == false )
 				{
@@ -388,12 +388,13 @@ int Game::move(string input)
 				}
 				else
 				{
-					cout << "you slowly meander across the bridge. it dipps beneith your weight to the point it is partially submerged" << endl;
-					cout << "about half way across the bridge, the creatures living hear find you. Pirahnas being launching themselves at you" << endl;
-					cout << "biting at your ankles, hands, butt. whatever they can get at. You sprint to get away, but youve already" << endl;
+					cout << "You slowly meander across the bridge. It dips beneath your weight to the point it is partially submerged" << endl;
+					cout << "about half way across the bridge. The creatures living here find you. Piranhas begin launching themselves at you," << endl;
+					cout << "biting at your ankles, hands, and butt. Whatever they can get at. You sprint to get away, but you've already" << endl;
 					cout << "been torn to ribbons" << endl;
 					playerLoc = playerLoc->getSouth();
 					//damage
+					char1->damage(-2);
 				}
 			}
 			else if (playerLoc == spaceArr[12])
@@ -404,7 +405,7 @@ int Game::move(string input)
 				}
 				else
 				{
-					cout << "the gate blocks your path" << endl;
+					cout << "The gate blocks your path" << endl;
 				}
 			}
 			else
@@ -431,10 +432,10 @@ int Game::move(string input)
 				}
 				else
 				{
-					cout << "as you cross the room you hear a loud THUNK. sunddenly the floor dissapears from beneith you" << endl;
-					cout << "and you begin to fall. the sensation feels familiar. you are whisked down a large metal tube" << endl;
-					cout << "getting coated with its innards in the process. you launch out of the tube and into a wall before falling to the ground." << endl;
-					cout << "you find yourself in the Sewer Depths" << endl;
+					cout << "As you cross the room you hear a loud THUNK. Sunddenly the floor disappears from beneath you" << endl;
+					cout << "and you begin to fall. The sensation feels familiar. You are whisked down a large metal tube" << endl;
+					cout << "getting coated with its innards in the process. You launch out of the tube and into a wall before falling to the ground." << endl;
+					cout << "You find yourself in the Sewer Depths" << endl;
 					playerLoc = spaceArr[3];
 				}
 			}
@@ -443,7 +444,7 @@ int Game::move(string input)
 				
 				if (s7.getJump() == true)
 				{
-					cout << "you cant walk anywhere from this island. try jumping!" << endl;
+					cout << "You can't walk anywhere from this island. Try jumping!" << endl;
 				}
 				else if (s7.getCross() == true)
 				{
@@ -451,9 +452,9 @@ int Game::move(string input)
 				}
 				else
 				{
-					cout << "you slowly meander across the bridge. it dipps beneith your weight to the point it is partially submerged" << endl;
-					cout << "about half way across the bridge, the creatures living hear find you. Pirahnas being launching themselves at you" << endl;
-					cout << "biting at your ankles, hands, butt. whatever they can get at. You sprint to get away, but youve already" << endl;
+					cout << "You slowly meander across the bridge. It dips beneath your weight to the point it is partially submerged" << endl;
+					cout << "about half way across the bridge. The creatures living here find you. Piranhas begin launching themselves at you," << endl;
+					cout << "biting at your ankles, hands, and butt. Whatever they can get at. You sprint to get away, but you've already" << endl;
 					cout << "been torn to ribbons" << endl;
 					playerLoc = playerLoc->getWest();
 					//damage
@@ -483,8 +484,6 @@ void Game::fight()
 	// Death checkers
 	bool p1Death = false;
 	bool p2Death = false;
-
-	cout << "Entering the fight function" << endl;	
 
 	while (p1Death == false && p2Death == false)
 	{
@@ -604,7 +603,7 @@ void Game::stashToBag(Objects obj)
 	}
 	else
 	{
-		cout << "To bag can only hold 5 items" << endl;
+		cout << "The bag can only hold 5 items" << endl;
 	}	
 }
 //*********************************************************************************
@@ -747,7 +746,7 @@ void Game::play(bool loadgame)
 					}
 					else
 					{
-						cout << "you cant do that" << endl;
+						cout << "You cant do that" << endl;
 					}
 				}
 				else if (input.find("drop") < 50) 
@@ -757,7 +756,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s1.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 							candrop = true;
@@ -765,7 +764,7 @@ void Game::play(bool loadgame)
 					}
 					if (candrop == false)
 					{
-						cout << "you cant do that" << endl;
+						cout << "You can't do that" << endl;
 					}
 				}
 				else if (input.find("pickup") < 50 || input.find("grab") < 50)
@@ -776,7 +775,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s1.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << ba.printItem(i).getName() << endl;
+							cout << "You pickup " << ba.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s1.deleteFromContainer(ba.printItem(i));
 						}
@@ -814,7 +813,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s2.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -828,7 +827,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s2.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s2.printItem(i).getName() << endl;
+							cout << "You pickup " << s2.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s2.deleteFromContainer(ba.printItem(i));
 						}
@@ -843,7 +842,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -859,7 +858,7 @@ void Game::play(bool loadgame)
 							}
 						}
 						else {
-							cout << " you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -905,7 +904,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s3.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -919,7 +918,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s3.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s3.printItem(i).getName() << endl;
+							cout << "You pickup " << s3.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s3.deleteFromContainer(ba.printItem(i));
 						}
@@ -934,7 +933,7 @@ void Game::play(bool loadgame)
 							if (s3.getTaken() == false) {
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -945,7 +944,7 @@ void Game::play(bool loadgame)
 							}
 							else
 							{
-								cout << " you already took that.";
+								cout << "You already took that.";
 							}
 						}
 
@@ -992,7 +991,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s4.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1006,7 +1005,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s4.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s4.printItem(i).getName() << endl;
+							cout << "You pickup " << s4.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s4.deleteFromContainer(ba.printItem(i));
 						}
@@ -1051,7 +1050,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s5.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1065,7 +1064,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s5.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s5.printItem(i).getName() << endl;
+							cout << "You pickup " << s5.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s5.deleteFromContainer(ba.printItem(i));
 						}
@@ -1081,7 +1080,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "Yhe bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -1098,7 +1097,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << "you already took this" << endl;
+							cout << "You already took this" << endl;
 						}
 					}
 				}
@@ -1112,11 +1111,11 @@ void Game::play(bool loadgame)
 						s6.look("canopy");
 					}
 				}
-				else if(input.find("vegitation") < 50)
+				else if(input.find("vegetation") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
-						s6.look("vegitation");
+						s6.look("vegetation");
 					}
 				}
 				else if(input.find("vines") < 50)
@@ -1138,7 +1137,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s6.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1152,7 +1151,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s6.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s6.printItem(i).getName() << endl;
+							cout << "You pickup " << s6.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s6.deleteFromContainer(ba.printItem(i));
 						}
@@ -1167,7 +1166,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. you cant pick that up." << endl;
 								}
 								else
 								{
@@ -1184,7 +1183,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << "you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -1261,7 +1260,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s7.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1275,7 +1274,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s7.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s7.printItem(i).getName() << endl;
+							cout << "You pickup " << s7.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s7.deleteFromContainer(ba.printItem(i));
 						}
@@ -1339,7 +1338,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s8.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1353,7 +1352,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s8.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s8.printItem(i).getName() << endl;
+							cout << "You pickup " << s8.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s8.deleteFromContainer(ba.printItem(i));
 						}
@@ -1368,7 +1367,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -1385,7 +1384,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << "you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -1400,7 +1399,7 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
-						s9.look("fountian");
+						s9.look("fountain");
 					}
 					else if (input.find("drink") < 50)
 					{
@@ -1408,7 +1407,7 @@ void Game::play(bool loadgame)
 						{
 							heal();
 						}
-						s9.drink("fountian");
+						s9.drink("fountain");
 						
 					}
 				}
@@ -1447,7 +1446,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s9.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1461,7 +1460,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s9.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s9.printItem(i).getName() << endl;
+							cout << "You pickup " << s9.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s9.deleteFromContainer(ba.printItem(i));
 						}
@@ -1506,7 +1505,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s10.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1520,7 +1519,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s10.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s10.printItem(i).getName() << endl;
+							cout << "You pickup " << s10.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s10.deleteFromContainer(ba.printItem(i));
 						}
@@ -1573,7 +1572,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s11.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1587,7 +1586,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s11.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s11.printItem(i).getName() << endl;
+							cout << "You pickup " << s11.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s11.deleteFromContainer(ba.printItem(i));
 						}
@@ -1626,7 +1625,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s12.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1640,7 +1639,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s12.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s12.printItem(i).getName() << endl;
+							cout << "You pickup " << s12.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s12.deleteFromContainer(ba.printItem(i));
 						}
@@ -1658,7 +1657,7 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
-						s13.look("fountian");
+						s13.look("fountain");
 					}
 					else if (input.find("drink") < 50)
 					{
@@ -1666,7 +1665,7 @@ void Game::play(bool loadgame)
 						{
 							heal();
 						}
-						s13.drink("fountian");
+						s13.drink("fountain");
 						
 					}
 				}
@@ -1686,7 +1685,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(ba.printItem(i).getName()) < 50)
 							{
-								cout << " you put " << ba.printItem(i).getName() << "into the forge" << endl;
+								cout << "You put " << ba.printItem(i).getName() << "into the forge" << endl;
 								fg.addToContainer(ba.printItem(i));
 								ba.deleteFromContainer(ba.printItem(i));
 
@@ -1701,13 +1700,13 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() <= 5)
 								{
-									cout << " you take " << fg.printItem(i).getName() << "from the forge" << endl;
+									cout << "You take " << fg.printItem(i).getName() << "from the forge" << endl;
 									ba.addToContainer(fg.printItem(i));
 									fg.deleteFromContainer(fg.printItem(i));
 								}
 								else
 								{
-									cout << " your inventory is full" << endl;
+									cout << "Your inventory is full" << endl;
 								}
 							}
 						}
@@ -1719,7 +1718,7 @@ void Game::play(bool loadgame)
 							if (fg.ultArmorCrafted())
 							{
 								s13.use("forge");
-								cout << " you created the ultimate armor" << endl;
+								cout << "You created the ultimate armor" << endl;
 								fg.clear();
 								fg.addToContainer(fg.getUltArmor());
 								fg.addToContainer(s2.getObject());
@@ -1728,7 +1727,7 @@ void Game::play(bool loadgame)
 							if (fg.ultWeaponCrafted())
 							{
 								s13.use("forge");
-								cout << " you created the ultimate sword" << endl;
+								cout << "You created the ultimate sword" << endl;
 								fg.clear();
 								fg.addToContainer(fg.getUltSword());
 								fg.addToContainer(s2.getObject());
@@ -1755,7 +1754,7 @@ void Game::play(bool loadgame)
 							}
 							else
 							{
-								cout << "you dont have the proper materials in the forge to start it" << endl;
+								cout << "You don't have the proper materials in the forge to start it" << endl;
 							}
 						}
 					}
@@ -1776,7 +1775,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(ba.printItem(i).getName()) < 50)
 							{
-								cout << " you put " << ba.printItem(i).getName() << " into the stash" << endl;
+								cout << "You put " << ba.printItem(i).getName() << " into the stash" << endl;
 								st.addToContainer(ba.printItem(i));
 								ba.deleteFromContainer(ba.printItem(i));
 
@@ -1791,13 +1790,13 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() <= 5)
 								{
-									cout << " you take " << st.printItem(i).getName() << "from the stash" << endl;
+									cout << "You take " << st.printItem(i).getName() << "from the stash" << endl;
 									ba.addToContainer(st.printItem(i));
 									st.deleteFromContainer(st.printItem(i));
 								}
 								else
 								{
-									cout << " your inventory is full" << endl;
+									cout << "Your inventory is full" << endl;
 								}
 							}
 						}
@@ -1821,7 +1820,7 @@ void Game::play(bool loadgame)
 						}
 						if (s13.getGate() == false)
 						{
-							cout << "you need a key to open the gate" << endl;
+							cout << "You need a key to open the gate" << endl;
 						}
 					}
 				}
@@ -1832,7 +1831,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s13.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1846,7 +1845,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s13.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s13.printItem(i).getName() << endl;
+							cout << "You pickup " << s13.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s13.deleteFromContainer(ba.printItem(i));
 						}
@@ -1913,7 +1912,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s14.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1927,7 +1926,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s14.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s14.printItem(i).getName() << endl;
+							cout << "You pickup " << s14.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s14.deleteFromContainer(ba.printItem(i));
 						}
@@ -1999,7 +1998,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s15.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2013,7 +2012,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s15.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s15.printItem(i).getName() << endl;
+							cout << "You pickup " << s15.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s15.deleteFromContainer(ba.printItem(i));
 						}
@@ -2028,7 +2027,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -2045,7 +2044,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << " you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -2081,7 +2080,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s16.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2095,7 +2094,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s16.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s16.printItem(i).getName() << endl;
+							cout << "You pickup " << s16.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s16.deleteFromContainer(ba.printItem(i));
 						}
@@ -2112,7 +2111,7 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
-						s17.look("fountian");
+						s17.look("fountain");
 					}
 					else if (input.find("drink") < 50)
 					{
@@ -2120,7 +2119,7 @@ void Game::play(bool loadgame)
 						{
 							heal();
 						}
-						s17.drink("fountian");
+						s17.drink("fountain");
 					}
 				}
 				else if(input.find("volcano") < 50)
@@ -2137,7 +2136,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s17.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2151,7 +2150,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s17.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s17.printItem(i).getName() << endl;
+							cout << "You pickup " << s17.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s17.deleteFromContainer(ba.printItem(i));
 						}
@@ -2164,7 +2163,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[17]) // Space18 Dragon Keep
 			{
-				cout <<  "END" << endl;
+				cout << "END" << endl;
 				exit(0);
 				
 			}
@@ -2236,7 +2235,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s19.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2250,7 +2249,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s19.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s19.printItem(i).getName() << endl;
+							cout << "You pickup " << s19.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s19.deleteFromContainer(ba.printItem(i));
 						}
@@ -2265,7 +2264,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -2334,7 +2333,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s20.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2348,7 +2347,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s20.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s20.printItem(i).getName() << endl;
+							cout << "You pickup " << s20.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s20.deleteFromContainer(ba.printItem(i));
 						}
@@ -2380,7 +2379,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s21.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2394,7 +2393,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s21.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s21.printItem(i).getName() << endl;
+							cout << "You pickup " << s21.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s21.deleteFromContainer(ba.printItem(i));
 						}
@@ -2409,7 +2408,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -2426,7 +2425,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << " you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -2483,7 +2482,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s22.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2497,7 +2496,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s22.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s22.printItem(i).getName() << endl;
+							cout << "You pickup " << s22.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s22.deleteFromContainer(ba.printItem(i));
 						}
@@ -2510,7 +2509,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[22]) // Space23 Volcano Lvl3
 			{
-				if(input.find("valuable") < 50)
+				if(input.find("valuables") < 50)
 				{
 					if (input.find("look") < 50)
 					{
@@ -2557,7 +2556,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s23.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2571,7 +2570,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s23.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s23.printItem(i).getName() << endl;
+							cout << "You pickup " << s23.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s23.deleteFromContainer(ba.printItem(i));
 						}
@@ -2586,7 +2585,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. you cant pick that up." << endl;
 								}
 								else
 								{
@@ -2604,7 +2603,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << "you already took that";
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -2636,10 +2635,6 @@ void Game::play(bool loadgame)
 						s24.look("landing");
 					}
 				}
-				/*else if(input.find("locker") < 50)
-				{
-
-				}*/
 				else if (input.find("drop") < 50)
 				{
 
@@ -2647,7 +2642,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s24.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2661,7 +2656,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s24.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s24.printItem(i).getName() << endl;
+							cout << "You pickup " << s24.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s24.deleteFromContainer(ba.printItem(i));
 						}
@@ -2700,7 +2695,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << " you drop " << ba.printItem(i).getName() << endl;
+							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s25.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2714,7 +2709,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s25.printItem(i).getName()) < 50)
 						{
-							cout << " you pickup " << s25.printItem(i).getName() << endl;
+							cout << "You pickup " << s25.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s25.deleteFromContainer(ba.printItem(i));
 						}
@@ -2730,7 +2725,7 @@ void Game::play(bool loadgame)
 							{
 								if (ba.getSize() >= 5)
 								{
-									cout << " the bag is full. you cant pick that up." << endl;
+									cout << "The bag is full. You can't pick that up." << endl;
 								}
 								else
 								{
@@ -2747,7 +2742,7 @@ void Game::play(bool loadgame)
 						}
 						else
 						{
-							cout << "you already took that" << endl;
+							cout << "You already took that" << endl;
 						}
 					}
 				}
@@ -2785,7 +2780,7 @@ void Game::play(bool loadgame)
 				cout << s1.getLongForm() << endl;
 				if (s1.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s1.printContainer();
 				}
 			}
@@ -2794,7 +2789,7 @@ void Game::play(bool loadgame)
 				cout << s1.getShortForm() << endl;
 				if (s1.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s1.printContainer();
 				}
 			}
@@ -2806,7 +2801,7 @@ void Game::play(bool loadgame)
 				cout << s2.getLongForm() << endl;
 				if (s2.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s2.printContainer();
 				}
 			}
@@ -2815,7 +2810,7 @@ void Game::play(bool loadgame)
 				cout << s2.getShortForm() << endl;
 				if (s2.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s2.printContainer();
 				}
 			}
@@ -2827,7 +2822,7 @@ void Game::play(bool loadgame)
 				cout << s3.getLongForm() << endl;
 				if (s3.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s3.printContainer();
 				}
 			}
@@ -2836,7 +2831,7 @@ void Game::play(bool loadgame)
 				cout << s3.getShortForm() << endl;
 				if (s3.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s3.printContainer();
 				}
 			}
@@ -2855,7 +2850,7 @@ void Game::play(bool loadgame)
 				cout << s4.getLongForm() << endl;
 				if (s4.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s4.printContainer();
 				}
 			}
@@ -2864,7 +2859,7 @@ void Game::play(bool loadgame)
 				cout << s4.getShortForm() << endl;
 				if (s4.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s4.printContainer();
 				}
 			}
@@ -2875,7 +2870,7 @@ void Game::play(bool loadgame)
 			{
 				cout << s5.getLongForm() << endl; if (s5.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s5.printContainer();
 				}
 			}
@@ -2884,7 +2879,7 @@ void Game::play(bool loadgame)
 				cout << s5.getShortForm() << endl; 
 				if (s5.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s5.printContainer();
 				}
 			}
@@ -2897,7 +2892,7 @@ void Game::play(bool loadgame)
 				cout << s6.getLongForm() << endl;
 				if (s6.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s6.printContainer();
 				}
 			}
@@ -2906,7 +2901,7 @@ void Game::play(bool loadgame)
 				cout << s6.getShortForm() << endl; 
 				if (s6.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s6.printContainer();
 				}
 			}
@@ -2918,7 +2913,7 @@ void Game::play(bool loadgame)
 				cout << s7.getLongForm() << endl;
 				if (s7.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s7.printContainer();
 				}
 			}
@@ -2927,7 +2922,7 @@ void Game::play(bool loadgame)
 				cout << s7.getShortForm() << endl;
 				if (s7.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s7.printContainer();
 				}
 			}
@@ -2946,7 +2941,7 @@ void Game::play(bool loadgame)
 				cout << s8.getLongForm() << endl;
 				if (s8.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s8.printContainer();
 				}
 			}
@@ -2955,7 +2950,7 @@ void Game::play(bool loadgame)
 				cout << s8.getShortForm() << endl;
 				if (s8.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s8.printContainer();
 				}
 			}
@@ -2967,7 +2962,7 @@ void Game::play(bool loadgame)
 				cout << s9.getLongForm() << endl;
 				if (s9.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s9.printContainer();
 				}
 			}
@@ -2976,7 +2971,7 @@ void Game::play(bool loadgame)
 				cout << s9.getShortForm() << endl;
 				if (s9.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s9.printContainer();
 				}
 			}
@@ -2995,7 +2990,7 @@ void Game::play(bool loadgame)
 				cout << s10.getLongForm() << endl;
 				if (s10.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s10.printContainer();
 				}
 			}
@@ -3004,7 +2999,7 @@ void Game::play(bool loadgame)
 				cout << s10.getShortForm() << endl;
 				if (s10.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s10.printContainer();
 				}
 			}
@@ -3023,7 +3018,7 @@ void Game::play(bool loadgame)
 				cout << s11.getLongForm() << endl;
 				if (s11.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s11.printContainer();
 				}
 			}
@@ -3032,7 +3027,7 @@ void Game::play(bool loadgame)
 				cout << s11.getShortForm() << endl;
 				if (s11.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s11.printContainer();
 				}
 			}
@@ -3044,7 +3039,7 @@ void Game::play(bool loadgame)
 				cout << s12.getLongForm() << endl;
 				if (s12.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s12.printContainer();
 				}
 			}
@@ -3053,7 +3048,7 @@ void Game::play(bool loadgame)
 				cout << s12.getShortForm() << endl;
 				if (s12.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s12.printContainer();
 				}
 			}
@@ -3066,7 +3061,7 @@ void Game::play(bool loadgame)
 				cout << s13.getLongForm() << endl;
 				if (s13.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s13.printContainer();
 				}
 			}
@@ -3075,7 +3070,7 @@ void Game::play(bool loadgame)
 				cout << s13.getShortForm() << endl;
 				if (s13.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s13.printContainer();
 				}
 			}	
@@ -3087,7 +3082,7 @@ void Game::play(bool loadgame)
 				cout << s14.getLongForm() << endl;
 				if (s14.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s14.printContainer();
 				}
 			}
@@ -3096,7 +3091,7 @@ void Game::play(bool loadgame)
 				cout << s14.getShortForm() << endl;
 				if (s14.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s14.printContainer();
 				}
 			}
@@ -3108,7 +3103,7 @@ void Game::play(bool loadgame)
 				cout << s15.getLongForm() << endl;
 				if (s15.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s15.printContainer();
 				}
 			}
@@ -3117,7 +3112,7 @@ void Game::play(bool loadgame)
 				cout << s15.getShortForm() << endl;
 				if (s15.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s15.printContainer();
 				}
 			}
@@ -3129,7 +3124,7 @@ void Game::play(bool loadgame)
 				cout << s16.getLongForm() << endl;
 				if (s16.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s16.printContainer();
 				}
 			}
@@ -3138,7 +3133,7 @@ void Game::play(bool loadgame)
 				cout << s16.getShortForm() << endl;
 				if (s16.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s16.printContainer();
 				}
 			}
@@ -3150,7 +3145,7 @@ void Game::play(bool loadgame)
 				cout << s17.getLongForm() << endl;
 				if (s17.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s17.printContainer();
 				}
 			}
@@ -3159,7 +3154,7 @@ void Game::play(bool loadgame)
 				cout << s17.getShortForm() << endl;
 				if (s17.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s17.printContainer();
 				}
 			}
@@ -3198,7 +3193,7 @@ void Game::play(bool loadgame)
 				cout << s19.getLongForm() << endl;
 				if (s19.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s19.printContainer();
 				}
 			}
@@ -3214,7 +3209,7 @@ void Game::play(bool loadgame)
 				cout << s19.getShortForm() << endl;
 				if (s19.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s19.printContainer();
 				}
 			}
@@ -3226,7 +3221,7 @@ void Game::play(bool loadgame)
 				cout << s20.getLongForm() << endl;
 				if (s20.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s20.printContainer();
 				}
 			}
@@ -3235,7 +3230,7 @@ void Game::play(bool loadgame)
 				cout << s20.getShortForm() << endl;
 				if (s20.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s20.printContainer();
 				}
 			}
@@ -3255,7 +3250,7 @@ void Game::play(bool loadgame)
 				cout << s21.getLongForm() << endl;
 				if (s21.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s21.printContainer();
 				}
 			}
@@ -3271,7 +3266,7 @@ void Game::play(bool loadgame)
 				cout << s21.getShortForm() << endl;
 				if (s21.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s21.printContainer();
 				}
 			}
@@ -3283,7 +3278,7 @@ void Game::play(bool loadgame)
 				cout << s22.getLongForm() << endl;
 				if (s22.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s22.printContainer();
 				}
 			}
@@ -3292,7 +3287,7 @@ void Game::play(bool loadgame)
 				cout << s22.getShortForm() << endl;
 				if (s22.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s22.printContainer();
 				}
 			}
@@ -3311,7 +3306,7 @@ void Game::play(bool loadgame)
 				cout << s23.getLongForm() << endl;
 				if (s23.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s23.printContainer();
 				}
 			}
@@ -3327,7 +3322,7 @@ void Game::play(bool loadgame)
 				cout << s23.getShortForm() << endl;
 				if (s23.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s23.printContainer();
 				}
 			}
@@ -3339,7 +3334,7 @@ void Game::play(bool loadgame)
 				cout << s24.getLongForm() << endl;
 				if (s24.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s24.printContainer();
 				}
 			}
@@ -3348,7 +3343,7 @@ void Game::play(bool loadgame)
 				cout << s24.getShortForm() << endl;
 				if (s24.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s24.printContainer();
 				}
 			}
@@ -3367,7 +3362,7 @@ void Game::play(bool loadgame)
 				cout << s25.getLongForm() << endl;
 				if (s25.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s25.printContainer();
 				}
 			}
@@ -3376,7 +3371,7 @@ void Game::play(bool loadgame)
 				cout << s25.getShortForm() << endl;
 				if (s25.getSize() != 0)
 				{
-					cout << "on the ground you see the following items:" << endl;
+					cout << "On the ground you see the following items:" << endl;
 					s25.printContainer();
 				}
 			}

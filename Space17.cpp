@@ -34,15 +34,15 @@ Space17::~Space17()
 
 void Space17::look(const char* thing)
 {
-if (strcmp(thing, "fountian") == 0)
+if (strcmp(thing, "fountain") == 0)
 	{
 		if(fountianUsed)
 		{
-			cout << "The fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 		else
 		{
-			cout << "The fountian is filled with water. It looks very refreshing" << endl;
+			cout << "The fountain is filled with water. It looks very refreshing" << endl;
 		}
 	}
 
