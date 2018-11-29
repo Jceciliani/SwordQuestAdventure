@@ -83,6 +83,7 @@ void Space3::pull(const char* thing)
 		{
 			cout << "you pull the basket up to the side of the walkway, and look" << endl;
 			cout << "into the basket. Somehow bronze armor got caught in the trap. Lucky!" << endl;
+			ropePulled = true;
 		}
 		else
 		{

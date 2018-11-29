@@ -17,9 +17,9 @@ Space25::Space25()
 {
 	name = "Volcanic Chamber";
 	shortForm = "You reach a small platform in the middle of the burning lake. \n"
-	"The stalactites spark from the heat.\n";
+	"The stalagtites spark from the heat.\n";
 	longForm = "You reach a small platform in the middle of the burning lake. Noxious gases slowly bubble to the magmas surface \n"
-		"You won't last long in this heat. The stalactites spark from the heat. The rock formations litter the small island\n\n";
+		"You won't last long in this heat. The stalagtites spark from the heat. The rock formations litter the small island\n\n";
 
 	id = 25;
 	obj = new Flint();
@@ -37,12 +37,12 @@ Space25::~Space25()
 }
 void Space25::look(const char* thing)
 {
-	if (strcmp(thing, "lake"))
+	if (strcmp(thing, "lake") == 0)
 	{
 			cout << "a lake made of lava. you are in a volcano after all. trying to go any closer to it" << endl;
 			cout << "would not bode well for you." << endl;
 	}
-	else if(strcmp(thing, "stalagtite"))
+	else if(strcmp(thing, "stalagtite") == 0)
 	{
 			cout << "small towers of a weird black substance. they seem to spark everyso often. they seem" << endl;
 			cout << "like they would be easy enough to break if you needed to" << endl;
@@ -55,7 +55,7 @@ void Space25::look(const char* thing)
 
 void Space25::attack(const char* thing)
 {
-	if (strcmp(thing, "stalagtite"))
+	if (strcmp(thing, "stalagtite") == 0)
 	{
 			cout << "you swing down with your sword at one of the stalagtites. upon impact a shower of sparks" << endl;
 			cout << "erupts from it. a large chunk of the stalagtite falls to the ground. from what just occured" << endl;

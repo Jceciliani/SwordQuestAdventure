@@ -16,7 +16,7 @@ Space18::Space18()
 {
 	name = "Dragon Keep";
 	shortForm = "This is the short form\n";
-	longForm = "This is the long form\n";
+	longForm = "Your quest is complete. You can rest...\n";
 	id = 18;
 	obj = NULL;
 	combatEncounter = false;

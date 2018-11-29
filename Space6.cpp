@@ -67,6 +67,7 @@ void Space6::attack(const char* thing)
 		cout << " you hack at the vine a few times before it separates and one end shoots into the canopy." << endl;
 		cout << " A second later a ball of vines crashes down to the ground next to you." << endl;
 		cout << "You see in it a set of silver armor." << endl;
+		vineCut = true;
 	}
 	else
 	{
