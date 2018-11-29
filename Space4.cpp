@@ -16,9 +16,13 @@ using namespace std;
 Space4::Space4()
 {
 	name = "Sewer Depths";
-	shortForm = "The mouth of the sewer opens up into the ocean. There is a small wooden bridge .\n";
+	shortForm = "The mouth of the sewer opens up into the ocean. There is a small wooden bridge .\n"
+		"To the east you see the tunnels continue to the Eastern Sewers \n"
+		"To the west you see the tunnels continue to the Western Sewers \n";
 	longForm = "The mouth of the sewer opens up into the ocean. you can hear the gulls call somewhere in \n"
-		"the distance. The waves look rough today. There is a small wooden bridge connecting the eastern and western parts of the sewers. \n\n";
+		"the distance. The waves look rough today. There is a small wooden bridge connecting the eastern and western parts of the sewers. \n\n"
+		"To the east you see the tunnels continue to the Eastern Sewers \n"
+		"To the west you see the tunnels continue to the Western Sewers \n";
 
 	id = 4;
 	obj = NULL;

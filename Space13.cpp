@@ -18,13 +18,21 @@ Space13::Space13()
 	name = "Sanctuary";
 	shortForm = "In the center of the room is a small ornate fountain \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest.\n"
-		"A large gate on the southern wall looms over the room \n";
+		"A large gate on the southern wall looms over the room \n"
+		"To the south there is a large ominously gated doorway to the Keep \n"
+		"To the west is a doorway that leads down a well lit corridor out into the Crossroads \n"
+		"To the north is a set of moist stairs that lead downward to the Guard Quarters \n"
+		"To the east is a doorway that leads through a small dimly lit passage through the Mausoleum\n";
 		longForm = "You awake to the sound of trickling water and the taste of rubble in your mouth. \n"
 		"You are sore, but not as sore as you would expect. You wince as you stand and begin to take \n"
 		"in your surroundings. The room itself seems fairly nice, despite being in an extreme state of disuse.\n"
 		"The majority of the room is covered in thick coat of dust. In the center of the room is a small ornate fountain \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest. \n"
-		"A large gate on the southern wall looms over the room, striking unease into your heart \n";
+		"A large gate on the southern wall looms over the room, striking unease into your heart \n"
+			"To the south there is a large ominously gated doorway to the Keep \n"
+			"To the west is a doorway that leads down a well lit corridor out into the Crossroads \n"
+			"To the north is a set of moist stairs that lead downward to the Guard Quarters \n"
+			"To the east is a doorway that leads through a small dimly lit passage through the Mausoleum\n";
 
 	id = 13;
 	obj = NULL;

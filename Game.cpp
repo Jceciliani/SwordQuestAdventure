@@ -657,18 +657,21 @@ void Game::play(bool loadgame)
 		getline(cin, charName);
 		// Set name to hero
 		char1->setName(charName);
+		
+		cout << s13.getLongForm() << endl;
 	}
 	// Seperator before the game starts
 	cout << "\n\n" << endl;
 	cout << "Type <help> for list of actions\n\n" << endl;	
 	// Randomize the game
 	srand(time(NULL));
-	s13.getLongForm();
+	
 	while (turns < 10000)
 	{
 
 
 		// Shows locations
+		/*use descriptions instead
 		if (playerLoc->getNorth() == NULL)
 		{
 			cout << "North: There is nothing there" << endl;
@@ -701,7 +704,7 @@ void Game::play(bool loadgame)
 		{
 			cout << "West: " << playerLoc->getWest()->getName() << endl;
 		}
-
+		*/
 		// Error handling
 		while (1)
 		{
