@@ -837,7 +837,7 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50 || input.find("pick up") < 50)
 					{
-						if (s2.getTaken() == true) {
+						if (s2.getTaken() == false) {
 							if (s2.getHammer() == true)
 							{
 								if (ba.getSize() >= 5)
@@ -848,6 +848,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Forge Hammer" << endl;
 									ba.addToContainer(s2.getObject());
+									s2.setTaken(1);
 								}
 							}
 
@@ -943,7 +944,7 @@ void Game::play(bool loadgame)
 							}
 							else
 							{
-								cout << " you already took that."
+								cout << " you already took that.";
 							}
 						}
 
@@ -1085,6 +1086,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Silver Sword" << endl;
 									ba.addToContainer(s5.getObject());
+									s5.setTaken(1);
 								}
 							}
 
@@ -1170,6 +1172,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Silver Armor" << endl;
 									ba.addToContainer(s6.getObject());
+									s6.setTaken(1);
 								}
 							}
 
@@ -1359,7 +1362,7 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s8.getTaken() == true) {
+						if (s8.getTaken() == false) {
 							if (s8.getSword() == true)
 							{
 								if (ba.getSize() >= 5)
@@ -1370,6 +1373,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Bronze Sword" << endl;
 									ba.addToContainer(s8.getObject());
+									s8.setTaken(1);
 								}
 							}
 
@@ -2029,6 +2033,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Steel" << endl;
 									ba.addToContainer(s15.getObject());
+									s15.setTaken(1);
 								}
 							}
 
@@ -2265,6 +2270,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Key" << endl;
 									ba.addToContainer(s19.getObject());
+									s19.setTaken(1);
 								}
 							}
 
@@ -2408,6 +2414,7 @@ void Game::play(bool loadgame)
 								{
 									cout << "You pickup the Gold Sword" << endl;
 									ba.addToContainer(s21.getObject());
+									s21.setTaken(1);
 								}
 							}
 
@@ -2573,22 +2580,30 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s23.getFound() == true)
-						{
-							if (ba.getSize() >= 5)
+						if (s23.getTaken() == false) {
+							if (s23.getFound() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Gold Armor" << endl;
+									ba.addToContainer(s23.getObject());
+									s23.setTaken(1);
+
+
+								}
 							}
 							else
 							{
-								cout << "You pickup the Gold Armor" << endl;
-								ba.addToContainer(s23.getObject());
-								
+								cout << "You haven't found a armor here" << endl;
 							}
 						}
 						else
 						{
-							cout << "You haven't found a armor here" << endl;
+							cout << "you already took that";
 						}
 					}
 				}
@@ -2709,22 +2724,29 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s25.getFlint() == true)
-						{
-							if (ba.getSize() >= 5)
+						if (s25.getTaken() == false) {
+							if (s25.getFlint() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Flint" << endl;
+									ba.addToContainer(s25.getObject());
+									s25.setTaken(1);
+								}
 							}
+
 							else
 							{
-								cout << "You pickup the Flint" << endl;
-								ba.addToContainer(s25.getObject());
+								cout << "You haven't found flint here" << endl;
 							}
 						}
-
 						else
 						{
-							cout << "You haven't found flint here" << endl;
+							cout << "you already took that" << endl;
 						}
 					}
 				}
@@ -3417,6 +3439,7 @@ void Game::save()
 	savefile << s2.checkVisited() << ",";
 	savefile << s2.getEncounter() << ",";
 	savefile << s2.getHammer() << ",";
+	savefile << s2.getTaken() << ",";
 	savefile << s2.getSize()  << ",";
     for(int i = 0; i < s2.getSize(); i++)
 	{
@@ -3425,6 +3448,7 @@ void Game::save()
 	savefile << s3.checkVisited() << ",";
 	savefile << s3.getEncounter() << ",";
 	savefile << s3.getPulled() << ",";
+	savefile << s3.getTaken() << ",";
 	savefile << s3.getSize()  << ",";
     for(int i = 0; i < s3.getSize(); i++)
 	{
@@ -3442,6 +3466,7 @@ void Game::save()
 	savefile << s5.checkVisited() << ",";
 	savefile << s5.getEncounter() << ",";
 	savefile << s5.getSword() << ",";
+	savefile << s5.getTaken() << ",";
 	savefile << s5.getSize()  << ",";
     for(int i = 0; i < s5.getSize(); i++)
 	{
@@ -3451,6 +3476,7 @@ void Game::save()
 	savefile << s6.checkVisited() << ",";
 	savefile << s6.getEncounter() << ",";
 	savefile << s6.getVine() << ",";
+	savefile << s6.getTaken() << ",";
 	savefile << s6.getSize()  << ",";
     for(int i = 0; i < s6.getSize(); i++)
 	{
@@ -3471,6 +3497,7 @@ void Game::save()
 	savefile << s8.checkVisited() << ",";
 	savefile << s8.getEncounter() << ",";
 	savefile << s8.getSword() << ",";
+	savefile << s8.getTaken() << ",";
 	savefile << s8.getSize()  << ",";
     for(int i = 0; i < s8.getSize(); i++)
 	{
@@ -3535,6 +3562,7 @@ void Game::save()
 	savefile << s15.getEncounter() << ",";
 	savefile << s15.getSteel() << ",";
 	savefile << s15.getTomb() << ",";
+	savefile << s15.getTaken() << ",";
 	savefile << s15.getSize()  << ",";
     for(int i = 0; i < s15.getSize(); i++)
 	{
@@ -3564,6 +3592,7 @@ void Game::save()
 	savefile << s19.getLock1() << ",";
 	savefile << s19.getLock2() << ",";
 	savefile << s19.getLock3() << ",";
+	savefile << s19.getTaken() << ",";
 	savefile << s19.getSize()  << ",";
     for(int i = 0; i < s19.getSize(); i++)
 	{
@@ -3582,6 +3611,7 @@ void Game::save()
 	savefile << s21.checkVisited() << ",";
 	savefile << s21.getEncounter() << ",";
 	savefile << s21.getBoulder() << ",";
+	savefile << s21.getTaken() << ",";
 	savefile << s21.getSize()  << ",";
     for(int i = 0; i < s21.getSize(); i++)
 	{
@@ -3601,6 +3631,7 @@ void Game::save()
 	savefile << s23.checkVisited() << ",";
 	savefile << s23.getEncounter() << ",";
 	savefile << s23.getFound() << ",";
+	savefile << s23.getTaken() << ",";
 	savefile << s23.getSize()  << ",";
     for(int i = 0; i < s23.getSize(); i++)
 	{
@@ -3618,6 +3649,7 @@ void Game::save()
 	savefile << s25.checkVisited() << ",";
 	savefile << s25.getEncounter() << ",";
 	savefile << s25.getFlint() << ",";
+	savefile << s25.getTaken() << ",";
 	savefile << s25.getSize()  << ",";
     for(int i = 0; i < s25.getSize(); i++)
 	{
@@ -4189,6 +4221,29 @@ void Game::load()
 
 		s2.setHammer(number);
 
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s2.setTaken(number);
 
 
 		count = 0;
@@ -4315,7 +4370,29 @@ void Game::load()
 
 		s3.setPulled(number);
 
+		count = 0;
+		chararray[0] = 0;
+		number;
 
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s3.setTaken(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -4542,7 +4619,29 @@ void Game::load()
 
 		s5.setSword(number);
 
+		count = 0;
+		chararray[0] = 0;
+		number;
 
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s5.setTaken(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -4669,6 +4768,30 @@ void Game::load()
 
 		s6.setVine(number);
 
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s6.setTaken(number);
 
 
 		count = 0;
@@ -4947,6 +5070,31 @@ void Game::load()
 		number = atoi(chararray);
 		
 		s8.setSword(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s8.setTaken(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -5845,6 +5993,29 @@ void Game::load()
 
 
 
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s15.setTaken(number);
 
 
 		count = 0;
@@ -6268,6 +6439,31 @@ void Game::load()
 		
 		s19.setLock3(number);
 
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s19.setTaken(number);
+
 		count = 0;
 		chararray[0] = 0;
 		number;
@@ -6515,6 +6711,31 @@ void Game::load()
 		number = atoi(chararray);
 
 		s21.setBoulder(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s21.setTaken(number);
 
 		count = 0;
 		chararray[0] = 0;
@@ -6789,6 +7010,31 @@ void Game::load()
 		
 		s23.setFound(number);
 
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s23.setTaken(number);
+
 		count = 0;
 		chararray[0] = 0;
 		number;
@@ -7012,6 +7258,31 @@ void Game::load()
 		number = atoi(chararray);
 		
 		s25.setFlint(number);
+
+
+		count = 0;
+		chararray[0] = 0;
+		number;
+
+		while (loadfile.good())
+		{
+			temp = (char)loadfile.get();
+
+			if (temp[0] == ',')
+			{
+				chararray[count] = 0;
+				count = 0;
+				break;
+			}
+			else {
+				chararray[count] = temp[0];
+				count++;
+			}
+		}
+
+		number = atoi(chararray);
+
+		s25.setTaken(number);
 
 		count = 0;
 		chararray[0] = 0;
