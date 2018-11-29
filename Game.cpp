@@ -192,21 +192,21 @@ int Game::move(string input)
 		cout << "<room name>:                            Travel to that room" << endl;
 		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
 		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
-		cout << "look in:                                " << endl;
-		cout << "search:                                 " << endl;   
+		cout << "look in:                                Investigate an object or feature" << endl;
+		cout << "search:                                 Investigate an object or feature" << endl;   
 		cout << "inventory:                              List your inventory" << endl;
-		cout << "equip:                                  " << endl;
-		cout << "unequip:                                " << endl; 
-		cout << "take:                                   Aquire an object, putting it in your inventory" << endl;
-		cout << "put:                                    " << endl;
+		cout << "equip <item>:                           Use to change weapons and armor" << endl;
+		cout << "unequip <item>:                         Use to change weapons and armor" << endl; 
+		cout << "take:                                   Acquire an object, putting it in your inventory" << endl;
+		cout << "put:                                    Place an object or item" << endl;
 		cout << "eat / drink <object>:                   Attempt to eat or drink something" << endl;
 		cout << "drop <item>:                            Drop the selected item in this room" << endl;
-		cout << "pickup <item>:                          " << endl;
+		cout << "pickup <item>:                          Use to acquire object or item" << endl;
 		cout << "attack <object>:                        Attack something in the room" << endl;
 		cout << "pull <object>:                          Pull on the object (usually a lever)" << endl;
-		cout << "open:                                   " << endl;
-		cout << "use:                                    " << endl;
-		cout << "remove:                                 " << endl; 
+		cout << "open:                                   Use for stash/forge and room interactions" << endl;
+		cout << "use:                                    Interact with some objects and items" << endl;
+		cout << "remove:                                 Take out objects and items" << endl; 
 		cout << "status:                                 View your current level and hit points" << endl;
 		cout << endl;
 		cout << "savegame:                               Save your game" << endl;
@@ -507,6 +507,8 @@ void Game::fight()
 		}
 		// check if player 1 died
 		p1Death = char1->fatalBlow();
+		
+		cout << "Press enter to attack" << endl;
 		// Pause screen	
 		cin.get();
 	}
@@ -658,10 +660,11 @@ void Game::play(bool loadgame)
 		char1->setName(charName);
 	}
 	// Seperator before the game starts
-	cout << "\n\n\n\n\n" << endl;
+	cout << "\n\n" << endl;
+	cout << "Type <help> for list of actions\n\n" << endl;	
 	// Randomize the game
 	srand(time(NULL));
-	while (turns < 100)
+	while (turns < 10000)
 	{
 
 
@@ -706,6 +709,8 @@ void Game::play(bool loadgame)
 			cout << "What do you want to do?" << endl;
 			cout << "> ";
 			getline(cin, input);
+			cout << endl;
+			cout << "-------------------------------------------------------------------------------------------" << endl;
 			int res = move(input);
 			//if (res == -1)
 			//{
@@ -1590,6 +1595,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[11]) // Space12 Crossroads
 			{
+		
 				if(input.find("plot") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
@@ -1642,6 +1648,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[12]) // Space13 Sanctuary
 			{
+
 				if(input.find("fountain") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
@@ -1702,11 +1709,11 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("use") < 50)
 					{
-						s13.use("forge");
 						if (fg.getForgeStart() == true)
 						{
 							if (fg.ultArmorCrafted())
 							{
+								s13.use("forge");
 								cout << " you created the ultimate armor" << endl;
 								fg.clear();
 								fg.addToContainer(fg.getUltArmor());
@@ -1715,11 +1722,16 @@ void Game::play(bool loadgame)
 						
 							if (fg.ultWeaponCrafted())
 							{
+								s13.use("forge");
 								cout << " you created the ultimate sword" << endl;
 								fg.clear();
-								fg.addToContainer(fg.getUltArmor());
+								fg.addToContainer(fg.getUltSword());
 								fg.addToContainer(s2.getObject());
 							}
+						}
+						else
+						{
+							s13.use("forge");
 						}
 					}
 					else if (input.find("start") < 50)
@@ -1734,6 +1746,7 @@ void Game::play(bool loadgame)
 							{
 								s13.start("forge");
 								s13.setForge(1);
+								fg.clear();
 							}
 							else
 							{
@@ -1758,7 +1771,7 @@ void Game::play(bool loadgame)
 						{
 							if (input.find(ba.printItem(i).getName()) < 50)
 							{
-								cout << " you put " << ba.printItem(i).getName() << "into the stash" << endl;
+								cout << " you put " << ba.printItem(i).getName() << " into the stash" << endl;
 								st.addToContainer(ba.printItem(i));
 								ba.deleteFromContainer(ba.printItem(i));
 
@@ -2145,22 +2158,9 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[17]) // Space18 Dragon Keep
 			{
-				/*if(input.find("papers") < 50)
-				{
-
-				}
-				else if(input.find("desk") < 50)
-				{
-
-				}
-				else if(input.find("locker") < 50)
-				{
-
-				}
-				else
-				{
-
-				}*/
+				cout <<  "END" << endl;
+				exit(0);
+				
 			}
 			if(playerLoc == spaceArr[18]) // Space19 Volcano lvl 5
 			{
@@ -2294,12 +2294,11 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
-						if ((!(s20.getFountian()))
+						if (s20.getFountian() == false)
 						{
 							heal();
 						}
 						s20.drink("fountain");
-						
 					}
 				}
 				else if(input.find("rock") < 50)
@@ -2570,6 +2569,29 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("armor") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s23.getFound() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Gold Armor" << endl;
+								ba.addToContainer(s23.getObject());
+								
+							}
+						}
+						else
+						{
+							cout << "You haven't found a armor here" << endl;
+						}
+					}
+				}
 				else
 				{
 
@@ -2652,6 +2674,7 @@ void Game::play(bool loadgame)
 					else if (input.find("attack") < 50 || input.find("hit") < 50)
 					{
 						s25.attack("stalagtite");
+					
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2681,6 +2704,30 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+
+				else if (input.find("flint") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s25.getFlint() == true)
+						{
+							if (ba.getSize() >= 5)
+							{
+								cout << " the bag is full. you cant pick that up." << endl;
+							}
+							else
+							{
+								cout << "You pickup the Flint" << endl;
+								ba.addToContainer(s25.getObject());
+							}
+						}
+
+						else
+						{
+							cout << "You haven't found flint here" << endl;
+						}
+					}
+				}
 				else
 				{
 
@@ -2697,8 +2744,8 @@ void Game::play(bool loadgame)
 		*/	
 		}
 
-		cout << "-------------------------------------------------------------------------------------------\n\n" << endl;
-
+		//cout << "-------------------------------------------------------------------------------------------\n\n" << endl;
+		cout << endl;
 		// All the magic happens here - interaction with objects, fighting, etc.
 		if (playerLoc == spaceArr[0])
 		{
@@ -2943,6 +2990,13 @@ void Game::play(bool loadgame)
 		{
 			if(s11.getVisited() == false)
 			{
+				if(s11.getEncounter() == false)
+				{
+					cout << "A TROLL APPEARED!\n\n" << endl;
+					char2 = new Troll();
+					fight();
+					char2 = NULL;
+				}
 				cout << s11.getLongForm() << endl;
 				if (s11.getSize() != 0)
 				{
@@ -3127,6 +3181,13 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
+				if(s19.getEncounter() == false)
+				{
+					cout << "A MOUNTAIN GIANT APPEARED!\n\n" << endl;
+					char2 = new Mountain_Giant();
+					fight();
+					char2 = NULL;
+				}
 				cout << s19.getShortForm() << endl;
 				if (s19.getSize() != 0)
 				{
@@ -3177,6 +3238,13 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
+				if(s21.getEncounter() == false)
+				{
+					cout << "A WIZARD APPEARED!\n\n" << endl;
+					char2 = new Wizard();
+					fight();
+					char2 = NULL;
+				}
 				cout << s21.getShortForm() << endl;
 				if (s21.getSize() != 0)
 				{
@@ -3226,6 +3294,13 @@ void Game::play(bool loadgame)
 			}
 			else
 			{
+				if(s23.getEncounter() == false)
+				{
+					cout << "A GANG OF BANDITS!\n\n" << endl;
+					char2 = new Gang_of_Bandits();
+					fight();
+					char2 = NULL;
+				}
 				cout << s23.getShortForm() << endl;
 				if (s23.getSize() != 0)
 				{

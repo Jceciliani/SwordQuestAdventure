@@ -89,7 +89,6 @@ void Space22::talk(const char* thing)
 
 void Space22::answer(const char* thing)
 {
-	answered = true;
 	if (strcmp(thing, "footsteps") == 0)
 	{
 

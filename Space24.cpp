@@ -51,7 +51,7 @@ void Space24::look(const char* thing)
 
 void Space24::pull(const char* thing)
 {
-	if (strcmp(thing, "lever"))
+	if (strcmp(thing, "lever") == 0)
 	{
 			cout << "as you move the lever you hear large gears begin to grinding, though you are not sure" << endl;
 			cout << "where it is coming from. as you finish pulling you hear a large THUD and you feel the " << endl;
