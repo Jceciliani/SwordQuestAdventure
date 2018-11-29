@@ -460,8 +460,8 @@ Gang_of_Bandits::~Gang_of_Bandits()
 
 int Gang_of_Bandits::attack()
 {
-	int attack1 = (rand() % 3) + 4;
-	int attack2 = (rand() % 3) + 4;
+	int attack1 = (rand() % 3) + 6;
+	int attack2 = (rand() % 3) + 5;
 	int attack3 = (rand() % 3) + 4;
 
 	int twoAttack = attack1 + attack2;
@@ -487,8 +487,8 @@ int Gang_of_Bandits::attack()
 
 void Gang_of_Bandits::defense(int damage)
 {
-	int defense1 = (rand() % 4) + 2;
-	int defense2 = (rand() % 4) + 2;
+	int defense1 = (rand() % 4) + 4;
+	int defense2 = (rand() % 4) + 3;
 	int defense3 = (rand() % 4) + 2;
 
 	int twoDefense = defense1 + defense2;
