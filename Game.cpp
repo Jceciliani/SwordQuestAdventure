@@ -509,7 +509,7 @@ void Game::fight()
 		
 		cout << "Press enter to attack" << endl;
 		// Pause screen	
-		cin.get();
+		cin.ignore();
 	}
 
 	if (p1Death == true)
