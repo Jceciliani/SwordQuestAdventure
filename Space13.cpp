@@ -16,7 +16,7 @@ using namespace std;
 Space13::Space13()
 {
 	name = "Sanctuary";
-	shortForm = "In the center of the room is a small ornate fountain \n"
+	shortForm = "In the center of the room is a small ornate fountain. \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest.\n"
 		"A large gate on the southern wall looms over the room \n";
 		longForm = "You awake to the sound of trickling water and the taste of rubble in your mouth. \n"
@@ -60,7 +60,7 @@ void Space13::look(const char* thing)
 		}
 		else
 		{
-			cout << "It is not currently functioning though. it looks cold and sad" << endl;
+			cout << "It is not currently functioning though. It looks cold and sad" << endl;
 		}
 
 	}
@@ -106,7 +106,7 @@ void Space13::drink(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -116,7 +116,7 @@ void Space13::start(const char* thing)
 	{
 		if (!forgeLit)
 		{
-			cout << "You strike the steel on the flint a few times. the sparks catch quickly" << endl;
+			cout << "You strike the steel on the flint a few times. The sparks catch quickly" << endl;
 			cout << "and the forge roars to life. You set the forge hammer down, ready to use it in the future" << endl;
 			
 		}
@@ -127,7 +127,7 @@ void Space13::start(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -148,7 +148,7 @@ void Space13::use(const char* thing)
 	}
 	else
 	{
-		cout << "you cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -170,6 +170,6 @@ void Space13::open(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

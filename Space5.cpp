@@ -18,7 +18,7 @@ Space5::Space5()
 	name = "Eastern Sewers";
 	shortForm = "Moss and mildew cover the sewer walls. You see a small corporeal form in the corner.\n";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
-		"You see a small corporeal form in the corner. You hope you do not meet a similar fate anytime soon";
+		"You see a small corporeal form in the corner. You hope you do not meet a similar fate anytime soon\n\n";
 
 	id = 5;
 	obj = new Two_Handed_Silver_Sword();
@@ -65,6 +65,6 @@ void Space5::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

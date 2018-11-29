@@ -43,7 +43,7 @@ void Space14::look(const char* thing)
 	else if (strcmp(thing, "floor") == 0)
 	{
 		cout << "Upon closer inspection, the floor seems to slightly slope towards the middle of the hall. " << endl;
-		cout << "The floor there definitly looks unstable" << endl;
+		cout << "The floor there definitely looks unstable" << endl;
 	}
 	else
 	{

@@ -39,8 +39,8 @@ void Space12::look(const char* thing)
 	}
 	else if (strcmp(thing, "sign") == 0)
 	{
-		cout << "A small worn signpost. And in a dungeon? How big is this place? The sign pointed" << endl;
-		cout << "North reads SWAMP: CAREFUL OF THE PIRAHNAS" << endl;
+		cout << "A small worn signpost. And in a dungeon? How big is this place?" << endl;
+		cout << "North reads SWAMP: CAREFUL OF THE PIRANHAS" << endl;
 		cout << "South sign reads VOLCANO: CAREFUL OF LEVERS" << endl;
 		cout << "East sign reads SANCTUARY: CAREFUL OF FLOORS" << endl;
 	}

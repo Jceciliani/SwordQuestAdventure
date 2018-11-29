@@ -126,7 +126,7 @@ int Hero::attack()
 	// Two-Handed Ultimate Sword Equipped
 	else if(equip.getSword() == "ultimate sword")
 	{
-		totalAttack = (rand() % 4) + 21;
+		totalAttack = (rand() % 4) + 15;
 	}	
 	cout << name << " attacked for " << totalAttack << endl;
 
@@ -160,7 +160,7 @@ void Hero::defense(int damage)
 	// Ultimate Armor Equipped
 	else if(equip.getArmor() == "ultimate armor")
 	{
-		totaldefense = (rand() % 4) + 23;
+		totaldefense = (rand() % 4) + 17;
 	}
 	int d = damage - totaldefense;
 
@@ -628,7 +628,7 @@ Dragon::~Dragon()
 
 int Dragon::attack()
 {
-	int totalAttack = (rand() % 8) + 18;
+	int totalAttack = (rand() % 18) + 10;
 
 	cout << "The " << name << " attacked for " << totalAttack << endl;
 
@@ -637,7 +637,7 @@ int Dragon::attack()
 
 void Dragon::defense(int damage)
 {
-	int totaldefense = (rand() % 11) + 13;
+	int totaldefense = (rand() % 18) + 8;
 
 	int d = damage - totaldefense;
 

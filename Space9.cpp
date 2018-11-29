@@ -18,7 +18,7 @@ Space9::Space9()
 	name = "Lower Maintenance";
 	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n";
 	longForm = "You arrive in a large room. There are many large metal tubes crossing through\n"
-		"the room along the walls. They weave in, out and over one another like a man made spiderweb. \n"
+		"the room along the walls. They weave in, out and over one another like a man-made spiderweb. \n"
 		"In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes \n\n";
 
 	id = 9;
@@ -34,21 +34,21 @@ Space9::~Space9()
 
 void Space9::look(const char* thing)
 {
-	if (strcmp(thing, "fountian") == 0)
+	if (strcmp(thing, "fountain") == 0)
 	{
 		if (fountianUsed)
 		{
-			cout << "The fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 		else
 		{
-			cout << "The fountian is filled with water. It looks very refreshing" << endl;
+			cout << "The fountain is filled with water. It looks very refreshing" << endl;
 		}
 	}
 	else if (strcmp(thing, "tubes") == 0)
 	{
 		cout << "There are many of them. Likely for sewage disposal. There looks to be a" << endl;
-		cout << "maintenince hatch on one of them" << endl;
+		cout << "maintenance hatch on one of them" << endl;
 	}
 	else if (strcmp(thing, "hatch") == 0)
 	{
@@ -63,7 +63,7 @@ void Space9::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -84,7 +84,7 @@ void Space9::enter(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 

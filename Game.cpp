@@ -190,7 +190,7 @@ int Game::move(string input)
 		cout << "-------------------------------------------------------------------------------------------" << endl;
 		cout << "north, east, south, west:               Travel in that direction" << endl;
 		cout << "<room name>:                            Travel to that room" << endl;
-		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
+		cout << "look:                                   Get a detailed description of the room you are in" << endl;
 		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
 		cout << "look in:                                Investigate an object or feature" << endl;
 		cout << "search:                                 Investigate an object or feature" << endl;   
@@ -3053,7 +3053,6 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[12])
 		{
-
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;
