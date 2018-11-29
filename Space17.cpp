@@ -17,10 +17,13 @@ Space17::Space17()
 {
 	name = "Volcano Foothills";
 	shortForm = "You are at the base of a large volcano.\n"
-	"In the middle of the path there is a small ornate fountain.\n";
+	"In the middle of the path there is a small ornate fountain.\n"
+		"To the north is a path sloping down and away from the volcano through the foothills back to the Crossroads \n"
+		"To west is a trail leading up to the Volcano Base\n";
 	longForm = "You are at the base of a large volcano. Its shadow looms over you. There is a faint \n"
 		"smell of sulfur in the air. In the middle of the path there is a small ornate fountain. \n\n"
-		"To the north is a path sloping down and away from the volcano \n";
+		"To the north is a path sloping down and away from the volcano through the foothills back to the Crossroads \n"
+		"To west is a trail leading up to the Volcano Base\n";
 
 	id = 17;
 	obj = NULL;

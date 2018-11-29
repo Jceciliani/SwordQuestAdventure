@@ -17,6 +17,7 @@ Space1::Space1()
 {
 	name = "Fields";
 	shortForm = "There are many tussocks of grass. A pleasant breeze blows from seemingly nowhere.\n"
+	shortForm = "there are many tussocks of grass. A pleasant breeze blows from seemingly nowhere.\n"
 		"To the east you see a cobblestone path to some Ruins\n"
 		"To the south is a trail into the thick brush of the Jungle\n";
 	longForm = "You arrive in a grassy clearing. There are many tussocks of grass. A pleasant breeze blows from seemingly nowhere. \n"

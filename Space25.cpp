@@ -17,9 +17,11 @@ Space25::Space25()
 {
 	name = "Volcanic Chamber";
 	shortForm = "You reach a small platform in the middle of the burning lake. \n"
-	"The stalactites spark from the heat.\n";
+	"The stalactites spark from the heat.\n"
+		"To the north you can see a steep climb back to the Volcano Summit\n";
 	longForm = "You reach a small platform in the middle of the burning lake. Noxious gases slowly bubble to the magmas surface. \n"
-		"You won't last long in this heat. The stalactites spark from the heat. The rock formations litter the small island\n\n";
+		"You won't last long in this heat. The stalactites spark from the heat. The rock formations litter the small island\n\n"
+		"To the north you can see a steep climb back to the Volcano Summit\n";
 
 	id = 25;
 	obj = new Flint();

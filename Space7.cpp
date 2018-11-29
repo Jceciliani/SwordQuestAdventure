@@ -18,11 +18,15 @@ Space7::Space7()
 	name = "Swamp";
 	shortForm = "The majority of the room is submerged in a murky liquid.\n"
 	"There is a narrow rope bridge that crosses to the western wall. A small \n"
-	"mossy island is in the middle of the room\n";
+	"mossy island is in the middle of the room\n"
+	"To the east is a small opening through the brush leading into the Jungle \n"
+		"To the south is a path leading back to the Crossroads, thick with vegetation\n";
 	longForm = "The room is covered in moss and vegetation. The hot, moist air causes \n"
 		" your clothes and armor to stick uncomfortably to your skin. The majority of the room \n"
 		" is submerged in a murky liquid. There is a narrow rope bridge that crosses to the western wall. A small \n"
 		"mossy island is in the middle of the room \n\n";
+	"To the east is a small opening through the brush leading into the Jungle \n"
+		"To the south is a path leading back to the Crossroads, thick with vegetation\n";
 
 	id = 7;
 	obj = NULL;

@@ -16,9 +16,14 @@ using namespace std;
 Space5::Space5()
 {
 	name = "Eastern Sewers";
-	shortForm = "Moss and mildew cover the sewer walls. You see a small corporeal form in the corner.\n";
+	shortForm = "Moss and mildew cover the sewer walls. You see a small corporeal form in the corner.\n"
+	"Down the walkways to the east there is bright light coming from the Sewer Depths \n"
+		"To the south there is a ladder leading to the Upper Maintenence area \n";
 	longForm = "Foul scents waft up from the waterway, moss and mildew cover the sewer walls.\n"
 		"You see a small corporeal form in the corner. You hope you do not meet a similar fate anytime soon\n\n";
+		"You see a small corporeal form in the corner. You hope you do not meet a similar fate anytime soon"
+	"Down the walkways to the east there is bright light coming from the Sewer Depths \n"
+		"To the south there is a ladder leading to the Upper Maintenence area \n";
 
 	id = 5;
 	obj = new Two_Handed_Silver_Sword();

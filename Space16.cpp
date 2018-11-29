@@ -16,9 +16,13 @@ using namespace std;
 Space16::Space16()
 {
 	name = "Volcano Base";
-	shortForm = "In the middle of the path there is a large sign post. There is a pile of bones at its base.\n";
+	shortForm = "In the middle of the path there is a large sign post. There is a pile of bones at its base.\n"
+		"The path to the east leads back down through the Volcano Foothills \n"
+		"The path to the south continues up and the mouintinside to Volcano Lvl. 1\n";
 	longForm = " The path continues to curl up the volcano. The scent of sulfur has grown stronger. \n"
-		"In the middle of the path there is a large sign post. There is a pile of bones at its base. \n\n";
+		"In the middle of the path there is a large sign post. There is a pile of bones at its base. \n\n"
+		"The path to the east leads back down through the Volcano Foothills \n"
+		"The path to the south continues up and the mouintinside to Volcano Lvl. 1\n";
 
 	id = 16;
 	obj = NULL;

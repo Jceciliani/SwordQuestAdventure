@@ -13,6 +13,7 @@ Description: Base Space class for all 25 spaces in the game
 
 #include "Characters.hpp"
 
+
 using namespace std;
 
 class Space
