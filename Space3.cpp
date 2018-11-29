@@ -26,6 +26,7 @@ Space3::Space3()
 	combatEncounter = false;
 	visited = false;
 	ropePulled = false;
+	taken = false;
 }
 
 Space3::~Space3()
@@ -50,7 +51,7 @@ void Space3::look(const char* thing)
 	}
 	else if (strcmp(thing, "rope") == 0)
 	{
-		cout << "Looks to be a perfectly usable rope. it is currently attachec to the fishing basket" << endl;
+		cout << "Looks to be a perfectly usable rope. it is currently attached to the fishing basket" << endl;
 	}
 	else
 	{
@@ -67,7 +68,13 @@ void Space3::take(const char* thing)
 		}
 		else
 		{
-			cout << " the basket is to big to carry. there is some bronze armor in the trap though!" << endl;
+			if (taken == false) {
+				cout << " the basket is to big to carry. there is some bronze armor in the trap though!" << endl;
+			}
+			else
+			{
+				cout << " the basket is to big to carry." << endl;
+			}
 		}
 	}
 	else
@@ -81,13 +88,22 @@ void Space3::pull(const char* thing)
 	{
 		if (!ropePulled)
 		{
-			cout << "you pull the basket up to the side of the walkway, and look" << endl;
-			cout << "into the basket. Somehow bronze armor got caught in the trap. Lucky!" << endl;
+
+				cout << "you pull the basket up to the side of the walkway, and look" << endl;
+				cout << "into the basket. Somehow bronze armor got caught in the trap. Lucky!" << endl;
+				ropePulled = true;
 		}
 		else
 		{
-			cout << "the basket is already next to the walkway. you can reach it and see" << endl;
-			cout << "that Somehow bronze armor got caught in the trap. Lucky!" << endl;
+			if (taken == false) {
+				cout << "the basket is already next to the walkway. you can reach it and see" << endl;
+				cout << "that Somehow bronze armor got caught in the trap. Lucky!" << endl;
+			}
+			else
+			{
+				cout << "you pull the basket up to the side of the walkway, and look" << endl;
+				cout << "into the basket. it is empty" << endl;
+			}
 		}
 	}
 	else

@@ -27,6 +27,7 @@ Space15::Space15()
 	visited = false;
 	steelFound = false;
 	tombOpen = false;
+	taken = false;
 }
 
 Space15::~Space15()
@@ -111,11 +112,16 @@ void Space15::attack(const char* thing)
 {
 	if (strcmp(thing, "vases") == 0)
 	{
-		cout << "like a true hylian you start hurling jar after jar after at the wall. After a few you" << endl;
-		cout << "feel kinda bad so you stop. But one of the busted pots had a bunch of steel!" << endl;
-		cout << "Maybe itll be useful?" << endl;
-		steelFound = true;
-
+		if (steelFound == false || taken == false) {
+			cout << "like a true hylian you start hurling jar after jar after at the wall. After a few you" << endl;
+			cout << "feel kinda bad so you stop. But one of the busted pots had a bunch of steel!" << endl;
+			cout << "Maybe itll be useful?" << endl;
+			steelFound = true;
+		}
+		else
+		{
+			cout << "you already found something useful, but you smash another pot for the hell of it" << endl;
+		}
 	}
 	else
 	{

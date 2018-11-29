@@ -20,6 +20,7 @@ class Space6 : public Space
 	private:
 		vector<Objects> space6;
 		bool vineCut;
+		bool taken;
 	public:
 		Space6();
 		~Space6();
@@ -28,5 +29,7 @@ class Space6 : public Space
 		void attack(const char* thing);
 		void setVine(int set) { if (set == 1) { vineCut = true; } else { vineCut = false; } }
 		bool getVine() { return vineCut; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE6_HPP

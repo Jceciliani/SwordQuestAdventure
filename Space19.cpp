@@ -30,6 +30,7 @@ Space19::Space19()
 	lock1Open = false;
 	lock2Open = false;
 	lock3Open = false;
+	taken = false;
 }
 
 Space19::~Space19()
@@ -45,7 +46,7 @@ void Space19::look(const char* thing)
 if (strcmp(thing, "compartment") == 0)
 	{
 		cout << "a small box set into the face of the mountian." << endl;
-		if(containerOpen)
+		if(containerOpen == true)
 		{
 			cout << "the compartment is open" << endl;
 		}
@@ -56,10 +57,16 @@ if (strcmp(thing, "compartment") == 0)
 	}
 else if (strcmp(thing, "in compartment") == 0)
 	{
-		if(containerOpen)
-		{
+	if (containerOpen == true)
+	{
+		if (taken == false) {
 			cout << "inside you find a large iron key" << endl;
 		}
+		else
+		{
+			cout << "inside you find nothing" << endl;
+		}
+	}
 		else
 		{
 			cout << "the container is closed and locked" << endl;

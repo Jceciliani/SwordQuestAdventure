@@ -20,6 +20,7 @@ class Space23 : public Space
 	private:
 		vector<Objects> space23;
 		bool armorFound;
+		bool taken;
 	public:
 		Space23();
 		~Space23();
@@ -29,5 +30,7 @@ class Space23 : public Space
 		void eat(const char* thing);
 		void setFound(int set) { if (set == 1) { armorFound = true; } else { armorFound = false; } }
 		bool getFound() { return armorFound; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE23_HPP

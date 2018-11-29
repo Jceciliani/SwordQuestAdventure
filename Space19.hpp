@@ -23,6 +23,7 @@ class Space19 : public Space
 		bool lock1Open;
 		bool lock2Open;
 		bool lock3Open;
+		bool taken;
 	public:
 		Space19();
 		~Space19();
@@ -38,5 +39,7 @@ class Space19 : public Space
 		bool getLock2() { return lock2Open; }
 		void setLock3(int set) { if (set == 1) { lock3Open = true; } else { lock3Open = false; } }
 		bool getLock3() { return lock3Open; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE19_HPP

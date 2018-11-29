@@ -20,6 +20,7 @@ class Space8 : public Space
 	private:
 		vector<Objects> space8;
 		bool swordFound;
+		bool taken;
 	public:
 		Space8();
 		~Space8();
@@ -28,5 +29,7 @@ class Space8 : public Space
 		void search(const char* thing);
 		void setSword(int set) { if (set == 1) { swordFound = true; } else { swordFound = false; } }
 		bool getSword() { return swordFound; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE8_HPP

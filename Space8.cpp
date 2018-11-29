@@ -25,6 +25,7 @@ Space8::Space8()
 	combatEncounter = false;
 	visited = false;
 	swordFound = false;
+	taken = false;
 }
 
 Space8::~Space8()
@@ -67,8 +68,14 @@ void Space8::search(const char* thing)
 
 	else if (strcmp(thing, "locker 13") == 0)
 	{
-		cout << " you find a bronze sword" << endl;
-		swordFound = true;
+		if (taken == false) {
+			cout << " you find a bronze sword" << endl;
+			swordFound = true;
+		}
+		else
+		{
+			cout << "nothing here" << endl;
+		}
 	}
 	else
 	{

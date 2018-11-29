@@ -20,6 +20,7 @@ class Space21 : public Space
 	private:
 		vector<Objects> space21;
 		bool boulderMoved;
+		bool taken;
 	public:
 		Space21();
 		~Space21();
@@ -28,6 +29,8 @@ class Space21 : public Space
 		void push(const char* thing);
 		void setBoulder(int set) { if (set == 1) { boulderMoved = true; } else { boulderMoved = false; } }
 		bool getBoulder() { return boulderMoved; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 
 };
 #endif // !SPACE21_HPP

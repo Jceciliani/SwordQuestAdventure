@@ -20,6 +20,7 @@ class Space25 : public Space
 	private:
 		vector<Objects> space25;
 		bool flintFound;
+		bool taken;
 	public:
 		Space25();
 		~Space25();
@@ -28,5 +29,7 @@ class Space25 : public Space
 		void attack(const char* thing);
 		void setFlint(int set) { if (set == 1) { flintFound = true; } else { flintFound = false; } }
 		bool getFlint() { return flintFound; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE25_HPP

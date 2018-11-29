@@ -21,6 +21,7 @@ class Space15 : public Space
 		vector<Objects> space15;
 		bool steelFound;
 		bool tombOpen;
+		bool taken;
 	public:
 		Space15();
 		~Space15();
@@ -33,5 +34,7 @@ class Space15 : public Space
 		bool getSteel() { return steelFound; }
 		void setTomb(int set) { if (set == 1) { tombOpen = true; } else { tombOpen = false; } }
 		bool getTomb() { return tombOpen; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE15_HPP

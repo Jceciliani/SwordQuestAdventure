@@ -26,6 +26,7 @@ Space5::Space5()
 	swordFound = false;
 	combatEncounter = false;
 	visited = false;
+	taken = false;
 }
 
 Space5::~Space5()
@@ -50,10 +51,18 @@ void Space5::look(const char* thing)
 	}
 	else if (strcmp(thing, "corner") == 0 || strcmp(thing, "form") == 0)
 	{
-		cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
-		cout << "silver sword sticking out of his chest its not hard to tell how he died." << endl;
-		cout << "The question is did he put it there, or someone else?" << endl;
-		swordFound = true;
+		if (taken == false) {
+			cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
+			cout << "silver sword sticking out of his chest its not hard to tell how he died." << endl;
+			cout << "The question is did he put it there, or someone else?" << endl;
+			swordFound = true;
+		}
+		else
+		{
+			cout << "the body appears to have been a guard here at some point. Looking at the" << endl;
+			cout << "sword wound in his chest its not hard to tell how he died." << endl;
+			cout << "The question is did he put it there, or someone else?" << endl;
+		}
 	}
 	else
 	{

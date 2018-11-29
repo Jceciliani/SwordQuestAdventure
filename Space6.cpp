@@ -27,6 +27,7 @@ Space6::Space6()
 	combatEncounter = false;
 	visited = false;
 	vineCut = false;
+	taken = false;
 }
 
 Space6::~Space6()
@@ -41,8 +42,13 @@ void Space6::look(const char* thing)
 {
 	if (strcmp(thing, "canopy") == 0)
 	{
-		cout << "you still cant see the top, but something up above seems to be caught in a bundle of vines" << endl;
-
+		if (vineCut == false) {
+			cout << "you still cant see the top, but something up above seems to be caught in a bundle of vines" << endl;
+		}
+		else
+		{
+			cout << "you still cant see the top, but you wonder how far up it goes" << endl;
+		}
 	}
 	else if (strcmp(thing, "vegitation") == 0 || strcmp(thing, "trees") == 0)
 	{
@@ -52,7 +58,10 @@ void Space6::look(const char* thing)
 	else if (strcmp(thing, "vines") == 0)
 	{
 		cout << "they are thick rope like vegitation, and it is very abundant here." << endl;
-		cout << "One vine on the tree next to you seems taught." << endl;
+		if (vineCut == false) 
+		{
+			cout << "One vine on the tree next to you seems taught." << endl;
+		}
 	}
 	else
 	{
@@ -64,9 +73,16 @@ void Space6::attack(const char* thing)
 {
 	if (strcmp(thing, "vines") == 0)
 	{
-		cout << " you hack at the vine a few times before it separates and one end shoots into the canopy." << endl;
-		cout << " A second later a ball of vines crashes down to the ground next to you." << endl;
-		cout << "You see in it a set of silver armor." << endl;
+		if (vineCut == false) {
+			cout << " you hack at the vine a few times before it separates and one end shoots into the canopy." << endl;
+			cout << " A second later a ball of vines crashes down to the ground next to you." << endl;
+			cout << "You see in it a set of silver armor." << endl;
+			vineCut = true;
+		}
+		else
+		{
+			cout << " you hack at the vine a few times before it separates. nothing happens" << endl;
+		}
 	}
 	else
 	{

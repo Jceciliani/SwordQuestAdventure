@@ -20,6 +20,7 @@ class Space3 : public Space
 	private:
 		vector<Objects> space3;
 		bool ropePulled;
+		bool taken;
 	public:
 		Space3();
 		~Space3();
@@ -29,5 +30,7 @@ class Space3 : public Space
 		void pull(const char* thing);
 		void setPulled(int set) { if (set == 1) { ropePulled = true; } else { ropePulled = false; } }
 		bool getPulled() { return ropePulled; }
+		void setTaken(int set) { if (set == 1) { taken = true; } else { taken = false; } }
+		bool getTaken() { return taken; }
 };
 #endif // !SPACE3_HPP

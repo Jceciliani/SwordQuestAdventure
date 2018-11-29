@@ -131,35 +131,35 @@ int Game::move(string input)
 		cout << "Input must be 50 characters or less" << endl;
 		return -1;
 	}
-	if (input.find("don't") < 50/*maxInputLength*/ || input.find("Don't") < 50/*maxInputLength*/)
+	else if (input.find("don't") < 50/*maxInputLength*/ || input.find("Don't") < 50/*maxInputLength*/)
 	{
 		cout << "Please don't say don't. It confuses me." << endl;
 		return -1;
 	}
-	if (input == "look")
+	else if (input == "look")
 	{
 		cout << playerLoc->getLongForm();
 	}
 	// end of input validation
 	// Check for Save or Load Game command
-	if(input.find("savegame") < 50)
+	else if(input.find("savegame") < 50)
 	{
 		// Call save game function
 		save();
 		return 1;
 	}
-	if(input.find("loadgame") < 50)
+	else if(input.find("loadgame") < 50)
 	{
 		load();
 		return 1;
 	}
-	if(input.find("exit game") < 50)
+	else if(input.find("exit game") < 50)
 	{
 		//exit game
 		cout << "exiting game" << endl;
 		exit(0);
 	}
-	if(input == "inventory")
+	else if(input == "inventory")
 	{
 		cout << "\n-----------------------------------------------------------------------------------------" << endl;
 		cout << "                        	        Inventory" << endl;
@@ -175,14 +175,14 @@ int Game::move(string input)
 		// Print out stash contents
 		st.printContainer();	
 	} 
-	if(input == "status")
+	else if(input == "status")
 	{
 		cout << "\n-------------------------------------------------------------------------------------------" << endl; 
 		cout << "Current Level: " << char1->getLevel() << endl;
 		cout << "Current Health: " << char1->getHealth() << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl;
 	}
-	if(input == "help")
+	else if(input == "help")
 	{
 		cout << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl;
@@ -214,7 +214,7 @@ int Game::move(string input)
 		cout << "exit game:                              Exit the game" << endl;
 		cout << "-------------------------------------------------------------------------------------------" << endl << endl;
 	} 
-	if (input.find("unequip") < 50)
+	else if (input.find("unequip") < 50)
 	{
 		if (ba.getSize() >= 5)
 		{
@@ -252,7 +252,7 @@ int Game::move(string input)
 			
 		}
 	}
-	if (input.find("equip") < 50)
+	else if (input.find("equip") < 50)
 	{
 		for (int i = 0; i < ba.getSize(); i++)
 		{
@@ -264,7 +264,7 @@ int Game::move(string input)
 					Objects hold = eq.getObject1();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
-					if (eq.getObject1().getName() != "no sword")
+					if (hold.getName() != "no sword")
 					{
 						ba.addToContainer(hold);
 					}
@@ -274,7 +274,7 @@ int Game::move(string input)
 					Objects hold = eq.getObject2();
 					eq.addEquipment(ba.printItem(i));
 					ba.deleteFromContainer(ba.printItem(i));
-					if (eq.getObject2().getName() != "no armor")
+					if (hold.getName() != "no armor")
 					{
 						ba.addToContainer(hold);
 					}
@@ -832,22 +832,27 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50 || input.find("pick up") < 50)
 					{
-						if (s2.getHammer() == true)
-						{
-							if (ba.getSize() >= 5)
+						if (s2.getTaken() == true) {
+							if (s2.getHammer() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Forge Hammer" << endl;
+									ba.addToContainer(s2.getObject());
+								}
 							}
+
 							else
 							{
-								cout << "You pickup the Forge Hammer" << endl;
-								ba.addToContainer(s2.getObject());
+								cout << "You haven't found a hammer here" << endl;
 							}
 						}
-
-						else
-						{
-							cout << "You haven't found a hammer here" << endl;
+						else {
+							cout << " you already took that" << endl;
 						}
 					}
 				}
@@ -919,14 +924,21 @@ void Game::play(bool loadgame)
 					{
 						if (s3.getPulled() == true)
 						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
+							if (s3.getTaken() == false) {
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Bronze Armor" << endl;
+									ba.addToContainer(s3.getObject());
+									s3.setTaken(1);
+								}
 							}
 							else
 							{
-								cout << "You pickup the Bronze Armor" << endl;
-								ba.addToContainer(s3.getObject());
+								cout << " you already took that."
 							}
 						}
 
@@ -1056,22 +1068,29 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s5.getSword() == true)
+						if (s5.getTaken() == false)
 						{
-							if (ba.getSize() >= 5)
+							if (s5.getSword() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Silver Sword" << endl;
+									ba.addToContainer(s5.getObject());
+								}
 							}
+
 							else
 							{
-								cout << "You pickup the Silver Sword" << endl;
-								ba.addToContainer(s5.getObject());
+								cout << "You haven't found a sword here" << endl;
 							}
 						}
-
 						else
 						{
-							cout << "You haven't found a sword here" << endl;
+							cout << "you already took this" << endl;
 						}
 					}
 				}
@@ -1135,22 +1154,28 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s6.getVine() == true)
-						{
-							if (ba.getSize() >= 5)
+						if (s6.getTaken() == false) {
+							if (s6.getVine() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Silver Armor" << endl;
+									ba.addToContainer(s6.getObject());
+								}
 							}
+
 							else
 							{
-								cout << "You pickup the Silver Armor" << endl;
-								ba.addToContainer(s6.getObject());
+								cout << "You haven't found armor here" << endl;
 							}
 						}
-
 						else
 						{
-							cout << "You haven't found armor here" << endl;
+							cout << "you already took that" << endl;
 						}
 					}
 				}
@@ -1329,22 +1354,28 @@ void Game::play(bool loadgame)
 				{
 					if (input.find("take") < 50 || input.find("grab") < 50)
 					{
-						if (s8.getSword() == true)
-						{
-							if (ba.getSize() >= 5)
+						if (s8.getTaken() == true) {
+							if (s8.getSword() == true)
 							{
-								cout << " the bag is full. you cant pick that up." << endl;
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Bronze Sword" << endl;
+									ba.addToContainer(s8.getObject());
+								}
 							}
+
 							else
 							{
-								cout << "You pickup the Bronze Sword" << endl;
-								ba.addToContainer(s8.getObject());
+								cout << "You haven't found a sword here" << endl;
 							}
 						}
-
 						else
 						{
-							cout << "You haven't found a sword here" << endl;
+							cout << "you already took that" << endl;
 						}
 					}
 				}
@@ -1380,7 +1411,7 @@ void Game::play(bool loadgame)
 					else if (input.find("enter") < 50 || input.find("go in") < 50)
 					{
 						s9.enter("tube");
-						playerLoc == spaceArr[3];
+						playerLoc = spaceArr[3];
 					}
 				}
 				else if(input.find("hatch") < 50)
@@ -1942,29 +1973,7 @@ void Game::play(bool loadgame)
 						s15.search("skeleton");
 					}
 				}
-				else if (input.find("steel") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s15.getSteel() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Steel" << endl;
-								ba.addToContainer(s15.getObject());
-							}
-						}
 
-						else
-						{
-							cout << "You haven't found steel here" << endl;
-						}
-					}
-				}
 				else if (input.find("drop") < 50)
 				{
 
@@ -1989,6 +1998,35 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s15.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s15.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("steel") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s15.getTaken() == false) {
+							if (s15.getSteel() == true)
+							{
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Steel" << endl;
+									ba.addToContainer(s15.getObject());
+								}
+							}
+
+							else
+							{
+								cout << "You haven't found steel here" << endl;
+							}
+						}
+						else
+						{
+							cout << " you already took that" << endl;
 						}
 					}
 				}
@@ -2184,29 +2222,7 @@ void Game::play(bool loadgame)
 						s19.look("levers");
 					}
 				}
-				else if (input.find("key") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s19.getContainerOpen() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Key" << endl;
-								ba.addToContainer(s19.getObject());
-							}
-						}
-
-						else
-						{
-							cout << "You haven't found a key here" << endl;
-						}
-					}
-				}
+				
 				else if (input.find("drop") < 50)
 				{
 
@@ -2234,6 +2250,35 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else if (input.find("key") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s19.getTaken() == false) {
+							if (s19.getContainerOpen() == true)
+							{
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Key" << endl;
+									ba.addToContainer(s19.getObject());
+								}
+							}
+
+							else
+							{
+								cout << "You haven't found a key here" << endl;
+
+							}
+						}
+						else {
+							cout << "You already took that " << endl;
+						}
+					}
+				}
 				else
 				{
 
@@ -2249,7 +2294,7 @@ void Game::play(bool loadgame)
 					}
 					else if (input.find("drink") < 50)
 					{
-						if (!(s20.getFountian()))
+						if ((!(s20.getFountian()))
 						{
 							heal();
 						}
@@ -2321,29 +2366,7 @@ void Game::play(bool loadgame)
 						s21.push("boulder");
 					}
 				}
-				else if (input.find("sword") < 50)
-				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
-					{
-						if (s21.getBoulder() == true)
-						{
-							if (ba.getSize() >= 5)
-							{
-								cout << " the bag is full. you cant pick that up." << endl;
-							}
-							else
-							{
-								cout << "You pickup the Gold Sword" << endl;
-								ba.addToContainer(s21.getObject());
-							}
-						}
 
-						else
-						{
-							cout << "You haven't found a sword here" << endl;
-						}
-					}
-				}
 				else if (input.find("drop") < 50)
 				{
 
@@ -2368,6 +2391,35 @@ void Game::play(bool loadgame)
 							cout << " you pickup " << s21.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s21.deleteFromContainer(ba.printItem(i));
+						}
+					}
+				}
+				else if (input.find("sword") < 50)
+				{
+					if (input.find("take") < 50 || input.find("grab") < 50)
+					{
+						if (s21.getTaken() == false) {
+							if (s21.getBoulder() == true)
+							{
+								if (ba.getSize() >= 5)
+								{
+									cout << " the bag is full. you cant pick that up." << endl;
+								}
+								else
+								{
+									cout << "You pickup the Gold Sword" << endl;
+									ba.addToContainer(s21.getObject());
+								}
+							}
+
+							else
+							{
+								cout << "You haven't found a sword here" << endl;
+							}
+						}
+						else
+						{
+							cout << " you already took that" << endl;
 						}
 					}
 				}

@@ -25,6 +25,7 @@ Space21::Space21()
 	combatEncounter = false;
 	visited = false;
 	boulderMoved = false;
+	taken = false;
 }
 
 Space21::~Space21()
@@ -53,7 +54,7 @@ void Space21::push(const char* thing)
 {
 	if (strcmp(thing, "boulder") == 0)
 	{
-		if(boulderMoved)
+		if(boulderMoved == true)
 		{
 			cout << "you had enough excitment moving it the first time" << endl;
 		}

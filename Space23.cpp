@@ -26,6 +26,7 @@ Space23::Space23()
 	combatEncounter = false;
 	visited = false;
 	armorFound = false;
+	taken = false;
 }
 
 Space23::~Space23()
@@ -62,10 +63,16 @@ void Space23::search(const char* thing)
 {
 	if (strcmp(thing, "piles") == 0 || strcmp(thing, "valuables") == 0 )
 	{
+		if (armorFound == false || taken == false) {
 			cout << "shoveling through piles of coins like they were dirt gets old really quickly" << endl;
 			cout << "luckily it doesnt take too long to find something useful. the coins and chalices part to" << endl;
 			cout << "reveal a fancy set of golden armor" << endl;
 			armorFound = true;
+		}
+		else
+		{
+			cout << "shoveling through piles of coins like they were dirt gets old really quickly. you give up." << endl;
+		}
 	}
 	else
 		{

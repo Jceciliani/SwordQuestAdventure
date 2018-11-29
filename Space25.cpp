@@ -26,6 +26,7 @@ Space25::Space25()
 	combatEncounter = false;
 	visited = false;
 	flintFound = false;
+	taken = false;
 }
 
 Space25::~Space25()
@@ -61,6 +62,9 @@ void Space25::attack(const char* thing)
 			cout << "erupts from it. a large chunk of the stalagtite falls to the ground. from what just occured" << endl;
 			cout << "you can guess that they are made of flint" << endl;
 			flintFound = true;
+			if (taken == true) {
+				cout << "you really dont need anymore of it though" << endl;
+			}
 	}
 
 	else

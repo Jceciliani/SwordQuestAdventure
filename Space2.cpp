@@ -27,6 +27,7 @@ Space2::Space2()
 	combatEncounter = false;
 	visited = false;
 	hammerFound = false;
+	taken = false;
 }
 
 Space2::~Space2()
@@ -55,10 +56,17 @@ void Space2::search(const char* thing)
 {
 	if(strcmp(thing, "ruins") == 0 || strcmp(thing, "remains") == 0)
 		{
+		if (hammerFound == false || taken == false) {
 			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
 			cout << "bones from a severed arm. There is handle that upon further inspection is" << endl;
 			cout << "attached to a forge hammer." << endl;
-			hammerFound = true;	
+			hammerFound = true;
+		}
+		else
+		{
+			cout << "most of it is less interesting upon further inspection. Broken vases," << endl;
+			cout << "bones from a severed arm. just a whole lot of garbage in your opinion" << endl;
+		}
 		}
 	else
 	{
