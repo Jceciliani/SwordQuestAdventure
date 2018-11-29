@@ -45,14 +45,14 @@ void Space19::look(const char* thing)
 {
 if (strcmp(thing, "compartment") == 0)
 	{
-		cout << "a small box set into the face of the mountian." << endl;
+		cout << "A small box set into the face of the mountian." << endl;
 		if(containerOpen == true)
 		{
-			cout << "the compartment is open" << endl;
+			cout << "The compartment is open" << endl;
 		}
 		else
 		{
-			cout << "It has 3 colored locks on it. A red a blue and a green." << endl;
+			cout << "It has 3 colored locks on it. A red, a blue and a green." << endl;
 		}
 	}
 else if (strcmp(thing, "in compartment") == 0)
@@ -60,43 +60,43 @@ else if (strcmp(thing, "in compartment") == 0)
 	if (containerOpen == true)
 	{
 		if (taken == false) {
-			cout << "inside you find a large iron key" << endl;
+			cout << "Inside you find a large iron key" << endl;
 		}
 		else
 		{
-			cout << "inside you find nothing" << endl;
+			cout << "Inside you find nothing" << endl;
 		}
 	}
 		else
 		{
-			cout << "the container is closed and locked" << endl;
+			cout << "The container is closed and locked" << endl;
 		}
 	}
 	else if(strcmp(thing, "levers") == 0)
 	{
-			cout << " levers. they probably unlock something. It would be convienient if that lock were close by huh?" << endl; 
-			cout << "there is a red lever, a green lever and a blue lever" << endl; 
+			cout << "Levers. They probably unlock something. It would be convienient if that lock were close by huh?" << endl; 
+			cout << "There is a red lever, a green lever and a blue lever" << endl; 
 	}
 
 	else if(strcmp(thing, "red lever") == 0)
 	{
-			cout << " a red lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
+			cout << "A red lever. Probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
 	}
 	else if(strcmp(thing, "green lever") == 0)
 	{
-			cout << " a green lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
+			cout << "A green lever. Probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
 	}
 	else if(strcmp(thing, "blue lever") == 0)
 	{
-			cout << " a blue lever. probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
+			cout << "A blue lever. Probably unlocks something. It would be convienient if that lock were close by huh?" << endl; 
 
 	}
-else
-		{
-			cout << "you cant do that" << endl;
-		}
+	else
+	{
+		cout << "You can't do that" << endl;
+	}
 }
 
 void Space19::pull( const char* thing)
@@ -105,12 +105,12 @@ if(strcmp(thing, "red lever") == 0)
 	{
 			if(!lock1Open)
 			{
-			cout << "as you pull you hear a light click" << endl;
+			cout << "As you pull you hear a light click" << endl;
 			lock1Open = true;
 			}
 			else 
 			{
-				cout << "as you pull you hear a heavy thud" << endl;
+				cout << "As you pull you hear a heavy thud" << endl;
 				lock1Open = false;
 				lock2Open = false;
 				lock3Open = false;
@@ -119,12 +119,12 @@ if(strcmp(thing, "red lever") == 0)
 	else if(strcmp(thing, "green lever") == 0)
 	{
 			if(lock1Open && !lock2Open){
-			cout << "as you pull you hear a light click" << endl;
+			cout << "As you pull you hear a light click" << endl;
 			lock2Open = true;
 			}
 			else 
 			{
-				cout << "as you pull you hear a heavy thud" << endl;
+				cout << "As you pull you hear a heavy thud" << endl;
 				lock1Open = false;
 				lock2Open = false;
 				lock3Open = false;
@@ -133,12 +133,12 @@ if(strcmp(thing, "red lever") == 0)
 	else if(strcmp(thing, "blue lever") == 0)
 	{
 			if(lock2Open && lock1Open && !lock3Open){
-			cout << "as you pull you hear a light click" << endl;
+			cout << "As you pull you hear a light click" << endl;
 			lock3Open = true;
 			}
 			else 
 			{
-				cout << "as you pull you hear a heavy thud" << endl;
+				cout << "As you pull you hear a heavy thud" << endl;
 				lock1Open = false;
 				lock2Open = false;
 				lock3Open = false;
@@ -155,16 +155,16 @@ void Space19::open(const char* thing)
 		if (!containerOpen) {
 			if (lock1Open && lock2Open && lock3Open)
 			{
-				cout << "the door is stiff but with effort it opens. the container is now open" << endl;
+				cout << "The door is stiff but with effort it opens. The container is now open" << endl;
 				containerOpen = true;
 			}
 			else
 			{
-				cout << "the door to the compartment wont budge" << endl;
+				cout << "The door to the compartment wont budge" << endl;
 			}
 		}
 		else {
-			cout << "the door is already open" << endl;
+			cout << "The door is already open" << endl;
 		}
 	}
 }
