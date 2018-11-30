@@ -1755,7 +1755,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read"))
+					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read") < 50)
 					{
 						s12.look("sign");
 					}
@@ -2021,7 +2021,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("wall") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search"))
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s14.look("walls");
 					}
@@ -2144,7 +2144,7 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("tomb") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search"))
+					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						if (input.find("in") < 50)
 						{
@@ -2246,7 +2246,7 @@ void Game::play(bool loadgame)
 			{
 				if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read"))
+					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read") < 50)
 					{
 						s16.look("sign");
 					}
