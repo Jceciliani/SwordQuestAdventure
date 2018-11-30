@@ -373,8 +373,9 @@ int Game::move(string input)
 			if (playerLoc == spaceArr[13])
 			{
 				
-				if (input.find("jump") < 50 || input.find("run") < 50) {
-
+				if (input.find("jump") < 50 || input.find("run") < 50) 
+				{
+					return 2;
 				}
 				
 				else if (s14.getCross() == true)
@@ -411,8 +412,9 @@ int Game::move(string input)
 		{
 			if (playerLoc == spaceArr[6])
 			{
-				if (input.find("jump") < 50 || input.find("run") < 50) {
-
+				if (input.find("jump") < 50 || input.find("run") < 50) 
+				{
+					return 2;
 				}
 				else if(s7.getJump() == true)
 				{
@@ -463,7 +465,7 @@ int Game::move(string input)
 			if (playerLoc == spaceArr[13])
 			{
 				if (input.find("jump") < 50 || input.find("run") < 50) {
-
+					return 2;
 				}
 
 				else if (s14.getCross() == false)
@@ -483,7 +485,7 @@ int Game::move(string input)
 			{
 				
 				if (input.find("jump") < 50 || input.find("run") < 50) {
-
+					return 2;
 				}
 				 else if (s7.getJump() == true)
 				{
@@ -1764,7 +1766,7 @@ void Game::play(bool loadgame)
 				}
 				else if (input.find("drop") < 50)
 				{
-
+				
 					for (int i = 0; i < ba.getSize(); i++)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
