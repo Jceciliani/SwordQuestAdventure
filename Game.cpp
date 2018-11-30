@@ -289,23 +289,32 @@ int Game::move(string input)
 	}
 	else if (input.find("look at") < 50)
 	{
+		int found = 0;
 		for (int i = 0; i < ba.getSize(); i++)
 		{
 			if (input.find(ba.printItem(i).getName()) < 50)
 			{
 				cout << ba.printItem(i).getDescription();
+				found++;
 				break;
 			}
 		}
 		if (input.find(eq.getObject1().getName()) < 50)
 		{
-			cout << eq.getObject1().getDescription();	
+			cout << eq.getObject1().getDescription();
+			found++;
 		}
 		if (input.find(eq.getObject2().getName()) < 50)
 		{
 			cout << eq.getObject2().getDescription();
+			found++;
 		}
-		return 1;
+		if (found > 0) {
+			return 1;
+		}
+		else {
+			return 2;
+		}
 	}
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
