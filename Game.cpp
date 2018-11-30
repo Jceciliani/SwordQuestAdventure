@@ -837,8 +837,8 @@ void Game::play(bool loadgame)
 						if (input.find(s1.printItem(i).getName()) < 50)
 						{
 							 
-							ba.addToContainer(ba.printItem(i));
-							s1.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s1.printItem(i));
+							s1.deleteFromContainer(s1.printItem(i));
 						}
 					}
 				}
@@ -891,8 +891,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s2.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s2.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s2.printItem(i));
+							s2.deleteFromContainer(s2.printItem(i));
 						}
 					}
 				}
@@ -985,8 +985,8 @@ void Game::play(bool loadgame)
 						if (input.find(s3.printItem(i).getName()) < 50)
 						{
 							
-							ba.addToContainer(ba.printItem(i));
-							s3.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s3.printItem(i));
+							s3.deleteFromContainer(s3.printItem(i));
 						}
 					}
 				}
@@ -1076,8 +1076,8 @@ void Game::play(bool loadgame)
 						if (input.find(s4.printItem(i).getName()) < 50)
 						{
 							
-							ba.addToContainer(ba.printItem(i));
-							s4.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s4.printItem(i));
+							s4.deleteFromContainer(s4.printItem(i));
 						}
 					}
 				}
@@ -1139,8 +1139,8 @@ void Game::play(bool loadgame)
 						if (input.find(s5.printItem(i).getName()) < 50)
 						{
 							
-							ba.addToContainer(ba.printItem(i));
-							s5.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s5.printItem(i));
+							s5.deleteFromContainer(s5.printItem(i));
 						}
 					}
 				}
@@ -1242,8 +1242,8 @@ void Game::play(bool loadgame)
 						if (input.find(s6.printItem(i).getName()) < 50)
 						{
 							
-							ba.addToContainer(ba.printItem(i));
-							s6.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s6.printItem(i));
+							s6.deleteFromContainer(s6.printItem(i));
 						}
 					}
 				}
@@ -1377,8 +1377,8 @@ void Game::play(bool loadgame)
 						if (input.find(s7.printItem(i).getName()) < 50)
 						{
 							
-							ba.addToContainer(ba.printItem(i));
-							s7.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s7.printItem(i));
+							s7.deleteFromContainer(s7.printItem(i));
 						}
 					}
 				}
@@ -1466,8 +1466,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s8.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s8.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s8.printItem(i));
+							s8.deleteFromContainer(s8.printItem(i));
 						}
 					}
 				}
@@ -1501,19 +1501,7 @@ void Game::play(bool loadgame)
 						}
 					}
 				}	
-				else if (input.find("pickup") < 50)
-				{
 
-					for (int i = 0; i < s8.getSize(); i++)
-					{
-						if (input.find(s8.printItem(i).getName()) < 50)
-						{
-							cout << "You pickup " << s8.printItem(i).getName() << endl;
-							ba.addToContainer(ba.printItem(i));
-							s8.deleteFromContainer(ba.printItem(i));
-						}
-					}
-				}
 				else
 				{
 					cout << "That won't work here" << endl;
@@ -1598,8 +1586,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s9.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s9.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s9.printItem(i));
+							s9.deleteFromContainer(s9.printItem(i));
 						}
 					}
 				}
@@ -1668,8 +1656,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s10.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s10.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s10.printItem(i));
+							s10.deleteFromContainer(s10.printItem(i));
 						}
 					}
 				}
@@ -1747,8 +1735,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s11.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s11.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s11.printItem(i));
+							s11.deleteFromContainer(s11.printItem(i));
 						}
 					}
 				}
@@ -1806,8 +1794,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s12.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s12.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s12.printItem(i));
+							s12.deleteFromContainer(s12.printItem(i));
 						}
 					}
 				}
@@ -2029,8 +2017,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s13.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s13.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s13.printItem(i));
+							s13.deleteFromContainer(s13.printItem(i));
 						}
 					}
 				}
@@ -2121,8 +2109,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s14.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s14.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s14.printItem(i));
+							s14.deleteFromContainer(s14.printItem(i));
 						}
 					}
 				}
@@ -2222,8 +2210,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s15.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s15.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s15.printItem(i));
+							s15.deleteFromContainer(s15.printItem(i));
 						}
 					}
 				}
@@ -2311,8 +2299,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s16.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s16.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s16.printItem(i));
+							s16.deleteFromContainer(s16.printItem(i));
 						}
 					}
 				}
@@ -2374,8 +2362,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s17.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s17.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s17.printItem(i));
+							s17.deleteFromContainer(s17.printItem(i));
 						}
 					}
 				}
@@ -2490,8 +2478,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s19.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s19.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s19.printItem(i));
+							s19.deleteFromContainer(s19.printItem(i));
 						}
 					}
 				}
@@ -2603,8 +2591,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s20.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s20.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s20.printItem(i));
+							s20.deleteFromContainer(s20.printItem(i));
 						}
 					}
 				}
@@ -2651,8 +2639,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s21.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s21.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s21.printItem(i));
+							s21.deleteFromContainer(s21.printItem(i));
 						}
 					}
 				}
@@ -2767,8 +2755,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s22.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s22.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s22.printItem(i));
+							s22.deleteFromContainer(s22.printItem(i));
 						}
 					}
 				}
@@ -2856,8 +2844,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s23.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s23.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s23.printItem(i));
+							s23.deleteFromContainer(s23.printItem(i));
 						}
 					}
 				}
@@ -2949,8 +2937,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s24.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s24.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s24.printItem(i));
+							s24.deleteFromContainer(s24.printItem(i));
 						}
 					}
 				}
@@ -3009,8 +2997,8 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s25.printItem(i).getName()) < 50)
 						{
-							ba.addToContainer(ba.printItem(i));
-							s25.deleteFromContainer(ba.printItem(i));
+							ba.addToContainer(s25.printItem(i));
+							s25.deleteFromContainer(s25.printItem(i));
 						}
 					}
 				}
