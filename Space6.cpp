@@ -17,13 +17,13 @@ Space6::Space6()
 {
 	name = "Jungle";
 	shortForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
-	"vines. The canopy is so thick you are not sure if there is even a ceiling anymore.\n"
+	"vines. The canopy is so thick you are not sure if there is even a ceiling anymore.\n\n"
 		"To the east is a small opening through the brush leading into the Swamp \n"
 		"To the south at the end of a wide path marked with broken branches you can see a small Cave \n"
 		"To the north past the brush you can see a clearing of open Fields\n";
 	longForm = "You are surrounded by heavy vegetation and rotting trees covered with serpentine \n"
 		"vines. The canopy is so thick you are not sure if there is even a ceiling anymore. The symphony of the jungle envelops you. \n"
-		"You can hear the songs of birds, the buzz of insects and the movement of mammals. Mostly small ones, though sometimes not.."
+		"You can hear the songs of birds, the buzz of insects and the movement of mammals. Mostly small ones, though sometimes not..\n\n"
 		"To the east is a small opening through the brush leading into the Swamp \n"
 		"To the south at the end of a wide path marked with broken branches you can see a small Cave \n"
 		"To the north past the brush you can see a clearing of open Fields\n";
@@ -71,7 +71,7 @@ void Space6::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -92,6 +92,6 @@ void Space6::attack(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

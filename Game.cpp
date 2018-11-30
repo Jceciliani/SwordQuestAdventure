@@ -173,14 +173,16 @@ int Game::move(string input)
 		cout << "-------------------------------------------------------------------------------------------" << endl;	
 		cout << "Stash" << endl;
 		// Print out stash contents
-		st.printContainer();	
+		st.printContainer(); 
+		return 1;
 	} 
 	else if(input == "status")
 	{
 		cout << "\n-------------------------------------------------------------------------------------------" << endl; 
 		cout << "Current Level: " << char1->getLevel() << endl;
 		cout << "Current Health: " << char1->getHealth() << endl;
-		cout << "-------------------------------------------------------------------------------------------" << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl; 
+		return 1;
 	}
 	else if(input == "help")
 	{
@@ -190,7 +192,7 @@ int Game::move(string input)
 		cout << "-------------------------------------------------------------------------------------------" << endl;
 		cout << "north, east, south, west:               Travel in that direction" << endl;
 		cout << "<room name>:                            Travel to that room" << endl;
-		cout << "look:                                   Get a detailed desciption of the room you are in" << endl;
+		cout << "look:                                   Get a detailed description of the room you are in" << endl;
 		cout << "look at <object or feature>:            Get a description of the object or feature" << endl;
 		cout << "look in:                                Investigate an object or feature" << endl;
 		cout << "search:                                 Investigate an object or feature" << endl;   
@@ -212,7 +214,8 @@ int Game::move(string input)
 		cout << "savegame:                               Save your game" << endl;
 		cout << "loadgame:                               Load saved game" << endl;
 		cout << "exit game:                              Exit the game" << endl;
-		cout << "-------------------------------------------------------------------------------------------" << endl << endl;
+		cout << "-------------------------------------------------------------------------------------------" << endl << endl; 
+		return 1;
 	} 
 	else if (input.find("unequip") < 50)
 	{
@@ -250,7 +253,8 @@ int Game::move(string input)
 				}
 			}
 			
-		}
+		} 
+		return 1;
 	}
 	else if (input.find("equip") < 50)
 	{
@@ -280,7 +284,8 @@ int Game::move(string input)
 					}
 				}
 			}
-		}
+		} 
+		return 1;
 	}
 	// Logic for moving different directions. Maybe refactor this down to a small function passing in the direction?
 	// Create variables that recognize direction names
@@ -333,7 +338,7 @@ int Game::move(string input)
 		else
 		{
 			playerLoc = playerLoc->getNorth();
-			return 0;
+			return 1;
 		}
 	}
 	else if (input.find("East") < 50/*maxInputLength*/ || input.find("east") < 50 || input.find(eastLocationName) < 50/*maxInputLength*/)
@@ -354,7 +359,8 @@ int Game::move(string input)
 				
 				else if (s14.getCross() == true)
 				{
-					playerLoc = playerLoc->getEast();
+					playerLoc = playerLoc->getEast(); 
+					return 1;
 				}
 				
 				else
@@ -363,7 +369,8 @@ int Game::move(string input)
 					cout << "and you begin to fall. The sensation feels familiar. You are whisked down a large metal tube" << endl;
 					cout << "getting coated with its innards in the process. You launch out of the tube and into a wall before falling to the ground." << endl;
 					cout << "You find yourself in the Sewer Depths" << endl;
-					playerLoc = spaceArr[3];
+					playerLoc = spaceArr[3]; 
+					return 1;
 				}
 			}
 			else
@@ -487,7 +494,7 @@ int Game::move(string input)
 	else
 	{
 		// cout << "Sorry, I did not understand your input" << endl << endl;
-		return -1;
+		return 2;
 	}
 }
 
@@ -738,7 +745,7 @@ void Game::play(bool loadgame)
 			//}
 			//else
 			//{
-			if(playerLoc == spaceArr[0]) // Space1 Fields
+			if(playerLoc == spaceArr[0] and res == 2) // Space1 Fields
 			{
 				if(input.find("grass") < 50)
 				{
@@ -765,7 +772,7 @@ void Game::play(bool loadgame)
 					}
 					else
 					{
-						cout << "You cant do that" << endl;
+						cout << "You cant do that with the wind" << endl;
 					}
 				}
 				else if (input.find("drop") < 50) 
@@ -800,9 +807,12 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
-
+				else
+				{
+					cout << "You can't do that here" << endl;
+				}
 			}
-			if(playerLoc == spaceArr[1]) // Space2 Ruins
+			if(playerLoc == spaceArr[1] and res == 2) // Space2 Ruins
 			{
 				if(input.find("ruin") < 50 || input.find("remains") < 50)
 				{
@@ -881,9 +891,12 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
-
+				else
+				{
+					cout << "You can't do that here" << endl;
+				}
 			}
-			if(playerLoc == spaceArr[2]) // Space3 Western Sewers
+			if(playerLoc == spaceArr[2] and res == 2) // Space3 Western Sewers
 			{
 				if(input.find("basket") < 50)
 				{
@@ -973,8 +986,12 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else
+				{
+					cout << "That won't work here, nice try though." << endl;
+				}
 			}
-			if(playerLoc == spaceArr[3]) // Space4 Sewer Depths
+			if(playerLoc == spaceArr[3] and res == 2) // Space4 Sewer Depths
 			{
 				if(input.find("ocean") < 50)
 				{
@@ -1030,8 +1047,12 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else
+				{
+					cout << "You can't do that here!" << endl;
+				}
 			}
-			if(playerLoc == spaceArr[4]) // Space5 Eastern Sewers
+			if(playerLoc == spaceArr[4] and res == 2) // Space5 Eastern Sewers
 			{
 				if(input.find("wall") < 50)
 				{
@@ -1058,7 +1079,7 @@ void Game::play(bool loadgame)
 					}
 					else
 					{
-						cout << "You can't do that" << endl;
+						cout << "You can't do that with the form..." << endl;
 					}
 				}
 				
@@ -1120,8 +1141,12 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
+				else
+				{
+					cout << "There's no effect. Try again." << endl;
+				}
 			}
-			if(playerLoc == spaceArr[5]) // Space6 Jungle
+			if(playerLoc == spaceArr[5] and res == 2) // Space6 Jungle
 			{
 				if(input.find("canopy") < 50)
 				{
@@ -1129,12 +1154,20 @@ void Game::play(bool loadgame)
 					{
 						s6.look("canopy");
 					}
+					else
+					{
+						cout << "That won't work. All you can really do from here is look at the canopy" << endl;
+					}
 				}
 				else if(input.find("vegetation") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s6.look("vegetation");
+					}
+					else
+					{
+						cout << "Good idea, but there's no effect" << endl;
 					}
 				}
 				else if(input.find("vines") < 50)
@@ -1146,6 +1179,10 @@ void Game::play(bool loadgame)
 					else if (input.find("attack") < 50 || input.find("cut") < 50 || input.find("hack") < 50)
 					{
 						s6.attack("vines");
+					}
+					else
+					{
+						cout << "That won't work with the vines." << endl;
 					}
 				}
 				
@@ -1208,16 +1245,20 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "That won't work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[6]) // Space7 Swamp
+			if(playerLoc == spaceArr[6] and res == 2) // Space7 Swamp
 			{
 				if(input.find("moss") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s7.look("moss");
+					}
+					else
+					{
+						cout << "You can't do that with the moss" << endl;
 					}
 				}
 				else if(input.find("bridge") < 50)
@@ -1226,14 +1267,18 @@ void Game::play(bool loadgame)
 					{
 						s7.look("bridge");
 					}
-					if (input.find("run") < 50 || input.find("sprint") < 50)
+					else if (input.find("run") < 50 || input.find("sprint") < 50)
 					{
 						s7.run("bridge");
 					}
-					if (input.find("use") < 50)
+					else if (input.find("use") < 50)
 					{
 						// Damage from the trap
 						char1->damage(-2);
+					}
+					else
+					{
+						cout << "That won't work with the bridge" << endl;
 					}
 				}
 				else if(input.find("liquid") < 50)
@@ -1241,6 +1286,10 @@ void Game::play(bool loadgame)
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s7.look("liquid");
+					}
+					else
+					{
+						cout << "Sorry, all you can really do is look at the stuff" << endl;
 					}
 				}
 				else if (input.find("island") < 50)
@@ -1301,10 +1350,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "That won't work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[7]) // Space8 Guard Quarters
+			if(playerLoc == spaceArr[7] and res == 2) // Space8 Guard Quarters
 			{
 				if(input.find("papers") < 50)
 				{
@@ -1312,12 +1361,20 @@ void Game::play(bool loadgame)
 					{
 						s8.look("papers");
 					}
+					else
+					{
+						cout << "You can't do that to the papers!" << endl;
+					}
 				}
 				else if(input.find("desk") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s8.look("desk");
+					}
+					else
+					{
+						cout << "That won't work with the desk" << endl;
 					}
 				}
 				else if(input.find("locker") < 50)
@@ -1347,6 +1404,10 @@ void Game::play(bool loadgame)
 						{
 							s8.search("lockers");
 						}
+					}
+					else
+					{
+						cout << "You can't do that with the lockers" << endl;
 					}
 				}
 
@@ -1409,7 +1470,7 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "That won't work here" << endl;
 				}
 			}
 			if(playerLoc == spaceArr[8]) // Space9 Lower Maintenance
@@ -3072,7 +3133,6 @@ void Game::play(bool loadgame)
 		}
 		else if (playerLoc == spaceArr[12])
 		{
-
 			if(s13.getVisited() == false)
 			{
 				cout << s13.getLongForm() << endl;

@@ -17,11 +17,11 @@ Space2::Space2()
 {
 	name = "Ruins";
 	shortForm = "You arrive at a ruin. You see various remains periodically peeking through the rubble.\n"
-	"To the west you see a cobblestone path leading to some Fields\n";
+	"To the west you see a cobblestone path leading to some Fields\n\n";
 	longForm = "You arrive at the end of the path to find what ages ago must have been a larger\n"
 		"complex, now appears to be a single hulking ruin. You see various remains periodically\n"
-		"peeking through the rubble. the thought that the creature that did this is likly still \n"
-		"here fills you with dread \n"
+		"peeking through the rubble. The thought that the creature that did this is likly still \n"
+		"here fills you with dread \n\n"
 		"To the west you see a cobblestone path leading to some Fields\n";
 
 	id = 2;
@@ -49,7 +49,7 @@ void Space2::look(const char* thing)
 		}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}	
 }
 
@@ -61,7 +61,7 @@ void Space2::search(const char* thing)
 		if (hammerFound == false || taken == false) {
 			cout << "Most of it is less interesting upon further inspection. Broken vases," << endl;
 			cout << "bones from a severed arm. There is handle that upon further inspection is" << endl;
-			cout << "attached to a forge hammer." << endl;
+			cout << "attached to an anvil hammer." << endl;
 			hammerFound = true;
 		}
 		else
@@ -72,6 +72,6 @@ void Space2::search(const char* thing)
 		}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }

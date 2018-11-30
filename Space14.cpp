@@ -16,7 +16,7 @@ using namespace std;
 Space14::Space14()
 {
 	name = "Mausoleum";
-	shortForm = "The walls seem to be etched with something. The floor of the room feels slightly uneven\n"
+	shortForm = "The walls seem to be etched with something. The floor of the room feels slightly uneven\n\n"
 		"To the west is a small corridor back to the Sanctuary \n"
 		"To the east is a doorway to a small Crypt\n";
 	longForm = "There is sparse light in the corridor. The walls seem to be etched with something, \n"
@@ -47,7 +47,7 @@ void Space14::look(const char* thing)
 	else if (strcmp(thing, "floor") == 0)
 	{
 		cout << "Upon closer inspection, the floor seems to slightly slope towards the middle of the hall. " << endl;
-		cout << "The floor there definitly looks unstable" << endl;
+		cout << "The floor there definitely looks unstable" << endl;
 	}
 	else
 	{

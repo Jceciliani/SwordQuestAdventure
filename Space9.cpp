@@ -16,7 +16,7 @@ using namespace std;
 Space9::Space9()
 {
 	name = "Lower Maintenance";
-	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n"
+	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n\n"
 		"To the east there is a walkway to the Upper Maintenance area\n"
 		"To the west is a door to the Guard Quarters\n";
 	longForm = "You arrive in a large room. There are many large metal tubes crossing through\n"
@@ -38,21 +38,21 @@ Space9::~Space9()
 
 void Space9::look(const char* thing)
 {
-	if (strcmp(thing, "fountian") == 0)
+	if (strcmp(thing, "fountain") == 0)
 	{
 		if (fountianUsed)
 		{
-			cout << "The fountian is dry" << endl;
+			cout << "The fountain is dry" << endl;
 		}
 		else
 		{
-			cout << "The fountian is filled with water. It looks very refreshing" << endl;
+			cout << "The fountain is filled with water. It looks very refreshing" << endl;
 		}
 	}
 	else if (strcmp(thing, "tubes") == 0)
 	{
 		cout << "There are many of them. Likely for sewage disposal. There looks to be a" << endl;
-		cout << "maintenince hatch on one of them" << endl;
+		cout << "maintenance hatch on one of them" << endl;
 	}
 	else if (strcmp(thing, "hatch") == 0)
 	{
@@ -67,7 +67,7 @@ void Space9::look(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -88,7 +88,7 @@ void Space9::enter(const char* thing)
 	}
 	else
 	{
-		cout << "You cant do that" << endl;
+		cout << "You can't do that" << endl;
 	}
 }
 
@@ -120,7 +120,7 @@ void Space9::drink(const char* thing)
 		if (!fountianUsed)
 		{
 			cout << "You feel strength return to your body as you drink. You quickly consume all" << endl;
-			cout << "of the water within the fountian. The fountain is now dry." << endl;
+			cout << "of the water within the fountain. The fountain is now dry." << endl;
 			fountianUsed = true;
 		}
 		else

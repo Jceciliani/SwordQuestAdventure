@@ -16,7 +16,7 @@ using namespace std;
 Space10::Space10()
 {
 	name = "Upper Maintenance";
-	shortForm = " In the corner you see a small hovel made of bone, metal scraps, and dung.\n"
+	shortForm = "In the corner you see a small hovel made of bone, metal scraps, and dung.\n\n"
 		"To the west there is a walkway back down to Lower Maintenance \n"
 		"To the north is a ladder leading down into the Eastern Sewers\n";
 	longForm = "You arrive on the end of the walkway. There is a moderately sized stone \n"

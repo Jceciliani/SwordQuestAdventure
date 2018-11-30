@@ -16,8 +16,8 @@ using namespace std;
 Space19::Space19()
 {
 	name = "Volcano Lvl. 5";
-	shortForm = " In the face of the volcano you can see a small locked compartment. \n"
-		"Beside it there is a blue lever, red lever, and a green lever.\n"
+	shortForm = "In the face of the volcano you can see a small locked compartment. \n"
+		"Beside it there is a blue lever, red lever, and a green lever.\n\n"
 		"The path to the east continues up to the Volcano Summit \n"
 		"The path to the south dissapates behind you into an ominous fog. there is no turning back \n";
 	longForm = "The air is thick with ash. The trial stops at another landing. In the face of the \n"
