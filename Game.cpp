@@ -1460,22 +1460,9 @@ void Game::play(bool loadgame)
 						}
 					}
 				}
-				else if (input.find("pickup") < 50)
-				{
-
-					for (int i = 0; i < s8.getSize(); i++)
-					{
-						if (input.find(s8.printItem(i).getName()) < 50)
-						{
-							cout << "You pickup " << s8.printItem(i).getName() << endl;
-							ba.addToContainer(ba.printItem(i));
-							s8.deleteFromContainer(ba.printItem(i));
-						}
-					}
-				}
 				else if (input.find("sword") < 50)
 				{
-					if (input.find("take") < 50 || input.find("grab") < 50)
+					if (input.find("take") < 50 || input.find("grab") < 50 || input.find("pick") < 50)
 					{
 						if (s8.getTaken() == false) {
 							if (s8.getSword() == true)
@@ -1500,6 +1487,19 @@ void Game::play(bool loadgame)
 						else
 						{
 							cout << "You already took that" << endl;
+						}
+					}
+				}	
+				else if (input.find("pickup") < 50)
+				{
+
+					for (int i = 0; i < s8.getSize(); i++)
+					{
+						if (input.find(s8.printItem(i).getName()) < 50)
+						{
+							cout << "You pickup " << s8.printItem(i).getName() << endl;
+							ba.addToContainer(ba.printItem(i));
+							s8.deleteFromContainer(ba.printItem(i));
 						}
 					}
 				}
@@ -1811,7 +1811,7 @@ void Game::play(bool loadgame)
 			}
 			if(playerLoc == spaceArr[12] and res == 2) // Space13 Sanctuary
 			{
-				if(input.find("fountain") < 50)
+				if(input.find("fountain") < 50 || input.find("water") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
@@ -1927,9 +1927,12 @@ void Game::play(bool loadgame)
 				}
 				else if(input.find("chest") < 50)
 				{
-					if (input.find("look in") < 50)
+					if (input.find("look in") < 50 || input.find("search") < 50 || input.find("investigate") < 50 || input.find("open") < 50)
 					{
+						cout << "You open the chest. It contains:" << endl;
+						cout << "-----------------------------------------------" << endl; 
 						st.printContainer();
+						cout << "-----------------------------------------------" << endl;
 					}
 					else if (input.find("look") < 50)
 					{
