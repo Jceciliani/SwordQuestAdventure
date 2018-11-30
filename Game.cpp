@@ -813,7 +813,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s1.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 							candrop = true;
@@ -832,7 +832,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s1.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << ba.printItem(i).getName() << endl;
+							 
 							ba.addToContainer(ba.printItem(i));
 							s1.deleteFromContainer(ba.printItem(i));
 						}
@@ -873,7 +873,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s2.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -887,7 +887,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s2.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s2.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s2.deleteFromContainer(ba.printItem(i));
 						}
@@ -967,7 +966,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s3.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -981,7 +980,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s3.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s3.printItem(i).getName() << endl;
+							
 							ba.addToContainer(ba.printItem(i));
 							s3.deleteFromContainer(ba.printItem(i));
 						}
@@ -1058,7 +1057,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s4.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1072,7 +1071,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s4.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s4.printItem(i).getName() << endl;
+							
 							ba.addToContainer(ba.printItem(i));
 							s4.deleteFromContainer(ba.printItem(i));
 						}
@@ -1121,7 +1120,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s5.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1135,7 +1134,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s5.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s5.printItem(i).getName() << endl;
+							
 							ba.addToContainer(ba.printItem(i));
 							s5.deleteFromContainer(ba.printItem(i));
 						}
@@ -1224,7 +1223,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s6.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1238,7 +1237,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s6.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s6.printItem(i).getName() << endl;
+							
 							ba.addToContainer(ba.printItem(i));
 							s6.deleteFromContainer(ba.printItem(i));
 						}
@@ -1359,7 +1358,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s7.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1373,7 +1372,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s7.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s7.printItem(i).getName() << endl;
+							
 							ba.addToContainer(ba.printItem(i));
 							s7.deleteFromContainer(ba.printItem(i));
 						}
@@ -1449,7 +1448,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s8.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1463,7 +1462,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s8.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s8.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s8.deleteFromContainer(ba.printItem(i));
 						}
@@ -1569,7 +1567,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s9.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1583,7 +1581,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s9.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s9.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s9.deleteFromContainer(ba.printItem(i));
 						}
@@ -1640,7 +1637,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s10.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1654,7 +1651,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s10.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s10.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s10.deleteFromContainer(ba.printItem(i));
 						}
@@ -1721,7 +1717,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s11.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 						}
@@ -1734,7 +1730,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s11.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s11.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s11.deleteFromContainer(ba.printItem(i));
 						}
@@ -1780,7 +1775,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s12.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -1794,7 +1789,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s12.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s12.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s12.deleteFromContainer(ba.printItem(i));
 						}
@@ -2001,7 +1995,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s13.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2015,7 +2009,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s13.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s13.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s13.deleteFromContainer(ba.printItem(i));
 						}
@@ -2094,7 +2087,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s14.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2108,7 +2101,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s14.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s14.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s14.deleteFromContainer(ba.printItem(i));
 						}
@@ -2196,7 +2188,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s15.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2210,7 +2202,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s15.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s15.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s15.deleteFromContainer(ba.printItem(i));
 						}
@@ -2286,7 +2277,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s16.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2300,7 +2291,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s16.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s16.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s16.deleteFromContainer(ba.printItem(i));
 						}
@@ -2350,7 +2340,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s17.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2364,7 +2354,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s17.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s17.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s17.deleteFromContainer(ba.printItem(i));
 						}
@@ -2467,7 +2456,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s19.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2481,7 +2470,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s19.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s19.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s19.deleteFromContainer(ba.printItem(i));
 						}
@@ -2581,7 +2569,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s20.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2595,7 +2583,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s20.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s20.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s20.deleteFromContainer(ba.printItem(i));
 						}
@@ -2630,7 +2617,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s21.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2644,7 +2631,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s21.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s21.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s21.deleteFromContainer(ba.printItem(i));
 						}
@@ -2747,7 +2733,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s22.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2761,7 +2747,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s22.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s22.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s22.deleteFromContainer(ba.printItem(i));
 						}
@@ -2837,7 +2822,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s23.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2851,7 +2836,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s23.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s23.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s23.deleteFromContainer(ba.printItem(i));
 						}
@@ -2931,7 +2915,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s24.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -2945,7 +2929,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s24.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s24.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s24.deleteFromContainer(ba.printItem(i));
 						}
@@ -2992,7 +2975,7 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(ba.printItem(i).getName()) < 50)
 						{
-							cout << "You drop " << ba.printItem(i).getName() << endl;
+							 
 							s25.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
 
@@ -3006,7 +2989,6 @@ void Game::play(bool loadgame)
 					{
 						if (input.find(s25.printItem(i).getName()) < 50)
 						{
-							cout << "You pickup " << s25.printItem(i).getName() << endl;
 							ba.addToContainer(ba.printItem(i));
 							s25.deleteFromContainer(ba.printItem(i));
 						}
