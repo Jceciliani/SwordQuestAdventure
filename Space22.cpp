@@ -69,7 +69,7 @@ void Space22::talk(const char* thing)
 			if(!answered)
 			{
 				cout <<"The old man speaks:" << endl;
-				cout <<"The more of me you take, the more of me you leave behind. what am I?" << endl;
+				cout <<"'The more of me you take, the more of me you leave behind. What am I?'" << endl;
 			}
 			else
 			{

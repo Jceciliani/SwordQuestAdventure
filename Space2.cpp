@@ -22,7 +22,7 @@ Space2::Space2()
 		"complex, now appears to be a single hulking ruin. You see various remains periodically\n"
 		"peeking through the rubble. The thought that the creature that did this is likly still \n"
 		"here fills you with dread \n\n"
-		"To the west you see a cobblestone path leading to some Fields\n";
+		"To the west you see a cobblestone path leading to some Fields\n\n";
 
 	id = 2;
 	obj = new Forge_Hammer();
