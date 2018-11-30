@@ -37,7 +37,7 @@ Space24::~Space24()
 
 void Space24::look(const char* thing)
 {
-	if (strcmp(thing, "lever"))
+	if (strcmp(thing, "lever") == 0)
 	{
 			cout << "A large metal lever. The area seems bare so youre not really sure" << endl;
 			cout << "what it could trigger." << endl;

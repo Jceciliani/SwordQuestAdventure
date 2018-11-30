@@ -80,6 +80,14 @@ void Space7::jump(const char* thing)
 		{
 			cout << "You make it to the landing" << endl;
 			jumped = false;
+			if (strcmp(thing, "west") == 0) 
+			{
+				crossed = true;
+			}
+			else
+			{
+				crossed = false;
+			}
 		}
 		else
 		{
@@ -123,7 +131,7 @@ void Space7::run(const char* thing)
 		}
 		else
 		{
-			if (!crossed)
+			if (crossed == false)
 			{
 				cout << "You run across the bridge. You can feel something barely" << endl;
 				cout << "grazing your heels but you make it across without incident." << endl;
@@ -142,7 +150,7 @@ void Space7::run(const char* thing)
 		}
 		else
 		{
-			if (crossed)
+			if (crossed == true)
 			{
 				cout << "You run across the bridge. You can feel something barely" << endl;
 				cout << "grazing your heels but you make it across without incident." << endl;

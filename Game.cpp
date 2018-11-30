@@ -347,10 +347,16 @@ int Game::move(string input)
 		{
 			if (playerLoc == spaceArr[13])
 			{
-				if (s14.getCross() == true)
+				
+				if (input.find("jump") < 50 || input.find("run") < 50) {
+
+				}
+				
+				else if (s14.getCross() == true)
 				{
 					playerLoc = playerLoc->getEast();
 				}
+				
 				else
 				{
 					cout << "As you cross the room you hear a loud THUNK. Sunddenly the floor disappears from beneath you" << endl;
@@ -378,7 +384,10 @@ int Game::move(string input)
 		{
 			if (playerLoc == spaceArr[6])
 			{
-				if(s7.getJump() == true)
+				if (input.find("jump") < 50 || input.find("run") < 50) {
+
+				}
+				else if(s7.getJump() == true)
 				{
 					cout << "You can't walk anywhere from this island. Try jumping!" << endl;
 				}
@@ -426,7 +435,11 @@ int Game::move(string input)
 		{
 			if (playerLoc == spaceArr[13])
 			{
-				if (s14.getCross() == false)
+				if (input.find("jump") < 50 || input.find("run") < 50) {
+
+				}
+
+				else if (s14.getCross() == false)
 				{
 					playerLoc = playerLoc->getWest();
 				}
@@ -442,7 +455,10 @@ int Game::move(string input)
 			else if (playerLoc == spaceArr[6])
 			{
 				
-				if (s7.getJump() == true)
+				if (input.find("jump") < 50 || input.find("run") < 50) {
+
+				}
+				 else if (s7.getJump() == true)
 				{
 					cout << "You can't walk anywhere from this island. Try jumping!" << endl;
 				}
@@ -1439,7 +1455,7 @@ void Game::play(bool loadgame)
 					else if (input.find("enter") < 50 || input.find("go in") < 50)
 					{
 						s9.enter("tube");
-						playerLoc == spaceArr[3];
+						playerLoc = spaceArr[3];
 					}
 				}
 				else if (input.find("drop") < 50)

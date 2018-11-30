@@ -60,7 +60,7 @@ void Space14::run(const char* thing)
 	if (strcmp(thing, "across") == 0)
 	{
 		cout << "You sprint across the room. You reach the other side unscathed" << endl;
-		if (crossed)
+		if (crossed == true)
 		{
 			crossed = false;
 		}
@@ -72,7 +72,7 @@ void Space14::run(const char* thing)
 	}
 	else if (strcmp(thing, "west") == 0)
 	{
-		if (crossed)
+		if (crossed == true)
 		{
 			cout << "You sprint across the room. You reach the other side unscathed" << endl;
 			crossed = false;
@@ -81,9 +81,9 @@ void Space14::run(const char* thing)
 			cout << "You are on the west side of the room" << endl;
 		}
 	}
-	else if (strcmp(thing, "east"))
+	else if (strcmp(thing, "east") == 0)
 	{
-		if (crossed)
+		if (crossed == false)
 		{
 			cout << "You sprint across the room. You reach the other side unscathed" << endl;
 			crossed = true;
@@ -99,7 +99,7 @@ void Space14::jump( const char* thing)
 	if (strcmp(thing, "across") == 0)
 	{
 		cout << "You make a small run and leap over the majority of the room. You cross unscathed" << endl;
-		if (crossed)
+		if (crossed == true)
 		{
 			crossed = false;
 		}
@@ -111,7 +111,7 @@ void Space14::jump( const char* thing)
 	}
 	else if (strcmp(thing, "west") == 0)
 	{
-		if (crossed)
+		if (crossed == true)
 		{
 			cout << " You make a small run and leap over the majority of the room. You cross unscathed" << endl;
 			crossed = false;
@@ -122,7 +122,7 @@ void Space14::jump( const char* thing)
 	}
 	else if (strcmp(thing, "east") == 0)
 	{
-		if (crossed)
+		if (crossed == false)
 		{
 			cout << "You make a small run and leap over the majority of the room. You cross unscathed" << endl;
 			crossed = true;
