@@ -713,7 +713,7 @@ void Game::play(bool loadgame)
 		getline(cin, charName);
 		// Set name to hero
 		char1->setName(charName);
-		
+		cout << "\n\n";
 		cout << s13.getLongForm() << endl;
 	}
 	// Seperator before the game starts
