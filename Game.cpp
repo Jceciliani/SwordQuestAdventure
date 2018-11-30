@@ -12,6 +12,8 @@ Description: This controls the flow of the game and all of the interactions
 #include <cstdlib>
 #include <fstream>
 #include <cstring>
+#include <locale>
+#include <algorithm>
 
 using namespace std;
 
@@ -763,9 +765,11 @@ void Game::play(bool loadgame)
 		while (1)
 		{
 			string input;
+			locale loc;
 			cout << "What do you want to do?" << endl;
 			cout << "> ";
 			getline(cin, input);
+			transform(input.begin(), input.end(), input.begin(), ::tolower);
 			cout << endl;
 			cout << "-------------------------------------------------------------------------------------------" << endl;
 			int res = move(input);
