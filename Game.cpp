@@ -1493,7 +1493,7 @@ void Game::play(bool loadgame)
 					cout << "That won't work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[8]) // Space9 Lower Maintenance
+			if(playerLoc == spaceArr[8] and res == 2) // Space9 Lower Maintenance
 			{
 				if(input.find("fountain") < 50)
 				{
@@ -1510,6 +1510,10 @@ void Game::play(bool loadgame)
 						s9.drink("fountain");
 						
 					}
+					else
+					{
+						cout << "You can't do that to the fountain" << endl;
+					}
 				}
 				else if(input.find("tube") < 50)
 				{
@@ -1521,6 +1525,10 @@ void Game::play(bool loadgame)
 					{
 						s9.enter("tube");
 						playerLoc = spaceArr[3];
+					}
+					else
+					{
+						cout << "That won't work with the tube" << endl;
 					}
 				}
 				else if(input.find("hatch") < 50)
@@ -1537,6 +1545,10 @@ void Game::play(bool loadgame)
 					{
 						s9.enter("tube");
 						playerLoc = spaceArr[3];
+					}
+					else
+					{
+						cout << "You can't do that with the hatch" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -1568,10 +1580,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "Doesn't look like that will work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[9]) // Space10 Upper Maintenance
+			if(playerLoc == spaceArr[9] and res == 2) // Space10 Upper Maintenance
 			{
 				if(input.find("hovel") < 50)
 				{
@@ -1579,12 +1591,20 @@ void Game::play(bool loadgame)
 					{
 						s10.look("hovel");
 					}
+					else
+					{
+						cout << "Sorry, seems like all you can do is look at the hovel" << endl;
+					}
 				}
 				else if(input.find("corner") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s10.look("corner");
+					}
+					else
+					{
+						cout << "Sorry, seems like all you can do is look at the corner" << endl;
 					}
 				}
 				else if(input.find("sack") < 50)
@@ -1596,6 +1616,10 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s10.search("sack");
+					}
+					else
+					{
+						cout << "That won't work with the sack" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -1627,10 +1651,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "That won't work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[10]) // Space11 Cave
+			if(playerLoc == spaceArr[10] and res == 2) // Space11 Cave
 			{
 				if(input.find("cave") < 50)
 				{
@@ -1641,6 +1665,11 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s11.search("cave");
+					}
+					else
+					{
+						cout << "That won't work with a cave" << endl;
+
 					}
 				}
 				else if(input.find("pile") < 50)
@@ -1653,6 +1682,11 @@ void Game::play(bool loadgame)
 					{
 						s11.search("cave");
 					}
+					else
+					{
+						cout << "You can't do that with the pile" << endl;
+
+					}
 				}
 				else if(input.find("book") < 50 || input.find("search") < 50)
 				{
@@ -1663,6 +1697,10 @@ void Game::play(bool loadgame)
 					else if (input.find("read") < 50)
 					{
 						s11.read("book");
+					}
+					else
+					{
+						cout << "That doesn't work with the book" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -1675,7 +1713,6 @@ void Game::play(bool loadgame)
 							cout << "You drop " << ba.printItem(i).getName() << endl;
 							s11.addToContainer(ba.printItem(i));
 							ba.deleteFromContainer(ba.printItem(i));
-
 						}
 					}
 				}
@@ -1694,13 +1731,12 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "That won't work here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[11]) // Space12 Crossroads
+			if(playerLoc == spaceArr[11] and res == 2) // Space12 Crossroads
 			{
-		
-				if(input.find("plot") < 50)
+				if(input.find("plot") < 50 || input.find("dirt") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
@@ -1710,12 +1746,20 @@ void Game::play(bool loadgame)
 					{
 						s12.dig("plot");
 					}
+					else
+					{
+						cout << "That won't work. Keep digging for the right action" << endl;	
+					}
 				}
 				else if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read"))
 					{
 						s12.look("sign");
+					}
+					else
+					{
+						cout << "Sorry, won't work. Maybe try reading the sign?" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -1747,12 +1791,11 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[12]) // Space13 Sanctuary
+			if(playerLoc == spaceArr[12] and res == 2) // Space13 Sanctuary
 			{
-
 				if(input.find("fountain") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
@@ -1767,6 +1810,10 @@ void Game::play(bool loadgame)
 						}
 						s13.drink("fountain");
 						
+					}
+					else
+					{
+						cout << "That won't work. You must be getting delerious from thirst..." << endl;
 					}
 				}
 				else if(input.find("forge") < 50)
@@ -1858,6 +1905,10 @@ void Game::play(bool loadgame)
 							}
 						}
 					}
+					else
+					{
+						cout << "It doesn't work" << endl;
+					}
 				}
 				else if(input.find("chest") < 50)
 				{
@@ -1901,8 +1952,12 @@ void Game::play(bool loadgame)
 							}
 						}
 					}
+					else
+					{
+						cout << "That doesn't work with the chest" << endl;
+					}
 				}
-				if (input.find("gate") < 50)
+				else if (input.find("gate") < 50)
 				{
 					if (input.find("look") < 50)
 					{
@@ -1922,6 +1977,10 @@ void Game::play(bool loadgame)
 						{
 							cout << "You need a key to open the gate" << endl;
 						}
+					}
+					else
+					{
+						cout << "The gate does not budge" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -1953,16 +2012,20 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[13]) // Space14 Mausoleum
+			if(playerLoc == spaceArr[13] and res == 2) // Space14 Mausoleum
 			{
 				if(input.find("wall") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search"))
 					{
 						s14.look("walls");
+					}
+					else
+					{
+						cout << "It doesn't work. Seems like all you can do is stare at the wall" << endl;
 					}
 				}
 				else if(input.find("floor") < 50)
@@ -1970,6 +2033,10 @@ void Game::play(bool loadgame)
 					if (input.find("look") < 50)
 					{
 						s14.look("floor");
+					}
+					else
+					{
+						cout << "That doesn't work" << endl;
 					}
 				}
 				else if (input.find("across") < 50)
@@ -1981,6 +2048,10 @@ void Game::play(bool loadgame)
 					else if (input.find("run") < 50)
 					{
 						s14.run("across");
+					}
+					else
+					{
+						cout << "Not quite. Try again" << endl;
 					}
 				}
 				else if (input.find("west") < 50)
@@ -2034,16 +2105,20 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[14]) // Space15 Crypt
+			if(playerLoc == spaceArr[14] and res == 2) // Space15 Crypt
 			{
 				if(input.find("candle") < 50)
 				{
 					if (input.find("look") < 50)
 					{
 						s15.look("candles");
+					}
+					else
+					{
+						cout << "The candle's no good for that!" << endl;
 					}
 				}
 				else if(input.find("vase") < 50)
@@ -2060,10 +2135,14 @@ void Game::play(bool loadgame)
 					{
 						s15.search("vases");
 					}
+					else
+					{
+						cout << "That won't work with the vases" << endl;
+					}
 				}
 				else if(input.find("tomb") < 50)
 				{
-					if (input.find("look") < 50)
+					if (input.find("look") < 50 || input.find("search"))
 					{
 						if (input.find("in") < 50)
 						{
@@ -2078,6 +2157,10 @@ void Game::play(bool loadgame)
 					{
 						s15.open("tomb");
 					}
+					else
+					{
+						cout << "There's no response from the tomb" << endl;
+					}
 				}
 				else if (input.find("skeleton") < 50)
 				{
@@ -2088,6 +2171,10 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s15.search("skeleton");
+					}
+					else
+					{
+						cout << "There's no response. It continues to stare with empty eyes..." << endl;
 					}
 				}
 
@@ -2150,16 +2237,20 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[15]) // Space16 Volcano Base
+			if(playerLoc == spaceArr[15] and res == 2) // Space16 Volcano Base
 			{
 				if(input.find("sign") < 50)
 				{
-					if (input.find("look") < 50 || input.find("search") < 50)
+					if (input.find("look") < 50 || input.find("search") < 50 || input.find("read"))
 					{
 						s16.look("sign");
+					}
+					else
+					{
+						cout << "That won't work. Try reading it" << endl;
 					}
 				}
 				else if(input.find("bone") < 50)
@@ -2171,6 +2262,10 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s16.search("bones");
+					}
+					else
+					{
+						cout << "You can't do that with the bones!" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2202,10 +2297,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[16]) // Space17 Volcano Foothills
+			if(playerLoc == spaceArr[16] and res == 2) // Space17 Volcano Foothills
 			{
 				if(input.find("fountain") < 50)
 				{
@@ -2221,12 +2316,20 @@ void Game::play(bool loadgame)
 						}
 						s17.drink("fountain");
 					}
+					else
+					{
+						cout << "That won't work. You must be distracted by your thirst" << endl;
+					}
 				}
 				else if(input.find("volcano") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s17.look("volcano");
+					}
+					else
+					{
+						cout << "Probably not a good idea, it is a volcano..." << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2258,14 +2361,14 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[17]) // Space18 Dragon Keep
+			if(playerLoc == spaceArr[17] and res == 2) // Space18 Dragon Keep
 			{
 				// Magic in the other function	
 			}
-			if(playerLoc == spaceArr[18]) // Space19 Volcano lvl 5
+			if(playerLoc == spaceArr[18] and res == 2) // Space19 Volcano lvl 5
 			{
 				if(input.find("compartment") < 50)
 				{
@@ -2284,6 +2387,10 @@ void Game::play(bool loadgame)
 					{
 						s19.open("compartment");
 					}
+					else
+					{
+						cout << "That doesn't work with the compartment" << endl;
+					}
 				}
 				else if(input.find("red lever") < 50)
 				{
@@ -2294,6 +2401,10 @@ void Game::play(bool loadgame)
 					else if(input.find("pull") < 50 || input.find("grab") < 50)
 					{
 						s19.pull("red lever");
+					}
+					else
+					{
+						cout << "It doesn't respond, perhaps you should pull it?" << endl;
 					}
 				}
 				else if(input.find("green lever") < 50)
@@ -2306,6 +2417,10 @@ void Game::play(bool loadgame)
 					{
 						s19.pull("green lever");
 					}
+					else
+					{
+						cout << "It doesn't respond, perhaps you should pull it?" << endl;
+					}
 				}
 				else if(input.find("blue lever") < 50)
 				{
@@ -2317,12 +2432,20 @@ void Game::play(bool loadgame)
 					{
 						s19.pull("blue lever");
 					}
+					else
+					{
+						cout << "It doesn't respond, perhaps you should pull it?" << endl;
+					}
 				}
 				else if (input.find("lever") < 50)
 				{
 					if (input.find("look") < 50)
 					{
 						s19.look("levers");
+					}
+					else
+					{
+						cout << "Which lever?" << endl;
 					}
 				}
 				
@@ -2382,13 +2505,17 @@ void Game::play(bool loadgame)
 							cout << "You already took that " << endl;
 						}
 					}
+					else
+					{
+						cout << "You can't do that with the key" << endl;
+					}
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[19]) // Space20 Volcano Summit
+			if(playerLoc == spaceArr[19] and res == 2) // Space20 Volcano Summit
 			{
 				if(input.find("fountain") < 50)
 				{
@@ -2404,12 +2531,20 @@ void Game::play(bool loadgame)
 						}
 						s20.drink("fountain");
 					}
+					else
+					{
+						cout << "That doesn't work. You could probably drink from it though" << endl;
+					}
 				}
 				else if(input.find("rock") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s20.look("rocks");
+					}
+					else
+					{
+						cout << "The rocks won't budge" << endl;
 					}
 				}
 				else if(input.find("gateway") < 50)
@@ -2422,6 +2557,10 @@ void Game::play(bool loadgame)
 					{
 						s20.enter("gateway");
 						playerLoc = spaceArr[12];
+					}
+					else
+					{
+						cout << "That doesn't work with the gateway" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2453,10 +2592,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[20]) // Space21 Volcano Lvl 1
+			if(playerLoc == spaceArr[20] and res == 2) // Space21 Volcano Lvl 1
 			{
 				if(input.find("boulder") < 50)
 				{
@@ -2468,8 +2607,11 @@ void Game::play(bool loadgame)
 					{
 						s21.push("boulder");
 					}
+					else
+					{
+						cout << "That doesn't work with the boulder" << endl;
+					}
 				}
-
 				else if (input.find("drop") < 50)
 				{
 
@@ -2526,13 +2668,17 @@ void Game::play(bool loadgame)
 							cout << "You already took that" << endl;
 						}
 					}
+					else
+					{
+						cout << "You can't do that with the sword" << endl;
+					}
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[21]) // Space22 Volcano Lvl 2
+			if(playerLoc == spaceArr[21] and res == 2) // Space22 Volcano Lvl 2
 			{
 				if(input.find("old man") < 50)
 				{
@@ -2543,9 +2689,11 @@ void Game::play(bool loadgame)
 					else if (input.find("talk") < 50 || input.find("speak") < 50 || input.find("call") < 50)
 					{
 						s22.talk("to old man");
-						
 					}
-					
+					else
+					{
+						cout << "He doesn't respond, perhaps you could talk to him" << endl;
+					}
 				}
 				else if(input.find("mountain") < 50)
 				{
@@ -2553,12 +2701,20 @@ void Game::play(bool loadgame)
 					{
 						s22.look("mountian");
 					}
+					else
+					{
+						cout << "It doesn't work" << endl;
+					}
 				}
 				else if(input.find("volcano") < 50)
 				{
 					if (input.find("look") < 50)
 					{
 						s22.look("volcano");
+					}
+					else
+					{
+						cout << "That doesn't work" << endl;
 					}
 				}
 				else if (input.find("answer") < 50)
@@ -2602,10 +2758,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[22]) // Space23 Volcano Lvl3
+			if(playerLoc == spaceArr[22] and res == 2) // Space23 Volcano Lvl3
 			{
 				if(input.find("valuables") < 50)
 				{
@@ -2616,6 +2772,10 @@ void Game::play(bool loadgame)
 					else if (input.find("search") < 50)
 					{
 						s23.search("valuables");
+					}
+					else
+					{
+						cout << "probably better to leave them be" << endl;
 					}
 				}
 				else if(input.find("pile") < 50)
@@ -2628,12 +2788,20 @@ void Game::play(bool loadgame)
 					{
 						s23.search("piles");
 					}
+					else
+					{
+						cout << "That doesn't work, try searching it" << endl;
+					}
 				}
 				else if(input.find("trail") < 50)
 				{
 					if (input.find("look") < 50)
 					{
 						s23.look("trail");
+					}
+					else
+					{
+						cout << "That doesn't work" << endl;
 					}
 				}
 				else if (input.find("bread") < 50)
@@ -2645,6 +2813,10 @@ void Game::play(bool loadgame)
 					else if (input.find("eat") < 50)
 					{
 						s23.eat("bread");
+					}
+					else
+					{
+						cout << "That doesn't work with bread" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2707,10 +2879,10 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << " You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[23]) // Space24 Volcano Lvl 4
+			if(playerLoc == spaceArr[23] and res == 2) // Space24 Volcano Lvl 4
 			{
 				if(input.find("lever") < 50)
 				{
@@ -2725,12 +2897,20 @@ void Game::play(bool loadgame)
 						char1->damage(-5);
 						playerLoc = spaceArr[15];
 					}
+					else
+					{
+						cout << "It doesn't work" << endl;
+					}
 				}
 				else if(input.find("landing") < 50)
 				{
 					if (input.find("look") < 50)
 					{
 						s24.look("landing");
+					}
+					else
+					{
+						cout << "That doesn't work. Seems like all you can do is look at the landing" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2762,16 +2942,20 @@ void Game::play(bool loadgame)
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
-			if(playerLoc == spaceArr[24]) // Space25 Volcanic Chamber
+			if(playerLoc == spaceArr[24] and res == 2) // Space25 Volcanic Chamber
 			{
 				if(input.find("lake") < 50)
 				{
 					if (input.find("look") < 50 || input.find("search") < 50)
 					{
 						s25.look("lake");
+					}
+					else
+					{
+						cout << "Probably best to stay back and just look at the burning lake" << endl;
 					}
 				}
 				else if(input.find("stalactite") < 50)
@@ -2784,6 +2968,10 @@ void Game::play(bool loadgame)
 					{
 						s25.attack("stalactite");
 					
+					}
+					else
+					{
+						cout << "That doesn't work with the stalactite" << endl;
 					}
 				}
 				else if (input.find("drop") < 50)
@@ -2843,10 +3031,14 @@ void Game::play(bool loadgame)
 							cout << "You already took that" << endl;
 						}
 					}
+					else
+					{
+						cout << "You can't do that with the flint" << endl;
+					}
 				}
 				else
 				{
-
+					cout << "You can't do that here" << endl;
 				}
 			}
 
