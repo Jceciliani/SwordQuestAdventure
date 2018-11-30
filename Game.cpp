@@ -3090,6 +3090,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s1.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3099,6 +3100,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s1.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3111,6 +3113,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s2.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3120,6 +3123,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s2.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3132,6 +3136,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s3.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3141,6 +3146,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s3.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3160,6 +3166,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s4.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3169,6 +3176,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s4.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3180,6 +3188,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s5.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3189,6 +3198,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s5.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3202,6 +3212,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s6.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3211,6 +3222,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s6.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3223,6 +3235,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s7.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3232,6 +3245,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s7.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3251,6 +3265,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s8.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3260,6 +3275,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s8.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3272,6 +3288,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s9.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3281,6 +3298,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s9.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3300,6 +3318,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s10.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3309,6 +3328,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s10.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3328,6 +3348,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s11.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3337,6 +3358,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s11.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3349,6 +3371,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s12.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3358,6 +3381,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s12.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3370,6 +3394,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s13.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3379,6 +3404,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s13.printContainer();
+					cout << endl;
 				}
 			}	
 		}
@@ -3391,6 +3417,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s14.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3400,6 +3427,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s14.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3412,6 +3440,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s15.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3421,6 +3450,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s15.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3433,6 +3463,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s16.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3442,6 +3473,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s16.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3454,6 +3486,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s17.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3463,6 +3496,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s17.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3503,6 +3537,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s19.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3512,6 +3547,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s19.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3527,6 +3563,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s20.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3536,6 +3573,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s20.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3556,6 +3594,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s21.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3565,6 +3604,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s21.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3580,6 +3620,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s22.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3589,6 +3630,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s22.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3608,6 +3650,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s23.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3617,6 +3660,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s23.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3632,6 +3676,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s24.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3641,6 +3686,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s24.printContainer();
+					cout << endl;
 				}
 			}
 		}
@@ -3660,6 +3706,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s25.printContainer();
+					cout << endl;
 				}
 			}
 			else
@@ -3669,6 +3716,7 @@ void Game::play(bool loadgame)
 				{
 					cout << "On the ground you see the following items:" << endl;
 					s25.printContainer();
+					cout << endl;
 				}
 			}
 		}
