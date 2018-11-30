@@ -15,7 +15,7 @@ using namespace std;
 
 Space2::Space2()
 {
-	name = "Ruins";
+	name = "ruins";
 	shortForm = "You arrive at a ruin. You see various remains periodically peeking through the rubble.\n"
 	"To the west you see a cobblestone path leading to some Fields\n\n";
 	longForm = "You arrive at the end of the path to find what ages ago must have been a larger\n"

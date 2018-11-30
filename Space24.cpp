@@ -15,7 +15,7 @@ using namespace std;
 
 Space24::Space24()
 {
-	name = "Volcano Lvl. 4";
+	name = "volcano lvl. 4";
 	shortForm = "There is a small landing before the trail cuts in and up the volcano.\n"
 	"In the middle of the landing is a lever.\n\n"
 	"The trail to the north is a smooth gradient up the volcano to Volcano Lvl. 5 \n"

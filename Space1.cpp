@@ -15,7 +15,7 @@ using namespace std;
 
 Space1::Space1()
 {
-	name = "Fields";
+	name = "fields";
 	shortForm = "There are many tussocks of grass. A pleasant breeze blows from seemingly nowhere.\n\n"
 		"To the east you see a cobblestone path to some Ruins\n"
 		"To the south is a trail into the thick brush of the Jungle\n";
@@ -32,9 +32,6 @@ Space1::Space1()
 
 Space1::~Space1()
 {}
-
-
-
 
 void Space1::look(const char* thing)
 {

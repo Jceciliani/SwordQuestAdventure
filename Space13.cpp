@@ -15,7 +15,7 @@ using namespace std;
 
 Space13::Space13()
 {
-	name = "Sanctuary";
+	name = "sanctuary";
 	shortForm = "In the center of the room is a small ornate fountain. \n"
 		"In the south western corner is an anvil and forge. Along the northern wall there is a large wooden chest.\n"
 		"A large gate on the southern wall looms over the room \n\n"

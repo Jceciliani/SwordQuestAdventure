@@ -15,7 +15,7 @@ using namespace std;
 
 Space14::Space14()
 {
-	name = "Mausoleum";
+	name = "mausoleum";
 	shortForm = "The walls seem to be etched with something. The floor of the room feels slightly uneven\n\n"
 		"To the west is a small corridor back to the Sanctuary \n"
 		"To the east is a doorway to a small Crypt\n";

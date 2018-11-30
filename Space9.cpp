@@ -15,7 +15,7 @@ using namespace std;
 
 Space9::Space9()
 {
-	name = "Lower Maintenance";
+	name = "lower maintenance";
 	shortForm = "In the center of the room is a small ornate fountain. There is a large metal hatch on one of the tubes\n\n"
 		"To the east there is a walkway to the Upper Maintenance area\n"
 		"To the west is a door to the Guard Quarters\n";

@@ -15,7 +15,7 @@ using namespace std;
 
 Space20::Space20()
 {
-	name = "Volcano Summit";
+	name = "volcano summit";
 	shortForm = "The rocks around you dimly glow from the mountains contents.\n"
 	"Near the lip you see a small ornate fountain. To the east you also see a door shaped shimmering gateway.\n\n"
 	"To the south you can see a ledge, and a perilous path leading down into the Volcanic Chamber \n"

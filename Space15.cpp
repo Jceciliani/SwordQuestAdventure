@@ -15,7 +15,7 @@ using namespace std;
 
 Space15::Space15()
 {
-	name = "Crypt";
+	name = "crypt";
 	shortForm = "The room is filled with candles and intricately painted pots and vases. In the center of the room is a large tomb\n\n"
 		"To the west is a doorway to leads back to the dimly lit corridor of the Mausoleum \n";
 	longForm = "The room is filled with candles that were used up long ago and a plethora of \n"

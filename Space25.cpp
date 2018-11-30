@@ -15,7 +15,7 @@ using namespace std;
 
 Space25::Space25()
 {
-	name = "Volcanic Chamber";
+	name = "volcanic chamber";
 	shortForm = "You reach a small platform in the middle of the burning lake. \n"
 	"The stalactites spark from the heat.\n\n"
 		"To the north you can see a steep climb back to the Volcano Summit\n";

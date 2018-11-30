@@ -15,7 +15,7 @@ using namespace std;
 
 Space3::Space3()
 {
-	name = "Western Sewers";
+	name = "western sewers";
 	shortForm = "The walkways are grimy and slick. There appears to be a fishing basket of some kind in the sewer waterway.\n\n"
 	"To the south are stairs leading up to the Guard Quarters \n"
 	"Down the walkways to the east there is bright light coming from the Sewer Depths \n";

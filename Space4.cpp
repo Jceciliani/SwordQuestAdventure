@@ -15,7 +15,7 @@ using namespace std;
 
 Space4::Space4()
 {
-	name = "Sewer Depths";
+	name = "sewer depths";
 	shortForm = "The mouth of the sewer opens up into the ocean. There is a small wooden bridge.\n\n"
 		"To the east you see the tunnels continue to the Eastern Sewers \n"
 		"To the west you see the tunnels continue to the Western Sewers \n";

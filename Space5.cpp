@@ -15,7 +15,7 @@ using namespace std;
 
 Space5::Space5()
 {
-	name = "Eastern Sewers";
+	name = "eastern sewers";
 	shortForm = "Moss and mildew cover the sewer walls. You see a small corporeal form in the corner.\n\n"
 	"Down the walkways to the east there is bright light coming from the Sewer Depths \n"
 	"To the south there is a ladder leading to the Upper Maintenance area \n";

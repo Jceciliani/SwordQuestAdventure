@@ -14,7 +14,7 @@ using namespace std;
 
 Space18::Space18()
 {
-	name = "Keep";
+	name = "keep";
 	shortForm = "This is the short form\n";
 	longForm = "Your quest is complete. You can rest...\n";
 	id = 18;

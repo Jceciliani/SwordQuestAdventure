@@ -15,7 +15,7 @@ using namespace std;
 
 Space23::Space23()
 {
-	name = "Volcano Lvl. 3";
+	name = "volcano lvl. 3";
 	shortForm = "There is a small alcove in the face of the volcano containing various piles of valuables and trinkets.\n"
 		"To the side of the alcove, there is a table of meager bread \n\n"
 		"The trail to the east zigzags questionably up the volcano to Volcano Lvl. 4 \n"

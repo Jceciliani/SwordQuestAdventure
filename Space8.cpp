@@ -15,7 +15,7 @@ using namespace std;
 
 Space8::Space8()
 {
-	name = "Guard Quarters";
+	name = "guard quarters";
 	shortForm = "There are papers strewn across the desk. There are a collection of lockers along the west wall\n\n"
 		"To the north is a door labeled 'Sewers' \n"
 		"To the east is a door labeled ÅgMaintenanceÅh \n"

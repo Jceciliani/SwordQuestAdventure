@@ -15,7 +15,7 @@ using namespace std;
 
 Space17::Space17()
 {
-	name = "Volcano Foothills";
+	name = "volcano foothills";
 	shortForm = "You are at the base of a large volcano.\n"
 	"In the middle of the path there is a small ornate fountain.\n\n"
 		"To the north is a path sloping down and away from the volcano through the foothills back to the Crossroads \n"

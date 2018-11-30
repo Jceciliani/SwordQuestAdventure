@@ -15,7 +15,7 @@ using namespace std;
 
 Space21::Space21()
 {
-	name = "Volcano Lvl. 1";
+	name = "volcano lvl. 1";
 	shortForm = "On the side of the path you see a large boulder.\n\n"
 	"The trail to the east continues up the volcano, slowly increasing in gradient as it approaches Volcano Lvl. 2 \n"
 	"The path to the north  dissapates behind you into an ominous fog. There is no turning back \n";
