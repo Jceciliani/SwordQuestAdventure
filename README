@@ -1,0 +1,9 @@
+How to compile SwordQuest
+
+Flip:
+1) Place files in a fresh directory (via FileZilla, etc.)
+2) Go to the location where you placed the files 
+3) Type "make" into the command line
+4) Type "SwordQuest" into the command line
+5) Once loaded, press "1" to Start, "2" to load, or "3" to quit
+6) Enjoy!
