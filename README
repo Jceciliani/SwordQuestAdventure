@@ -21,7 +21,7 @@ Go north to Room 3
   “equip bronze armor”
 Go east to Room 4
   Fight Goblin
-  Go east to Room 5
+Go east to Room 5
   “look at form”
   “take silver sword”
   “equip silver sword”
@@ -33,7 +33,8 @@ Go west to Room 8
 Go south to Room 13
 Go west to Room 12
 Go north to Room 7
-  “sprint across bridge”
+  “jump to island”
+  "jump west"
 Go west to Room 6
   “cut vines”
   “take silver armor”
@@ -46,7 +47,8 @@ Go east to Room 2
 Go west to Room 1
 Go south to Room 6
 Go east to Room 7
-  “sprint across bridge”
+  “jump to island”
+  "jump south"
 Go south to Room 12
 Go east to Room 13
   “put wooden sword in chest”
